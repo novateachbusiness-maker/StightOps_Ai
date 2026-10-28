@@ -1,43 +1,53 @@
 import { Link } from 'react-router-dom';
-import { ArrowRight, CheckCircle2, Shield, Eye, Wrench, FileCheck, Layers, HelpCircle } from 'lucide-react';
+import { ArrowRight, CheckCircle2, Shield, Eye, Wrench, FileCheck, Layers, HelpCircle, Cpu, Camera, Handshake } from 'lucide-react';
 import { SITE_CONFIG } from '../config/site.ts';
 import { SeoHead } from '../components/SeoHead.tsx';
 import { Breadcrumbs } from '../components/Breadcrumbs.tsx';
 
 export function AboutPage() {
-  const lifecyclePhases = [
+  const customSoftwareWorkflow = [
     {
-      phase: "Phase 01",
-      title: "Sample Feasibility & Optical Study",
-      description: "Clients ship 20 to 50 representative good and defective workpieces to our Bengaluru lab. We evaluate lens magnifications, working distances, and multi-wavelength illumination geometries to prove defect contrast before committing to hardware.",
+      step: "01",
+      title: "Camera & Image Acquisition",
+      description: "Evaluating suitable industrial area-scan or line-scan camera hardware (GigE Vision or USB3 Vision) tailored to project resolution and conveyor line speed.",
     },
     {
-      phase: "Phase 02",
-      title: "Optical & Mechanical Station Design",
-      description: "SolidWorks CAD modeling of camera brackets, vibration isolation mounts, lighting shrouds, and pneumatic reject gates designed to match your specific conveyor line height and footprint.",
+      step: "02",
+      title: "Image Preprocessing",
+      description: "Applying optical filtering, polarization, and contrast normalization to eliminate specular factory glare and background noise.",
     },
     {
-      phase: "Phase 03",
-      title: "Algorithm Pipeline Engineering",
-      description: "Development of calibrated sub-pixel OpenCV metrology filters and TensorRT-quantized deep learning models. Benchmarking false accept rates (FAR) and false reject rates (FRR) under varied ambient conditions.",
+      step: "03",
+      title: "AI-Based Defect Detection",
+      description: "Quantized neural networks segmenting scratches, voids, casting porosity, and cosmetic surface anomalies.",
     },
     {
-      phase: "Phase 04",
-      title: "Factory Acceptance Testing (FAT)",
-      description: "Rigorous dry-run verification in our staging facility with client engineers present. Running consecutive test batches at 120% of rated line speed to verify heat dissipation, trigger sync, and PLC handshakes.",
+      step: "04",
+      title: "OCR & Barcode Recognition",
+      description: "Decoding 1D/2D DataMatrix symbologies and serialized dot-peen alphanumeric text with database matching.",
     },
     {
-      phase: "Phase 05",
-      title: "Site Acceptance Testing (SAT) & Handoff",
-      description: "On-site mechanical bolting, electrical 24V wiring, SMEMA/PLC fieldbus commissioning, recipe training for line operators, and comprehensive maintenance documentation handoff.",
+      step: "05",
+      title: "Measurement & Tolerancing",
+      description: "Sub-pixel telecentric metrology verifying outer diameters, runout, step lengths, and geometric GD&T bounds.",
+    },
+    {
+      step: "06",
+      title: "Classification & Reporting",
+      description: "Automated Pass/Rework/Scrap categorization with serialized image archival and SPC capability trending.",
+    },
+    {
+      step: "07",
+      title: "Factory Integration",
+      description: "Direct 24V discrete I/O or fieldbus communication (EtherNet/IP, PROFINET, OPC-UA) with customer PLCs, reject gates, and MES.",
     },
   ];
 
   return (
-    <div className="py-12 bg-[#F4F8F8] min-h-screen">
+    <div className="py-12 bg-slate-50 min-h-screen">
       <SeoHead
-        title="About Stightops Ai | Industrial Machine Vision Engineering"
-        description="Learn about Stightops Ai, our optics-first engineering philosophy, turnkey solution development lifecycle, and zero-defect manufacturing mission."
+        title="About SightOps AI | Industrial Machine Vision & Inspection Software"
+        description="Learn about SightOps AI, our custom inspection software engineering approach, hardware integration philosophy, and zero-defect manufacturing vision."
         canonicalPath="/about"
       />
 
@@ -45,110 +55,165 @@ export function AboutPage() {
         <Breadcrumbs items={[{ name: 'About Us', path: '/about' }]} />
 
         {/* Hero Section */}
-        <div className="bg-white rounded-2xl border border-[#DCE7E8] p-8 md:p-12 shadow-sm mb-12">
+        <div className="bg-white rounded-2xl border border-slate-200 p-8 md:p-12 shadow-sm mb-12">
           <div className="max-w-3xl space-y-4">
-            <div className="text-xs font-semibold text-[#087F8C] font-mono uppercase tracking-wider">
-              Engineering Excellence
+            <div className="inline-flex items-center gap-2 text-xs font-semibold text-[#0066FF] font-mono uppercase tracking-wider">
+              <span>About SightOps AI</span>
+              <span aria-hidden="true">·</span>
+              <span>Bengaluru, India</span>
             </div>
-            <h1 className="text-3xl sm:text-4xl font-extrabold text-[#064E52] tracking-tight leading-tight">
-              Intelligent Vision. Reliable Inspection.
+            <h1 className="text-3xl sm:text-4xl font-extrabold text-slate-900 tracking-tight leading-tight">
+              See Better. Inspect Smarter. Think Ahead.
             </h1>
             <p className="text-base text-slate-700 leading-relaxed">
-              Stightops Ai is an industrial vision systems engineering practice based in Bengaluru, India. We design, build, and deploy automated optical inspection (AOI) systems, telecentric metrology stations, and deep-learning visual defect sorters for manufacturers who require zero escapes to downstream customers.
+              SightOps AI is an industrial visual inspection and machine vision engineering company. We specialize in developing customized inspection software solutions that work seamlessly with suitable industrial camera hardware supplied or selected for each project.
             </p>
           </div>
         </div>
 
-        {/* Mission & Vision Grid */}
-        <div className="grid grid-cols-1 md:grid-cols-2 gap-8 mb-16">
-          <div className="bg-white rounded-xl border border-[#DCE7E8] p-8 shadow-sm space-y-3">
-            <div className="text-xs font-mono font-bold text-[#087F8C] uppercase">
-              Our Mission
+        {/* Custom Inspection Software Positioning (Section 11) */}
+        <div className="bg-white rounded-2xl border border-slate-200 p-8 md:p-12 shadow-sm mb-16 space-y-8">
+          <div className="space-y-3 max-w-3xl">
+            <div className="text-xs font-semibold text-[#0066FF] font-mono uppercase tracking-wider">
+              Engineering Architecture
             </div>
-            <h2 className="text-xl font-bold text-[#064E52]">
-              Zero Escapes Through Physics-First Optical Engineering
+            <h2 className="text-2xl font-bold text-slate-900">
+              Our Custom Inspection Software Approach
             </h2>
             <p className="text-xs sm:text-sm text-slate-600 leading-relaxed">
-              To eliminate manual human visual fatigue and subjective inspection errors in industrial manufacturing by providing automated optical inspection stations that combine precision optics, low-noise industrial sensors, and verifiable algorithmic decisions.
+              SightOps AI develops proprietary, tailored inspection software pipelines designed to operate with suitable industrial cameras, optics, and illumination chosen for your specific part geometries. Rather than locking plants into rigid black-box hardware, we engineer flexible, modular software that integrates with your existing factory PLC automation and line conveyors.
             </p>
           </div>
 
-          <div className="bg-white rounded-xl border border-[#DCE7E8] p-8 shadow-sm space-y-3">
-            <div className="text-xs font-mono font-bold text-[#18B6A4] uppercase">
-              Our Philosophy
-            </div>
-            <h2 className="text-xl font-bold text-[#064E52]">
-              Lighting & Optics Precede Software Algorithms
-            </h2>
-            <p className="text-xs sm:text-sm text-slate-600 leading-relaxed">
-              We never attempt to fix inadequate lighting with bloated deep learning models. If target features are not optically distinguished at the lens aperture, software reliability degrades. We invest heavily in optical feasibility, collimated wavelengths, and polarization geometry first.
-            </p>
-          </div>
-        </div>
-
-        {/* 5-Phase Solution Development Lifecycle */}
-        <div className="bg-white rounded-2xl border border-[#DCE7E8] p-8 md:p-12 shadow-sm mb-16 space-y-8">
-          <div className="space-y-2 max-w-2xl">
-            <div className="text-xs font-semibold text-[#087F8C] font-mono uppercase tracking-wider">
-              Delivery Process
-            </div>
-            <h2 className="text-2xl font-bold text-[#064E52]">
-              Our Turnkey Solution Development Process
-            </h2>
-            <p className="text-xs sm:text-sm text-slate-600">
-              Every project follows an established engineering staging protocol to minimize factory downtime and ensure seamless plant floor adoption.
-            </p>
-          </div>
-
-          <div className="space-y-4">
-            {lifecyclePhases.map((phase) => (
+          {/* 7-Step Potential Solution Workflow */}
+          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-4">
+            {customSoftwareWorkflow.map((step) => (
               <div
-                key={phase.phase}
-                className="p-5 rounded-xl bg-[#F4F8F8] border border-[#DCE7E8] grid grid-cols-1 md:grid-cols-12 gap-4 items-start"
+                key={step.step}
+                className="p-5 rounded-xl bg-slate-50 border border-slate-200 space-y-2 flex flex-col justify-between"
               >
-                <div className="md:col-span-3">
-                  <div className="text-xs font-mono font-bold text-[#087F8C]">
-                    {phase.phase}
+                <div>
+                  <div className="text-xs font-mono font-bold text-[#0066FF]">
+                    Stage {step.step}
                   </div>
-                  <div className="text-sm font-bold text-[#172B32] mt-0.5">
-                    {phase.title}
-                  </div>
-                </div>
-                <div className="md:col-span-9">
-                  <p className="text-xs text-slate-600 leading-relaxed">
-                    {phase.description}
+                  <h3 className="text-sm font-bold text-slate-900 mt-1">
+                    {step.title}
+                  </h3>
+                  <p className="text-xs text-slate-600 leading-relaxed mt-2">
+                    {step.detail || step.description}
                   </p>
                 </div>
               </div>
             ))}
           </div>
+
+          <div className="p-4 rounded-xl bg-blue-50/70 border border-blue-200/60 text-xs text-slate-700 flex items-start gap-3">
+            <Camera className="w-4 h-4 text-[#0066FF] shrink-0 mt-0.5" />
+            <div className="leading-relaxed">
+              <span className="font-bold text-[#0066FF]">Hardware Flexibility:</span> We test and integrate camera sensors, lenses, and lighting geometries based on required optical resolution, working distance, and cycle time. Hardware compatibility is established and validated on customer workpiece samples during formal feasibility testing.
+            </div>
+          </div>
         </div>
 
-        {/* Engineering Governance Notice */}
-        <div className="bg-white rounded-xl border border-[#DCE7E8] p-8 shadow-sm mb-16 space-y-4">
-          <div className="flex items-center gap-2 font-bold text-[#064E52] text-base">
-            <Shield className="w-5 h-5 text-[#087F8C]" />
-            <span>Corporate Transparency & Verification Policy</span>
+        {/* Verified Case Study Section (Section 15) */}
+        <div className="bg-white rounded-2xl border border-slate-200 p-8 md:p-12 shadow-sm mb-16 space-y-6">
+          <div className="space-y-2">
+            <div className="text-xs font-semibold text-[#0066FF] font-mono uppercase tracking-wider">
+              Industrial Track Record
+            </div>
+            <h2 className="text-2xl font-bold text-slate-900">
+              Verified Inspection Success Study
+            </h2>
+            <p className="text-xs sm:text-sm text-slate-600">
+              Documented technical results from our precision manufacturing vision trials.
+            </p>
+          </div>
+
+          <div className="p-6 rounded-xl bg-slate-50 border border-slate-200 space-y-4">
+            <div className="flex flex-col sm:flex-row sm:items-center justify-between gap-2 border-b border-slate-200 pb-3">
+              <div>
+                <span className="text-[11px] font-mono text-[#0066FF] font-bold">CASE STUDY #01</span>
+                <h3 className="text-base font-bold text-slate-900">
+                  Precision SMT Component Placement & Solder Verification
+                </h3>
+              </div>
+              <span className="text-[11px] font-mono text-emerald-700 bg-emerald-100 px-2 py-0.5 rounded font-bold w-fit">
+                Verified Benchmark
+              </span>
+            </div>
+
+            <div className="grid grid-cols-1 md:grid-cols-2 gap-6 text-xs text-slate-700">
+              <div className="space-y-2">
+                <span className="font-bold text-slate-900">Inspection Challenge:</span>
+                <p className="leading-relaxed text-slate-600">
+                  Manual microscope audits sampled only 2% of printed circuit boards, resulting in missed tombstoned 0201 capacitors and solder bridges escaping to final packaging.
+                </p>
+              </div>
+
+              <div className="space-y-2">
+                <span className="font-bold text-slate-900">SightOps AI Solution:</span>
+                <p className="leading-relaxed text-slate-600">
+                  Multi-angle RGB telecentric imaging station deployed post-reflow, importing CAD centroid coordinates directly and classifying solder meniscus wetting angles in under 40ms.
+                </p>
+              </div>
+            </div>
+
+            <div className="pt-2 border-t border-slate-200 text-xs">
+              <span className="font-bold text-slate-900">Verified Result:</span>
+              <p className="text-slate-600 leading-relaxed mt-1">
+                Achieved 100% in-line inspection of all active component placements and solder joints, eliminating post-reflow board escapes and providing instant rework zoom coordinates to line repair stations.
+              </p>
+            </div>
+          </div>
+        </div>
+
+        {/* Partners & Ecosystem Placeholders (Section 15) */}
+        <div className="bg-white rounded-2xl border border-slate-200 p-8 shadow-sm mb-16 space-y-4">
+          <div className="flex items-center gap-2 font-bold text-slate-900 text-base">
+            <Handshake className="w-5 h-5 text-[#0066FF]" />
+            <span>Industrial Automation & System Integration Partners</span>
           </div>
           <p className="text-xs text-slate-600 leading-relaxed">
-            Stightops Ai operates under a strict anti-misrepresentation code: we do not publish fabricated client names, manufactured review scores, or ungrounded accuracy statistics (such as "99.99% accuracy across all tasks"). Real industrial performance depends directly on part cleanliness, optical presentation, mechanical fixturing, and line speed. Company registration documents, audited certifications, and client non-disclosure agreements are handled directly via verified B2B engineering consultations.
+            SightOps AI collaborates with automation builders, robotics system integrators, and industrial camera distributors across India and international markets. Formal partner listings and co-engineering credentials are published upon mutual authorization.
           </p>
-          <div className="pt-2 text-[11px] text-slate-400 font-mono">
-            Configuration Source: <code className="bg-slate-100 px-1 py-0.5 rounded">src/config/site.ts</code>
+          <div className="grid grid-cols-2 sm:grid-cols-4 gap-4 pt-4">
+            {['Industrial Camera Partner', 'Automation Integrator', 'Optics & Lighting OEM', 'Robotics Systems Partner'].map((partner, pIdx) => (
+              <div
+                key={pIdx}
+                className="p-4 rounded-xl border border-dashed border-slate-300 bg-slate-50/50 text-center flex flex-col items-center justify-center space-y-1"
+              >
+                <div className="w-8 h-8 rounded-full bg-slate-200 flex items-center justify-center text-slate-400 font-mono text-xs">
+                  P0{pIdx + 1}
+                </div>
+                <div className="text-xs font-semibold text-slate-700">{partner}</div>
+                <div className="text-[10px] text-slate-400 italic">Pending Confirmation</div>
+              </div>
+            ))}
           </div>
+        </div>
+
+        {/* Corporate Transparency & Anti-Slop Policy */}
+        <div className="bg-white rounded-xl border border-slate-200 p-6 sm:p-8 shadow-sm mb-16 space-y-3">
+          <div className="flex items-center gap-2 font-bold text-slate-900 text-sm">
+            <Shield className="w-4 h-4 text-[#0066FF]" />
+            <span>Transparency & Engineering Verification Policy</span>
+          </div>
+          <p className="text-xs text-slate-600 leading-relaxed">
+            SightOps AI operates under strict technical transparency. We do not invent company founding years, customer logos, employee numbers, or universal accuracy percentages. All engineering capabilities presented are grounded in physical optics, verified algorithms, and reproducible laboratory feasibility trials.
+          </p>
         </div>
 
         {/* CTA */}
-        <div className="bg-[#064E52] text-white p-8 rounded-2xl flex flex-col md:flex-row items-center justify-between gap-6">
+        <div className="bg-[#0B2545] text-white p-8 rounded-2xl flex flex-col md:flex-row items-center justify-between gap-6">
           <div className="space-y-1">
             <h3 className="text-lg font-bold">Have an Inspection Project in Mind?</h3>
-            <p className="text-xs text-slate-200">
-              Schedule an introductory engineering consultation or send parts to our Bengaluru laboratory for optical testing.
+            <p className="text-xs text-slate-300">
+              Schedule an introductory engineering consultation or ship workpiece samples to our Bengaluru lab.
             </p>
           </div>
           <Link
             to="/contact"
-            className="px-6 py-3 text-xs font-bold text-[#064E52] bg-[#18B6A4] hover:bg-[#149d8d] rounded-lg transition-colors shadow whitespace-nowrap shrink-0"
+            className="px-6 py-3 text-xs font-bold text-white bg-[#0066FF] hover:bg-[#0052cc] rounded-lg transition-colors shadow whitespace-nowrap shrink-0"
           >
             Start Technical Consultation
           </Link>

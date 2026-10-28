@@ -1,8 +1,8 @@
-# Stightops Ai - Premium Industrial Vision Systems Platform
+# SightOps AI - Premium Industrial Vision Systems Platform
 
-**Intelligent Vision. Reliable Inspection.**
+**See Better. Inspect Smarter. Think Ahead.**
 
-A production-grade, full-stack web application for **Stightops Ai**, an industrial vision systems engineering practice providing AI-powered visual inspection, automated optical inspection (AOI), PCB inspection, surface defect classification, high-speed OCR/barcode reading, and telecentric dimensional metrology.
+A production-grade, full-stack web application for **SightOps AI**, an industrial machine vision and automated optical inspection engineering company delivering AI-driven defect classification, high-speed SMT PCB inspection, robotic guidance, OCR/barcode traceability, and metrology solutions.
 
 ---
 
@@ -99,9 +99,9 @@ All company variables, contact coordinates, domain endpoints, and branding token
 
 ```typescript
 export const SITE_CONFIG = {
-  name: "Stightops Ai",                                  // Change company name
-  tagline: "Intelligent Vision. Reliable Inspection.",
-  domain: "[DOMAIN PENDING]",                            // Update to your production domain (e.g. https://stightops.ai)
+  name: "SightOps AI",                                   // Change company name
+  tagline: "See Better. Inspect Smarter. Think Ahead.",
+  domain: "[DOMAIN PENDING]",                            // Update to your production domain (e.g. https://sightops.ai)
   contactEmail: "[CONTACT EMAIL]",                       // Update to your corporate email
   phone: "+91 (0) 80 4920 1800",                         // Update telephone
   address: {
@@ -127,7 +127,7 @@ Open **Command Prompt (`cmd.exe`)** and navigate to your project directory.
 
 ### Step 1: Install Dependencies
 ```cmd
-cd \path\to\stightops-ai
+cd \path\to\sightops-ai
 npm install
 ```
 
@@ -149,13 +149,13 @@ If you prefer running the backend API and frontend Vite server independently:
 
 **Terminal 1 (Backend Server):**
 ```cmd
-cd \path\to\stightops-ai
+cd \path\to\sightops-ai
 npx tsx server.ts
 ```
 
 **Terminal 2 (Frontend Client):**
 ```cmd
-cd \path\to\stightops-ai
+cd \path\to\sightops-ai
 npx vite --port 3001
 ```
 
@@ -194,7 +194,7 @@ npm run build
 
 Before deploying to your public production domain:
 
-1. **Domain Update:** Replace `[DOMAIN PENDING]` in `src/config/site.ts` and `server.ts` with your live domain (e.g., `https://stightops.ai`).
+1. **Domain Update:** Replace `[DOMAIN PENDING]` in `src/config/site.ts` and `server.ts` with your live domain (e.g., `https://sightops.ai`).
 2. **Email & Phone Configuration:** Replace `[CONTACT EMAIL]` in `src/config/site.ts` with your monitored inbox.
 3. **Google Search Console:** Submit `https://your-domain.com/sitemap.xml` in Search Console.
 4. **Canonical & OpenGraph Verification:** Inspect `head` metadata to verify absolute canonical URLs match your registered domain.

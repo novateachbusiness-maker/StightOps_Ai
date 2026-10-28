@@ -15,9 +15,9 @@ export function generateOrganizationSchema() {
     "@context": "https://schema.org",
     "@type": "Organization",
     "name": SITE_CONFIG.name,
-    "alternateName": "Stightops Machine Vision",
+    "alternateName": "SightOps Machine Vision",
     "description": SITE_CONFIG.subheadline,
-    "url": SITE_CONFIG.domain.startsWith("http") ? SITE_CONFIG.domain : "https://stightops.ai",
+    "url": SITE_CONFIG.domain.startsWith("http") ? SITE_CONFIG.domain : "https://sightops.ai",
     "email": SITE_CONFIG.contactEmail,
     "telephone": SITE_CONFIG.phone,
     "address": {
@@ -46,7 +46,7 @@ export function generateOrganizationSchema() {
 }
 
 export function generateBreadcrumbSchema(items: BreadcrumbItem[]) {
-  const baseDomain = SITE_CONFIG.domain.startsWith("http") ? SITE_CONFIG.domain : "https://stightops.ai";
+  const baseDomain = SITE_CONFIG.domain.startsWith("http") ? SITE_CONFIG.domain : "https://sightops.ai";
   return {
     "@context": "https://schema.org",
     "@type": "BreadcrumbList",
@@ -65,7 +65,7 @@ export function generateServiceSchema(service: {
   url: string;
   category: string;
 }) {
-  const baseDomain = SITE_CONFIG.domain.startsWith("http") ? SITE_CONFIG.domain : "https://stightops.ai";
+  const baseDomain = SITE_CONFIG.domain.startsWith("http") ? SITE_CONFIG.domain : "https://sightops.ai";
   return {
     "@context": "https://schema.org",
     "@type": "Service",
@@ -103,7 +103,7 @@ export function generateArticleSchema(article: {
   url: string;
   tags?: string[];
 }) {
-  const baseDomain = SITE_CONFIG.domain.startsWith("http") ? SITE_CONFIG.domain : "https://stightops.ai";
+  const baseDomain = SITE_CONFIG.domain.startsWith("http") ? SITE_CONFIG.domain : "https://sightops.ai";
   return {
     "@context": "https://schema.org",
     "@type": "TechArticle",

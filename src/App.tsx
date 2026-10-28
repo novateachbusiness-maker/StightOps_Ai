@@ -7,6 +7,7 @@ import { useEffect } from 'react';
 import { BrowserRouter, Routes, Route, useLocation } from 'react-router-dom';
 import { Header } from './components/Header.tsx';
 import { Footer } from './components/Footer.tsx';
+import { WhatsAppButton } from './components/WhatsAppButton.tsx';
 
 // Pages
 import { HomePage } from './pages/HomePage.tsx';
@@ -36,7 +37,7 @@ export default function App() {
   return (
     <BrowserRouter>
       <ScrollToTop />
-      <div className="flex flex-col min-h-screen bg-[#F4F8F8] text-[#172B32] antialiased">
+      <div className="flex flex-col min-h-screen bg-slate-50 text-slate-900 antialiased relative">
         <Header />
         <main className="flex-1">
           <Routes>
@@ -46,7 +47,7 @@ export default function App() {
             <Route path="/solutions" element={<SolutionsPage />} />
             <Route path="/solutions/:slug" element={<SolutionDetailPage />} />
             
-            {/* Industries */}
+            {/* Consolidated 5 Industries */}
             <Route path="/industries" element={<IndustriesPage />} />
             <Route path="/industries/:slug" element={<IndustryDetailPage />} />
             
@@ -69,6 +70,8 @@ export default function App() {
           </Routes>
         </main>
         <Footer />
+        {/* Floating WhatsApp Quick Action Button */}
+        <WhatsAppButton />
       </div>
     </BrowserRouter>
   );

@@ -81,7 +81,7 @@ function checkRateLimit(ip: string): boolean {
 app.get('/api/health', (req: Request, res: Response) => {
   res.json({
     status: 'ok',
-    service: 'Stightops Ai Industrial Vision Platform',
+    service: 'SightOps AI Industrial Vision Platform',
     timestamp: new Date().toISOString(),
     environment: isProd ? 'production' : 'development',
     version: '1.0.0',
@@ -186,13 +186,13 @@ app.get('/robots.txt', (req: Request, res: Response) => {
 Allow: /
 Disallow: /api/
 
-Sitemap: https://stightops.ai/sitemap.xml
+Sitemap: https://sightops.ai/sitemap.xml
 `);
 });
 
 // Dynamic sitemap.xml
 app.get('/sitemap.xml', (req: Request, res: Response) => {
-  const baseUrl = 'https://stightops.ai';
+  const baseUrl = 'https://sightops.ai';
   const staticRoutes = [
     '',
     '/solutions',
@@ -247,7 +247,7 @@ async function startServer() {
   }
 
   app.listen(Number(PORT), '0.0.0.0', () => {
-    console.log(`[Server] Stightops Ai server running on port ${PORT} (${isProd ? 'production' : 'development'})`);
+    console.log(`[Server] SightOps AI server running on port ${PORT} (${isProd ? 'production' : 'development'})`);
   });
 }
 

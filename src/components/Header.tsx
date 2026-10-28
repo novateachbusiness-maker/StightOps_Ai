@@ -29,26 +29,37 @@ export function Header() {
   const industriesItem = NAVIGATION_ITEMS.find((item) => item.title === 'Industries');
 
   return (
-    <header className="sticky top-0 z-50 bg-white/95 backdrop-blur-md border-b border-[#DCE7E8]">
+    <header className="sticky top-0 z-40 bg-white/95 backdrop-blur-md border-b border-slate-200">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-        <div className="flex items-center justify-between gap-8 h-18" ref={dropdownRef}>
-          {/* Zone 1: Brand Wordmark (Single text element) */}
+        <div className="flex items-center justify-between gap-8 h-20" ref={dropdownRef}>
+          {/* Zone 1: Approved Brand Logo & Wordmark (Blue SightOps lettering on white) */}
           <Link
             to="/"
-            className="flex items-center gap-2.5 text-xl font-bold tracking-tight text-[#064E52] whitespace-nowrap shrink-0 group"
+            className="flex items-center gap-3 text-xl font-bold tracking-tight text-[#0B2545] whitespace-nowrap shrink-0 group"
           >
-            <div className="w-8 h-8 rounded-md bg-[#064E52] flex items-center justify-center text-white font-mono text-base font-semibold group-hover:bg-[#087F8C] transition-colors">
-              S<span className="text-[#18B6A4]">A</span>
+            <div className="w-10 h-10 rounded-lg overflow-hidden border border-slate-200 bg-white shadow-xs shrink-0 flex items-center justify-center p-0.5">
+              <img
+                src={SITE_CONFIG.logo.main}
+                alt={SITE_CONFIG.logo.alt}
+                className="w-full h-full object-cover"
+              />
             </div>
-            <span>{SITE_CONFIG.name}</span>
+            <div className="flex flex-col">
+              <span className="text-lg font-extrabold tracking-tight text-[#0B2545] group-hover:text-[#0066FF] transition-colors leading-none">
+                Sight<span className="text-[#0066FF]">Ops</span> AI
+              </span>
+              <span className="text-[10px] font-mono text-slate-500 tracking-wider uppercase mt-1 hidden sm:block">
+                Industrial Vision Systems
+              </span>
+            </div>
           </Link>
 
-          {/* Zone 2: Navigation Links (Single-line, quiet hover states) */}
-          <nav className="hidden lg:flex items-center gap-6 text-sm font-medium text-[#172B32]">
+          {/* Zone 2: Navigation Links */}
+          <nav className="hidden lg:flex items-center gap-6 text-sm font-medium text-slate-700">
             <Link
               to="/"
-              className={`hover:text-[#087F8C] transition-colors whitespace-nowrap shrink-0 ${
-                location.pathname === '/' ? 'text-[#087F8C] font-semibold' : ''
+              className={`hover:text-[#0066FF] transition-colors whitespace-nowrap shrink-0 ${
+                location.pathname === '/' ? 'text-[#0066FF] font-semibold' : ''
               }`}
             >
               Home
@@ -59,40 +70,40 @@ export function Header() {
               <button
                 type="button"
                 onClick={() => setOpenDropdown(openDropdown === 'solutions' ? null : 'solutions')}
-                className={`flex items-center gap-1 hover:text-[#087F8C] transition-colors whitespace-nowrap shrink-0 ${
-                  location.pathname.startsWith('/solutions') ? 'text-[#087F8C] font-semibold' : ''
+                className={`flex items-center gap-1 hover:text-[#0066FF] transition-colors whitespace-nowrap shrink-0 cursor-pointer ${
+                  location.pathname.startsWith('/solutions') ? 'text-[#0066FF] font-semibold' : ''
                 }`}
                 aria-expanded={openDropdown === 'solutions'}
               >
                 <span>Solutions</span>
                 <ChevronDown
                   className={`w-4 h-4 transition-transform duration-150 ${
-                    openDropdown === 'solutions' ? 'rotate-180 text-[#087F8C]' : 'text-slate-400'
+                    openDropdown === 'solutions' ? 'rotate-180 text-[#0066FF]' : 'text-slate-400'
                   }`}
                 />
               </button>
 
               {openDropdown === 'solutions' && solutionsItem?.children && (
-                <div className="absolute top-full left-0 mt-3 w-84 bg-white border border-[#DCE7E8] rounded-lg shadow-lg p-3 grid gap-1.5 z-50">
-                  <div className="px-3 py-1.5 text-xs font-semibold text-slate-400 uppercase tracking-wider">
+                <div className="absolute top-full left-0 mt-3 w-88 bg-white border border-slate-200 rounded-xl shadow-xl p-3 grid gap-1.5 z-50 animate-in fade-in slide-in-from-top-1">
+                  <div className="px-3 py-1.5 text-[11px] font-mono font-semibold text-slate-400 uppercase tracking-wider">
                     Inspection Systems
                   </div>
                   {solutionsItem.children.map((sub) => (
                     <Link
                       key={sub.href}
                       to={sub.href}
-                      className="px-3 py-2 rounded-md hover:bg-[#F4F8F8] transition-colors block text-left group"
+                      className="px-3 py-2 rounded-lg hover:bg-slate-50 transition-colors block text-left group"
                     >
-                      <div className="text-sm font-medium text-[#172B32] group-hover:text-[#087F8C]">
+                      <div className="text-xs font-bold text-slate-800 group-hover:text-[#0066FF]">
                         {sub.title}
                       </div>
-                      <p className="text-xs text-slate-500 line-clamp-1 mt-0.5">{sub.description}</p>
+                      <p className="text-[11px] text-slate-500 line-clamp-1 mt-0.5">{sub.description}</p>
                     </Link>
                   ))}
-                  <div className="pt-2 mt-1 border-t border-[#DCE7E8]">
+                  <div className="pt-2 mt-1 border-t border-slate-100">
                     <Link
                       to="/solutions"
-                      className="px-3 py-1.5 text-xs font-semibold text-[#087F8C] hover:underline flex items-center justify-between"
+                      className="px-3 py-1.5 text-xs font-semibold text-[#0066FF] hover:underline flex items-center justify-between"
                     >
                       <span>View All Solutions Overview</span>
                       <ArrowUpRight className="w-3.5 h-3.5" />
@@ -102,47 +113,47 @@ export function Header() {
               )}
             </div>
 
-            {/* Industries Dropdown */}
+            {/* Consolidated 5 Industries Dropdown */}
             <div className="relative">
               <button
                 type="button"
                 onClick={() => setOpenDropdown(openDropdown === 'industries' ? null : 'industries')}
-                className={`flex items-center gap-1 hover:text-[#087F8C] transition-colors whitespace-nowrap shrink-0 ${
-                  location.pathname.startsWith('/industries') ? 'text-[#087F8C] font-semibold' : ''
+                className={`flex items-center gap-1 hover:text-[#0066FF] transition-colors whitespace-nowrap shrink-0 cursor-pointer ${
+                  location.pathname.startsWith('/industries') ? 'text-[#0066FF] font-semibold' : ''
                 }`}
                 aria-expanded={openDropdown === 'industries'}
               >
                 <span>Industries</span>
                 <ChevronDown
                   className={`w-4 h-4 transition-transform duration-150 ${
-                    openDropdown === 'industries' ? 'rotate-180 text-[#087F8C]' : 'text-slate-400'
+                    openDropdown === 'industries' ? 'rotate-180 text-[#0066FF]' : 'text-slate-400'
                   }`}
                 />
               </button>
 
               {openDropdown === 'industries' && industriesItem?.children && (
-                <div className="absolute top-full left-0 mt-3 w-84 bg-white border border-[#DCE7E8] rounded-lg shadow-lg p-3 grid gap-1.5 z-50">
-                  <div className="px-3 py-1.5 text-xs font-semibold text-slate-400 uppercase tracking-wider">
-                    Manufacturing Sectors
+                <div className="absolute top-full left-0 mt-3 w-88 bg-white border border-slate-200 rounded-xl shadow-xl p-3 grid gap-1.5 z-50 animate-in fade-in slide-in-from-top-1">
+                  <div className="px-3 py-1.5 text-[11px] font-mono font-semibold text-slate-400 uppercase tracking-wider">
+                    5 Core Manufacturing Sectors
                   </div>
                   {industriesItem.children.map((sub) => (
                     <Link
                       key={sub.href}
                       to={sub.href}
-                      className="px-3 py-2 rounded-md hover:bg-[#F4F8F8] transition-colors block text-left group"
+                      className="px-3 py-2 rounded-lg hover:bg-slate-50 transition-colors block text-left group"
                     >
-                      <div className="text-sm font-medium text-[#172B32] group-hover:text-[#087F8C]">
+                      <div className="text-xs font-bold text-slate-800 group-hover:text-[#0066FF]">
                         {sub.title}
                       </div>
-                      <p className="text-xs text-slate-500 line-clamp-1 mt-0.5">{sub.description}</p>
+                      <p className="text-[11px] text-slate-500 line-clamp-1 mt-0.5">{sub.description}</p>
                     </Link>
                   ))}
-                  <div className="pt-2 mt-1 border-t border-[#DCE7E8]">
+                  <div className="pt-2 mt-1 border-t border-slate-100">
                     <Link
                       to="/industries"
-                      className="px-3 py-1.5 text-xs font-semibold text-[#087F8C] hover:underline flex items-center justify-between"
+                      className="px-3 py-1.5 text-xs font-semibold text-[#0066FF] hover:underline flex items-center justify-between"
                     >
-                      <span>Explore All Industries</span>
+                      <span>Explore Industry Sector Hub</span>
                       <ArrowUpRight className="w-3.5 h-3.5" />
                     </Link>
                   </div>
@@ -152,8 +163,8 @@ export function Header() {
 
             <Link
               to="/technologies"
-              className={`hover:text-[#087F8C] transition-colors whitespace-nowrap shrink-0 ${
-                location.pathname === '/technologies' ? 'text-[#087F8C] font-semibold' : ''
+              className={`hover:text-[#0066FF] transition-colors whitespace-nowrap shrink-0 ${
+                location.pathname === '/technologies' ? 'text-[#0066FF] font-semibold' : ''
               }`}
             >
               Technologies
@@ -161,8 +172,8 @@ export function Header() {
 
             <Link
               to="/applications"
-              className={`hover:text-[#087F8C] transition-colors whitespace-nowrap shrink-0 ${
-                location.pathname === '/applications' ? 'text-[#087F8C] font-semibold' : ''
+              className={`hover:text-[#0066FF] transition-colors whitespace-nowrap shrink-0 ${
+                location.pathname === '/applications' ? 'text-[#0066FF] font-semibold' : ''
               }`}
             >
               Applications
@@ -170,8 +181,8 @@ export function Header() {
 
             <Link
               to="/resources"
-              className={`hover:text-[#087F8C] transition-colors whitespace-nowrap shrink-0 ${
-                location.pathname.startsWith('/resources') ? 'text-[#087F8C] font-semibold' : ''
+              className={`hover:text-[#0066FF] transition-colors whitespace-nowrap shrink-0 ${
+                location.pathname.startsWith('/resources') ? 'text-[#0066FF] font-semibold' : ''
               }`}
             >
               Resources
@@ -179,8 +190,8 @@ export function Header() {
 
             <Link
               to="/about"
-              className={`hover:text-[#087F8C] transition-colors whitespace-nowrap shrink-0 ${
-                location.pathname === '/about' ? 'text-[#087F8C] font-semibold' : ''
+              className={`hover:text-[#0066FF] transition-colors whitespace-nowrap shrink-0 ${
+                location.pathname === '/about' ? 'text-[#0066FF] font-semibold' : ''
               }`}
             >
               About Us
@@ -191,7 +202,7 @@ export function Header() {
           <div className="hidden lg:flex items-center gap-3 shrink-0">
             <Link
               to="/contact"
-              className="px-4 py-2 text-xs font-semibold text-white bg-[#064E52] hover:bg-[#087F8C] rounded-lg transition-colors shadow-sm whitespace-nowrap shrink-0"
+              className="px-5 py-2.5 text-xs font-bold text-white bg-[#0066FF] hover:bg-[#0052cc] rounded-lg transition-colors shadow-sm whitespace-nowrap shrink-0"
             >
               Request a Consultation
             </Link>
@@ -201,7 +212,7 @@ export function Header() {
           <div className="lg:hidden flex items-center gap-2">
             <Link
               to="/contact"
-              className="px-3 py-1.5 text-xs font-semibold text-white bg-[#064E52] rounded-md whitespace-nowrap shrink-0"
+              className="px-3 py-1.5 text-xs font-bold text-white bg-[#0066FF] rounded-md whitespace-nowrap shrink-0"
             >
               Consultation
             </Link>
@@ -219,20 +230,20 @@ export function Header() {
 
       {/* Mobile Drawer Menu */}
       {mobileMenuOpen && (
-        <div className="lg:hidden border-t border-[#DCE7E8] bg-white px-4 pt-3 pb-6 space-y-3">
+        <div className="lg:hidden border-t border-slate-200 bg-white px-4 pt-3 pb-6 space-y-3">
           <Link
             to="/"
-            className="block py-2 text-base font-medium text-slate-900 border-b border-slate-100"
+            className="block py-2 text-sm font-semibold text-slate-900 border-b border-slate-100"
           >
             Home
           </Link>
 
           <div>
-            <div className="text-xs font-semibold text-slate-400 uppercase tracking-wider py-1">
+            <div className="text-[11px] font-mono font-semibold text-slate-400 uppercase tracking-wider py-1">
               Solutions
             </div>
             <div className="pl-3 space-y-1">
-              <Link to="/solutions" className="block py-1 text-sm text-slate-700 font-medium">
+              <Link to="/solutions" className="block py-1 text-xs text-slate-700 font-semibold">
                 All Solutions Overview
               </Link>
               {solutionsItem?.children?.map((sub) => (
@@ -244,11 +255,11 @@ export function Header() {
           </div>
 
           <div>
-            <div className="text-xs font-semibold text-slate-400 uppercase tracking-wider py-1">
-              Industries
+            <div className="text-[11px] font-mono font-semibold text-slate-400 uppercase tracking-wider py-1">
+              Consolidated Industries
             </div>
             <div className="pl-3 space-y-1">
-              <Link to="/industries" className="block py-1 text-sm text-slate-700 font-medium">
+              <Link to="/industries" className="block py-1 text-xs text-slate-700 font-semibold">
                 All Industries Overview
               </Link>
               {industriesItem?.children?.map((sub) => (
@@ -261,31 +272,31 @@ export function Header() {
 
           <Link
             to="/technologies"
-            className="block py-2 text-base font-medium text-slate-900 border-b border-slate-100"
+            className="block py-2 text-sm font-semibold text-slate-900 border-b border-slate-100"
           >
             Technologies
           </Link>
           <Link
             to="/applications"
-            className="block py-2 text-base font-medium text-slate-900 border-b border-slate-100"
+            className="block py-2 text-sm font-semibold text-slate-900 border-b border-slate-100"
           >
             Applications & Case Studies
           </Link>
           <Link
             to="/resources"
-            className="block py-2 text-base font-medium text-slate-900 border-b border-slate-100"
+            className="block py-2 text-sm font-semibold text-slate-900 border-b border-slate-100"
           >
             Resources & Guides
           </Link>
           <Link
             to="/about"
-            className="block py-2 text-base font-medium text-slate-900 border-b border-slate-100"
+            className="block py-2 text-sm font-semibold text-slate-900 border-b border-slate-100"
           >
             About Us
           </Link>
           <Link
             to="/contact"
-            className="block w-full text-center py-2.5 text-sm font-semibold text-white bg-[#064E52] rounded-lg mt-3"
+            className="block w-full text-center py-2.5 text-xs font-bold text-white bg-[#0066FF] rounded-lg mt-3"
           >
             Request a Consultation
           </Link>

@@ -1,73 +1,94 @@
+import { useState, useEffect } from 'react';
 import { Link } from 'react-router-dom';
-import { ArrowRight, Eye, Cpu, CheckCircle2, ChevronRight, Layers, Sparkles, Binary, Sliders, Shield } from 'lucide-react';
+import { ArrowRight, Eye, Cpu, CheckCircle2, ChevronRight, Layers, Sparkles, Binary, Sliders, Shield, Play } from 'lucide-react';
 import { SITE_CONFIG } from '../config/site.ts';
 import { SOLUTIONS } from '../data/solutions.ts';
 import { INDUSTRIES } from '../data/industries.ts';
 import { APPLICATIONS } from '../data/applications.ts';
 import { RESOURCE_ARTICLES } from '../data/resources.ts';
-import { InteractiveInspectionDemo } from '../components/InteractiveInspectionDemo.tsx';
+import { InteractiveBoundingBoxViewer } from '../components/InteractiveBoundingBoxViewer.tsx';
+import { InteractiveIndustryExplorer } from '../components/InteractiveIndustryExplorer.tsx';
+import { InteractiveTechnologyExplorer } from '../components/InteractiveTechnologyExplorer.tsx';
 import { SeoHead } from '../components/SeoHead.tsx';
 import { generateOrganizationSchema } from '../utils/seo.ts';
 
+const HERO_SLIDES = [
+  {
+    image: "/assets/hero/robotic-hud-inspection.jpeg",
+    title: "Automated Robotic & Laser In-Line Inspection",
+    subtitle: "Real-time 3D defect detection on high-speed CNC and automotive assembly lines",
+    badge: "Automotive & Machining",
+  },
+  {
+    image: "/src/assets/images/hero_pcb_inspection_1792999689695.jpg",
+    title: "Sub-Micron Telecentric PCB & SMT Inspection",
+    subtitle: "Bi-telecentric optics with multi-tier RGB ring lighting verifying 0201 passives and micro-BGAs",
+    badge: "Electronics & PCB",
+  },
+  {
+    image: "/assets/hero/engineer-quality-monitor.jpeg",
+    title: "Edge AI Quality Control & Telemetry",
+    subtitle: "Plant engineers monitoring automated pass/fail decisions and SPC drift alerts in real time",
+    badge: "Edge GPU Intelligence",
+  },
+];
+
 export function HomePage() {
+  const [activeSlide, setActiveSlide] = useState(0);
   const orgSchema = generateOrganizationSchema();
+
+  // Gentle auto-transition between hero visual assets (every 6s)
+  useEffect(() => {
+    const timer = setInterval(() => {
+      setActiveSlide((prev) => (prev + 1) % HERO_SLIDES.length);
+    }, 6000);
+    return () => clearInterval(timer);
+  }, []);
 
   const coreSolutionCards = [
     {
       title: "AI-Based Visual Inspection Systems",
-      description: "Deep learning segmentation to detect subtle scratches, dents, and texture anomalies on irregular cast and machined surfaces.",
+      description: "Deep learning models for complex defect detection on irregular cast, brushed, or textured surfaces.",
       href: "/solutions/ai-visual-inspection",
       tag: "AI Inspection",
     },
     {
-      title: "Automated Optical Inspection (AOI)",
-      description: "High-speed multi-angle RGB illumination and telecentric imaging for sub-millimeter component and assembly verification.",
+      title: "Automated PCB Inspection (AOI)",
+      description: "High-speed SMT verification, component presence/absence, solder fillet angles, and polarity checks.",
       href: "/solutions/pcb-aoi",
       tag: "Electronics AOI",
     },
     {
       title: "Industrial Machine Vision",
-      description: "Deterministic edge-detection, pattern matching, and blob analysis engineered for high-cadence production lines.",
+      description: "Deterministic edge-detection, sub-pixel metrology, and blob analysis for high-cadence production lines.",
       href: "/technologies",
-      tag: "Classical Vision",
+      tag: "Deterministic Vision",
     },
     {
-      title: "PCB Inspection Systems",
-      description: "100% SMT placement verification, solder fillet coplanarity, solder bridging detection, and polarity checks.",
-      href: "/solutions/pcb-aoi",
-      tag: "SMT & THT",
-    },
-    {
-      title: "OCR & Barcode Inspection",
-      description: "High-speed reading and verification of 1D barcodes, 2D DataMatrix codes, and serialized direct-part marks.",
+      title: "OCR & Barcode Recognition",
+      description: "High-speed reading of 1D/2D DataMatrix codes, serialized alphanumeric text, and DPM laser markings.",
       href: "/solutions/ocr-barcode-inspection",
       tag: "Traceability",
     },
     {
-      title: "Defect Detection & Classification",
-      description: "Classifying surface flaws into functional vs. cosmetic categories using edge GPU inference in under 30ms.",
+      title: "Surface Defect Detection & Classification",
+      description: "Classifying surface scratches, porosity pits, and tool chatter in under 30ms on edge GPUs.",
       href: "/solutions/surface-defect-detection",
       tag: "Quality Control",
     },
     {
-      title: "Dimensional Measurement",
-      description: "Non-contact telecentric optical metrology with sub-pixel edge detection for micron-level tolerance verification.",
+      title: "Dimensional Measurement & Metrology",
+      description: "Telecentric optical metrology with sub-pixel edge detection for micron-level tolerance verification.",
       href: "/solutions/dimensional-measurement",
       tag: "Metrology",
-    },
-    {
-      title: "Custom Vision Automation",
-      description: "Bespoke optical enclosures, multi-camera synchronization, PLC handshakes, and pneumatic reject stations.",
-      href: "/solutions/custom-machine-vision",
-      tag: "System Integration",
     },
   ];
 
   const workflowSteps = [
     {
       step: "01",
-      title: "Image Acquisition & Optics",
-      description: "Matched telecentric lenses, monochromatic narrow-band filters, and strobed illumination freeze movement without motion blur.",
+      title: "Image Acquisition",
+      description: "Matched telecentric optics, monochromatic filters, and microsecond strobes freeze line movement without motion blur.",
     },
     {
       step: "02",
@@ -77,7 +98,7 @@ export function HomePage() {
     {
       step: "03",
       title: "AI or Rule-Based Analysis",
-      description: "Sub-pixel algorithms evaluate dimensions while TensorRT-optimized neural networks classify surface texture defects.",
+      description: "Sub-pixel algorithms evaluate dimensions while TensorRT-optimized neural networks classify surface anomalies.",
     },
     {
       step: "04",
@@ -86,8 +107,8 @@ export function HomePage() {
     },
     {
       step: "05",
-      title: "MES & SPC Reporting",
-      description: "Inspection data, defect images, and Cp/Cpk trend metrics stream to factory MES via OPC-UA and MQTT.",
+      title: "MES & Traceability Reporting",
+      description: "Inspection data, defect images, and SPC trend metrics stream to factory MES via OPC-UA and MQTT.",
     },
   ];
 
@@ -95,94 +116,123 @@ export function HomePage() {
     <div>
       <SeoHead
         title="AI-Powered Vision Systems for Smarter Industrial Inspection"
-        description="Stightops Ai engineers industrial machine vision systems, automated optical inspection (AOI), PCB inspection, OCR, and defect classification for modern manufacturing."
+        description="SightOps AI engineers industrial machine vision systems, automated optical inspection (AOI), PCB inspection, OCR, and defect classification for modern manufacturing."
         canonicalPath="/"
         jsonLd={orgSchema}
       />
 
-      {/* Hero Section */}
-      <section className="relative pt-12 pb-20 md:pt-20 md:pb-28 bg-[#F4F8F8] border-b border-[#DCE7E8] overflow-hidden">
-        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+      {/* Hero Section with Multi-Asset Visual Transition */}
+      <section className="relative pt-12 pb-20 md:pt-16 md:pb-24 bg-gradient-to-b from-slate-900 to-[#0B2545] text-white border-b border-slate-800 overflow-hidden">
+        {/* Subtle grid backdrop */}
+        <div
+          className="absolute inset-0 opacity-15 pointer-events-none"
+          style={{
+            backgroundImage:
+              'linear-gradient(to right, rgba(0, 210, 255, 0.2) 1px, transparent 1px), linear-gradient(to bottom, rgba(0, 210, 255, 0.2) 1px, transparent 1px)',
+            backgroundSize: '40px 40px',
+          }}
+        />
+
+        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
           <div className="grid grid-cols-1 lg:grid-cols-12 gap-12 items-center">
-            {/* Left Headline & Content */}
+            {/* Left Headline & Content (7 cols) */}
             <div className="lg:col-span-7 space-y-6">
-              <div className="inline-flex items-center gap-2 text-xs font-semibold text-[#087F8C]">
-                <span className="font-mono tracking-wider uppercase">Industrial Machine Vision & AOI</span>
+              <div className="inline-flex items-center gap-2 text-xs font-semibold text-[#00D2FF]">
+                <span className="font-mono tracking-wider uppercase">SightOps AI · Vision Platform</span>
                 <span aria-hidden="true">·</span>
-                <span className="text-slate-600">Zero-Escape Quality Control</span>
+                <span className="text-slate-300">See Better. Inspect Smarter. Think Ahead.</span>
               </div>
 
-              <h1 className="text-3xl sm:text-4xl lg:text-5xl font-extrabold text-[#064E52] tracking-tight leading-[1.15] text-balance">
+              <h1 className="text-3xl sm:text-4xl lg:text-5xl font-extrabold text-white tracking-tight leading-[1.15] text-balance">
                 AI-Powered Vision Systems for Smarter Industrial Inspection
               </h1>
 
-              <p className="text-base sm:text-lg text-[#172B32]/85 leading-relaxed max-w-2xl">
-                We engineer intelligent machine vision solutions, automated optical inspection (AOI), and edge AI systems that help manufacturing plants automate visual quality checks, identify microscopic defects, verify serial codes, and maintain zero-defect standards.
+              <p className="text-base sm:text-lg text-slate-300 leading-relaxed max-w-2xl">
+                We engineer intelligent machine vision solutions, automated visual inspection systems, and edge AI that help manufacturers detect microscopic defects, verify assemblies, inspect markings, and maintain zero-defect standards.
               </p>
 
               {/* CTAs */}
               <div className="pt-2 flex flex-col sm:flex-row items-stretch sm:items-center gap-4">
                 <Link
-                  to="/contact"
-                  className="inline-flex items-center justify-center gap-2 px-6 py-3.5 text-sm font-bold text-white bg-[#064E52] hover:bg-[#087F8C] rounded-lg transition-colors shadow-sm text-center"
+                  to="/solutions"
+                  className="inline-flex items-center justify-center gap-2 px-6 py-3.5 text-xs font-bold text-white bg-[#0066FF] hover:bg-[#0052cc] rounded-lg transition-colors shadow-md text-center"
                 >
-                  <span>Discuss Your Application</span>
+                  <span>Explore Our Solutions</span>
                   <ArrowRight className="w-4 h-4" />
                 </Link>
 
                 <Link
-                  to="/solutions"
-                  className="inline-flex items-center justify-center gap-2 px-6 py-3.5 text-sm font-bold text-[#064E52] hover:text-[#087F8C] bg-white border border-[#DCE7E8] hover:border-[#087F8C] rounded-lg transition-colors text-center"
+                  to="/contact"
+                  className="inline-flex items-center justify-center gap-2 px-6 py-3.5 text-xs font-bold text-slate-200 hover:text-white bg-white/10 hover:bg-white/20 border border-white/20 rounded-lg transition-colors text-center"
                 >
-                  <span>Explore Our Solutions</span>
+                  <span>Contact Our Team</span>
                 </Link>
               </div>
 
               {/* Technical Trust Strip */}
-              <div className="pt-6 border-t border-[#DCE7E8] grid grid-cols-3 gap-4 text-xs text-slate-600">
+              <div className="pt-6 border-t border-white/15 grid grid-cols-3 gap-4 text-xs text-slate-300">
                 <div>
-                  <div className="font-bold text-[#064E52] text-sm font-mono">100% In-Line</div>
-                  <div className="text-[11px] text-slate-500 mt-0.5">Automated Optical Inspection</div>
+                  <div className="font-bold text-[#00D2FF] text-sm font-mono">100% In-Line</div>
+                  <div className="text-[11px] text-slate-400 mt-0.5">Automated Visual Inspection</div>
                 </div>
                 <div>
-                  <div className="font-bold text-[#064E52] text-sm font-mono">Sub-Pixel</div>
-                  <div className="text-[11px] text-slate-500 mt-0.5">Micron Metrology Precision</div>
+                  <div className="font-bold text-[#00D2FF] text-sm font-mono">Sub-Pixel</div>
+                  <div className="text-[11px] text-slate-400 mt-0.5">Micron Metrology Precision</div>
                 </div>
                 <div>
-                  <div className="font-bold text-[#064E52] text-sm font-mono">Edge GPU</div>
-                  <div className="text-[11px] text-slate-500 mt-0.5">Deterministic Real-Time I/O</div>
+                  <div className="font-bold text-[#00D2FF] text-sm font-mono">Edge GPU</div>
+                  <div className="text-[11px] text-slate-400 mt-0.5">Deterministic Real-Time I/O</div>
                 </div>
               </div>
             </div>
 
-            {/* Right Hero Visual with realistic inspection reticles */}
+            {/* Right Multi-Asset Visual Hero Showcase (5 cols) */}
             <div className="lg:col-span-5 relative">
-              <div className="relative rounded-2xl overflow-hidden border border-[#DCE7E8] shadow-md bg-slate-900 group">
-                <img
-                  src="/src/assets/images/hero_pcb_inspection_1792999689695.jpg"
-                  alt="Industrial machine vision camera inspecting PCB assembly under telecentric illumination"
-                  className="w-full h-[400px] object-cover"
-                />
+              <div className="relative rounded-2xl overflow-hidden border border-white/20 shadow-2xl bg-slate-950 group min-h-[380px] flex items-center justify-center">
+                {HERO_SLIDES.map((slide, sIdx) => (
+                  <div
+                    key={sIdx}
+                    className={`absolute inset-0 transition-opacity duration-700 ease-in-out ${
+                      activeSlide === sIdx ? 'opacity-100 z-10' : 'opacity-0 z-0'
+                    }`}
+                  >
+                    <img
+                      src={slide.image}
+                      alt={slide.title}
+                      className="w-full h-full object-cover"
+                    />
+                    {/* Dark gradient scrim for legibility */}
+                    <div className="absolute inset-0 bg-gradient-to-t from-slate-950 via-slate-950/40 to-transparent pointer-events-none" />
 
-                {/* Inspection Overlays on Hero Image */}
-                <div className="absolute inset-0 bg-gradient-to-t from-slate-950/80 via-transparent to-transparent pointer-events-none" />
+                    {/* Slide Information Overlay */}
+                    <div className="absolute bottom-4 left-4 right-4 bg-slate-900/90 backdrop-blur-md p-3.5 rounded-xl border border-white/15 text-xs space-y-1">
+                      <div className="flex items-center justify-between">
+                        <span className="text-[10px] font-mono font-bold text-[#00D2FF] uppercase">
+                          {slide.badge}
+                        </span>
+                        <span className="text-[10px] text-slate-400 font-mono">
+                          0{sIdx + 1} / 0{HERO_SLIDES.length}
+                        </span>
+                      </div>
+                      <div className="font-bold text-white text-xs">{slide.title}</div>
+                      <p className="text-[11px] text-slate-300 leading-snug">{slide.subtitle}</p>
+                    </div>
+                  </div>
+                ))}
 
-                {/* Reticle bounding box */}
-                <div className="absolute top-1/3 left-1/4 w-28 h-20 border-2 border-emerald-400 rounded bg-emerald-500/10 pointer-events-none">
-                  <div className="text-[9px] font-mono font-bold text-white bg-emerald-600 px-1.5 py-0.5 rounded -mt-4 w-fit shadow">
-                    AOI: BGA-64 VERIFIED
-                  </div>
-                </div>
-
-                {/* Subtitle Badge */}
-                <div className="absolute bottom-4 left-4 right-4 bg-white/95 backdrop-blur-md p-3 rounded-lg border border-white/20 text-xs flex items-center justify-between">
-                  <div>
-                    <div className="font-bold text-[#064E52]">Automated SMT Inspection Station</div>
-                    <div className="text-[10px] text-slate-500">Global shutter camera · Bi-telecentric optics</div>
-                  </div>
-                  <div className="px-2 py-1 bg-emerald-100 text-emerald-800 font-mono text-[10px] font-bold rounded">
-                    PASS
-                  </div>
+                {/* Manual Thumbnail Switcher at Top Right */}
+                <div className="absolute top-3 right-3 z-20 flex items-center gap-1.5 bg-black/60 backdrop-blur-sm p-1 rounded-lg border border-white/10">
+                  {HERO_SLIDES.map((_, dotIdx) => (
+                    <button
+                      key={dotIdx}
+                      type="button"
+                      onClick={() => setActiveSlide(dotIdx)}
+                      className={`w-2.5 h-2.5 rounded-full transition-all cursor-pointer ${
+                        activeSlide === dotIdx ? 'bg-[#00D2FF] w-6' : 'bg-white/40 hover:bg-white/70'
+                      }`}
+                      aria-label={`Switch to hero showcase slide ${dotIdx + 1}`}
+                    />
+                  ))}
                 </div>
               </div>
             </div>
@@ -190,40 +240,98 @@ export function HomePage() {
         </div>
       </section>
 
-      {/* Core Solutions Bento Grid */}
-      <section className="py-20 bg-white border-b border-[#DCE7E8]">
+      {/* Section 3: Interactive Inspection Bounding Boxes Experience */}
+      <section className="py-20 bg-slate-50 border-b border-slate-200">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-          <div className="space-y-3 mb-12">
-            <div className="text-xs font-semibold text-[#087F8C] uppercase tracking-wider font-mono">
-              Core Capabilities
+          <div className="space-y-3 mb-10 text-center max-w-3xl mx-auto">
+            <div className="inline-flex items-center gap-2 text-xs font-semibold text-[#0066FF] font-mono uppercase">
+              <Eye className="w-4 h-4" />
+              <span>Interactive Machine Vision Experience</span>
             </div>
-            <h2 className="text-2xl sm:text-3xl font-bold text-[#064E52]">
-              Industrial Vision Solutions for Manufacturing Lines
+            <h2 className="text-2xl sm:text-3xl font-bold text-slate-900">
+              Interactive Inspection Bounding Boxes
             </h2>
-            <p className="text-sm text-slate-600 max-w-2xl">
-              From sub-micron electronics assembly to heavy automotive forgings, our inspection solutions are engineered to prevent defects from escaping the plant.
+            <p className="text-sm text-slate-600">
+              Hover over or tap the inspection regions below to inspect object detection bounding boxes, defect classifications, OCR readings, and dimension tolerances in real time.
             </p>
           </div>
 
-          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6">
+          <InteractiveBoundingBoxViewer />
+        </div>
+      </section>
+
+      {/* Section 5: Industry Navigation Transition & Consolidated 5 Industries */}
+      <section className="py-20 bg-white border-b border-slate-200">
+        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+          <div className="space-y-3 mb-10 max-w-3xl">
+            <div className="text-xs font-semibold text-[#0066FF] uppercase tracking-wider font-mono">
+              Consolidated Sector Explorer
+            </div>
+            <h2 className="text-2xl sm:text-3xl font-bold text-slate-900">
+              Explore Our 5 Core Manufacturing Sectors
+            </h2>
+            <p className="text-sm text-slate-600">
+              Use the horizontal navigation buttons below to explore inspection challenges, proposed vision solutions, and expected business benefits across key manufacturing industries.
+            </p>
+          </div>
+
+          <InteractiveIndustryExplorer />
+        </div>
+      </section>
+
+      {/* Section 6 & 7: Redesigned Interactive Technology Explorer */}
+      <section className="py-20 bg-slate-50 border-b border-slate-200">
+        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+          <div className="space-y-3 mb-10 max-w-3xl">
+            <div className="text-xs font-semibold text-[#0066FF] uppercase tracking-wider font-mono">
+              Technology Explorer
+            </div>
+            <h2 className="text-2xl sm:text-3xl font-bold text-slate-900">
+              Interactive Machine Vision & AI Technology Stack
+            </h2>
+            <p className="text-sm text-slate-600">
+              Explore our core capabilities: deep learning, object detection, OCR & barcode decoding, precision metrology, industrial cameras, and on-premises edge model deployment.
+            </p>
+          </div>
+
+          <InteractiveTechnologyExplorer />
+        </div>
+      </section>
+
+      {/* Core Solutions Bento Grid */}
+      <section className="py-20 bg-white border-b border-slate-200">
+        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+          <div className="space-y-3 mb-12">
+            <div className="text-xs font-semibold text-[#0066FF] uppercase tracking-wider font-mono">
+              Core Capabilities
+            </div>
+            <h2 className="text-2xl sm:text-3xl font-bold text-slate-900">
+              Industrial Vision Solutions for Manufacturing Lines
+            </h2>
+            <p className="text-sm text-slate-600 max-w-2xl">
+              From sub-micron electronics assembly to heavy automotive forgings, our inspection solutions are engineered to prevent defects from escaping to downstream customers.
+            </p>
+          </div>
+
+          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
             {coreSolutionCards.map((card) => (
               <Link
                 key={card.title}
                 to={card.href}
-                className="group p-6 rounded-xl border border-[#DCE7E8] bg-[#F4F8F8]/50 hover:bg-white hover:border-[#087F8C] transition-all flex flex-col justify-between"
+                className="group p-6 rounded-xl border border-slate-200 bg-slate-50/50 hover:bg-white hover:border-[#0066FF] transition-all flex flex-col justify-between"
               >
                 <div className="space-y-3">
-                  <div className="text-xs font-mono font-semibold text-[#087F8C]">
+                  <div className="text-xs font-mono font-semibold text-[#0066FF]">
                     {card.tag}
                   </div>
-                  <h3 className="text-base font-bold text-[#172B32] group-hover:text-[#087F8C] transition-colors">
+                  <h3 className="text-base font-bold text-slate-900 group-hover:text-[#0066FF] transition-colors">
                     {card.title}
                   </h3>
                   <p className="text-xs text-slate-600 leading-relaxed">
                     {card.description}
                   </p>
                 </div>
-                <div className="pt-4 mt-4 border-t border-[#DCE7E8]/60 flex items-center justify-between text-xs font-semibold text-[#064E52] group-hover:text-[#087F8C]">
+                <div className="pt-4 mt-4 border-t border-slate-200 flex items-center justify-between text-xs font-semibold text-slate-800 group-hover:text-[#0066FF]">
                   <span>Technical Details</span>
                   <ChevronRight className="w-4 h-4 transition-transform group-hover:translate-x-1" />
                 </div>
@@ -234,7 +342,7 @@ export function HomePage() {
           <div className="mt-10 text-center">
             <Link
               to="/solutions"
-              className="inline-flex items-center gap-2 text-xs font-bold text-[#087F8C] hover:underline"
+              className="inline-flex items-center gap-2 text-xs font-bold text-[#0066FF] hover:underline"
             >
               <span>View In-Depth Specifications for All Solutions</span>
               <ArrowRight className="w-3.5 h-3.5" />
@@ -243,38 +351,18 @@ export function HomePage() {
         </div>
       </section>
 
-      {/* Interactive Vision Demonstration Section */}
-      <section className="py-20 bg-[#F4F8F8] border-b border-[#DCE7E8]">
-        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-          <div className="space-y-3 mb-10 text-center max-w-3xl mx-auto">
-            <div className="inline-flex items-center gap-2 text-xs font-semibold text-[#087F8C] font-mono uppercase">
-              <Eye className="w-4 h-4" />
-              <span>Interactive Demonstration</span>
-            </div>
-            <h2 className="text-2xl sm:text-3xl font-bold text-[#064E52]">
-              Experience Our Vision System Controller Interface
-            </h2>
-            <p className="text-sm text-slate-600">
-              Toggle between SMT component checks, telecentric precision metrology, and high-speed OCR decoding. Adjust illumination exposure and inspect automated finding overlays in real time.
-            </p>
-          </div>
-
-          <InteractiveInspectionDemo />
-        </div>
-      </section>
-
-      {/* How Our Vision System Works: 5-Stage Engineering Architecture */}
-      <section className="py-20 bg-white border-b border-[#DCE7E8]">
+      {/* 5-Stage Engineering Workflow */}
+      <section className="py-20 bg-slate-50 border-b border-slate-200">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="space-y-3 mb-14">
-            <div className="text-xs font-semibold text-[#087F8C] uppercase tracking-wider font-mono">
+            <div className="text-xs font-semibold text-[#0066FF] uppercase tracking-wider font-mono">
               System Engineering
             </div>
-            <h2 className="text-2xl sm:text-3xl font-bold text-[#064E52]">
+            <h2 className="text-2xl sm:text-3xl font-bold text-slate-900">
               How Our Industrial Vision Systems Work
             </h2>
             <p className="text-sm text-slate-600 max-w-2xl">
-              Reliable machine vision is an integrated optical and mechanical discipline, combining optics, strobe timing, edge inference, and deterministic PLC handshakes.
+              Reliable machine vision combines optics, microsecond strobe timing, edge inference, and deterministic PLC handshakes.
             </p>
           </div>
 
@@ -282,12 +370,12 @@ export function HomePage() {
             {workflowSteps.map((ws) => (
               <div
                 key={ws.step}
-                className="p-5 rounded-xl border border-[#DCE7E8] bg-[#F4F8F8]/40 space-y-3"
+                className="p-5 rounded-xl border border-slate-200 bg-white space-y-3 shadow-xs"
               >
-                <div className="text-2xl font-black font-mono text-[#18B6A4]">
+                <div className="text-2xl font-black font-mono text-[#0066FF]">
                   {ws.step}
                 </div>
-                <h3 className="text-sm font-bold text-[#172B32]">{ws.title}</h3>
+                <h3 className="text-sm font-bold text-slate-900">{ws.title}</h3>
                 <p className="text-xs text-slate-600 leading-relaxed">
                   {ws.description}
                 </p>
@@ -297,86 +385,26 @@ export function HomePage() {
         </div>
       </section>
 
-      {/* Industries Served Preview */}
-      <section className="py-20 bg-[#F4F8F8] border-b border-[#DCE7E8]">
-        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-          <div className="flex flex-col md:flex-row md:items-end justify-between gap-6 mb-12">
-            <div className="space-y-3">
-              <div className="text-xs font-semibold text-[#087F8C] uppercase tracking-wider font-mono">
-                Target Sectors
-              </div>
-              <h2 className="text-2xl sm:text-3xl font-bold text-[#064E52]">
-                Industries Where We Solve Inspection Challenges
-              </h2>
-              <p className="text-sm text-slate-600 max-w-xl">
-                Tailored vision solutions engineered for the specific physical and regulatory demands of modern manufacturing.
-              </p>
-            </div>
-            <Link
-              to="/industries"
-              className="text-xs font-bold text-[#064E52] hover:text-[#087F8C] flex items-center gap-1.5 shrink-0"
-            >
-              <span>Explore All Industries</span>
-              <ArrowRight className="w-3.5 h-3.5" />
-            </Link>
-          </div>
-
-          <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
-            {INDUSTRIES.slice(0, 3).map((ind) => (
-              <div
-                key={ind.id}
-                className="rounded-xl border border-[#DCE7E8] bg-white overflow-hidden shadow-sm flex flex-col justify-between"
-              >
-                <div className="relative h-44 overflow-hidden bg-slate-900">
-                  <img
-                    src={ind.image}
-                    alt={ind.title}
-                    className="w-full h-full object-cover transition-transform duration-300 hover:scale-105"
-                  />
-                  <div className="absolute inset-0 bg-gradient-to-t from-slate-950/70 to-transparent" />
-                  <div className="absolute bottom-3 left-4 text-white text-sm font-bold">
-                    {ind.title}
-                  </div>
-                </div>
-
-                <div className="p-5 space-y-4 flex-1 flex flex-col justify-between">
-                  <p className="text-xs text-slate-600 leading-relaxed">
-                    {ind.heroSummary}
-                  </p>
-                  <Link
-                    to={`/industries/${ind.slug}`}
-                    className="text-xs font-semibold text-[#087F8C] hover:underline flex items-center gap-1"
-                  >
-                    <span>View Inspection Challenges</span>
-                    <ChevronRight className="w-3.5 h-3.5" />
-                  </Link>
-                </div>
-              </div>
-            ))}
-          </div>
-        </div>
-      </section>
-
       {/* Applications Gallery Preview */}
-      <section className="py-20 bg-white border-b border-[#DCE7E8]">
+      <section className="py-20 bg-white border-b border-slate-200">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="flex flex-col md:flex-row md:items-end justify-between gap-6 mb-12">
             <div className="space-y-3">
-              <div className="text-xs font-semibold text-[#087F8C] uppercase tracking-wider font-mono">
+              <div className="text-xs font-semibold text-[#0066FF] uppercase tracking-wider font-mono">
                 Technical Case Studies
               </div>
-              <h2 className="text-2xl sm:text-3xl font-bold text-[#064E52]">
+              <h2 className="text-2xl sm:text-3xl font-bold text-slate-900">
                 Demonstrated Application Examples
               </h2>
               <p className="text-sm text-slate-600 max-w-xl">
-                Representative engineering benchmarks detailing objectives, optical methods, expected outputs, and known limitations.
+                Representative engineering benchmarks detailing customer problems, 5-stage workflows, example inputs/outputs, and business value.
               </p>
             </div>
             <Link
               to="/applications"
-              className="text-xs font-bold text-[#064E52] hover:text-[#087F8C] flex items-center gap-1.5 shrink-0"
+              className="text-xs font-bold text-[#0066FF] hover:underline flex items-center gap-1.5 shrink-0"
             >
-              <span>View Full Applications Gallery</span>
+              <span>View All Applications</span>
               <ArrowRight className="w-3.5 h-3.5" />
             </Link>
           </div>
@@ -385,24 +413,24 @@ export function HomePage() {
             {APPLICATIONS.slice(0, 3).map((app) => (
               <div
                 key={app.id}
-                className="p-5 rounded-xl border border-[#DCE7E8] bg-[#F4F8F8]/40 space-y-4 flex flex-col justify-between"
+                className="p-6 rounded-xl border border-slate-200 bg-slate-50/50 space-y-4 flex flex-col justify-between"
               >
                 <div className="space-y-2.5">
-                  <div className="text-[11px] font-mono text-[#087F8C] font-semibold">
-                    {app.tag}
+                  <div className="text-[11px] font-mono text-[#0066FF] font-semibold">
+                    {app.industry}
                   </div>
-                  <h3 className="text-sm font-bold text-[#172B32]">{app.title}</h3>
+                  <h3 className="text-sm font-bold text-slate-900">{app.title}</h3>
                   <p className="text-xs text-slate-600 line-clamp-3 leading-relaxed">
-                    {app.objective}
+                    {app.customerProblem}
                   </p>
                 </div>
-                <div className="pt-3 border-t border-[#DCE7E8] flex items-center justify-between text-xs">
-                  <span className="text-[11px] text-slate-500 font-mono">Demo Benchmark</span>
+                <div className="pt-3 border-t border-slate-200 flex items-center justify-between text-xs">
+                  <span className="text-[11px] text-slate-500 font-mono">Demonstration</span>
                   <Link
-                    to="/applications"
-                    className="font-semibold text-[#087F8C] hover:underline"
+                    to={`/applications#${app.slug}`}
+                    className="font-semibold text-[#0066FF] hover:underline"
                   >
-                    Inspect Details &rarr;
+                    Inspect Workflow &rarr;
                   </Link>
                 </div>
               </div>
@@ -411,67 +439,22 @@ export function HomePage() {
         </div>
       </section>
 
-      {/* Technical Resources Section */}
-      <section className="py-20 bg-[#F4F8F8] border-b border-[#DCE7E8]">
-        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-          <div className="space-y-3 mb-12">
-            <div className="text-xs font-semibold text-[#087F8C] uppercase tracking-wider font-mono">
-              Engineering Knowledge Base
-            </div>
-            <h2 className="text-2xl sm:text-3xl font-bold text-[#064E52]">
-              Technical Guides & Vision Fundamentals
-            </h2>
-            <p className="text-sm text-slate-600 max-w-2xl">
-              Practical engineering articles addressing optical geometry, telecentric lenses, deep learning trade-offs, and factory PLC integration.
-            </p>
-          </div>
-
-          <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
-            {RESOURCE_ARTICLES.slice(0, 3).map((art) => (
-              <Link
-                key={art.id}
-                to={`/resources/${art.slug}`}
-                className="p-6 rounded-xl border border-[#DCE7E8] bg-white hover:border-[#087F8C] transition-all flex flex-col justify-between group shadow-sm"
-              >
-                <div className="space-y-3">
-                  <div className="flex items-center gap-2 text-[11px] text-slate-500">
-                    <span className="font-semibold text-[#087F8C]">{art.category}</span>
-                    <span aria-hidden="true">·</span>
-                    <span>{art.readingTime}</span>
-                  </div>
-                  <h3 className="text-base font-bold text-[#172B32] group-hover:text-[#087F8C] transition-colors">
-                    {art.title}
-                  </h3>
-                  <p className="text-xs text-slate-600 line-clamp-3 leading-relaxed">
-                    {art.summary}
-                  </p>
-                </div>
-                <div className="pt-4 mt-4 border-t border-slate-100 flex items-center justify-between text-xs font-semibold text-[#064E52]">
-                  <span>Read Article</span>
-                  <ArrowRight className="w-3.5 h-3.5 transition-transform group-hover:translate-x-1" />
-                </div>
-              </Link>
-            ))}
-          </div>
-        </div>
-      </section>
-
       {/* Consultation Action Banner */}
-      <section className="py-20 bg-[#064E52] text-white">
+      <section className="py-20 bg-[#0B2545] text-white">
         <div className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 text-center space-y-6">
-          <div className="inline-flex items-center gap-2 text-xs font-semibold text-[#18B6A4] font-mono uppercase tracking-wider">
+          <div className="inline-flex items-center gap-2 text-xs font-semibold text-[#00D2FF] font-mono uppercase tracking-wider">
             Optical Feasibility Testing
           </div>
           <h2 className="text-3xl sm:text-4xl font-extrabold tracking-tight">
-            Evaluate Your Components in Our Vision Lab
+            Evaluate Your Components in Our Bengaluru Vision Lab
           </h2>
           <p className="text-sm sm:text-base text-slate-200 leading-relaxed max-w-2xl mx-auto">
-            Ship your representative pass/fail parts to our Bengaluru laboratory. We test optical geometries, lenses, and algorithmic feasibility, delivering a detailed report with sample images and cycle time estimates.
+            Ship representative pass/fail parts to our laboratory. We test optical geometries, telecentric lenses, and algorithmic feasibility, delivering a detailed report with cycle time and repeatability estimates.
           </p>
           <div className="pt-4 flex flex-col sm:flex-row items-center justify-center gap-4">
             <Link
               to="/contact"
-              className="px-8 py-3.5 text-xs font-bold text-[#064E52] bg-[#18B6A4] hover:bg-[#149d8d] rounded-lg transition-colors shadow-md"
+              className="px-8 py-3.5 text-xs font-bold text-white bg-[#0066FF] hover:bg-[#0052cc] rounded-lg transition-colors shadow-md"
             >
               Request Optical Feasibility Trial
             </Link>
@@ -479,7 +462,7 @@ export function HomePage() {
               to="/about"
               className="px-8 py-3.5 text-xs font-bold text-white border border-white/20 hover:border-white rounded-lg transition-colors"
             >
-              Our Engineering Process
+              Our Engineering Approach
             </Link>
           </div>
         </div>

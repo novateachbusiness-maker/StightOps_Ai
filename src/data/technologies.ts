@@ -1,131 +1,135 @@
 /**
- * Technology Architecture Data
- * Detailed engineering breakdown of optics, rule-based algorithms, deep learning, edge hardware, and PLC interfaces.
+ * Technology Categories Data (Redesigned Interactive Explorer Structure)
+ * Categories:
+ * 1. AI & Deep Learning
+ * 2. Object Detection & Segmentation
+ * 3. OCR & Barcode Recognition
+ * 4. Image Processing & Measurement
+ * 5. Camera & Vision Hardware
+ * 6. Model Training & Deployment
  */
 
 export interface TechnologyItem {
   id: string;
+  category: string;
   title: string;
-  category: "Optics & Sensing" | "Algorithm & AI" | "Industrial Computing" | "Factory Integration";
-  overview: string;
-  whenToUse: string;
-  whenSimplerMethodSuffices: string;
-  keySpecifications: string[];
-  tradeOffs: string;
+  simpleExplanation: string;
+  industrialUse: string;
+  exampleInput: string;
+  exampleOutput: string;
+  image: string;
+  visualCaption: string;
+  keyTools: string[];
+  tradeOffNotes: string;
 }
 
-export const TECHNOLOGIES: TechnologyItem[] = [
+export const TECHNOLOGY_EXPLORER_ITEMS: TechnologyItem[] = [
   {
-    id: "industrial-optics-lighting",
-    title: "Industrial Optics, Lighting & Calibration",
-    category: "Optics & Sensing",
-    overview:
-      "The physical foundation of any machine vision system. High-quality illumination (coaxial, dome, darkfield, low-angle, telecentric) and low-distortion lenses isolate target features before pixel data ever reaches software.",
-    whenToUse:
-      "Every single vision inspection system requires intentional lighting and lens matching. Poor lighting cannot be resolved by software or AI.",
-    whenSimplerMethodSuffices:
-      "Standard C-mount fixed focal length lenses with basic LED bar lights are adequate for general orientation checks or high-contrast label presences.",
-    keySpecifications: [
-      "Bi-telecentric lenses (< 0.05% optical distortion)",
-      "Coaxial, polarized, darkfield, and diffuse dome LED illuminators",
-      "Wavelength-matched narrow-band pass optical filters (e.g., 470nm Blue, 630nm Red, 850nm IR)",
-      "NIST-traceable dot-grid distortion and pixel-to-millimeter calibration plates",
-    ],
-    tradeOffs:
-      "Telecentric lenses provide flawless zero-perspective measurement but have fixed working distances and front element sizes matching the part field of view.",
+    id: "ai-deep-learning",
+    category: "AI & Deep Learning",
+    title: "Deep Learning & Neural Network Anomaly Detection",
+    simpleExplanation:
+      "Deep learning uses neural networks trained on thousands of surface examples to identify subtle flaws—like fine cracks, casting voids, and weave distortions—that are too irregular for rigid mathematical rules to catch.",
+    industrialUse:
+      "Used for aesthetic and cosmetic surface quality control on brushed metals, textured plastics, glass panels, carbon fiber weaves, and automotive engine castings where acceptable natural variation exists.",
+    exampleInput:
+      "High-resolution 12MP image of a cast aluminum cylinder head with natural surface pebble texture and casting lines.",
+    exampleOutput:
+      "Pixel-level anomaly heatmap highlighting a 0.35mm porosity pit with a 98.4% defect confidence score, triggering an automated diverter signal.",
+    image: "/assets/hero/ai-inspection-core.jpeg",
+    visualCaption: "Neural network anomaly inspection engine running on industrial edge GPU",
+    keyTools: ["TensorRT FP16/INT8", "PyTorch Anomaly Networks", "Vision Transformers (ViT)", "Unsupervised PatchCore"],
+    tradeOffNotes:
+      "Requires representative good and defect workpiece samples for training; higher compute requirements compared to classical rule-based filtering.",
   },
   {
-    id: "rule-based-vision",
-    title: "Rule-Based Vision & Classical Image Processing",
-    category: "Algorithm & AI",
-    overview:
-      "Deterministic algorithms including edge detection (Sobel, Canny), morphological transformations, blob analysis, geometric template matching, and Fourier transforms.",
-    whenToUse:
-      "High-precision metrology, gauge measurement, hole diameter verification, high-contrast part presence, and tasks requiring sub-millisecond execution with mathematically provable bounds.",
-    whenSimplerMethodSuffices:
-      "A photoelectric or proximity sensor suffices if only checking whether an object exists at a single point without dimensional validation.",
-    keySpecifications: [
-      "Sub-pixel edge interpolation down to 1/20th of a pixel",
-      "Deterministic run-time (typically 2ms to 10ms on standard CPUs)",
-      "OpenCV, Halcon, and custom optimized C++ / Rust kernels",
-      "Normalized Cross-Correlation (NCC) and shape-based geometric matching",
-    ],
-    tradeOffs:
-      "Extremely fast and repeatable, but brittle when part geometry has natural aesthetic variations, shifting ambient shadows, or rough organic textures.",
+    id: "object-detection-segmentation",
+    category: "Object Detection & Segmentation",
+    title: "Object Detection & Semantic Pixel Segmentation",
+    simpleExplanation:
+      "Object detection identifies what and where components are using bounding boxes, while segmentation marks the exact pixel boundary of every part or defect.",
+    industrialUse:
+      "Used in SMT circuit board assembly verification (finding missing 0201 chips), robotic pick-and-place guidance, weld bead geometry verification, and multi-part subassembly checks.",
+    exampleInput:
+      "Multi-angle RGB image of a populated PCB assembly with dozens of ICs, capacitors, and connector pins.",
+    exampleOutput:
+      "Bounding boxes around all components with labels ('IC_U4: PRESENT', 'C14: TOMBSTONED') and exact XY millimeter coordinates passed to the assembly controller.",
+    image: "/src/assets/images/solution_aoi_system_1792999689778.jpg",
+    visualCaption: "Automated optical inspection head locating component coordinates on PCB assembly",
+    keyTools: ["YOLOv8 / YOLOv11 Edge Architectures", "Mask R-CNN / SegNet", "NVIDIA DeepStream", "C++ ONNX Runtime"],
+    tradeOffNotes:
+      "Bounding boxes provide high-speed localization (15ms), while full semantic segmentation yields contour boundaries at slightly higher inference latency (35ms).",
   },
   {
-    id: "deep-learning-inspection",
-    title: "Deep Learning & AI-Based Defect Segmentation",
-    category: "Algorithm & AI",
-    overview:
-      "Convolutional Neural Networks (CNNs) and Vision Transformers (ViTs) trained for anomaly detection, feature classification, and semantic pixel-level segmentation.",
-    whenToUse:
-      "Complex cosmetic surface inspections (scratches on cast iron, stains on textiles, weld bead consistency, wood grain flaws) where defects have unpredictable shapes.",
-    whenSimplerMethodSuffices:
-      "Classical rule-based thresholding or blob analysis should always be preferred for dimensional tolerances, barcode reading, and simple geometric alignment.",
-    keySpecifications: [
-      "Few-shot unsupervised anomaly models & supervised semantic segmentation",
-      "TensorRT-optimized FP16/INT8 inference engines",
-      "Inference latency: 15ms–45ms per frame on industrial edge GPUs",
-      "Integrated active learning loop for continuous model fine-tuning",
-    ],
-    tradeOffs:
-      "Tolerates natural surface variability, but requires curating representative training datasets and demands dedicated GPU hardware.",
+    id: "ocr-barcode-recognition",
+    category: "OCR & Barcode Recognition",
+    title: "Optical Character Recognition & 2D Symbology Decoding",
+    simpleExplanation:
+      "High-speed machine vision algorithms that locate, read, and verify printed or laser-etched letters, numbers, 1D barcodes, and 2D DataMatrix codes at production speeds.",
+    industrialUse:
+      "Used across pharmaceutical carton serialization, automotive direct-part-mark (DPM) tracking, consumer packaging expiry date checks, and PCB micro-QR tracking.",
+    exampleInput:
+      "Coaxial strobed image of a dot-peened 2D DataMatrix code on a curved stainless steel automotive shaft moving at 120 parts per minute.",
+    exampleOutput:
+      "Decoded serial payload ('SN: 1048-5739-9214') verified against the MES database with an ISO/IEC 15415 print quality verification grade (Grade A / 4.0).",
+    image: "/src/assets/images/solution_ocr_barcode_1792999690125.jpg",
+    visualCaption: "High-speed 2D DataMatrix and serial text verification on conveyor line",
+    keyTools: ["Deep Learning Character OCR", "ISO/IEC 15415/15416 Graders", "GS1 Syntax Parsers", "Direct Part Mark (DPM) Filters"],
+    tradeOffNotes:
+      "Direct part marks on rough or specular metal require specialized multi-directional darkfield lighting to cast clear shadows inside dot indentations.",
   },
   {
-    id: "ocr-ocv-decoding",
-    title: "Industrial OCR, OCV & Barcode Decoding",
-    category: "Algorithm & AI",
-    overview:
-      "Specialized algorithms for locating, segmenting, and decoding 1D barcodes (Code 128, UPC), 2D matrix symbologies (DataMatrix, QR, DotCode), and direct-part-marked (DPM) alphanumeric text.",
-    whenToUse:
-      "Packaging lot/expiry date validation, serialized automotive part tracking, pharmaceutical compliance, and traceability across supply chains.",
-    whenSimplerMethodSuffices:
-      "Handheld optical laser scanners are sufficient for static warehouse inventory where items do not move on automated high-speed conveyors.",
-    keySpecifications: [
-      "ISO/IEC 15415 & 15416 print quality grading",
-      "Font-independent deep learning character recognition for dot-peen and laser marks",
-      "Decoding rates exceeding 60 reads per second at conveyor speeds up to 4 m/s",
-    ],
-    tradeOffs:
-      "High-speed reading requires synchronized strobe lighting to eliminate motion blur.",
+    id: "image-processing-measurement",
+    category: "Image Processing & Measurement",
+    title: "Precision Metrology & Classical Image Processing",
+    simpleExplanation:
+      "Mathematical image filters that detect edges down to fractions of a pixel to measure diameters, lengths, angles, and runout with sub-micron precision.",
+    industrialUse:
+      "Used for turned shafts, precision screws, medical needles, stamped metal connector pins, and brake discs where strict engineering drawing tolerances must be verified 100%.",
+    exampleInput:
+      "Silhouette image of a precision turned steel pin captured with a collimated blue telecentric backlight and bi-telecentric lens.",
+    exampleOutput:
+      "Outer diameter measurement of 12.003 mm against nominal 12.000 ± 0.008 mm, with automated SPC trend logging and CNC tool offset compensation.",
+    image: "/src/assets/images/case_study_pcb_1792999691900.jpg",
+    visualCaption: "Sub-pixel telecentric edge measurement verifying tolerances without perspective error",
+    keyTools: ["OpenCV / Halcon Metrology", "Sub-Pixel Canny & Sobel Kernels", "Bi-Telecentric Optics", "NIST Calibration Grids"],
+    tradeOffNotes:
+      "Superior to AI for dimensional tolerances and deterministic sub-millisecond execution, but requires controlled, high-contrast backlighting.",
   },
   {
-    id: "edge-gpu-computing",
-    title: "Edge Computing & Industrial IPC Platforms",
-    category: "Industrial Computing",
-    overview:
-      "Fanless, ruggedized industrial PCs (IPCs) and embedded GPU systems (NVIDIA Jetson, Intel Core/Xeon with RTX GPUs) designed for 24/7 continuous factory operation in harsh environments.",
-    whenToUse:
-      "High-speed in-line inspection where latency must be deterministic (< 50ms) and images cannot be sent to remote cloud servers due to line speeds or security policies.",
-    whenSimplerMethodSuffices:
-      "Compact all-in-one smart cameras with onboard microprocessors are sufficient for low-complexity presence checks under 100 parts per minute.",
-    keySpecifications: [
-      "Operating temperature: -20°C to +60°C fanless conduction cooling",
-      "GigE Vision (PoE) and USB3 Vision camera interfaces with dedicated PCIe frame grabbers",
-      "DIN-rail or cabinet mounting with 24V DC industrial power input",
-      "Hardware watchdog timers and RAID solid-state storage",
-    ],
-    tradeOffs:
-      "Industrial PCs have a higher upfront cost than smart cameras, but offer complete flexibility for multi-camera synchronization and GPU model upgrades.",
+    id: "camera-vision-hardware",
+    category: "Camera & Vision Hardware",
+    title: "Industrial Cameras, Telecentric Optics & Strobe Lighting",
+    simpleExplanation:
+      "The physical hardware foundation—industrial global-shutter sensors, distortion-free telecentric lenses, and microsecond LED strobes that freeze fast factory conveyor motion.",
+    industrialUse:
+      "Selecting the exact camera resolution (5MP to 65MP), sensor interface (GigE Vision or USB3 Vision), and lighting geometry (coaxial, dome, darkfield) for each specific customer application.",
+    exampleInput:
+      "Parts moving at 2.5 meters per second on an automated conveyor line with ambient factory overhead fluorescent flicker.",
+    exampleOutput:
+      "Crystal-clear, zero-blur image captured with a 200-microsecond high-intensity LED strobe pulse triggered by a shaft encoder signal.",
+    image: "/src/assets/images/hero_pcb_inspection_1792999689695.jpg",
+    visualCaption: "Industrial camera with telecentric lens and integrated ring illuminator over inspection station",
+    keyTools: ["GigE Vision & USB3 Vision SDKs", "Global Shutter CMOS Sensors", "Collimated & Coaxial LED Strobes", "IP67 Protective Housings"],
+    tradeOffNotes:
+      "Software cannot fix poor lighting. Proper optical and illumination selection represents 80% of total vision inspection reliability.",
   },
   {
-    id: "plc-factory-integration",
-    title: "PLC, Industrial I/O & MES Connectivity",
-    category: "Factory Integration",
-    overview:
-      "Real-time deterministic communication bridges between the vision processor, programmable logic controllers (PLCs), high-speed pneumatic reject mechanisms, and Manufacturing Execution Systems (MES).",
-    whenToUse:
-      "All automated in-line inspection systems that must reject bad parts, synchronize with conveyor encoders, or store traceability records.",
-    whenSimplerMethodSuffices:
-      "Standalone benchtop offline inspection stations with manual part loading by an operator only require a simple touch screen display.",
-    keySpecifications: [
-      "Optically isolated 24V DC discrete inputs/outputs (optical trigger, Pass/Fail, system ready)",
-      "Industrial Ethernet protocols: EtherNet/IP, PROFINET, Modbus TCP, EtherCAT",
-      "MES/SCADA telemetry via OPC-UA and MQTT over TLS",
-      "Shaft encoder tracking for millisecond-accurate reject diverter timing",
-    ],
-    tradeOffs:
-      "Fieldbus protocols provide rich diagnostic telemetry but require coordination with plant automation and controls engineers during commissioning.",
+    id: "model-training-deployment",
+    category: "Model Training & Deployment",
+    title: "Model Training, Active Learning & Edge Deployment",
+    simpleExplanation:
+      "The end-to-end software pipeline that annotates images, trains custom inspection models on real plant data, and deploys optimized inference engines to fanless industrial PCs.",
+    industrialUse:
+      "Ensuring vision systems continuously adapt when new part variants are introduced, while running reliably 24/7 on factory floors without internet connectivity.",
+    exampleInput:
+      "A batch of 150 workpiece images collected during new product introduction (NPI) on the customer's assembly line.",
+    exampleOutput:
+      "A quantized, production-ready TensorRT model running locally on an industrial PC with sub-25ms inference latency and zero cloud dependency.",
+    image: "/assets/hero/engineer-quality-monitor.jpeg",
+    visualCaption: "Plant engineer monitoring deployed model inference and quality telemetry in real time",
+    keyTools: ["Active Learning Annotation", "TensorRT Engine Compiler", "Local Industrial IPC Runtime", "OPC-UA / MQTT Factory Gateways"],
+    tradeOffNotes:
+      "All inspection models run strictly on-premises on local factory edge hardware, ensuring total intellectual property confidentiality and zero cloud latency.",
   },
 ];

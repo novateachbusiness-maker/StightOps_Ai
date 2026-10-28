@@ -14,7 +14,7 @@ export function ContactPage() {
     <div className="py-12 bg-[#F4F8F8] min-h-screen">
       <SeoHead
         title="Request an Industrial Vision Consultation & Optical Feasibility Trial"
-        description="Connect with Stightops Ai machine vision engineers to evaluate automated optical inspection, PCB inspection, or surface defect classification for your plant."
+        description="Connect with SightOps AI machine vision engineers to evaluate automated optical inspection, PCB inspection, or surface defect classification for your plant."
         canonicalPath="/contact"
       />
 

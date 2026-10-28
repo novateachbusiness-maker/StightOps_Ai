@@ -32,7 +32,7 @@ export function SeoHead({ title, description, canonicalPath, jsonLd }: SeoProps)
     if (ogDesc) ogDesc.setAttribute('content', description);
 
     // Update Canonical URL
-    const domain = SITE_CONFIG.domain.startsWith('http') ? SITE_CONFIG.domain : 'https://stightops.ai';
+    const domain = SITE_CONFIG.domain.startsWith('http') ? SITE_CONFIG.domain : 'https://sightops.ai';
     const canonicalUrl = canonicalPath ? `${domain}${canonicalPath}` : domain;
     let linkCanonical = document.querySelector('link[rel="canonical"]');
     if (!linkCanonical) {
@@ -43,7 +43,7 @@ export function SeoHead({ title, description, canonicalPath, jsonLd }: SeoProps)
     linkCanonical.setAttribute('href', canonicalUrl);
 
     // Update Structured Data JSON-LD
-    const scriptId = 'stightops-jsonld';
+    const scriptId = 'sightops-jsonld';
     let scriptTag = document.getElementById(scriptId) as HTMLScriptElement | null;
     if (jsonLd) {
       if (!scriptTag) {

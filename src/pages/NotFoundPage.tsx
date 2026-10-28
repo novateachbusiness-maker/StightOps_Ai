@@ -7,7 +7,7 @@ export function NotFoundPage() {
     <div className="py-20 bg-[#F4F8F8] min-h-[70vh] flex items-center justify-center">
       <SeoHead
         title="Page Not Found"
-        description="The requested page could not be located on Stightops Ai."
+        description="The requested page could not be located on SightOps AI."
         canonicalPath="/404"
       />
 

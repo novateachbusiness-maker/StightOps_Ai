@@ -25,7 +25,7 @@ export const RESOURCE_ARTICLES: ResourceArticle[] = [
     category: "AI-Based Inspection",
     readingTime: "6 min read",
     datePublished: "2026-03-15",
-    author: "Stightops Ai Vision Engineering",
+    author: "SightOps AI Vision Engineering",
     summary:
       "A technical comparison of classical algorithmic vision (edge detection, blob analysis, template matching) versus convolutional and transformer neural networks in manufacturing environments.",
     tags: ["Machine Vision", "Deep Learning", "Edge AI", "OpenCV", "Algorithms"],
@@ -84,7 +84,7 @@ The most reliable industrial vision stations combine both paradigms:
     category: "Optics & Lighting",
     readingTime: "7 min read",
     datePublished: "2026-02-28",
-    author: "Stightops Ai Optical Lab",
+    author: "SightOps AI Optical Lab",
     summary:
       "Why lighting represents 80% of vision system success. An engineering breakdown of darkfield, brightfield, coaxial, dome, and polarized illumination geometries.",
     tags: ["Optics", "Lighting", "Machine Vision", "Telecentric", "Polarization"],
@@ -137,7 +137,7 @@ Clear cellophane wrappers, plastic bottles, and shiny printed labels cause inten
     category: "PCB Inspection",
     readingTime: "5 min read",
     datePublished: "2026-01-20",
-    author: "Stightops Ai Electronics Division",
+    author: "SightOps AI Electronics Division",
     summary:
       "How multi-tier RGB lighting and shape-from-shading verify solder fillet coplanarity, solder bridges, and wetting angles according to IPC-A-610 Class 3 standards.",
     tags: ["PCB", "SMT", "AOI", "IPC-A-610", "Soldering"],
@@ -170,7 +170,7 @@ This transforms complex 3D physical curvature into unambiguous 2D color bands, a
     category: "OCR & Barcode",
     readingTime: "6 min read",
     datePublished: "2025-12-10",
-    author: "Stightops Ai Traceability Systems",
+    author: "SightOps AI Traceability Systems",
     summary:
       "Techniques for decoding low-contrast 2D DataMatrix codes etched directly onto cast iron, aluminum, and surgical instruments.",
     tags: ["DPM", "DataMatrix", "Traceability", "Laser Etch", "Dot-Peen"],
@@ -199,7 +199,7 @@ Adhesive paper labels cannot survive high-temperature engine bays, ultrasonic ch
     category: "QA & Automation",
     readingTime: "5 min read",
     datePublished: "2025-11-05",
-    author: "Stightops Ai Automation Team",
+    author: "SightOps AI Automation Team",
     summary:
       "Transforming vision inspection from an end-of-line reject gate into an active feedback loop that prevents scrap before it occurs.",
     tags: ["SPC", "Industry 4.0", "Closed Loop", "Quality Control", "MES"],

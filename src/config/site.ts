@@ -1,5 +1,5 @@
 /**
- * Stightops Ai - Central Site & Brand Configuration
+ * SightOps AI - Central Site & Brand Configuration
  * 
  * Edit this single configuration file to update company details, contact information,
  * domain endpoints, social channels, and core brand messaging across the entire site.
@@ -19,11 +19,19 @@ export interface NavItem {
 
 export const SITE_CONFIG = {
   // Brand identity
-  name: "Stightops Ai",
-  tagline: "Intelligent Vision. Reliable Inspection.",
+  name: "SightOps AI",
+  shortName: "SightOps",
+  tagline: "See Better. Inspect Smarter. Think Ahead.",
+  pillars: ["Vision", "Intelligence", "Cutting-Edge Technology"],
   headline: "AI-Powered Vision Systems for Smarter Industrial Inspection",
   subheadline:
-    "We engineer industrial machine vision, automated optical inspection (AOI), and edge AI systems that help manufacturing plants detect defects, verify assemblies, inspect markings, and maintain zero-defect standards.",
+    "We engineer industrial machine vision, automated visual inspection, and edge AI systems that help manufacturing plants detect defects, verify assemblies, inspect markings, and maintain zero-defect standards.",
+
+  // Approved Brand Logo Assets
+  logo: {
+    main: "/assets/branding/sightops-logo.jpeg",
+    alt: "SightOps AI - See Better. Inspect Smarter. Think Ahead.",
+  },
 
   // Contact details & editable placeholders
   domain: "[DOMAIN PENDING]",
@@ -39,38 +47,48 @@ export const SITE_CONFIG = {
   },
   operatingHours: "Monday – Friday: 09:00 – 18:00 IST",
 
+  // WhatsApp Business Integration
+  whatsapp: {
+    number: "919876543210", // Configurable WhatsApp business phone number
+    displayPhone: "+91 98765 43210",
+    prefillMessage: "Hello SightOps AI, I would like to discuss an industrial vision inspection solution.",
+    chatUrl: "https://wa.me/919876543210?text=Hello%20SightOps%20AI%2C%20I%20would%20like%20to%20discuss%20an%20industrial%20vision%20inspection%20solution.",
+  },
+
   // Primary market & business model
   primaryMarket: "India & International B2B Manufacturing",
-  businessModel: "B2B industrial machine vision solutions, automated optical inspection systems, custom AI model training, hardware integration, and plant technical support.",
+  businessModel:
+    "B2B industrial inspection solutions, custom machine-vision development, camera hardware integration, optical consultation, and plant technical support.",
 
   // Social & professional links
   socials: {
-    linkedin: "https://www.linkedin.com/company/stightops-ai",
-    youtube: "https://www.youtube.com/@stightops-ai",
-    github: "https://github.com/stightops-ai",
-    twitter: "https://twitter.com/stightops_ai",
+    linkedin: "https://www.linkedin.com/company/sightops-ai", // Configurable company presence placeholder
+    linkedinStatus: "Pending official company page publication",
+    youtube: "https://www.youtube.com/@sightops-ai",
+    github: "https://github.com/sightops-ai",
+    twitter: "https://twitter.com/sightops_ai",
   },
 
-  // Color palette tokens (Peacock theme)
+  // Color palette tokens (Refined Blue & Industrial Slate)
   palette: {
-    darkTeal: "#064E52",
+    primaryNavy: "#0B2545",
+    sightopsBlue: "#0066FF",
+    techCyan: "#00D2FF",
     primaryTeal: "#087F8C",
-    turquoiseAccent: "#18B6A4",
-    mutedBlue: "#537DA8",
-    white: "#FFFFFF",
-    surface: "#F4F8F8",
-    darkText: "#172B32",
-    subtleBorder: "#DCE7E8",
+    surfaceLight: "#F8FAFC",
+    darkText: "#0F172A",
+    subtleBorder: "#E2E8F0",
   },
 
   // Core capabilities
   mainServices: [
-    "AI Visual Inspection",
-    "PCB Automated Optical Inspection",
-    "OCR and Barcode Inspection",
-    "Industrial Machine Vision",
-    "Dimensional Measurement",
-    "Surface Defect Detection",
+    "AI-Based Visual Inspection Systems",
+    "Automated Visual Inspection Systems",
+    "Industrial Machine Vision Systems",
+    "PCB Inspection & AOI Systems",
+    "OCR & Barcode Recognition",
+    "Surface Defect Detection & Classification",
+    "Dimensional Measurement & Metrology",
   ],
 };
 
@@ -89,7 +107,7 @@ export const NAVIGATION_ITEMS: NavItem[] = [
         description: "Deep learning models for complex defect detection and classification on irregular surfaces.",
       },
       {
-        title: "PCB Automated Optical Inspection",
+        title: "Automated PCB Inspection (AOI)",
         href: "/solutions/pcb-aoi",
         description: "High-speed SMT verification, missing component checks, and solder fillet inspection.",
       },
@@ -120,34 +138,29 @@ export const NAVIGATION_ITEMS: NavItem[] = [
     href: "/industries",
     children: [
       {
-        title: "Electronics & PCB Assembly",
-        href: "/industries/electronics-pcb",
-        description: "Surface mount technology, micro-soldering, and PCB substrate inspection.",
+        title: "Automotive Vision Inspection",
+        href: "/industries/automotive-vision-inspection",
+        description: "Powertrain components, machined surfaces, weld integrity, and safety-critical fasteners.",
       },
       {
-        title: "Automotive & Machined Metal",
-        href: "/industries/automotive-metal",
-        description: "Precision powertrain parts, stamped metal, casting porosity, and weld checks.",
+        title: "Electronics & PCB Inspection",
+        href: "/industries/electronics-pcb-inspection",
+        description: "Surface mount assembly, micro-soldering, semiconductor dies, and lead frames.",
       },
       {
-        title: "Pharmaceutical & Medical Devices",
-        href: "/industries/pharmaceutical-medical",
-        description: "Vial inspection, blister pack verification, sterile seal checks, and serialisation.",
+        title: "Food & Packaging Inspection",
+        href: "/industries/food-packaging-inspection",
+        description: "Cap placement, fill level verification, label alignment, and seal integrity.",
       },
       {
-        title: "Food & Beverage Packaging",
-        href: "/industries/food-beverage-packaging",
-        description: "Cap placement, fill level verification, label orientation, and tamper seal checks.",
+        title: "Logistics & Product Inspection",
+        href: "/industries/logistics-product-inspection",
+        description: "Multi-sided barcode reading tunnels, parcel volumetrics, and sortation.",
       },
       {
-        title: "Semiconductors & Components",
-        href: "/industries/semiconductor",
-        description: "Die placement, lead frame inspection, wire bonding integrity, and micro-defects.",
-      },
-      {
-        title: "Logistics & Traceability",
-        href: "/industries/logistics-traceability",
-        description: "High-speed parcel sorting, multi-barcode reading, and packaging verification.",
+        title: "Pharmaceutical Inspection",
+        href: "/industries/pharmaceutical-inspection",
+        description: "Vials, blister packs, syringe graduations, and 21 CFR Part 11 serialized code tracking.",
       },
     ],
   },
