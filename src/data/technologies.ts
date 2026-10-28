@@ -36,8 +36,8 @@ export const TECHNOLOGY_EXPLORER_ITEMS: TechnologyItem[] = [
       "High-resolution 12MP image of a cast aluminum cylinder head with natural surface pebble texture and casting lines.",
     exampleOutput:
       "Pixel-level anomaly heatmap highlighting a 0.35mm porosity pit with a 98.4% defect confidence score, triggering an automated diverter signal.",
-    image: "/assets/hero/ai-inspection-core.jpeg",
-    visualCaption: "Neural network anomaly inspection engine running on industrial edge GPU",
+    image: "/assets/aistudio/image_2430292c_75e78aa8.jpg",
+    visualCaption: "Deep learning neural network architecture with hidden layers for real-time anomaly identification and classification",
     keyTools: ["TensorRT FP16/INT8", "PyTorch Anomaly Networks", "Vision Transformers (ViT)", "Unsupervised PatchCore"],
     tradeOffNotes:
       "Requires representative good and defect workpiece samples for training; higher compute requirements compared to classical rule-based filtering.",
@@ -72,7 +72,7 @@ export const TECHNOLOGY_EXPLORER_ITEMS: TechnologyItem[] = [
       "Coaxial strobed image of a dot-peened 2D DataMatrix code on a curved stainless steel automotive shaft moving at 120 parts per minute.",
     exampleOutput:
       "Decoded serial payload ('SN: 1048-5739-9214') verified against the MES database with an ISO/IEC 15415 print quality verification grade (Grade A / 4.0).",
-    image: "/src/assets/images/solution_ocr_barcode_1792999690125.jpg",
+    image: "/assets/applications/pharma-inspection.jpg",
     visualCaption: "High-speed 2D DataMatrix and serial text verification on conveyor line",
     keyTools: ["Deep Learning Character OCR", "ISO/IEC 15415/15416 Graders", "GS1 Syntax Parsers", "Direct Part Mark (DPM) Filters"],
     tradeOffNotes:
@@ -90,7 +90,7 @@ export const TECHNOLOGY_EXPLORER_ITEMS: TechnologyItem[] = [
       "Silhouette image of a precision turned steel pin captured with a collimated blue telecentric backlight and bi-telecentric lens.",
     exampleOutput:
       "Outer diameter measurement of 12.003 mm against nominal 12.000 ± 0.008 mm, with automated SPC trend logging and CNC tool offset compensation.",
-    image: "/src/assets/images/case_study_pcb_1792999691900.jpg",
+    image: "/assets/applications/shaft-metrology.jpg",
     visualCaption: "Sub-pixel telecentric edge measurement verifying tolerances without perspective error",
     keyTools: ["OpenCV / Halcon Metrology", "Sub-Pixel Canny & Sobel Kernels", "Bi-Telecentric Optics", "NIST Calibration Grids"],
     tradeOffNotes:
@@ -126,8 +126,8 @@ export const TECHNOLOGY_EXPLORER_ITEMS: TechnologyItem[] = [
       "A batch of 150 workpiece images collected during new product introduction (NPI) on the customer's assembly line.",
     exampleOutput:
       "A quantized, production-ready TensorRT model running locally on an industrial PC with sub-25ms inference latency and zero cloud dependency.",
-    image: "/assets/hero/engineer-quality-monitor.jpeg",
-    visualCaption: "Plant engineer monitoring deployed model inference and quality telemetry in real time",
+    image: "/src/assets/images/clean_edge_ipc_1793174610127.jpg",
+    visualCaption: "Edge GPU vision controller and processing computer mounted in industrial automation enclosure",
     keyTools: ["Active Learning Annotation", "TensorRT Engine Compiler", "Local Industrial IPC Runtime", "OPC-UA / MQTT Factory Gateways"],
     tradeOffNotes:
       "All inspection models run strictly on-premises on local factory edge hardware, ensuring total intellectual property confidentiality and zero cloud latency.",

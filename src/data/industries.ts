@@ -76,7 +76,7 @@ export const INDUSTRIES: Industry[] = [
       "Integration with automotive traceability systems and laser marking stations.",
       "Automated tool-wear compensation triggers sent back to CNC controllers.",
     ],
-    image: "/assets/hero/robotic-hud-inspection.jpeg",
+    image: "/assets/industries/automotive-inspection.jpg",
   },
   {
     id: "electronics-pcb-inspection",
@@ -174,7 +174,7 @@ export const INDUSTRIES: Industry[] = [
       "High-speed pneumatic blow-off reject nozzles synchronized with downstream encoder tracking.",
       "Integration with line control systems to stop conveyors upon continuous consecutive reject thresholds.",
     ],
-    image: "/src/assets/images/solution_ocr_barcode_1792999690125.jpg",
+    image: "/assets/industries/packaging-inspection.jpg",
   },
   {
     id: "logistics-product-inspection",
@@ -221,7 +221,7 @@ export const INDUSTRIES: Industry[] = [
       "Direct integration with Warehouse Management Systems (WMS) and sorting conveyor PLCs.",
       "Real-time image archival for misread audit logs and carrier dispute resolution.",
     ],
-    image: "/assets/hero/engineer-quality-monitor.jpeg",
+    image: "/assets/industries/logistics-tunnel.jpg",
   },
   {
     id: "pharmaceutical-inspection",
@@ -270,6 +270,6 @@ export const INDUSTRIES: Industry[] = [
       "Fail-safe reject verification (confirming rejected cartons actually drop into locked reject bins).",
       "Cleanroom stainless steel (SS316) enclosures and IP65 washdown protection.",
     ],
-    image: "/src/assets/images/solution_surface_defect_1792999691227.jpg",
+    image: "/assets/applications/pharma-inspection.jpg",
   },
 ];

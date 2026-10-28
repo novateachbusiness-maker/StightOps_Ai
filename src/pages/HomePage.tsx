@@ -14,7 +14,7 @@ import { generateOrganizationSchema } from '../utils/seo.ts';
 
 const HERO_SLIDES = [
   {
-    image: "/assets/hero/robotic-hud-inspection.jpeg",
+    image: "/assets/applications/robotic-gear-inspection.jpg",
     title: "Automated Robotic & Laser In-Line Inspection",
     subtitle: "Real-time 3D defect detection on high-speed CNC and automotive assembly lines",
     badge: "Automotive & Machining",
@@ -26,7 +26,7 @@ const HERO_SLIDES = [
     badge: "Electronics & PCB",
   },
   {
-    image: "/assets/hero/engineer-quality-monitor.jpeg",
+    image: "/src/assets/images/clean_engineer_monitor_1793174576152.jpg",
     title: "Edge AI Quality Control & Telemetry",
     subtitle: "Plant engineers monitoring automated pass/fail decisions and SPC drift alerts in real time",
     badge: "Edge GPU Intelligence",
@@ -186,9 +186,9 @@ export function HomePage() {
               </div>
             </div>
 
-            {/* Right Multi-Asset Visual Hero Showcase (5 cols) */}
-            <div className="lg:col-span-5 relative">
-              <div className="relative rounded-2xl overflow-hidden border border-white/20 shadow-2xl bg-slate-950 group min-h-[380px] flex items-center justify-center">
+            {/* Right Multi-Asset Visual Hero Showcase (5 cols) - Clean Unannotated Images */}
+            <div className="lg:col-span-5 space-y-3">
+              <div className="relative rounded-2xl overflow-hidden border border-white/20 shadow-2xl bg-slate-950 min-h-[340px] sm:min-h-[380px] flex items-center justify-center">
                 {HERO_SLIDES.map((slide, sIdx) => (
                   <div
                     key={sIdx}
@@ -201,22 +201,6 @@ export function HomePage() {
                       alt={slide.title}
                       className="w-full h-full object-cover"
                     />
-                    {/* Dark gradient scrim for legibility */}
-                    <div className="absolute inset-0 bg-gradient-to-t from-slate-950 via-slate-950/40 to-transparent pointer-events-none" />
-
-                    {/* Slide Information Overlay */}
-                    <div className="hover-card-dark-panel absolute bottom-4 left-4 right-4 bg-slate-900/90 backdrop-blur-md p-3.5 rounded-xl border border-white/15 text-xs space-y-1">
-                      <div className="flex items-center justify-between">
-                        <span className="text-[10px] font-mono font-bold text-[#00D2FF] uppercase">
-                          {slide.badge}
-                        </span>
-                        <span className="text-[10px] text-slate-400 font-mono">
-                          0{sIdx + 1} / 0{HERO_SLIDES.length}
-                        </span>
-                      </div>
-                      <div className="font-bold text-white text-xs">{slide.title}</div>
-                      <p className="text-[11px] text-slate-300 leading-snug">{slide.subtitle}</p>
-                    </div>
                   </div>
                 ))}
 
@@ -235,12 +219,26 @@ export function HomePage() {
                   ))}
                 </div>
               </div>
+
+              {/* Clean Slide Information Panel Below Image */}
+              <div className="hover-card-dark-panel bg-slate-900/90 backdrop-blur-md p-3.5 rounded-xl border border-white/15 text-xs space-y-1">
+                <div className="flex items-center justify-between">
+                  <span className="text-[10px] font-mono font-bold text-[#00D2FF] uppercase">
+                    {HERO_SLIDES[activeSlide].badge}
+                  </span>
+                  <span className="text-[10px] text-slate-400 font-mono">
+                    0{activeSlide + 1} / 0{HERO_SLIDES.length}
+                  </span>
+                </div>
+                <div className="font-bold text-white text-xs">{HERO_SLIDES[activeSlide].title}</div>
+                <p className="text-[11px] text-slate-300 leading-snug">{HERO_SLIDES[activeSlide].subtitle}</p>
+              </div>
             </div>
           </div>
         </div>
       </section>
 
-      {/* Section 3: Interactive Inspection Bounding Boxes Experience */}
+      {/* Section 3: Interactive Inspection System Experience */}
       <section className="py-20 bg-slate-50 border-b border-slate-200">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="space-y-3 mb-10 text-center max-w-3xl mx-auto">
@@ -249,10 +247,10 @@ export function HomePage() {
               <span>Interactive Machine Vision Experience</span>
             </div>
             <h2 className="text-2xl sm:text-3xl font-bold text-slate-900">
-              Interactive Inspection Bounding Boxes
+              Interactive Machine Vision Inspection Explorer
             </h2>
             <p className="text-sm text-slate-600">
-              Hover over or tap the inspection regions below to inspect object detection bounding boxes, defect classifications, OCR readings, and dimension tolerances in real time.
+              Select inspection targets below to evaluate object localization criteria, defect classifications, OCR readings, and dimension tolerances with clean visual clarity.
             </p>
           </div>
 

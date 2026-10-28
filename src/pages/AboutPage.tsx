@@ -100,7 +100,7 @@ export function AboutPage() {
                     {step.title}
                   </h3>
                   <p className="text-xs text-slate-600 leading-relaxed mt-2">
-                    {step.detail || step.description}
+                    {step.description}
                   </p>
                 </div>
               </div>

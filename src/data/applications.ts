@@ -76,7 +76,7 @@ export const APPLICATIONS: ApplicationCase[] = [
         detail: "Pass/Fail decision is dispatched to the SMEMA conveyor buffer, and rework zoom coordinates are sent to the operator repair station.",
       },
     ],
-    image: "/src/assets/images/solution_aoi_system_1792999689778.jpg",
+    image: "/assets/applications/pcb-aoi.jpg",
     technologiesUsed: [
       "Multi-angle RGB Shape-from-Shading",
       "Telecentric Macro Optics",
@@ -168,7 +168,7 @@ export const APPLICATIONS: ApplicationCase[] = [
         detail: "Discrete 24V I/O triggers pneumatic diverter finger to divert defective gears to the rework lane.",
       },
     ],
-    image: "/assets/hero/robotic-hud-inspection.jpeg",
+    image: "/assets/applications/robotic-gear-inspection.jpg",
     technologiesUsed: [
       "Photometric Stereo 3D Imaging",
       "Coaxial Glare-Suppression Strobes",
@@ -250,7 +250,7 @@ export const APPLICATIONS: ApplicationCase[] = [
         detail: "Fail-safe air blast rejects unverified cartons into a locked reject bin with optical drop-sensor confirmation.",
       },
     ],
-    image: "/src/assets/images/solution_ocr_barcode_1792999690125.jpg",
+    image: "/assets/applications/pharma-inspection.jpg",
     technologiesUsed: [
       "Polarized Coaxial Strobe Lighting",
       "Deep Learning Font-Independent OCR",
@@ -332,7 +332,7 @@ export const APPLICATIONS: ApplicationCase[] = [
         detail: "When tool wear trends exceed 75% of tolerance window, an automated tool-offset update is sent directly to the CNC lathe.",
       },
     ],
-    image: "/src/assets/images/case_study_pcb_1792999691900.jpg",
+    image: "/assets/applications/shaft-metrology.jpg",
     technologiesUsed: [
       "Bi-Telecentric Optics with zero magnification distortion",
       "Collimated Blue LED Telecentric Backlights",

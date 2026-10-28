@@ -116,31 +116,30 @@ export function InteractiveIndustryExplorer() {
             </div>
           </div>
 
-          {/* Right: Representative Image (5 cols) */}
-          <div className="lg:col-span-5">
-            <div className="relative rounded-2xl overflow-hidden border border-slate-200 bg-slate-900 shadow-md group">
+          {/* Right: Representative Image (5 cols) - Clean Unannotated Image */}
+          <div className="lg:col-span-5 space-y-3">
+            <div className="relative rounded-2xl overflow-hidden border border-slate-200 bg-slate-900 shadow-md">
               <img
                 src={currentIndustry.image}
                 alt={currentIndustry.title}
-                className="w-full h-80 object-cover group-hover:scale-105 transition-transform duration-500"
+                className="w-full h-72 sm:h-80 object-cover"
               />
-              <div className="absolute inset-0 bg-gradient-to-t from-slate-950/80 via-transparent to-transparent pointer-events-none" />
+            </div>
 
-              {/* Technologies Tag strip */}
-              <div className="absolute bottom-4 left-4 right-4 bg-white/95 backdrop-blur-md p-3 rounded-xl border border-white/20 text-xs">
-                <div className="text-[10px] font-mono font-bold text-[#0066FF] uppercase tracking-wider mb-1">
-                  Primary Vision Technologies:
-                </div>
-                <div className="flex flex-wrap gap-1">
-                  {currentIndustry.suitableTechnologies.slice(0, 3).map((tech, tIdx) => (
-                    <span
-                      key={tIdx}
-                      className="text-[10px] bg-slate-100 text-slate-700 px-2 py-0.5 rounded font-mono"
-                    >
-                      {tech}
-                    </span>
-                  ))}
-                </div>
+            {/* Technologies Tag strip below image */}
+            <div className="bg-slate-50 p-3 rounded-xl border border-slate-200 text-xs shadow-xs">
+              <div className="text-[10px] font-mono font-bold text-[#0066FF] uppercase tracking-wider mb-1.5">
+                Primary Vision Technologies:
+              </div>
+              <div className="flex flex-wrap gap-1">
+                {currentIndustry.suitableTechnologies.slice(0, 3).map((tech, tIdx) => (
+                  <span
+                    key={tIdx}
+                    className="text-[10px] bg-white text-slate-700 px-2 py-0.5 rounded font-mono border border-slate-200"
+                  >
+                    {tech}
+                  </span>
+                ))}
               </div>
             </div>
           </div>

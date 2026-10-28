@@ -106,24 +106,27 @@ export function InteractiveTechnologyExplorer() {
             </div>
           </div>
 
-          {/* Right: Technology Image & Visual Demonstration (5 cols) */}
-          <div className="lg:col-span-5">
-            <div className="relative rounded-2xl overflow-hidden border border-slate-200 bg-slate-900 shadow-md group">
+          {/* Right: Technology Image & Visual Demonstration (5 cols) - Clean Unannotated Image */}
+          <div className="lg:col-span-5 space-y-3">
+            <div className="relative rounded-2xl overflow-hidden border border-slate-200 bg-slate-900 shadow-md">
               <img
                 src={activeItem.image}
                 alt={activeItem.title}
-                className="w-full h-80 object-cover group-hover:scale-105 transition-transform duration-500"
+                className={`w-full h-72 sm:h-80 ${
+                  activeItem.id === 'ai-deep-learning'
+                    ? 'object-contain bg-slate-950'
+                    : 'object-cover'
+                }`}
               />
-              <div className="absolute inset-0 bg-gradient-to-t from-slate-950/80 via-transparent to-transparent pointer-events-none" />
+            </div>
 
-              {/* Caption Tag */}
-              <div className="absolute bottom-4 left-4 right-4 bg-white/95 backdrop-blur-md p-3 rounded-xl border border-white/20 text-xs">
-                <div className="text-[10px] font-mono text-slate-500 uppercase tracking-wider">
-                  Representative Visual
-                </div>
-                <div className="font-semibold text-slate-800 mt-0.5">
-                  {activeItem.visualCaption}
-                </div>
+            {/* Caption Tag below image */}
+            <div className="bg-slate-50 p-3 rounded-xl border border-slate-200 text-xs shadow-xs">
+              <div className="text-[10px] font-mono text-slate-500 uppercase tracking-wider mb-0.5">
+                Representative Visual
+              </div>
+              <div className="font-semibold text-slate-800">
+                {activeItem.visualCaption}
               </div>
             </div>
           </div>

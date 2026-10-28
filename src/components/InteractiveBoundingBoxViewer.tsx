@@ -1,5 +1,5 @@
 import { useState } from 'react';
-import { Eye, Crosshair, CheckCircle2, AlertTriangle, Cpu, Layers } from 'lucide-react';
+import { Eye } from 'lucide-react';
 
 export interface BoundingTarget {
   id: string;
@@ -27,7 +27,7 @@ const INSPECTION_TARGETS: BoundingTarget[] = [
     id: 'robotic-automotive',
     name: 'Automotive Robotic Flange Inspection',
     category: 'Automotive Vision',
-    image: '/assets/hero/robotic-hud-inspection.jpeg',
+    image: '/src/assets/images/solution_surface_defect_1792999691227.jpg',
     description: 'Robotic arm with laser profilometer inspecting CNC machined gear flanges for surface porosity and tool chatter.',
     boxes: [
       {
@@ -75,7 +75,7 @@ const INSPECTION_TARGETS: BoundingTarget[] = [
     id: 'pcb-aoi',
     name: 'High-Density SMT Circuit Assembly',
     category: 'Electronics & PCB',
-    image: '/src/assets/images/solution_aoi_system_1792999689778.jpg',
+    image: '/src/assets/images/case_study_pcb_1792999691900.jpg',
     description: 'Multi-angle RGB telecentric inspection verifying 0201 chip presence, solder fillet angles, and IC alignment.',
     boxes: [
       {
@@ -123,7 +123,7 @@ const INSPECTION_TARGETS: BoundingTarget[] = [
     id: 'pharma-serialized',
     name: 'Pharmaceutical Serialization & Labeling',
     category: 'Pharmaceutical',
-    image: '/src/assets/images/solution_ocr_barcode_1792999690125.jpg',
+    image: '/assets/applications/pharma-inspection.jpg',
     description: 'Polarized coaxial strobe camera decoding 2D DataMatrix and serialized expiry codes on cartons at 450 ppm.',
     boxes: [
       {
@@ -170,7 +170,7 @@ export function InteractiveBoundingBoxViewer() {
         <div className="flex items-center gap-2">
           <Eye className="w-4 h-4 text-[#00D2FF]" />
           <span className="text-xs font-mono font-bold tracking-wider text-slate-300 uppercase">
-            Interactive Inspection Bounding Box Experience
+            Interactive Inspection System Explorer
           </span>
         </div>
 
@@ -198,88 +198,13 @@ export function InteractiveBoundingBoxViewer() {
 
       {/* Main Interactive Stage */}
       <div className="grid grid-cols-1 lg:grid-cols-12">
-        {/* Left Viewport with Bounding Boxes (8 cols) */}
+        {/* Left Viewport - Clean Unannotated Industrial Image (8 cols) */}
         <div className="lg:col-span-8 bg-slate-950 relative min-h-[360px] sm:min-h-[460px] flex items-center justify-center overflow-hidden select-none">
           <img
             src={target.image}
             alt={target.name}
             className="w-full h-full object-cover max-h-[500px]"
           />
-
-          {/* Optical Reticle Grid */}
-          <div
-            className="absolute inset-0 pointer-events-none opacity-20"
-            style={{
-              backgroundImage:
-                'linear-gradient(to right, rgba(0, 210, 255, 0.3) 1px, transparent 1px), linear-gradient(to bottom, rgba(0, 210, 255, 0.3) 1px, transparent 1px)',
-              backgroundSize: '48px 48px',
-            }}
-          />
-
-          {/* Interactive Bounding Boxes */}
-          {target.boxes.map((box) => {
-            const isHovered = activeBoxId === box.id;
-            const isDefect = box.status === 'fail';
-
-            return (
-              <div
-                key={box.id}
-                onMouseEnter={() => setActiveBoxId(box.id)}
-                onClick={() => setActiveBoxId(box.id)}
-                className={`absolute cursor-pointer transition-all duration-200 group ${
-                  isHovered ? 'z-30 scale-[1.02]' : 'z-20'
-                }`}
-                style={{
-                  left: `${box.x}%`,
-                  top: `${box.y}%`,
-                  width: `${box.width}%`,
-                  height: `${box.height}%`,
-                }}
-              >
-                {/* Bounding Box Border */}
-                <div
-                  className={`w-full h-full rounded border-2 transition-all duration-200 ${
-                    isDefect
-                      ? isHovered
-                        ? 'border-rose-400 bg-rose-500/25 shadow-[0_0_15px_rgba(244,63,94,0.6)]'
-                        : 'border-rose-500 bg-rose-500/15'
-                      : isHovered
-                      ? 'border-[#00D2FF] bg-[#00D2FF]/20 shadow-[0_0_15px_rgba(0,210,255,0.6)]'
-                      : 'border-emerald-400 bg-emerald-500/10'
-                  }`}
-                >
-                  {/* Corner Accent Reticles */}
-                  <div className="absolute top-0 left-0 w-2 h-2 border-t-2 border-l-2 border-white" />
-                  <div className="absolute top-0 right-0 w-2 h-2 border-t-2 border-r-2 border-white" />
-                  <div className="absolute bottom-0 left-0 w-2 h-2 border-b-2 border-l-2 border-white" />
-                  <div className="absolute bottom-0 right-0 w-2 h-2 border-b-2 border-r-2 border-white" />
-
-                  {/* Floating Tag */}
-                  <div
-                    className={`absolute -top-6 left-0 text-[10px] font-mono font-bold px-2 py-0.5 rounded shadow-sm whitespace-nowrap transition-transform duration-200 ${
-                      isDefect ? 'bg-rose-600 text-white' : 'bg-slate-900 text-[#00D2FF] border border-[#00D2FF]/50'
-                    }`}
-                  >
-                    <span>{box.type}: </span>
-                    <span className="text-white">{box.label}</span>
-                  </div>
-                </div>
-              </div>
-            );
-          })}
-
-          {/* Telemetry Footer Badge inside viewer */}
-          <div className="absolute bottom-3 left-3 right-3 flex items-center justify-between text-[11px] font-mono text-slate-300 bg-slate-900/80 backdrop-blur-md px-3.5 py-1.5 rounded border border-white/10">
-            <div>
-              Target: <span className="text-[#00D2FF]">{target.name}</span>
-            </div>
-            <div className="hidden sm:block">
-              Active Regions: <span className="text-white font-bold">{target.boxes.length} Tracked</span>
-            </div>
-            <div className="text-[10px] text-slate-400">
-              Hover/Tap Box to Inspect
-            </div>
-          </div>
         </div>
 
         {/* Right Inspection Telemetry Panel (4 cols) */}
@@ -350,7 +275,7 @@ export function InteractiveBoundingBoxViewer() {
           {/* Honest Engineering Disclaimer */}
           <div className="pt-3 border-t border-slate-200 text-[10px] text-slate-400 leading-relaxed">
             <span className="font-semibold text-slate-500">Representative Visual Demonstration: </span>
-            The bounding boxes above demonstrate object localization and defect detection workflows. Production models are trained on customer-provided golden samples and defect catalogs.
+            The inspection parameters and classification criteria above demonstrate object localization and defect detection workflows. Production models are trained on customer-provided golden samples and defect catalogs.
           </div>
         </div>
       </div>

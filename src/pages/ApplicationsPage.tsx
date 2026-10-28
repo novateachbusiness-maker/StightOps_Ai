@@ -1,6 +1,6 @@
 import { useState } from 'react';
 import { Link } from 'react-router-dom';
-import { Search, Eye, AlertTriangle, CheckCircle2, ArrowRight, Layers, Sliders, Check, X, ShieldAlert } from 'lucide-react';
+import { Search, AlertTriangle, CheckCircle2, ArrowRight, Check, X, ShieldAlert } from 'lucide-react';
 import { APPLICATIONS, ApplicationCase } from '../data/applications.ts';
 import { SeoHead } from '../components/SeoHead.tsx';
 import { Breadcrumbs } from '../components/Breadcrumbs.tsx';
@@ -8,12 +8,6 @@ import { Breadcrumbs } from '../components/Breadcrumbs.tsx';
 export function ApplicationsPage() {
   const [searchQuery, setSearchQuery] = useState('');
   const [selectedIndustry, setSelectedIndustry] = useState('All');
-  const [activeOverlays, setActiveOverlays] = useState<Record<string, boolean>>({
-    'pcb-smt-component-assembly': true,
-    'automotive-gear-surface-scratch-inspection': true,
-    'pharma-vial-blister-ocr-inspection': true,
-    'turned-shaft-telecentric-metrology': true,
-  });
 
   const industries = [
     'All',
@@ -21,13 +15,6 @@ export function ApplicationsPage() {
     'Automotive Vision Inspection',
     'Pharmaceutical Inspection',
   ];
-
-  function toggleOverlay(id: string) {
-    setActiveOverlays((prev) => ({
-      ...prev,
-      [id]: !prev[id],
-    }));
-  }
 
   const filteredApplications = APPLICATIONS.filter((app) => {
     const matchesIndustry = selectedIndustry === 'All' || app.industry === selectedIndustry;
@@ -103,10 +90,7 @@ export function ApplicationsPage() {
 
         {/* Applications List */}
         <div className="space-y-12">
-          {filteredApplications.map((app) => {
-            const isOverlayOn = activeOverlays[app.id] ?? true;
-
-            return (
+          {filteredApplications.map((app) => (
               <div
                 key={app.id}
                 id={app.slug}
@@ -130,54 +114,13 @@ export function ApplicationsPage() {
                 <div className="p-6 sm:p-8 space-y-8">
                   {/* Two-Column: Visual Viewport with Overlays (5 cols) & Customer Problem (7 cols) */}
                   <div className="grid grid-cols-1 lg:grid-cols-12 gap-8 items-start">
-                    {/* Visual Viewport with Annotations (5 cols) */}
-                    <div className="lg:col-span-5 relative bg-slate-950 rounded-xl overflow-hidden min-h-[300px] flex items-center justify-center border border-slate-200 select-none">
+                    {/* Clean Unannotated Industrial Image (5 cols) */}
+                    <div className="lg:col-span-5 relative bg-slate-950 rounded-xl overflow-hidden min-h-[300px] flex items-center justify-center border border-slate-200 select-none shadow-xs">
                       <img
                         src={app.image}
                         alt={app.title}
                         className="w-full h-full object-cover max-h-[340px]"
                       />
-
-                      {/* Bounding box overlays */}
-                      {isOverlayOn &&
-                        app.boundingOverlays.map((ov, oIdx) => (
-                          <div
-                            key={oIdx}
-                            className="absolute transition-all duration-200"
-                            style={{
-                              left: `${ov.x}%`,
-                              top: `${ov.y}%`,
-                              width: `${ov.width}%`,
-                              height: `${ov.height}%`,
-                            }}
-                          >
-                            <div
-                              className={`w-full h-full border-2 rounded ${
-                                ov.status === 'pass'
-                                  ? 'border-emerald-400 bg-emerald-500/10'
-                                  : 'border-rose-500 bg-rose-500/20'
-                              }`}
-                            >
-                              <div
-                                className={`text-[9px] font-mono font-bold px-1.5 py-0.5 rounded -mt-5 inline-block text-white shadow ${
-                                  ov.status === 'pass' ? 'bg-emerald-600' : 'bg-rose-600'
-                                }`}
-                              >
-                                {ov.label}
-                              </div>
-                            </div>
-                          </div>
-                        ))}
-
-                      {/* Overlay Toggle Button */}
-                      <button
-                        type="button"
-                        onClick={() => toggleOverlay(app.id)}
-                        className="absolute top-3 right-3 px-2.5 py-1 text-[11px] font-semibold bg-black/70 hover:bg-black text-white rounded backdrop-blur-sm border border-white/20 transition-colors flex items-center gap-1.5 z-10 cursor-pointer"
-                      >
-                        <Eye className="w-3.5 h-3.5 text-[#00D2FF]" />
-                        <span>{isOverlayOn ? 'Hide Annotations' : 'Show Annotations'}</span>
-                      </button>
                     </div>
 
                     {/* Customer Problem & Inspected Product (7 cols) */}
@@ -282,11 +225,10 @@ export function ApplicationsPage() {
                       <span>Discuss a Custom Solution</span>
                       <ArrowRight className="w-3.5 h-3.5" />
                     </Link>
-                  </div>
                 </div>
               </div>
-            );
-          })}
+            </div>
+          ))}
         </div>
       </div>
     </div>
