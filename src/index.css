@@ -1,0 +1,30 @@
+@import "tailwindcss";
+
+@theme {
+  --font-sans: "Plus Jakarta Sans", system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif;
+  --font-mono: "JetBrains Mono", ui-monospace, SFMono-Regular, Menlo, Monaco, Consolas, monospace;
+
+  --color-peacock-dark: #064E52;
+  --color-peacock-primary: #087F8C;
+  --color-peacock-accent: #18B6A4;
+  --color-peacock-muted: #537DA8;
+  --color-peacock-surface: #F4F8F8;
+  --color-peacock-text: #172B32;
+  --color-peacock-border: #DCE7E8;
+}
+
+:root {
+  font-family: var(--font-sans);
+  color: var(--color-peacock-text);
+  background-color: var(--color-peacock-surface);
+}
+
+/* Custom smooth scrolling and scrollbar */
+html {
+  scroll-behavior: smooth;
+}
+
+::selection {
+  background-color: #18B6A4;
+  color: #FFFFFF;
+}
