@@ -182,7 +182,7 @@ export function ApplicationsPage() {
 
                     {/* Customer Problem & Inspected Product (7 cols) */}
                     <div className="lg:col-span-7 space-y-4">
-                      <div className="p-4 rounded-xl bg-slate-50 border border-slate-200 space-y-1.5">
+                      <div className="hover-card-panel p-4 rounded-xl bg-white border border-slate-200 space-y-1.5 shadow-xs">
                         <div className="text-xs font-bold text-slate-800 flex items-center gap-1.5">
                           <ShieldAlert className="w-4 h-4 text-amber-600" />
                           <span>The Customer's Problem:</span>
@@ -194,14 +194,14 @@ export function ApplicationsPage() {
 
                       {/* Input vs Output Description */}
                       <div className="grid grid-cols-1 sm:grid-cols-2 gap-4 text-xs">
-                        <div className="p-3.5 rounded-lg border border-slate-200 space-y-1">
+                        <div className="hover-card-panel p-3.5 rounded-lg border border-slate-200 bg-white space-y-1 shadow-xs">
                           <span className="font-semibold text-slate-700">Example Input:</span>
                           <p className="text-slate-600 leading-relaxed text-[11px]">
                             {app.exampleInputDescription}
                           </p>
                         </div>
 
-                        <div className="p-3.5 rounded-lg border border-slate-200 bg-blue-50/60 space-y-1">
+                        <div className="hover-card-panel p-3.5 rounded-lg border border-slate-200 bg-blue-50/60 space-y-1 shadow-xs">
                           <span className="font-semibold text-[#0066FF]">Example Inspection Output:</span>
                           <p className="text-slate-700 leading-relaxed text-[11px] font-mono">
                             {app.exampleOutputDescription}
@@ -211,7 +211,7 @@ export function ApplicationsPage() {
 
                       {/* Accepted vs Rejected Criteria */}
                       <div className="grid grid-cols-1 sm:grid-cols-2 gap-4 text-xs">
-                        <div className="p-3 rounded-lg bg-emerald-50/70 border border-emerald-200/60 space-y-1">
+                        <div className="hover-card-panel p-3 rounded-lg bg-emerald-50/70 border border-emerald-200/60 space-y-1 shadow-xs">
                           <span className="font-semibold text-emerald-800 flex items-center gap-1">
                             <Check className="w-3.5 h-3.5" />
                             <span>Accepted Criteria:</span>
@@ -221,7 +221,7 @@ export function ApplicationsPage() {
                           </p>
                         </div>
 
-                        <div className="p-3 rounded-lg bg-rose-50/70 border border-rose-200/60 space-y-1">
+                        <div className="hover-card-panel p-3 rounded-lg bg-rose-50/70 border border-rose-200/60 space-y-1 shadow-xs">
                           <span className="font-semibold text-rose-800 flex items-center gap-1">
                             <X className="w-3.5 h-3.5" />
                             <span>Rejected Criteria:</span>
@@ -243,7 +243,7 @@ export function ApplicationsPage() {
                       {app.inspectionProcess.map((step) => (
                         <div
                           key={step.stepNumber}
-                          className="p-3 rounded-lg bg-slate-50 border border-slate-200 space-y-1 text-xs"
+                          className="hover-card-panel p-3 rounded-lg bg-white border border-slate-200 space-y-1 text-xs shadow-xs"
                         >
                           <div className="text-[10px] font-mono font-bold text-[#0066FF]">
                             Stage {step.stepNumber}

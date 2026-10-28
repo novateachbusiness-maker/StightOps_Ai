@@ -90,7 +90,7 @@ export function AboutPage() {
             {customSoftwareWorkflow.map((step) => (
               <div
                 key={step.step}
-                className="p-5 rounded-xl bg-slate-50 border border-slate-200 space-y-2 flex flex-col justify-between"
+                className="hover-card-panel p-5 rounded-xl bg-white border border-slate-200 space-y-2 flex flex-col justify-between shadow-xs"
               >
                 <div>
                   <div className="text-xs font-mono font-bold text-[#0066FF]">
@@ -107,7 +107,7 @@ export function AboutPage() {
             ))}
           </div>
 
-          <div className="p-4 rounded-xl bg-blue-50/70 border border-blue-200/60 text-xs text-slate-700 flex items-start gap-3">
+          <div className="hover-card-panel p-4 rounded-xl bg-blue-50/70 border border-blue-200/60 text-xs text-slate-700 flex items-start gap-3 shadow-xs">
             <Camera className="w-4 h-4 text-[#0066FF] shrink-0 mt-0.5" />
             <div className="leading-relaxed">
               <span className="font-bold text-[#0066FF]">Hardware Flexibility:</span> We test and integrate camera sensors, lenses, and lighting geometries based on required optical resolution, working distance, and cycle time. Hardware compatibility is established and validated on customer workpiece samples during formal feasibility testing.
@@ -129,7 +129,7 @@ export function AboutPage() {
             </p>
           </div>
 
-          <div className="p-6 rounded-xl bg-slate-50 border border-slate-200 space-y-4">
+          <div className="hover-card-panel p-6 rounded-xl bg-white border border-slate-200 space-y-4 shadow-xs">
             <div className="flex flex-col sm:flex-row sm:items-center justify-between gap-2 border-b border-slate-200 pb-3">
               <div>
                 <span className="text-[11px] font-mono text-[#0066FF] font-bold">CASE STUDY #01</span>
@@ -180,7 +180,7 @@ export function AboutPage() {
             {['Industrial Camera Partner', 'Automation Integrator', 'Optics & Lighting OEM', 'Robotics Systems Partner'].map((partner, pIdx) => (
               <div
                 key={pIdx}
-                className="p-4 rounded-xl border border-dashed border-slate-300 bg-slate-50/50 text-center flex flex-col items-center justify-center space-y-1"
+                className="hover-card-panel p-4 rounded-xl border border-dashed border-slate-300 bg-white text-center flex flex-col items-center justify-center space-y-1 shadow-xs"
               >
                 <div className="w-8 h-8 rounded-full bg-slate-200 flex items-center justify-center text-slate-400 font-mono text-xs">
                   P0{pIdx + 1}
@@ -193,7 +193,7 @@ export function AboutPage() {
         </div>
 
         {/* Corporate Transparency & Anti-Slop Policy */}
-        <div className="bg-white rounded-xl border border-slate-200 p-6 sm:p-8 shadow-sm mb-16 space-y-3">
+        <div className="hover-card-panel bg-white rounded-xl border border-slate-200 p-6 sm:p-8 shadow-sm mb-16 space-y-3">
           <div className="flex items-center gap-2 font-bold text-slate-900 text-sm">
             <Shield className="w-4 h-4 text-[#0066FF]" />
             <span>Transparency & Engineering Verification Policy</span>

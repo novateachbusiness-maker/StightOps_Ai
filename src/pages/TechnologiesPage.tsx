@@ -52,7 +52,7 @@ export function TechnologiesPage() {
 
           <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
             {/* Rule-Based Card */}
-            <div className="p-6 rounded-xl bg-slate-50 border border-slate-200 space-y-3">
+            <div className="hover-card-panel p-6 rounded-xl bg-white border border-slate-200 space-y-3 shadow-xs">
               <div className="flex items-center justify-between">
                 <span className="text-sm font-bold text-slate-900">Traditional Rule-Based Vision</span>
                 <span className="text-[10px] font-mono font-semibold px-2 py-0.5 bg-emerald-100 text-emerald-800 rounded">
@@ -82,7 +82,7 @@ export function TechnologiesPage() {
             </div>
 
             {/* AI Deep Learning Card */}
-            <div className="p-6 rounded-xl bg-slate-50 border border-slate-200 space-y-3">
+            <div className="hover-card-panel p-6 rounded-xl bg-white border border-slate-200 space-y-3 shadow-xs">
               <div className="flex items-center justify-between">
                 <span className="text-sm font-bold text-slate-900">AI & Deep Learning Inspection</span>
                 <span className="text-[10px] font-mono font-semibold px-2 py-0.5 bg-blue-100 text-[#0066FF] rounded">

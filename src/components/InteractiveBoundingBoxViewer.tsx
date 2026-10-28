@@ -307,7 +307,7 @@ export function InteractiveBoundingBoxViewer() {
                       type="button"
                       onClick={() => setActiveBoxId(box.id)}
                       onMouseEnter={() => setActiveBoxId(box.id)}
-                      className={`w-full text-left p-2.5 rounded-lg border text-xs transition-all cursor-pointer flex items-center justify-between ${
+                      className={`hover-card-interactive w-full text-left p-2.5 rounded-lg border text-xs flex items-center justify-between ${
                         isSelected
                           ? isDefect
                             ? 'bg-rose-50 border-rose-300 ring-1 ring-rose-400'
@@ -333,7 +333,7 @@ export function InteractiveBoundingBoxViewer() {
             </div>
 
             {/* Selected Box Telemetry Card */}
-            <div className="p-3.5 bg-white rounded-lg border border-slate-200 shadow-xs space-y-2 text-xs">
+            <div className="hover-card-panel p-3.5 bg-white rounded-lg border border-slate-200 shadow-xs space-y-2 text-xs">
               <div className="flex items-center justify-between">
                 <span className="font-semibold text-slate-800">{activeBox.label}</span>
                 <span className="font-mono text-[11px] text-[#0066FF] font-bold">

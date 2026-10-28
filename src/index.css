@@ -28,3 +28,96 @@ html {
   background-color: #18B6A4;
   color: #FFFFFF;
 }
+
+/* ==========================================================================
+   SightOps AI Global Modern Hover Interaction System
+   Consistent micro-interactions for all content cards, article cards,
+   information panels, feature boxes, and dashboard widgets across all pages.
+   ========================================================================== */
+
+/* Base transition rules */
+.hover-card,
+.hover-card-interactive,
+.hover-card-panel,
+.hover-card-dark,
+.hover-card-dark-interactive,
+.hover-card-dark-panel {
+  transition-property: transform, box-shadow, border-color, background-color;
+  transition-duration: 280ms;
+  transition-timing-function: cubic-bezier(0.16, 1, 0.3, 1);
+  will-change: transform, box-shadow;
+}
+
+/* 1. Interactive / Clickable Light Cards */
+.hover-card,
+.hover-card-interactive {
+  cursor: pointer;
+}
+
+@media (hover: hover) and (pointer: fine) {
+  .hover-card:hover,
+  .hover-card-interactive:hover {
+    transform: translateY(-5px);
+    border-color: #087F8C !important;
+    box-shadow: 0 14px 28px -6px rgba(8, 127, 140, 0.16), 0 6px 14px -4px rgba(15, 23, 42, 0.08) !important;
+    background-color: #FAFCFC;
+  }
+}
+
+/* 2. Informational / Non-Clickable Light Panels (Technical specs, metrics, benchmarks) */
+.hover-card-panel {
+  cursor: default;
+}
+
+@media (hover: hover) and (pointer: fine) {
+  .hover-card-panel:hover {
+    transform: translateY(-4px);
+    border-color: #18B6A4 !important;
+    box-shadow: 0 12px 24px -6px rgba(6, 78, 82, 0.12), 0 4px 10px -2px rgba(15, 23, 42, 0.06) !important;
+    background-color: #FAFCFC;
+  }
+}
+
+/* 3. Dark Surface Interactive Cards */
+.hover-card-dark,
+.hover-card-dark-interactive {
+  cursor: pointer;
+}
+
+@media (hover: hover) and (pointer: fine) {
+  .hover-card-dark:hover,
+  .hover-card-dark-interactive:hover {
+    transform: translateY(-5px);
+    border-color: #00D2FF !important;
+    box-shadow: 0 14px 28px -6px rgba(0, 210, 255, 0.22), 0 6px 14px -4px rgba(0, 0, 0, 0.4) !important;
+    background-color: rgba(15, 23, 42, 0.95);
+  }
+}
+
+/* 4. Dark Surface Informational Panels */
+.hover-card-dark-panel {
+  cursor: default;
+}
+
+@media (hover: hover) and (pointer: fine) {
+  .hover-card-dark-panel:hover {
+    transform: translateY(-4px);
+    border-color: #087F8C !important;
+    box-shadow: 0 12px 24px -6px rgba(8, 127, 140, 0.28), 0 4px 12px -2px rgba(0, 0, 0, 0.35) !important;
+    background-color: rgba(15, 23, 42, 0.85);
+  }
+}
+
+/* 5. Accessibility: Strict Reduced-Motion Compliance */
+@media (prefers-reduced-motion: reduce) {
+  .hover-card,
+  .hover-card-interactive,
+  .hover-card-panel,
+  .hover-card-dark,
+  .hover-card-dark-interactive,
+  .hover-card-dark-panel {
+    transform: none !important;
+    transition: none !important;
+  }
+}
+

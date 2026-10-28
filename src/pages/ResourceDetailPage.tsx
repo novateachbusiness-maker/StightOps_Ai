@@ -112,7 +112,7 @@ export function ResourceDetailPage() {
               </h2>
               <div className="space-y-4">
                 {article.faqs.map((faq, idx) => (
-                  <div key={idx} className="p-4 rounded-lg bg-[#F4F8F8] border border-[#DCE7E8] space-y-1">
+                  <div key={idx} className="hover-card-panel p-4 rounded-lg bg-[#F4F8F8] border border-[#DCE7E8] space-y-1 shadow-xs">
                     <div className="text-xs font-bold text-[#172B32]">{faq.question}</div>
                     <p className="text-xs text-slate-600 leading-relaxed">{faq.answer}</p>
                   </div>

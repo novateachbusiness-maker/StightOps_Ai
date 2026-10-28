@@ -93,7 +93,7 @@ export function ResourcesPage() {
               <Link
                 key={article.id}
                 to={`/resources/${article.slug}`}
-                className="bg-white rounded-xl border border-[#DCE7E8] p-6 shadow-sm hover:border-[#087F8C] transition-all flex flex-col justify-between group"
+                className="hover-card-interactive bg-white rounded-xl border border-[#DCE7E8] p-6 shadow-sm flex flex-col justify-between group"
               >
                 <div className="space-y-4">
                   <div className="flex items-center gap-2 text-[11px] text-slate-500">

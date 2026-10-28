@@ -49,7 +49,7 @@ export function IndustriesPage() {
           {INDUSTRIES.map((industry) => (
             <div
               key={industry.id}
-              className="bg-white rounded-xl border border-slate-200 overflow-hidden shadow-sm flex flex-col justify-between hover:border-[#0066FF] transition-all group"
+              className="hover-card-panel bg-white rounded-xl border border-slate-200 overflow-hidden shadow-sm flex flex-col justify-between group"
             >
               <div>
                 <div className="relative h-48 overflow-hidden bg-slate-900">
@@ -109,7 +109,7 @@ export function IndustriesPage() {
         </div>
 
         {/* Transparency Box */}
-        <div className="mt-16 bg-white p-6 rounded-xl border border-slate-200 text-xs text-slate-600 space-y-2">
+        <div className="hover-card-panel mt-16 bg-white p-6 rounded-xl border border-slate-200 text-xs text-slate-600 space-y-2">
           <div className="flex items-center gap-2 font-bold text-[#0066FF] text-sm">
             <ShieldCheck className="w-4 h-4 text-[#0066FF]" />
             <span>Industrial Engineering Integrity</span>

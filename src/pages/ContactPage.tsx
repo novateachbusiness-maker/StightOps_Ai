@@ -47,7 +47,7 @@ export function ContactPage() {
           {/* Right Column: Office Location & Feasibility Protocol (5 cols) */}
           <div className="lg:col-span-5 space-y-6">
             {/* Direct Contact Card */}
-            <div className="bg-white rounded-xl border border-[#DCE7E8] p-6 sm:p-8 shadow-sm space-y-5">
+            <div className="hover-card-panel bg-white rounded-xl border border-[#DCE7E8] p-6 sm:p-8 shadow-sm space-y-5">
               <h2 className="text-base font-bold text-[#064E52] border-b border-slate-100 pb-3">
                 Laboratory & Head Office
               </h2>
@@ -101,7 +101,7 @@ export function ContactPage() {
             </div>
 
             {/* Part Sample Shipment Protocol */}
-            <div className="bg-white rounded-xl border border-[#DCE7E8] p-6 sm:p-8 shadow-sm space-y-4">
+            <div className="hover-card-panel bg-white rounded-xl border border-[#DCE7E8] p-6 sm:p-8 shadow-sm space-y-4">
               <h3 className="text-sm font-bold text-[#064E52] flex items-center gap-2">
                 <Cpu className="w-4 h-4 text-[#087F8C]" />
                 <span>Sample Part Evaluation Protocol</span>
@@ -126,7 +126,7 @@ export function ContactPage() {
             </div>
 
             {/* NDA & IP Assurance */}
-            <div className="bg-[#064E52]/5 border border-[#087F8C]/20 rounded-xl p-5 text-xs text-slate-700 flex items-start gap-3">
+            <div className="hover-card-panel bg-[#064E52]/5 border border-[#087F8C]/20 rounded-xl p-5 text-xs text-slate-700 flex items-start gap-3">
               <ShieldCheck className="w-5 h-5 text-[#087F8C] shrink-0 mt-0.5" />
               <div>
                 <span className="font-bold text-[#064E52]">Confidentiality Guaranteed: </span>

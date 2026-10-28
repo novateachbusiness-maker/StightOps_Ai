@@ -79,7 +79,7 @@ export function IndustryDetailPage() {
           {/* Main Content (8 cols) */}
           <div className="lg:col-span-8 space-y-8">
             {/* 1. Customer Challenge vs Proposed Solution */}
-            <div className="bg-white rounded-xl border border-slate-200 p-8 shadow-sm space-y-6">
+            <div className="hover-card-panel bg-white rounded-xl border border-slate-200 p-8 shadow-sm space-y-6">
               <h2 className="text-xl font-bold text-slate-900">
                 The Customer Challenge & Vision Solution
               </h2>
@@ -108,7 +108,7 @@ export function IndustryDetailPage() {
             </div>
 
             {/* 2. Specific Inspection Challenges List */}
-            <div className="bg-white rounded-xl border border-slate-200 p-8 shadow-sm space-y-4">
+            <div className="hover-card-panel bg-white rounded-xl border border-slate-200 p-8 shadow-sm space-y-4">
               <h2 className="text-xl font-bold text-slate-900 flex items-center gap-2">
                 <ShieldAlert className="w-5 h-5 text-amber-600" />
                 <span>Sector-Specific Inspection Challenges</span>
@@ -124,7 +124,7 @@ export function IndustryDetailPage() {
             </div>
 
             {/* 3. Key Applications & Use Cases */}
-            <div className="bg-white rounded-xl border border-slate-200 p-8 shadow-sm space-y-6">
+            <div className="hover-card-panel bg-white rounded-xl border border-slate-200 p-8 shadow-sm space-y-6">
               <h2 className="text-xl font-bold text-slate-900">Core Inspection Use Cases</h2>
               <div className="grid grid-cols-1 gap-4">
                 {industry.keyApplications.map((app, idx) => (
@@ -137,7 +137,7 @@ export function IndustryDetailPage() {
             </div>
 
             {/* 4. Factory Integration Considerations */}
-            <div className="bg-white rounded-xl border border-slate-200 p-8 shadow-sm space-y-4">
+            <div className="hover-card-panel bg-white rounded-xl border border-slate-200 p-8 shadow-sm space-y-4">
               <h2 className="text-xl font-bold text-slate-900 flex items-center gap-2">
                 <Wrench className="w-5 h-5 text-[#0066FF]" />
                 <span>Production Line Integration Considerations</span>
@@ -156,7 +156,7 @@ export function IndustryDetailPage() {
           {/* Sidebar (4 cols) */}
           <div className="lg:col-span-4 space-y-8">
             {/* Expected Business Benefits */}
-            <div className="bg-white rounded-xl border border-slate-200 p-6 shadow-sm space-y-3">
+            <div className="hover-card-panel bg-white rounded-xl border border-slate-200 p-6 shadow-sm space-y-3">
               <h3 className="text-sm font-bold text-slate-900">Expected Business Benefits</h3>
               <div className="space-y-2 text-xs text-slate-600">
                 {industry.expectedBenefits.map((benefit, idx) => (
@@ -169,7 +169,7 @@ export function IndustryDetailPage() {
             </div>
 
             {/* Suitable Vision Technologies */}
-            <div className="bg-white rounded-xl border border-slate-200 p-6 shadow-sm space-y-4">
+            <div className="hover-card-panel bg-white rounded-xl border border-slate-200 p-6 shadow-sm space-y-4">
               <h3 className="text-sm font-bold text-slate-900">Recommended Vision Technologies</h3>
               <div className="space-y-2 text-xs text-slate-600">
                 {industry.suitableTechnologies.map((tech, idx) => (

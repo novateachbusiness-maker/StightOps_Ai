@@ -64,7 +64,7 @@ export function InteractiveIndustryExplorer() {
 
             {/* Customer Challenge vs Solution */}
             <div className="grid grid-cols-1 sm:grid-cols-2 gap-4 pt-2">
-              <div className="p-4 rounded-xl bg-slate-50 border border-slate-200 space-y-2">
+              <div className="hover-card-panel p-4 rounded-xl bg-white border border-slate-200 space-y-2 shadow-xs">
                 <div className="flex items-center gap-2 text-xs font-bold text-slate-800">
                   <ShieldAlert className="w-4 h-4 text-amber-600 shrink-0" />
                   <span>The Inspection Challenge</span>
@@ -74,7 +74,7 @@ export function InteractiveIndustryExplorer() {
                 </p>
               </div>
 
-              <div className="p-4 rounded-xl bg-blue-50/60 border border-blue-200/60 space-y-2">
+              <div className="hover-card-panel p-4 rounded-xl bg-blue-50/60 border border-blue-200/60 space-y-2 shadow-xs">
                 <div className="flex items-center gap-2 text-xs font-bold text-[#0066FF]">
                   <Cpu className="w-4 h-4 text-[#0066FF] shrink-0" />
                   <span>The SightOps AI Solution</span>

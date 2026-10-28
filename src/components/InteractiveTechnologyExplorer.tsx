@@ -54,7 +54,7 @@ export function InteractiveTechnologyExplorer() {
             </div>
 
             {/* Industrial Use Block */}
-            <div className="p-4 rounded-xl bg-slate-50 border border-slate-200 space-y-1.5">
+            <div className="hover-card-panel p-4 rounded-xl bg-white border border-slate-200 space-y-1.5 shadow-xs">
               <div className="text-xs font-bold text-slate-800">
                 Where It Is Used in Industrial Inspection:
               </div>
@@ -65,7 +65,7 @@ export function InteractiveTechnologyExplorer() {
 
             {/* Input & Output Comparison */}
             <div className="grid grid-cols-1 sm:grid-cols-2 gap-4">
-              <div className="p-4 rounded-xl bg-slate-50 border border-slate-200 space-y-1.5">
+              <div className="hover-card-panel p-4 rounded-xl bg-white border border-slate-200 space-y-1.5 shadow-xs">
                 <div className="text-xs font-bold text-slate-700 flex items-center gap-1.5">
                   <span className="w-2 h-2 rounded-full bg-[#087F8C]" />
                   <span>Example Input Image</span>
@@ -75,7 +75,7 @@ export function InteractiveTechnologyExplorer() {
                 </p>
               </div>
 
-              <div className="p-4 rounded-xl bg-blue-50/70 border border-blue-200/70 space-y-1.5">
+              <div className="hover-card-panel p-4 rounded-xl bg-blue-50/70 border border-blue-200/70 space-y-1.5 shadow-xs">
                 <div className="text-xs font-bold text-[#0066FF] flex items-center gap-1.5">
                   <span className="w-2 h-2 rounded-full bg-[#0066FF]" />
                   <span>Resulting Inspection Output</span>

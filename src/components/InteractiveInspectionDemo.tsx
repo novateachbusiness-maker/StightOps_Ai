@@ -366,7 +366,7 @@ export function InteractiveInspectionDemo() {
             </div>
 
             {/* Metric Summary Card */}
-            <div className="bg-[#F4F8F8] p-3 rounded-lg border border-[#DCE7E8] text-xs space-y-1.5">
+            <div className="hover-card-panel bg-[#F4F8F8] p-3 rounded-lg border border-[#DCE7E8] text-xs space-y-1.5 shadow-xs">
               <div className="font-semibold text-[#064E52]">Inspection Findings</div>
               {sample.overlayItems.map((item) => (
                 <div key={item.id} className="flex items-start justify-between gap-2 text-[11px]">

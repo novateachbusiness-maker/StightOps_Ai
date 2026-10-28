@@ -205,7 +205,7 @@ export function HomePage() {
                     <div className="absolute inset-0 bg-gradient-to-t from-slate-950 via-slate-950/40 to-transparent pointer-events-none" />
 
                     {/* Slide Information Overlay */}
-                    <div className="absolute bottom-4 left-4 right-4 bg-slate-900/90 backdrop-blur-md p-3.5 rounded-xl border border-white/15 text-xs space-y-1">
+                    <div className="hover-card-dark-panel absolute bottom-4 left-4 right-4 bg-slate-900/90 backdrop-blur-md p-3.5 rounded-xl border border-white/15 text-xs space-y-1">
                       <div className="flex items-center justify-between">
                         <span className="text-[10px] font-mono font-bold text-[#00D2FF] uppercase">
                           {slide.badge}
@@ -318,7 +318,7 @@ export function HomePage() {
               <Link
                 key={card.title}
                 to={card.href}
-                className="group p-6 rounded-xl border border-slate-200 bg-slate-50/50 hover:bg-white hover:border-[#0066FF] transition-all flex flex-col justify-between"
+                className="hover-card-interactive group p-6 rounded-xl border border-slate-200 bg-white shadow-xs flex flex-col justify-between"
               >
                 <div className="space-y-3">
                   <div className="text-xs font-mono font-semibold text-[#0066FF]">
@@ -370,7 +370,7 @@ export function HomePage() {
             {workflowSteps.map((ws) => (
               <div
                 key={ws.step}
-                className="p-5 rounded-xl border border-slate-200 bg-white space-y-3 shadow-xs"
+                className="hover-card-panel p-5 rounded-xl border border-slate-200 bg-white space-y-3 shadow-xs"
               >
                 <div className="text-2xl font-black font-mono text-[#0066FF]">
                   {ws.step}
@@ -413,7 +413,7 @@ export function HomePage() {
             {APPLICATIONS.slice(0, 3).map((app) => (
               <div
                 key={app.id}
-                className="p-6 rounded-xl border border-slate-200 bg-slate-50/50 space-y-4 flex flex-col justify-between"
+                className="hover-card-panel p-6 rounded-xl border border-slate-200 bg-white shadow-xs space-y-4 flex flex-col justify-between"
               >
                 <div className="space-y-2.5">
                   <div className="text-[11px] font-mono text-[#0066FF] font-semibold">

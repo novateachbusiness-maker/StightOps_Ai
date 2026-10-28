@@ -95,7 +95,7 @@ export function SolutionsPage() {
             {filteredSolutions.map((solution) => (
               <div
                 key={solution.id}
-                className="bg-white rounded-xl border border-[#DCE7E8] overflow-hidden shadow-sm flex flex-col justify-between hover:border-[#087F8C] transition-all group"
+                className="hover-card-panel bg-white rounded-xl border border-[#DCE7E8] overflow-hidden shadow-sm flex flex-col justify-between group"
               >
                 <div>
                   <div className="relative h-48 overflow-hidden bg-slate-900">

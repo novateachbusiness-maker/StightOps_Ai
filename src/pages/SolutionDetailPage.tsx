@@ -87,7 +87,7 @@ export function SolutionDetailPage() {
           {/* Main Technical Content (8 cols) */}
           <div className="lg:col-span-8 space-y-10">
             {/* 1. Industrial Problem */}
-            <div className="bg-white rounded-xl border border-[#DCE7E8] p-8 shadow-sm space-y-3">
+            <div className="hover-card-panel bg-white rounded-xl border border-[#DCE7E8] p-8 shadow-sm space-y-3">
               <h2 className="text-xl font-bold text-[#064E52]">The Industrial Problem</h2>
               <p className="text-sm text-slate-700 leading-relaxed">
                 {solution.industrialProblem}
@@ -95,7 +95,7 @@ export function SolutionDetailPage() {
             </div>
 
             {/* 2. Inspection Approach */}
-            <div className="bg-white rounded-xl border border-[#DCE7E8] p-8 shadow-sm space-y-3">
+            <div className="hover-card-panel bg-white rounded-xl border border-[#DCE7E8] p-8 shadow-sm space-y-3">
               <h2 className="text-xl font-bold text-[#064E52]">Inspection Engineering Approach</h2>
               <p className="text-sm text-slate-700 leading-relaxed">
                 {solution.inspectionApproach}
@@ -104,7 +104,7 @@ export function SolutionDetailPage() {
 
             {/* 3. Inputs & Outputs */}
             <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
-              <div className="bg-white rounded-xl border border-[#DCE7E8] p-6 shadow-sm space-y-3">
+              <div className="hover-card-panel bg-white rounded-xl border border-[#DCE7E8] p-6 shadow-sm space-y-3">
                 <h3 className="text-sm font-bold text-[#064E52] flex items-center gap-2">
                   <span className="w-2 h-2 rounded-full bg-[#087F8C]" />
                   <span>Typical Hardware Inputs</span>
@@ -119,7 +119,7 @@ export function SolutionDetailPage() {
                 </ul>
               </div>
 
-              <div className="bg-white rounded-xl border border-[#DCE7E8] p-6 shadow-sm space-y-3">
+              <div className="hover-card-panel bg-white rounded-xl border border-[#DCE7E8] p-6 shadow-sm space-y-3">
                 <h3 className="text-sm font-bold text-[#064E52] flex items-center gap-2">
                   <span className="w-2 h-2 rounded-full bg-[#18B6A4]" />
                   <span>Deterministic Outputs & Telemetry</span>
@@ -136,7 +136,7 @@ export function SolutionDetailPage() {
             </div>
 
             {/* 4. Practical Limitations & Implementation Constraints */}
-            <div className="bg-white rounded-xl border border-[#DCE7E8] p-8 shadow-sm space-y-3">
+            <div className="hover-card-panel bg-white rounded-xl border border-[#DCE7E8] p-8 shadow-sm space-y-3">
               <h2 className="text-xl font-bold text-[#064E52] flex items-center gap-2">
                 <AlertTriangle className="w-5 h-5 text-amber-600" />
                 <span>Practical Limitations & Physical Considerations</span>
@@ -155,7 +155,7 @@ export function SolutionDetailPage() {
             </div>
 
             {/* 5. FAQs */}
-            <div className="bg-white rounded-xl border border-[#DCE7E8] p-8 shadow-sm space-y-4">
+            <div className="hover-card-panel bg-white rounded-xl border border-[#DCE7E8] p-8 shadow-sm space-y-4">
               <h2 className="text-xl font-bold text-[#064E52] flex items-center gap-2">
                 <HelpCircle className="w-5 h-5 text-[#087F8C]" />
                 <span>Frequently Asked Questions</span>
