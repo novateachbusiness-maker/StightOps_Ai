@@ -1,5 +1,7 @@
 import { useState } from 'react';
 import { Eye } from 'lucide-react';
+import automotiveFlangeImg from '../assets/images/solution_surface_defect_1792999691227.jpg';
+import pcbAssemblyImg from '../assets/images/case_study_pcb_1792999691900.jpg';
 
 export interface BoundingTarget {
   id: string;
@@ -27,7 +29,7 @@ const INSPECTION_TARGETS: BoundingTarget[] = [
     id: 'robotic-automotive',
     name: 'Automotive Robotic Flange Inspection',
     category: 'Automotive Vision',
-    image: '/src/assets/images/solution_surface_defect_1792999691227.jpg',
+    image: automotiveFlangeImg,
     description: 'Robotic arm with laser profilometer inspecting CNC machined gear flanges for surface porosity and tool chatter.',
     boxes: [
       {
@@ -75,7 +77,7 @@ const INSPECTION_TARGETS: BoundingTarget[] = [
     id: 'pcb-aoi',
     name: 'High-Density SMT Circuit Assembly',
     category: 'Electronics & PCB',
-    image: '/src/assets/images/case_study_pcb_1792999691900.jpg',
+    image: pcbAssemblyImg,
     description: 'Multi-angle RGB telecentric inspection verifying 0201 chip presence, solder fillet angles, and IC alignment.',
     boxes: [
       {
@@ -203,7 +205,15 @@ export function InteractiveBoundingBoxViewer() {
           <img
             src={target.image}
             alt={target.name}
+            loading="eager"
+            decoding="async"
             className="w-full h-full object-cover max-h-[500px]"
+            onError={(e) => {
+              const fallback = '/assets/applications/robotic-gear-inspection.jpg';
+              if (e.currentTarget.src !== fallback) {
+                e.currentTarget.src = fallback;
+              }
+            }}
           />
         </div>
 
