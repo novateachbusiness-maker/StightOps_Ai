@@ -1,0 +1,193 @@
+@import "tailwindcss";
+
+@theme {
+  --font-sans: "Plus Jakarta Sans", system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif;
+  --font-mono: "JetBrains Mono", ui-monospace, SFMono-Regular, Menlo, Monaco, Consolas, monospace;
+
+  --color-peacock-dark: #064E52;
+  --color-peacock-primary: #087F8C;
+  --color-peacock-accent: #18B6A4;
+  --color-peacock-muted: #537DA8;
+  --color-peacock-surface: #F4F8F8;
+  --color-peacock-text: #172B32;
+  --color-peacock-border: #DCE7E8;
+}
+
+:root {
+  font-family: var(--font-sans);
+  color: var(--color-peacock-text);
+  background-color: transparent;
+}
+
+html,
+body {
+  background-color: transparent;
+  min-height: 100vh;
+}
+
+/* Custom smooth scrolling and scrollbar */
+html {
+  scroll-behavior: smooth;
+}
+
+::selection {
+  background-color: #18B6A4;
+  color: #FFFFFF;
+}
+
+/* ==========================================================================
+   SightOps AI Global Modern Hover Interaction System
+   Consistent micro-interactions for all content cards, article cards,
+   information panels, feature boxes, and dashboard widgets across all pages.
+   ========================================================================== */
+
+/* Base transition rules */
+.hover-card,
+.hover-card-interactive,
+.hover-card-panel,
+.hover-card-dark,
+.hover-card-dark-interactive,
+.hover-card-dark-panel {
+  transition-property: transform, box-shadow, border-color, background-color;
+  transition-duration: 280ms;
+  transition-timing-function: cubic-bezier(0.16, 1, 0.3, 1);
+  will-change: transform, box-shadow;
+}
+
+/* 1. Interactive / Clickable Light Cards */
+.hover-card,
+.hover-card-interactive {
+  cursor: pointer;
+}
+
+@media (hover: hover) and (pointer: fine) {
+  .hover-card:hover,
+  .hover-card-interactive:hover {
+    transform: translateY(-5px);
+    border-color: #087F8C !important;
+    box-shadow: 0 14px 28px -6px rgba(8, 127, 140, 0.16), 0 6px 14px -4px rgba(15, 23, 42, 0.08) !important;
+    background-color: #FAFCFC;
+  }
+}
+
+/* 2. Informational / Non-Clickable Light Panels (Technical specs, metrics, benchmarks) */
+.hover-card-panel {
+  cursor: default;
+}
+
+@media (hover: hover) and (pointer: fine) {
+  .hover-card-panel:hover {
+    transform: translateY(-4px);
+    border-color: #18B6A4 !important;
+    box-shadow: 0 12px 24px -6px rgba(6, 78, 82, 0.12), 0 4px 10px -2px rgba(15, 23, 42, 0.06) !important;
+    background-color: #FAFCFC;
+  }
+}
+
+/* 3. Dark Surface Interactive Cards */
+.hover-card-dark,
+.hover-card-dark-interactive {
+  cursor: pointer;
+}
+
+@media (hover: hover) and (pointer: fine) {
+  .hover-card-dark:hover,
+  .hover-card-dark-interactive:hover {
+    transform: translateY(-5px);
+    border-color: #00D2FF !important;
+    box-shadow: 0 14px 28px -6px rgba(0, 210, 255, 0.22), 0 6px 14px -4px rgba(0, 0, 0, 0.4) !important;
+    background-color: rgba(15, 23, 42, 0.95);
+  }
+}
+
+/* 4. Dark Surface Informational Panels */
+.hover-card-dark-panel {
+  cursor: default;
+}
+
+@media (hover: hover) and (pointer: fine) {
+  .hover-card-dark-panel:hover {
+    transform: translateY(-4px);
+    border-color: #087F8C !important;
+    box-shadow: 0 12px 24px -6px rgba(8, 127, 140, 0.28), 0 4px 12px -2px rgba(0, 0, 0, 0.35) !important;
+    background-color: rgba(15, 23, 42, 0.85);
+  }
+}
+
+/* 5. Accessibility: Strict Reduced-Motion Compliance */
+@media (prefers-reduced-motion: reduce) {
+  .hover-card,
+  .hover-card-interactive,
+  .hover-card-panel,
+  .hover-card-dark,
+  .hover-card-dark-interactive,
+  .hover-card-dark-panel {
+    transform: none !important;
+    transition: none !important;
+  }
+}
+
+/* ==========================================================================
+   Applications Page – Horizontal Carousel Card Sizing
+   Responsive card dimensions for the horizontal-flow carousel.
+   ========================================================================== */
+
+/* Hide webkit scrollbar inside the carousel */
+.app-carousel-card::-webkit-scrollbar,
+[aria-label="Applications carousel"]::-webkit-scrollbar {
+  display: none;
+}
+
+/* Card sizing – mobile-first */
+.app-carousel-card {
+  width: 85vw;
+  min-width: 300px;
+  max-width: 420px;
+}
+
+/* Tablet: 2 cards visible */
+@media (min-width: 640px) {
+  .app-carousel-card {
+    width: calc(50vw - 48px);
+    min-width: 340px;
+    max-width: 440px;
+  }
+}
+
+/* Desktop: ~2.5 cards visible to hint more exist */
+@media (min-width: 1024px) {
+  .app-carousel-card {
+    width: 380px;
+    min-width: 380px;
+    max-width: 420px;
+  }
+}
+
+/* Large desktop: 3 cards visible */
+@media (min-width: 1280px) {
+  .app-carousel-card {
+    width: 400px;
+    min-width: 380px;
+    max-width: 420px;
+  }
+}
+
+/* Expand-in animation for detail section */
+@keyframes expandIn {
+  from {
+    opacity: 0;
+    max-height: 0;
+    transform: translateY(-8px);
+  }
+  to {
+    opacity: 1;
+    max-height: 2000px;
+    transform: translateY(0);
+  }
+}
+
+.animate-in {
+  animation: expandIn 0.35s cubic-bezier(0.16, 1, 0.3, 1) forwards;
+  overflow: hidden;
+}
+

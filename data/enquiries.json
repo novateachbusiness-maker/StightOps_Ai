@@ -1,0 +1,28 @@
+[
+  {
+    "id": "enq_1793000534310_qb8xw",
+    "referenceId": "ST-2026-64787",
+    "name": "Aravind Swaminathan",
+    "company": "Bharat Precision Electronics Ltd",
+    "email": "aravind@bharatprecision.in",
+    "phone": "+91 99401 23456",
+    "industry": "Electronics & PCB Assembly",
+    "application": "PCB Automated Optical Inspection (AOI)",
+    "description": "We need 100% SMT post-reflow inspection for missing 0201 passives and solder bridge detection on a 45,000 cph line.",
+    "createdAt": "2026-10-26T07:42:14.310Z",
+    "deliveryStatus": "LOGGED_TO_STORAGE_SMTP_PENDING"
+  },
+  {
+    "id": "enq_1793000446324_an1of",
+    "referenceId": "ST-2026-18487",
+    "name": "Rajesh Patel",
+    "company": "Tata AutoComp Systems",
+    "email": "rajesh.patel@tatacomp.com",
+    "phone": "+91 98200 12345",
+    "industry": "Automotive & Machined Metal",
+    "application": "Surface Defect Detection",
+    "description": "Automated optical inspection of machined cylinder heads for 30µm scratches at 60 ppm line speed.",
+    "createdAt": "2026-10-26T07:40:46.324Z",
+    "deliveryStatus": "LOGGED_TO_STORAGE_SMTP_PENDING"
+  }
+]
