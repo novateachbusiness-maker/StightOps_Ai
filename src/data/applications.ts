@@ -379,4 +379,168 @@ export const APPLICATIONS: ApplicationCase[] = [
       },
     ],
   },
+  {
+    id: "food-packaging-seal-cap-integrity",
+    slug: "food-packaging-seal-cap-integrity",
+    title: "Food & Beverage High-Speed Bottling Cap, Seal Integrity & Fill-Level Inspection",
+    industry: "Food & Packaging Inspection",
+    inspectedProduct: "Aseptic Beverage Bottles, Induction Seals & CPG Containers",
+    customerProblem:
+      "High-speed bottling and liquid lines operating at 800 bottles per minute suffered from crooked caps, unseated induction liners, and irregular fill heights that went undetected until palletizing, causing expensive batch quarantines and retail leakage returns.",
+    inspectionProcess: [
+      {
+        stepNumber: "01",
+        name: "Image Capture",
+        detail: "Continuous strobe captures synchronized dual-view profiles of the bottle neck, crown, and fluid meniscus at 800 units/min.",
+      },
+      {
+        stepNumber: "02",
+        name: "Image Preprocessing",
+        detail: "Dynamic thresholding and backlighting contrast separation isolate the liquid meniscus from bottle reflections and label edges.",
+      },
+      {
+        stepNumber: "03",
+        name: "AI & Geometric Analysis",
+        detail: "Edge algorithms calculate cap tilt angle in degrees while deep learning checks tamper-evident ring bridge integrity.",
+      },
+      {
+        stepNumber: "04",
+        name: "Result Classification",
+        detail: "Bottles are classified as Pass, Cocked Cap, High Fill, Low Fill, or Missing Tamper Band against recipe tolerances.",
+      },
+      {
+        stepNumber: "05",
+        name: "High-Speed Rejection",
+        detail: "Discrete 24V signal triggers a multi-finger pneumatic rejector to divert defective bottles into an inspection bay.",
+      },
+    ],
+    image: "/assets/industries/packaging-inspection.jpg",
+    technologiesUsed: [
+      "Continuous High-Frequency Strobe Backlights",
+      "Telecentric Fill-Level Profiling",
+      "Tamper-Evident Ring Verification",
+      "800 BPM Pneumatic Reject Synchronization",
+      "Real-Time Liquid SPC Trend Analytics",
+    ],
+    exampleInputDescription:
+      "Dual-angle 5MP high-speed capture of 500ml PET bottle neck and fill boundary indexed through the vision inspection tunnel.",
+    exampleOutputDescription:
+      "Cap angle measured at 0.3° tilt (PASS); liquid meniscus at -1.4mm from nominal reference (PASS: within ±5.0mm tolerance).",
+    acceptedVsRejectedDetails: {
+      acceptedCriteria: "Cap tilt < 0.8°, 360° tamper band intact, liquid fill level within ±5.0mm of target volume.",
+      rejectedCriteria: "Cocked cap (> 0.8°), missing tamper ring, broken safety seal, or fill level outside statutory threshold.",
+    },
+    expectedBusinessValue: [
+      "Zero compromised seal containers shipped to retail distribution partners",
+      "Immediate pneumatic air-blast reject of defective bottles at 800 bottles per minute",
+      "Automated shift quality reporting with hourly fill-level SPC charts and statistical distribution",
+    ],
+    isDemonstrationBenchmark: true,
+    demonstrationDisclaimer:
+      "Representative food & packaging inspection benchmark. Throughput verified up to 800 bottles per minute with synchronized pneumatic rejection.",
+    boundingOverlays: [
+      {
+        label: "Cap Seating Angle",
+        type: "dimension",
+        status: "pass",
+        x: 35,
+        y: 20,
+        width: 30,
+        height: 15,
+        metric: "Tilt: 0.3° (Limit: 0.8°)",
+      },
+      {
+        label: "Liquid Meniscus Level",
+        type: "dimension",
+        status: "pass",
+        x: 30,
+        y: 45,
+        width: 40,
+        height: 12,
+        metric: "Delta: -1.4mm (Tol: ±5.0mm)",
+      },
+    ],
+  },
+  {
+    id: "logistics-parcel-barcode-dimensioning",
+    slug: "logistics-parcel-barcode-dimensioning",
+    title: "Logistics 5-Sided High-Speed Parcel Scanning, 3D Dimensioning & Label OCR",
+    industry: "Logistics & Product Inspection",
+    inspectedProduct: "Cross-Belt Conveyor Parcels, Polybags & Irregular Freight",
+    customerProblem:
+      "High-throughput distribution hubs processing 25,000 parcels per hour experienced tracking blind spots when barcodes were crumpled, tilted on package sides, or obscured by plastic straps, causing conveyor recirculation and lost throughput.",
+    inspectionProcess: [
+      {
+        stepNumber: "01",
+        name: "Tunnel Capture",
+        detail: "5 high-speed line-scan cameras with LED bar illumination capture top, front, back, and both side faces of moving parcels.",
+      },
+      {
+        stepNumber: "02",
+        name: "3D Volumetric Scanning",
+        detail: "Time-of-flight laser or stereo depth scanner measures parcel length, width, height, and irregular bulges at up to 3.0 m/s.",
+      },
+      {
+        stepNumber: "03",
+        name: "Omnidirectional Barcode Decoding",
+        detail: "Multi-symbology decoders read 1D Code-128, GS1, and 2D DataMatrix even on torn, wrinkled, or reflective polybag surfaces.",
+      },
+      {
+        stepNumber: "04",
+        name: "Result Verification",
+        detail: "Parcel barcode string and certified legal-for-trade cubic volume are matched against warehouse management system manifests.",
+      },
+      {
+        stepNumber: "05",
+        name: "WMS Sorting Dispatch",
+        detail: "Chute routing instructions are dispatched via Industrial Ethernet/IP to the sorter controller in under 15 milliseconds.",
+      },
+    ],
+    image: "/assets/industries/logistics-tunnel.jpg",
+    technologiesUsed: [
+      "5-Camera Line-Scan Vision Tunnel",
+      "Certified 3D Volumetric Cubing",
+      "Omnidirectional Multi-Symbology Decoder",
+      "Industrial Ethernet/IP to WMS/WCS",
+      "High-Speed Conveyor Motion Tracking (3.0 m/s)",
+    ],
+    exampleInputDescription:
+      "5-sided synchronized image stream of a corrugated parcel moving at 2.6 m/s on an automated cross-belt sorter.",
+    exampleOutputDescription:
+      "Decoded 1D Code-128 and GS1-128 barcode in 11ms; 3D dimensions 342 x 228 x 165mm (±2mm); dispatched to Chute 18.",
+    acceptedVsRejectedDetails: {
+      acceptedCriteria: "Valid barcode decode rate >= 99.95%, accurate 3D volumetric cubing, label fully adhered.",
+      rejectedCriteria: "Unreadable or torn barcode, dimensional bulge exceeding sorter pocket limits, unmanifested SKU.",
+    },
+    expectedBusinessValue: [
+      "Reduces parcel recirculation by 94%, maximizing cross-dock sorter throughput",
+      "Real-time legal-for-trade revenue recovery via certified 3D dimensional cubing",
+      "Direct plug-and-play integration into warehouse management systems (WMS/WCS)",
+    ],
+    isDemonstrationBenchmark: true,
+    demonstrationDisclaimer:
+      "Representative logistics vision tunnel benchmark. Certified for legal-for-trade dimensioning and multi-carrier parcel sorting at up to 3.0 m/s.",
+    boundingOverlays: [
+      {
+        label: "Shipping Barcode 1D/2D",
+        type: "ocr",
+        status: "pass",
+        x: 40,
+        y: 48,
+        width: 25,
+        height: 18,
+        metric: "Code-128 & GS1: VALID",
+      },
+      {
+        label: "3D Volumetric Bounding Box",
+        type: "dimension",
+        status: "pass",
+        x: 25,
+        y: 30,
+        width: 50,
+        height: 40,
+        metric: "342 x 228 x 165 mm (PASS)",
+      },
+    ],
+  },
 ];
