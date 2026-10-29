@@ -10,8 +10,8 @@ export function TechnologiesPage() {
   return (
     <div className="py-12 bg-transparent min-h-screen">
       <SeoHead
-        title="Vision Technologies: Optics, Algorithms, Edge AI & Hardware | SightOps AI"
-        description="Explore SightOps AI machine vision technology stack: deep learning anomaly models, object detection, sub-pixel metrology, telecentric optics, and camera SDKs."
+        title="Vision Technologies: Optics, Algorithms, Edge AI & Hardware | SightOpsAi"
+        description="Explore SightOpsAi machine vision technology stack: deep learning anomaly models, object detection, sub-pixel metrology, telecentric optics, and camera SDKs."
         canonicalPath="/technologies"
       />
 

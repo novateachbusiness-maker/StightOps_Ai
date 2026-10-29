@@ -175,8 +175,8 @@ export function ApplicationsPage() {
   return (
     <div className="py-12 bg-transparent min-h-screen">
       <SeoHead
-        title="Industrial Vision Applications & Case Benchmarks | SightOps AI"
-        description="Explore SightOps AI engineering application benchmarks: PCB AOI, automotive transmission defect detection, pharmaceutical serialization, packaging seal integrity, and telecentric metrology."
+        title="Industrial Vision Applications & Case Benchmarks | SightOpsAi"
+        description="Explore SightOpsAi engineering application benchmarks: PCB AOI, automotive transmission defect detection, pharmaceutical serialization, packaging seal integrity, and telecentric metrology."
         canonicalPath="/applications"
       />
 

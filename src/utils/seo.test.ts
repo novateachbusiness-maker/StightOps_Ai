@@ -5,7 +5,7 @@ import { generateOrganizationSchema, generateBreadcrumbSchema, generateFaqSchema
 test('generateOrganizationSchema returns valid JSON-LD structure', () => {
   const schema = generateOrganizationSchema();
   assert.equal(schema['@type'], 'Organization');
-  assert.equal(schema.name, 'SightOps AI');
+  assert.equal(schema.name, 'SightOpsAi');
   assert.ok(Array.isArray(schema.knowsAbout));
   assert.ok(schema.address);
 });

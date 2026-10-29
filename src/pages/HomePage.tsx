@@ -165,7 +165,7 @@ export function HomePage() {
     <div>
       <SeoHead
         title="AI-Powered Vision Systems for Smarter Industrial Inspection"
-        description="SightOps AI engineers industrial machine vision systems, automated optical inspection (AOI), PCB inspection, OCR, and defect classification for modern manufacturing."
+        description="SightOpsAi engineers industrial machine vision systems, automated optical inspection (AOI), PCB inspection, OCR, and defect classification for modern manufacturing."
         canonicalPath="/"
         jsonLd={orgSchema}
       />
@@ -177,7 +177,7 @@ export function HomePage() {
             {/* Left Headline & Content (7 cols) */}
             <div className="lg:col-span-7 space-y-6">
               <div className="inline-flex items-center gap-2 text-xs font-semibold text-[#00D2FF]">
-                <span className="font-mono tracking-wider uppercase">SightOps AI · Vision Platform</span>
+                <span className="font-mono tracking-wider uppercase">SightOpsAi · Vision Platform</span>
                 <span aria-hidden="true">·</span>
                 <span className="text-slate-300">See Better. Inspect Smarter. Think Ahead.</span>
               </div>

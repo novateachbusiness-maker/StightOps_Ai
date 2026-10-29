@@ -1,5 +1,5 @@
 import { useState, useId } from 'react';
-import { Send, CheckCircle2, AlertCircle, Loader2, ShieldCheck, FileText } from 'lucide-react';
+import { Send, CheckCircle2, AlertCircle, Loader2, ShieldCheck, FileText, MessageCircle } from 'lucide-react';
 import { validateEnquiryForm, ValidationErrors } from '../utils/validation.ts';
 import { SITE_CONFIG } from '../config/site.ts';
 
@@ -162,7 +162,7 @@ export function ConsultationForm({ defaultApplication = '', defaultIndustry = ''
             </div>
           </div>
 
-          <div className="pt-4">
+          <div className="pt-4 flex flex-col sm:flex-row items-center justify-center gap-3">
             <button
               type="button"
               onClick={() => setSubmissionResult(null)}
@@ -170,6 +170,15 @@ export function ConsultationForm({ defaultApplication = '', defaultIndustry = ''
             >
               Submit Another Technical Request
             </button>
+            <a
+              href={SITE_CONFIG.whatsapp.chatUrl}
+              target="_blank"
+              rel="noopener noreferrer"
+              className="px-5 py-2.5 text-xs font-semibold text-white bg-[#25D366] hover:bg-[#20ba59] rounded-lg transition-colors flex items-center gap-1.5 shadow-sm"
+            >
+              <MessageCircle className="w-3.5 h-3.5" />
+              <span>Direct WhatsApp ({SITE_CONFIG.whatsapp.displayPhone})</span>
+            </a>
           </div>
         </div>
       ) : (
@@ -263,7 +272,7 @@ export function ConsultationForm({ defaultApplication = '', defaultIndustry = ''
                 name="phone"
                 value={formData.phone}
                 onChange={handleChange}
-                placeholder="+91 98765 43210"
+                placeholder="+91 72591 71733"
                 className={`w-full px-3 py-2 text-xs rounded-lg border bg-white focus:outline-none focus:ring-1 ${
                   errors.phone
                     ? 'border-rose-400 focus:ring-rose-400'

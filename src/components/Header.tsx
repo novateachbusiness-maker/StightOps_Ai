@@ -1,6 +1,6 @@
 import { useState, useRef, useEffect } from 'react';
 import { Link, useLocation } from 'react-router-dom';
-import { ChevronDown, Menu, X, ArrowUpRight } from 'lucide-react';
+import { ChevronDown, Menu, X, ArrowUpRight, Phone, MessageCircle } from 'lucide-react';
 import { SITE_CONFIG, NAVIGATION_ITEMS } from '../config/site.ts';
 
 export function Header() {
@@ -32,7 +32,7 @@ export function Header() {
     <header className="sticky top-0 z-40 bg-white/95 backdrop-blur-md border-b border-slate-200">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <div className="flex items-center justify-between gap-8 h-20" ref={dropdownRef}>
-          {/* Zone 1: Approved Brand Logo & Wordmark (Blue SightOps lettering on white) */}
+          {/* Zone 1: Approved Brand Logo & Wordmark (Blue SightOpsAi lettering on white) */}
           <Link
             to="/"
             className="flex items-center gap-3 text-xl font-bold tracking-tight text-[#0B2545] whitespace-nowrap shrink-0 group"
@@ -46,7 +46,7 @@ export function Header() {
             </div>
             <div className="flex flex-col">
               <span className="text-lg font-extrabold tracking-tight text-[#0B2545] group-hover:text-[#0066FF] transition-colors leading-none">
-                Sight<span className="text-[#0066FF]">Ops</span> AI
+                Sight<span className="text-[#0066FF]">OpsAi</span>
               </span>
               <span className="text-[10px] font-mono text-slate-500 tracking-wider uppercase mt-1 hidden sm:block">
                 Industrial Vision Systems
@@ -300,6 +300,25 @@ export function Header() {
           >
             Request a Consultation
           </Link>
+
+          <div className="pt-3 mt-2 border-t border-slate-100 flex items-center justify-between text-xs px-1">
+            <a
+              href="tel:+917259171733"
+              className="flex items-center gap-1.5 text-slate-700 hover:text-[#0066FF] font-mono"
+            >
+              <Phone className="w-3.5 h-3.5 text-[#0066FF]" />
+              <span>+91 72591 71733</span>
+            </a>
+            <a
+              href={SITE_CONFIG.whatsapp.chatUrl}
+              target="_blank"
+              rel="noopener noreferrer"
+              className="flex items-center gap-1.5 text-[#25D366] hover:underline font-mono"
+            >
+              <MessageCircle className="w-3.5 h-3.5" />
+              <span>WhatsApp</span>
+            </a>
+          </div>
         </div>
       )}
     </header>

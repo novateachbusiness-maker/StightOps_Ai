@@ -21,7 +21,7 @@ export function Footer() {
               </div>
               <div>
                 <span className="text-xl font-extrabold tracking-tight text-white">
-                  Sight<span className="text-[#00D2FF]">Ops</span> AI
+                  Sight<span className="text-[#00D2FF]">OpsAi</span>
                 </span>
                 <div className="text-[10px] font-mono text-slate-300 tracking-wider uppercase">
                   {SITE_CONFIG.tagline}
@@ -44,8 +44,8 @@ export function Footer() {
             <div className="pt-2 space-y-2 text-xs text-slate-300">
               <div className="flex items-start gap-2.5">
                 <MapPin className="w-4 h-4 text-[#00D2FF] shrink-0 mt-0.5" />
-                <span>
-                  {SITE_CONFIG.address.line1}, {SITE_CONFIG.address.line2}, {SITE_CONFIG.address.city}, {SITE_CONFIG.address.state} {SITE_CONFIG.address.postalCode}, {SITE_CONFIG.address.country}
+                <span className="leading-relaxed">
+                  <span className="font-semibold text-white">Registered Office:</span> Flat No. L248, Second Floor, KB Ecocity, Phase 1, Kammasandra, Electronic City, Hebbagodi, Bengaluru, Karnataka - 560100
                 </span>
               </div>
               <div className="flex items-center gap-2.5">
@@ -54,7 +54,12 @@ export function Footer() {
               </div>
               <div className="flex items-center gap-2.5">
                 <Phone className="w-4 h-4 text-[#00D2FF] shrink-0" />
-                <span className="font-mono">{SITE_CONFIG.phone}</span>
+                <a
+                  href="tel:+917259171733"
+                  className="font-mono hover:text-[#00D2FF] transition-colors"
+                >
+                  +91 72591 71733
+                </a>
               </div>
               <div className="flex items-center gap-2.5">
                 <MessageCircle className="w-4 h-4 text-[#25D366] shrink-0" />
@@ -166,7 +171,7 @@ export function Footer() {
               </li>
               <li>
                 <Link to="/about" className="hover:text-white transition-colors">
-                  About SightOps AI
+                  About SightOpsAi
                 </Link>
               </li>
               <li>
@@ -198,7 +203,7 @@ export function Footer() {
         {/* Technical Disclaimer & Legal Notice */}
         <div className="pt-8 text-xs text-slate-400 space-y-4">
           <p className="leading-relaxed bg-white/5 p-4 rounded-xl border border-white/10 text-[11px]">
-            <span className="font-semibold text-slate-200">Engineering Note:</span> Inspection repeatabilities, cycle times, optical resolution, and false rejection rates depend on workpiece presentation, optical geometry, lighting wavelength, camera sensor calibration, line speed, and dataset verification. Visualizations provided on this website are illustrative engineering demonstrations. SightOps AI designs systems to specific customer acceptance criteria established during formal feasibility trials.
+            <span className="font-semibold text-slate-200">Engineering Note:</span> Inspection repeatabilities, cycle times, optical resolution, and false rejection rates depend on workpiece presentation, optical geometry, lighting wavelength, camera sensor calibration, line speed, and dataset verification. Visualizations provided on this website are illustrative engineering demonstrations. SightOpsAi designs systems to specific customer acceptance criteria established during formal feasibility trials.
           </p>
 
           <div className="flex flex-col sm:flex-row items-center justify-between gap-4 pt-2 border-t border-white/10 text-[11px]">

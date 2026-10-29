@@ -30,7 +30,7 @@ export function WhatsAppButton() {
         href={SITE_CONFIG.whatsapp.chatUrl}
         target="_blank"
         rel="noopener noreferrer"
-        aria-label="Chat with SightOps AI on WhatsApp"
+        aria-label="Chat with SightOpsAi on WhatsApp"
         className="w-14 h-14 bg-[#25D366] hover:bg-[#20ba59] text-white rounded-full flex items-center justify-center shadow-xl hover:shadow-2xl hover:scale-105 active:scale-95 transition-all duration-200 focus:outline-none focus:ring-4 focus:ring-[#25D366]/40 cursor-pointer"
       >
         {/* SVG WhatsApp Official Icon */}

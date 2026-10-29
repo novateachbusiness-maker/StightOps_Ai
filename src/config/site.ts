@@ -1,5 +1,5 @@
 /**
- * SightOps AI - Central Site & Brand Configuration
+ * SightOpsAi - Central Site & Brand Configuration
  * 
  * Edit this single configuration file to update company details, contact information,
  * domain endpoints, social channels, and core brand messaging across the entire site.
@@ -19,8 +19,8 @@ export interface NavItem {
 
 export const SITE_CONFIG = {
   // Brand identity
-  name: "SightOps AI",
-  shortName: "SightOps",
+  name: "SightOpsAi",
+  shortName: "SightOpsAi",
   tagline: "See Better. Inspect Smarter. Think Ahead.",
   pillars: ["Vision", "Intelligence", "Cutting-Edge Technology"],
   headline: "AI-Powered Vision Systems for Smarter Industrial Inspection",
@@ -30,29 +30,32 @@ export const SITE_CONFIG = {
   // Approved Brand Logo Assets
   logo: {
     main: "/assets/branding/sightops-logo.jpeg",
-    alt: "SightOps AI - See Better. Inspect Smarter. Think Ahead.",
+    alt: "SightOpsAi - See Better. Inspect Smarter. Think Ahead.",
   },
 
   // Contact details & editable placeholders
   domain: "[DOMAIN PENDING]",
   contactEmail: "[CONTACT EMAIL]",
-  phone: "+91 (0) 80 4920 1800", // Representative B2B support line placeholder
+  phone: "+91 72591 71733",
+  phoneRaw: "+917259171733",
+  registeredOffice: "Flat No. L248, Second Floor, KB Ecocity, Phase 1, Kammasandra, Electronic City, Hebbagodi, Bengaluru, Karnataka - 560100",
   address: {
-    line1: "Industrial Automation & Vision Systems Hub",
-    line2: "Electronic City Phase 1",
+    line1: "Flat No. L248, Second Floor, KB Ecocity, Phase 1",
+    line2: "Kammasandra, Electronic City, Hebbagodi",
     city: "Bengaluru",
     state: "Karnataka",
     postalCode: "560100",
     country: "India",
+    full: "Flat No. L248, Second Floor, KB Ecocity, Phase 1, Kammasandra, Electronic City, Hebbagodi, Bengaluru, Karnataka - 560100",
   },
   operatingHours: "Monday – Friday: 09:00 – 18:00 IST",
 
   // WhatsApp Business Integration
   whatsapp: {
-    number: "919876543210", // Configurable WhatsApp business phone number
-    displayPhone: "+91 98765 43210",
-    prefillMessage: "Hello SightOps AI, I would like to discuss an industrial vision inspection solution.",
-    chatUrl: "https://wa.me/919876543210?text=Hello%20SightOps%20AI%2C%20I%20would%20like%20to%20discuss%20an%20industrial%20vision%20inspection%20solution.",
+    number: "917259171733", // Configurable WhatsApp business phone number
+    displayPhone: "+91 72591 71733",
+    prefillMessage: "Hello SightOpsAi, I would like to discuss an industrial vision inspection solution.",
+    chatUrl: "https://wa.me/917259171733?text=Hello%20SightOpsAi%2C%20I%20would%20like%20to%20discuss%20an%20industrial%20vision%20inspection%20solution.",
   },
 
   // Primary market & business model

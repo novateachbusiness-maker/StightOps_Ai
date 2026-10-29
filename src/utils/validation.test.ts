@@ -11,7 +11,7 @@ test('validateEmail correctly validates business emails', () => {
 });
 
 test('validatePhone correctly validates international telephone numbers', () => {
-  assert.equal(validatePhone('+91 98765 43210'), true);
+  assert.equal(validatePhone('+91 72591 71733'), true);
   assert.equal(validatePhone('+1 (555) 234-5678'), true);
   assert.equal(validatePhone('123'), false); // Too short
   assert.equal(validatePhone(''), false);
@@ -22,7 +22,7 @@ test('validateEnquiryForm checks all mandatory B2B fields', () => {
     name: 'Rajesh Sharma',
     company: 'Apex Precision Auto Components Ltd',
     email: 'r.sharma@apexauto.in',
-    phone: '+91 9876543210',
+    phone: '+91 72591 71733',
     industry: 'Automotive & Machined Metal',
     application: 'Surface Defect Detection',
     description: 'We need to inspect bevel gear tooth surface flaws and scratches on a 60 ppm line.',

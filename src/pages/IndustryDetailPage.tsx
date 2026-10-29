@@ -98,7 +98,7 @@ export function IndustryDetailPage() {
                 <div className="p-4 rounded-xl bg-blue-50/70 border border-blue-200/70 space-y-2">
                   <div className="flex items-center gap-2 text-xs font-bold text-[#0066FF]">
                     <Cpu className="w-4 h-4 text-[#0066FF]" />
-                    <span>The SightOps AI Solution</span>
+                    <span>The SightOpsAi Solution</span>
                   </div>
                   <p className="text-xs text-slate-700 leading-relaxed">
                     {industry.proposedSolution}

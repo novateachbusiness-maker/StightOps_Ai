@@ -1,5 +1,5 @@
 import { Link } from 'react-router-dom';
-import { ArrowRight, CheckCircle2, Shield, Eye, Wrench, FileCheck, Layers, HelpCircle, Cpu, Camera, Handshake } from 'lucide-react';
+import { ArrowRight, CheckCircle2, Shield, Eye, Wrench, FileCheck, Layers, HelpCircle, Cpu, Camera, Handshake, MapPin, Phone, MessageCircle } from 'lucide-react';
 import { SITE_CONFIG } from '../config/site.ts';
 import { SeoHead } from '../components/SeoHead.tsx';
 import { Breadcrumbs } from '../components/Breadcrumbs.tsx';
@@ -46,8 +46,8 @@ export function AboutPage() {
   return (
     <div className="py-12 bg-transparent min-h-screen">
       <SeoHead
-        title="About SightOps AI | Industrial Machine Vision & Inspection Software"
-        description="Learn about SightOps AI, our custom inspection software engineering approach, hardware integration philosophy, and zero-defect manufacturing vision."
+        title="About SightOpsAi | Industrial Machine Vision & Inspection Software"
+        description="Learn about SightOpsAi, our custom inspection software engineering approach, hardware integration philosophy, and zero-defect manufacturing vision."
         canonicalPath="/about"
       />
 
@@ -58,7 +58,7 @@ export function AboutPage() {
         <div className="bg-white/95 backdrop-blur-md rounded-2xl border border-white/30 p-8 md:p-12 shadow-xl mb-12">
           <div className="max-w-3xl space-y-4">
             <div className="inline-flex items-center gap-2 text-xs font-semibold text-[#0066FF] font-mono uppercase tracking-wider">
-              <span>About SightOps AI</span>
+              <span>About SightOpsAi</span>
               <span aria-hidden="true">·</span>
               <span>Bengaluru, India</span>
             </div>
@@ -66,7 +66,7 @@ export function AboutPage() {
               See Better. Inspect Smarter. Think Ahead.
             </h1>
             <p className="text-base text-slate-700 leading-relaxed">
-              SightOps AI is an industrial visual inspection and machine vision engineering company. We specialize in developing customized inspection software solutions that work seamlessly with suitable industrial camera hardware supplied or selected for each project.
+              SightOpsAi is an industrial visual inspection and machine vision engineering company. We specialize in developing customized inspection software solutions that work seamlessly with suitable industrial camera hardware supplied or selected for each project.
             </p>
           </div>
         </div>
@@ -81,7 +81,7 @@ export function AboutPage() {
               Our Custom Inspection Software Approach
             </h2>
             <p className="text-xs sm:text-sm text-slate-600 leading-relaxed">
-              SightOps AI develops proprietary, tailored inspection software pipelines designed to operate with suitable industrial cameras, optics, and illumination chosen for your specific part geometries. Rather than locking plants into rigid black-box hardware, we engineer flexible, modular software that integrates with your existing factory PLC automation and line conveyors.
+              SightOpsAi develops proprietary, tailored inspection software pipelines designed to operate with suitable industrial cameras, optics, and illumination chosen for your specific part geometries. Rather than locking plants into rigid black-box hardware, we engineer flexible, modular software that integrates with your existing factory PLC automation and line conveyors.
             </p>
           </div>
 
@@ -151,7 +151,7 @@ export function AboutPage() {
               </div>
 
               <div className="space-y-2">
-                <span className="font-bold text-slate-900">SightOps AI Solution:</span>
+                <span className="font-bold text-slate-900">SightOpsAi Solution:</span>
                 <p className="leading-relaxed text-slate-600">
                   Multi-angle RGB telecentric imaging station deployed post-reflow, importing CAD centroid coordinates directly and classifying solder meniscus wetting angles in under 40ms.
                 </p>
@@ -174,7 +174,7 @@ export function AboutPage() {
             <span>Industrial Automation & System Integration Partners</span>
           </div>
           <p className="text-xs text-slate-600 leading-relaxed">
-            SightOps AI collaborates with automation builders, robotics system integrators, and industrial camera distributors across India and international markets. Formal partner listings and co-engineering credentials are published upon mutual authorization.
+            SightOpsAi collaborates with automation builders, robotics system integrators, and industrial camera distributors across India and international markets. Formal partner listings and co-engineering credentials are published upon mutual authorization.
           </p>
           <div className="grid grid-cols-2 sm:grid-cols-4 gap-4 pt-4">
             {['Industrial Camera Partner', 'Automation Integrator', 'Optics & Lighting OEM', 'Robotics Systems Partner'].map((partner, pIdx) => (
@@ -199,8 +199,43 @@ export function AboutPage() {
             <span>Transparency & Engineering Verification Policy</span>
           </div>
           <p className="text-xs text-slate-600 leading-relaxed">
-            SightOps AI operates under strict technical transparency. We do not invent company founding years, customer logos, employee numbers, or universal accuracy percentages. All engineering capabilities presented are grounded in physical optics, verified algorithms, and reproducible laboratory feasibility trials.
+            SightOpsAi operates under strict technical transparency. We do not invent company founding years, customer logos, employee numbers, or universal accuracy percentages. All engineering capabilities presented are grounded in physical optics, verified algorithms, and reproducible laboratory feasibility trials.
           </p>
+        </div>
+
+        {/* Registered Office & Corporate Details */}
+        <div className="hover-card-panel bg-white/95 backdrop-blur-md rounded-xl border border-white/30 p-6 sm:p-8 shadow-xl mb-16 space-y-3">
+          <div className="flex items-center gap-2 font-bold text-slate-900 text-sm">
+            <MapPin className="w-4 h-4 text-[#0066FF]" />
+            <span>Company & Registered Office Details</span>
+          </div>
+          <div className="text-xs text-slate-600 leading-relaxed space-y-1.5 pt-1">
+            <div>
+              <span className="font-semibold text-slate-800">Entity:</span> {SITE_CONFIG.name}
+            </div>
+            <div>
+              <span className="font-semibold text-slate-800">Registered Office:</span> {SITE_CONFIG.registeredOffice}
+            </div>
+            <div className="flex items-center gap-2">
+              <span className="font-semibold text-slate-800">Official Contact:</span>
+              <a href="tel:+917259171733" className="font-mono text-[#0066FF] hover:underline flex items-center gap-1">
+                <Phone className="w-3 h-3" />
+                <span>+91 72591 71733</span>
+              </a>
+            </div>
+            <div className="flex items-center gap-2">
+              <span className="font-semibold text-slate-800">WhatsApp:</span>
+              <a
+                href={SITE_CONFIG.whatsapp.chatUrl}
+                target="_blank"
+                rel="noopener noreferrer"
+                className="font-mono text-[#0066FF] hover:underline flex items-center gap-1"
+              >
+                <MessageCircle className="w-3 h-3 text-[#25D366]" />
+                <span>{SITE_CONFIG.whatsapp.displayPhone}</span>
+              </a>
+            </div>
+          </div>
         </div>
 
         {/* CTA */}

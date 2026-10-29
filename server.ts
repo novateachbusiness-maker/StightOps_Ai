@@ -81,7 +81,7 @@ function checkRateLimit(ip: string): boolean {
 app.get('/api/health', (req: Request, res: Response) => {
   res.json({
     status: 'ok',
-    service: 'SightOps AI Industrial Vision Platform',
+    service: 'SightOpsAi Industrial Vision Platform',
     timestamp: new Date().toISOString(),
     environment: isProd ? 'production' : 'development',
     version: '1.0.0',
@@ -247,7 +247,7 @@ async function startServer() {
   }
 
   app.listen(Number(PORT), '0.0.0.0', () => {
-    console.log(`[Server] SightOps AI server running on port ${PORT} (${isProd ? 'production' : 'development'})`);
+    console.log(`[Server] SightOpsAi server running on port ${PORT} (${isProd ? 'production' : 'development'})`);
   });
 }
 

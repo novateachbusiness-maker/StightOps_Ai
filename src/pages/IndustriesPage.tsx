@@ -9,8 +9,8 @@ export function IndustriesPage() {
   return (
     <div className="py-12 bg-transparent min-h-screen">
       <SeoHead
-        title="Manufacturing Industries Served | SightOps AI"
-        description="Explore SightOps AI machine vision systems across 5 core sectors: Automotive, Electronics & PCB, Food & Packaging, Logistics, and Pharmaceuticals."
+        title="Manufacturing Industries Served | SightOpsAi"
+        description="Explore SightOpsAi machine vision systems across 5 core sectors: Automotive, Electronics & PCB, Food & Packaging, Logistics, and Pharmaceuticals."
         canonicalPath="/industries"
       />
 
@@ -26,7 +26,7 @@ export function IndustriesPage() {
             5 Core Manufacturing Industry Sectors
           </h1>
           <p className="text-sm sm:text-base text-slate-200 leading-relaxed">
-            Industrial inspection requirements vary radically by manufacturing discipline. SightOps AI designs vision stations engineered for the physical, optical, and regulatory demands of each sector.
+            Industrial inspection requirements vary radically by manufacturing discipline. SightOpsAi designs vision stations engineered for the physical, optical, and regulatory demands of each sector.
           </p>
         </div>
 
@@ -115,7 +115,7 @@ export function IndustriesPage() {
             <span>Industrial Engineering Integrity</span>
           </div>
           <p className="leading-relaxed">
-            SightOps AI presents verified engineering principles and optical testing methodologies. We do not claim client names, proprietary installations, or unverified performance figures without formal contractual authorization.
+            SightOpsAi presents verified engineering principles and optical testing methodologies. We do not claim client names, proprietary installations, or unverified performance figures without formal contractual authorization.
           </p>
         </div>
       </div>

@@ -38,7 +38,7 @@ export const INDUSTRIES: Industry[] = [
     customerChallenge:
       "Automotive component manufacturers face zero-defect mandates from tier-1 OEMs. Specular reflections from machined metals, oil mist in CNC bays, and rapid 60+ ppm cycle times make manual inspection error-prone and fatigue-heavy.",
     proposedSolution:
-      "SightOps AI provides multi-camera stations with photometric stereo and polarized coaxial illumination that isolate 3D surface topography from oil stains and reflections, delivering deterministic pass/fail triggers to line PLCs.",
+      "SightOpsAi provides multi-camera stations with photometric stereo and polarized coaxial illumination that isolate 3D surface topography from oil stains and reflections, delivering deterministic pass/fail triggers to line PLCs.",
     inspectionChallenges: [
       "Machined metal surfaces possess high specular reflectivity and directional tool marks that mask fine scratches.",
       "Oil mist, coolant splash, and heavy mechanical vibration in stamping and CNC machining bays.",
@@ -88,7 +88,7 @@ export const INDUSTRIES: Industry[] = [
     customerChallenge:
       "With sub-millimeter passives (0201 and 01005) and multi-pin QFN/BGA packages, manual microscope inspection is impossible at production speeds. Reworking defective boards post-reflow costs up to 10x more than catching flaws immediately.",
     proposedSolution:
-      "Multi-angle RGB tiered ring illumination transforms 3D solder curvature into distinct color gradients (shape-from-shading). Coupled with sub-pixel CAD centroid matching and deep learning classification, SightOps AI catches defects before final potting or boxing.",
+      "Multi-angle RGB tiered ring illumination transforms 3D solder curvature into distinct color gradients (shape-from-shading). Coupled with sub-pixel CAD centroid matching and deep learning classification, SightOpsAi catches defects before final potting or boxing.",
     inspectionChallenges: [
       "Sub-millimeter components (0201 and 01005 chips) prone to skew and tombstoning during reflow.",
       "Highly reflective solder joints requiring multi-angle chromatic lighting to avoid false bridging calls.",
@@ -138,7 +138,7 @@ export const INDUSTRIES: Industry[] = [
     customerChallenge:
       "High line speeds, shifting container orientations, variable liquid transparency, and splash environments cause frequent misalignments, loose caps, and missing expiry dates that lead to costly retailer fines.",
     proposedSolution:
-      "SightOps AI deploys IP67 washdown vision systems with synchronized high-intensity LED strobes that freeze fast movement without motion blur, verifying cap height, tilt, seal ring intactness, and fill lines simultaneously.",
+      "SightOpsAi deploys IP67 washdown vision systems with synchronized high-intensity LED strobes that freeze fast movement without motion blur, verifying cap height, tilt, seal ring intactness, and fill lines simultaneously.",
     inspectionChallenges: [
       "Condensation, wet environments, and washdown cleaning chemicals requiring high IP ratings.",
       "Variable bottle and container orientations on conveyors traveling at up to 1,200 units per minute.",
@@ -186,7 +186,7 @@ export const INDUSTRIES: Industry[] = [
     customerChallenge:
       "Fulfillment centers handle variable parcel sizes with damaged, crumpled, or plastic-wrapped labels. Misreads cause sorting re-circulation and manual barcode re-handling bottlenecks.",
     proposedSolution:
-      "SightOps AI provides 5-sided and 6-sided vision scanning tunnels utilizing high-speed line-scan cameras with autofocus and wide dynamic range lighting to decode 1D/2D barcodes and measure legal-for-trade box volumes.",
+      "SightOpsAi provides 5-sided and 6-sided vision scanning tunnels utilizing high-speed line-scan cameras with autofocus and wide dynamic range lighting to decode 1D/2D barcodes and measure legal-for-trade box volumes.",
     inspectionChallenges: [
       "Extreme depth-of-field requirements with parcels ranging from 5cm to 100cm tall on the same belt.",
       "Torn, crumpled, or plastic-wrapped labels with specular reflections.",
@@ -233,7 +233,7 @@ export const INDUSTRIES: Industry[] = [
     customerChallenge:
       "Pharmaceutical manufacturers operate under strict regulatory scrutiny where a missing pill or illegible lot number can cause major recalls. Glass reflections and transparent vials challenge traditional sensors.",
     proposedSolution:
-      "SightOps AI engineers polarized darkfield inspection stations and deep-learning OCR modules that verify vial crimp seals, detect particulate in liquids, and validate lot codes against GS1 compliance databases.",
+      "SightOpsAi engineers polarized darkfield inspection stations and deep-learning OCR modules that verify vial crimp seals, detect particulate in liquids, and validate lot codes against GS1 compliance databases.",
     inspectionChallenges: [
       "Transparent glass and liquid inspection with particulate detection and bubble differentiation.",
       "Rigorous regulatory requirements including 21 CFR Part 11 audit trails and validated CSV documentation.",

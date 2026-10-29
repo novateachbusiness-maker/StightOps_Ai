@@ -77,7 +77,7 @@ export function InteractiveIndustryExplorer() {
               <div className="hover-card-panel p-4 rounded-xl bg-blue-50/60 border border-blue-200/60 space-y-2 shadow-xs">
                 <div className="flex items-center gap-2 text-xs font-bold text-[#0066FF]">
                   <Cpu className="w-4 h-4 text-[#0066FF] shrink-0" />
-                  <span>The SightOps AI Solution</span>
+                  <span>The SightOpsAi Solution</span>
                 </div>
                 <p className="text-xs text-slate-700 leading-relaxed">
                   {currentIndustry.proposedSolution}

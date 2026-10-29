@@ -32,7 +32,7 @@ export function SolutionsPage() {
     <div className="py-12 bg-transparent min-h-screen">
       <SeoHead
         title="Industrial Vision Systems & Inspection Solutions"
-        description="Explore SightOps AI inspection systems: AI visual inspection, PCB AOI, surface defect detection, OCR & barcode decoding, and telecentric dimensional metrology."
+        description="Explore SightOpsAi inspection systems: AI visual inspection, PCB AOI, surface defect detection, OCR & barcode decoding, and telecentric dimensional metrology."
         canonicalPath="/solutions"
       />
 
@@ -152,7 +152,7 @@ export function SolutionsPage() {
             Optical Feasibility & System Performance Governance
           </h3>
           <p>
-            Final system capabilities (repeatability, false rejection rate, cycle time) depend on part presentation stability, ambient thermal expansion, lighting wavelength selection, and optical depth-of-field. SightOps AI conducts physical laboratory feasibility assessments on client part samples before finalizing mechanical or optical design freezes.
+            Final system capabilities (repeatability, false rejection rate, cycle time) depend on part presentation stability, ambient thermal expansion, lighting wavelength selection, and optical depth-of-field. SightOpsAi conducts physical laboratory feasibility assessments on client part samples before finalizing mechanical or optical design freezes.
           </p>
         </div>
       </div>

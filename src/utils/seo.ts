@@ -15,7 +15,7 @@ export function generateOrganizationSchema() {
     "@context": "https://schema.org",
     "@type": "Organization",
     "name": SITE_CONFIG.name,
-    "alternateName": "SightOps Machine Vision",
+    "alternateName": "SightOpsAi Machine Vision",
     "description": SITE_CONFIG.subheadline,
     "url": SITE_CONFIG.domain.startsWith("http") ? SITE_CONFIG.domain : "https://sightops.ai",
     "email": SITE_CONFIG.contactEmail,

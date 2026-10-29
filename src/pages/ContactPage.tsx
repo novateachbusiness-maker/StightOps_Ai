@@ -1,5 +1,5 @@
 import { useSearchParams } from 'react-router-dom';
-import { Mail, Phone, MapPin, Clock, ShieldCheck, FileCheck2, Cpu } from 'lucide-react';
+import { Mail, Phone, MapPin, Clock, ShieldCheck, FileCheck2, Cpu, MessageCircle } from 'lucide-react';
 import { SITE_CONFIG } from '../config/site.ts';
 import { SeoHead } from '../components/SeoHead.tsx';
 import { Breadcrumbs } from '../components/Breadcrumbs.tsx';
@@ -14,7 +14,7 @@ export function ContactPage() {
     <div className="py-12 bg-transparent min-h-screen">
       <SeoHead
         title="Request an Industrial Vision Consultation & Optical Feasibility Trial"
-        description="Connect with SightOps AI machine vision engineers to evaluate automated optical inspection, PCB inspection, or surface defect classification for your plant."
+        description="Connect with SightOpsAi machine vision engineers to evaluate automated optical inspection, PCB inspection, or surface defect classification for your plant."
         canonicalPath="/contact"
       />
 
@@ -49,7 +49,7 @@ export function ContactPage() {
             {/* Direct Contact Card */}
             <div className="hover-card-panel bg-white/95 backdrop-blur-md rounded-2xl border border-white/30 p-6 sm:p-8 shadow-xl space-y-5">
               <h2 className="text-base font-bold text-[#064E52] border-b border-slate-100 pb-3">
-                Laboratory & Head Office
+                Laboratory & Registered Office
               </h2>
 
               <div className="space-y-4 text-xs text-slate-600">
@@ -57,13 +57,10 @@ export function ContactPage() {
                   <MapPin className="w-4 h-4 text-[#087F8C] shrink-0 mt-0.5" />
                   <div>
                     <div className="font-semibold text-slate-800">
-                      {SITE_CONFIG.name} Engineering Lab
+                      Registered Office:
                     </div>
-                    <div className="mt-0.5 text-slate-600">
-                      {SITE_CONFIG.address.line1}, {SITE_CONFIG.address.line2}
-                    </div>
-                    <div className="text-slate-600">
-                      {SITE_CONFIG.address.city}, {SITE_CONFIG.address.state} {SITE_CONFIG.address.postalCode}, {SITE_CONFIG.address.country}
+                    <div className="mt-0.5 text-slate-700 leading-relaxed">
+                      Flat No. L248, Second Floor, KB Ecocity, Phase 1, Kammasandra, Electronic City, Hebbagodi, Bengaluru, Karnataka - 560100
                     </div>
                   </div>
                 </div>
@@ -82,9 +79,27 @@ export function ContactPage() {
                   <Phone className="w-4 h-4 text-[#087F8C] shrink-0" />
                   <div>
                     <div className="text-[11px] text-slate-400">Engineering Desk:</div>
-                    <div className="font-mono font-medium text-slate-800">
-                      {SITE_CONFIG.phone}
-                    </div>
+                    <a
+                      href="tel:+917259171733"
+                      className="font-mono font-medium text-slate-800 hover:text-[#0066FF] transition-colors"
+                    >
+                      +91 72591 71733
+                    </a>
+                  </div>
+                </div>
+
+                <div className="flex items-center gap-3">
+                  <MessageCircle className="w-4 h-4 text-[#25D366] shrink-0" />
+                  <div>
+                    <div className="text-[11px] text-slate-400">WhatsApp Direct:</div>
+                    <a
+                      href={SITE_CONFIG.whatsapp.chatUrl}
+                      target="_blank"
+                      rel="noopener noreferrer"
+                      className="font-mono font-medium text-slate-800 hover:text-[#25D366] transition-colors"
+                    >
+                      {SITE_CONFIG.whatsapp.displayPhone}
+                    </a>
                   </div>
                 </div>
 
