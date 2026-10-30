@@ -8,22 +8,22 @@ export function Footer() {
   return (
     <footer className="bg-[#0B2545]/90 backdrop-blur-md text-white pt-16 pb-12 border-t border-slate-800/80">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-5 gap-10 pb-12 border-b border-white/10">
+        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-10 pb-12 border-b border-white/10">
           {/* Brand & Mission */}
-          <div className="lg:col-span-2 space-y-4">
-            <div className="flex items-center gap-3">
-              <div className="w-10 h-10 rounded-lg overflow-hidden border border-white/20 bg-white p-0.5 shrink-0 flex items-center justify-center">
+          <div className="space-y-4">
+            <div className="flex items-center gap-3.5">
+              <div className="w-14 h-14 sm:w-16 sm:h-16 rounded-xl overflow-hidden border border-white/20 bg-white p-1.5 shrink-0 flex items-center justify-center shadow-sm">
                 <img
                   src={SITE_CONFIG.logo.main}
                   alt={SITE_CONFIG.logo.alt}
-                  className="w-full h-full object-cover"
+                  className="w-full h-full object-contain"
                 />
               </div>
               <div>
-                <span className="text-xl font-extrabold tracking-tight text-white">
+                <span className="text-xl sm:text-2xl font-extrabold tracking-tight text-white">
                   Sight<span className="text-[#00D2FF]">OpsAi</span>
                 </span>
-                <div className="text-[10px] font-mono text-slate-300 tracking-wider uppercase">
+                <div className="text-[10px] font-mono text-slate-300 tracking-wider uppercase mt-0.5">
                   {SITE_CONFIG.tagline}
                 </div>
               </div>
@@ -45,7 +45,7 @@ export function Footer() {
               <div className="flex items-start gap-2.5">
                 <MapPin className="w-4 h-4 text-[#00D2FF] shrink-0 mt-0.5" />
                 <span className="leading-relaxed">
-                  <span className="font-semibold text-white">Registered Office:</span> Flat No. L248, Second Floor, KB Ecocity, Phase 1, Kammasandra, Electronic City, Hebbagodi, Bengaluru, Karnataka - 560100
+                  <span className="font-semibold text-white">Registered Office:</span> {SITE_CONFIG.registeredOffice}
                 </span>
               </div>
               <div className="flex items-center gap-2.5">
@@ -55,10 +55,10 @@ export function Footer() {
               <div className="flex items-center gap-2.5">
                 <Phone className="w-4 h-4 text-[#00D2FF] shrink-0" />
                 <a
-                  href="tel:+917259171733"
+                  href={`tel:${SITE_CONFIG.phoneRaw}`}
                   className="font-mono hover:text-[#00D2FF] transition-colors"
                 >
-                  +91 72591 71733
+                  {SITE_CONFIG.phone}
                 </a>
               </div>
               <div className="flex items-center gap-2.5">
@@ -73,45 +73,6 @@ export function Footer() {
                 </a>
               </div>
             </div>
-          </div>
-
-          {/* Solutions Column */}
-          <div>
-            <div className="text-xs font-semibold uppercase tracking-wider text-[#00D2FF] mb-4 font-mono">
-              Vision Solutions
-            </div>
-            <ul className="space-y-2.5 text-xs text-slate-300">
-              <li>
-                <Link to="/solutions/ai-visual-inspection" className="hover:text-white transition-colors">
-                  AI Visual Inspection
-                </Link>
-              </li>
-              <li>
-                <Link to="/solutions/pcb-aoi" className="hover:text-white transition-colors">
-                  Automated PCB Inspection
-                </Link>
-              </li>
-              <li>
-                <Link to="/solutions/ocr-barcode-inspection" className="hover:text-white transition-colors">
-                  OCR & Barcode Reading
-                </Link>
-              </li>
-              <li>
-                <Link to="/solutions/surface-defect-detection" className="hover:text-white transition-colors">
-                  Surface Defect Detection
-                </Link>
-              </li>
-              <li>
-                <Link to="/solutions/dimensional-measurement" className="hover:text-white transition-colors">
-                  Dimensional Measurement
-                </Link>
-              </li>
-              <li>
-                <Link to="/solutions/custom-machine-vision" className="hover:text-white transition-colors">
-                  Custom Vision Automation
-                </Link>
-              </li>
-            </ul>
           </div>
 
           {/* Consolidated 5 Industries Column */}
@@ -145,18 +106,64 @@ export function Footer() {
                   Pharmaceutical Inspection
                 </Link>
               </li>
+              <li className="pt-2">
+                <Link to="/industries" className="text-[#00D2FF] hover:underline font-semibold flex items-center gap-1">
+                  <span>View All 5 Industries</span>
+                  <ExternalLink className="w-3 h-3" />
+                </Link>
+              </li>
             </ul>
           </div>
 
-          {/* Technologies & Company */}
+          {/* Technologies & Capabilities */}
           <div>
             <div className="text-xs font-semibold uppercase tracking-wider text-[#00D2FF] mb-4 font-mono">
-              Platform & Company
+              Technologies & Vision
             </div>
             <ul className="space-y-2.5 text-xs text-slate-300">
               <li>
                 <Link to="/technologies" className="hover:text-white transition-colors">
-                  Technology Explorer
+                  Deep Learning & Anomaly Segmentation
+                </Link>
+              </li>
+              <li>
+                <Link to="/technologies" className="hover:text-white transition-colors">
+                  Sub-Pixel Telecentric Metrology
+                </Link>
+              </li>
+              <li>
+                <Link to="/technologies" className="hover:text-white transition-colors">
+                  Industrial Optics & Strobe Lighting
+                </Link>
+              </li>
+              <li>
+                <Link to="/technologies" className="hover:text-white transition-colors">
+                  Edge AI & Jetson Accelerator IPCs
+                </Link>
+              </li>
+              <li>
+                <Link to="/technologies" className="hover:text-white transition-colors">
+                  Deterministic PLC & Robot Handshakes
+                </Link>
+              </li>
+              <li className="pt-2">
+                <Link to="/technologies" className="text-[#00D2FF] hover:underline font-semibold flex items-center gap-1">
+                  <span>Explore Technology Stack</span>
+                  <ExternalLink className="w-3 h-3" />
+                </Link>
+              </li>
+            </ul>
+          </div>
+
+          {/* Platform & Navigation */}
+          <div>
+            <div className="text-xs font-semibold uppercase tracking-wider text-[#00D2FF] mb-4 font-mono">
+              Navigation & Company
+            </div>
+            <ul className="space-y-2.5 text-xs text-slate-300">
+              <li>
+                <Link to="/" className="hover:text-white transition-colors">
+                  Home
                 </Link>
               </li>
               <li>
@@ -166,7 +173,7 @@ export function Footer() {
               </li>
               <li>
                 <Link to="/resources" className="hover:text-white transition-colors">
-                  Knowledge Centre
+                  Knowledge Centre & Guides
                 </Link>
               </li>
               <li>
@@ -178,17 +185,6 @@ export function Footer() {
                 <Link to="/contact" className="hover:text-white transition-colors">
                   Contact & Consultation
                 </Link>
-              </li>
-              <li>
-                <a
-                  href="/sitemap.xml"
-                  target="_blank"
-                  rel="noopener noreferrer"
-                  className="hover:text-white transition-colors inline-flex items-center gap-1"
-                >
-                  <span>XML Sitemap</span>
-                  <ExternalLink className="w-3 h-3 text-slate-400" />
-                </a>
               </li>
               <li className="pt-2 text-[11px] text-slate-400">
                 <span>LinkedIn Company Page: </span>

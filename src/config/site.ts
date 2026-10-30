@@ -29,7 +29,7 @@ export const SITE_CONFIG = {
 
   // Approved Brand Logo Assets
   logo: {
-    main: "/assets/branding/sightops-logo.jpeg",
+    main: "/assets/branding/sightops-logo.png",
     alt: "SightOpsAi - See Better. Inspect Smarter. Think Ahead.",
   },
 
@@ -99,42 +99,6 @@ export const NAVIGATION_ITEMS: NavItem[] = [
   {
     title: "Home",
     href: "/",
-  },
-  {
-    title: "Solutions",
-    href: "/solutions",
-    children: [
-      {
-        title: "AI-Based Visual Inspection",
-        href: "/solutions/ai-visual-inspection",
-        description: "Deep learning models for complex defect detection and classification on irregular surfaces.",
-      },
-      {
-        title: "Automated PCB Inspection (AOI)",
-        href: "/solutions/pcb-aoi",
-        description: "High-speed SMT verification, missing component checks, and solder fillet inspection.",
-      },
-      {
-        title: "OCR & Barcode Inspection",
-        href: "/solutions/ocr-barcode-inspection",
-        description: "Reliable reading of 1D/2D DataMatrix codes, lot codes, and expiration dates at line speed.",
-      },
-      {
-        title: "Surface Defect Detection",
-        href: "/solutions/surface-defect-detection",
-        description: "Identifying scratches, dents, porosity, and tool marks on metal and plastic parts.",
-      },
-      {
-        title: "Dimensional Measurement",
-        href: "/solutions/dimensional-measurement",
-        description: "Sub-pixel telecentric optical metrology for critical tolerances and geometric verification.",
-      },
-      {
-        title: "Custom Machine Vision Automation",
-        href: "/solutions/custom-machine-vision",
-        description: "End-to-end engineered vision stations integrated with factory PLCs, robotics, and MES.",
-      },
-    ],
   },
   {
     title: "Industries",

@@ -7,9 +7,9 @@ import { Breadcrumbs } from '../components/Breadcrumbs.tsx';
 
 export function IndustriesPage() {
   return (
-    <div className="py-12 bg-transparent min-h-screen">
+    <div className="py-8 bg-transparent min-h-screen">
       <SeoHead
-        title="Manufacturing Industries Served | SightOpsAi"
+        title="Industrial Vision Solutions | 5 Core Manufacturing Sectors | SightOpsAi"
         description="Explore SightOpsAi machine vision systems across 5 core sectors: Automotive, Electronics & PCB, Food & Packaging, Logistics, and Pharmaceuticals."
         canonicalPath="/industries"
       />
@@ -18,30 +18,30 @@ export function IndustriesPage() {
         <Breadcrumbs items={[{ name: 'Industries', path: '/industries' }]} />
 
         {/* Header */}
-        <div className="space-y-4 mb-10 max-w-3xl">
+        <div className="space-y-3 mb-8 max-w-3xl">
           <div className="text-xs font-semibold text-[#00D2FF] font-mono uppercase tracking-wider">
-            Sector Solutions
+            Sector Overview
           </div>
-          <h1 className="text-3xl sm:text-4xl font-extrabold text-white drop-shadow-sm tracking-tight">
-            5 Core Manufacturing Industry Sectors
+          <h1 className="text-2xl sm:text-3xl lg:text-4xl font-extrabold text-white drop-shadow-sm tracking-tight">
+            Industrial Vision Solutions
           </h1>
-          <p className="text-sm sm:text-base text-slate-200 leading-relaxed">
-            Industrial inspection requirements vary radically by manufacturing discipline. SightOpsAi designs vision stations engineered for the physical, optical, and regulatory demands of each sector.
+          <p className="text-sm text-slate-200 leading-relaxed">
+            Engineered optical inspection and automated vision stations designed for 5 core manufacturing sectors.
           </p>
         </div>
 
         {/* Interactive Industry Transition Explorer Widget */}
-        <div className="mb-16">
+        <div className="mb-8">
           <InteractiveIndustryExplorer />
         </div>
 
         {/* In-Depth Sector Cards */}
-        <div className="space-y-3 mb-8">
+        <div className="space-y-2 mb-6">
           <div className="text-xs font-mono font-bold text-[#00D2FF] uppercase bg-slate-900/60 backdrop-blur-sm px-3 py-1 rounded-full border border-white/10 w-fit">
-            Sector Profiles & Inspection Points
+            Sector Specifications
           </div>
           <h2 className="text-xl sm:text-2xl font-bold text-white drop-shadow-sm">
-            Comprehensive Industry Breakdown
+            Comprehensive Sector Breakdown
           </h2>
         </div>
 
@@ -109,13 +109,13 @@ export function IndustriesPage() {
         </div>
 
         {/* Transparency Box */}
-        <div className="hover-card-panel mt-16 bg-white/95 backdrop-blur-md p-6 rounded-xl border border-white/30 text-xs text-slate-600 space-y-2 shadow-md">
+        <div className="hover-card-panel mt-8 bg-white/95 backdrop-blur-md p-5 rounded-xl border border-white/30 text-xs text-slate-600 space-y-1.5 shadow-md">
           <div className="flex items-center gap-2 font-bold text-[#0066FF] text-sm">
             <ShieldCheck className="w-4 h-4 text-[#0066FF]" />
             <span>Industrial Engineering Integrity</span>
           </div>
           <p className="leading-relaxed">
-            SightOpsAi presents verified engineering principles and optical testing methodologies. We do not claim client names, proprietary installations, or unverified performance figures without formal contractual authorization.
+            SightOpsAi presents verified engineering principles and optical testing methodologies. All inspection capabilities are grounded in physical optics and verified feasibility trials.
           </p>
         </div>
       </div>

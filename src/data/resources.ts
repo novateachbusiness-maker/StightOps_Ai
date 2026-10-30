@@ -12,6 +12,7 @@ export interface ResourceArticle {
   datePublished: string;
   summary: string;
   author: string;
+  image: string;
   content: string;
   faqs?: { question: string; answer: string }[];
   tags: string[];
@@ -26,6 +27,7 @@ export const RESOURCE_ARTICLES: ResourceArticle[] = [
     readingTime: "6 min read",
     datePublished: "2026-03-15",
     author: "SightOpsAi Vision Engineering",
+    image: "/assets/resources/ai-inspection.jpg",
     summary:
       "A technical comparison of classical algorithmic vision (edge detection, blob analysis, template matching) versus convolutional and transformer neural networks in manufacturing environments.",
     tags: ["Machine Vision", "Deep Learning", "Edge AI", "OpenCV", "Algorithms"],
@@ -85,6 +87,7 @@ The most reliable industrial vision stations combine both paradigms:
     readingTime: "7 min read",
     datePublished: "2026-02-28",
     author: "SightOpsAi Optical Lab",
+    image: "/assets/resources/optics-lighting.jpg",
     summary:
       "Why lighting represents 80% of vision system success. An engineering breakdown of darkfield, brightfield, coaxial, dome, and polarized illumination geometries.",
     tags: ["Optics", "Lighting", "Machine Vision", "Telecentric", "Polarization"],
@@ -138,6 +141,7 @@ Clear cellophane wrappers, plastic bottles, and shiny printed labels cause inten
     readingTime: "5 min read",
     datePublished: "2026-01-20",
     author: "SightOpsAi Electronics Division",
+    image: "/assets/resources/pcb-inspection.jpg",
     summary:
       "How multi-tier RGB lighting and shape-from-shading verify solder fillet coplanarity, solder bridges, and wetting angles according to IPC-A-610 Class 3 standards.",
     tags: ["PCB", "SMT", "AOI", "IPC-A-610", "Soldering"],
@@ -171,6 +175,7 @@ This transforms complex 3D physical curvature into unambiguous 2D color bands, a
     readingTime: "6 min read",
     datePublished: "2025-12-10",
     author: "SightOpsAi Traceability Systems",
+    image: "/assets/resources/ocr-barcode-dpm.jpg",
     summary:
       "Techniques for decoding low-contrast 2D DataMatrix codes etched directly onto cast iron, aluminum, and surgical instruments.",
     tags: ["DPM", "DataMatrix", "Traceability", "Laser Etch", "Dot-Peen"],
@@ -200,6 +205,7 @@ Adhesive paper labels cannot survive high-temperature engine bays, ultrasonic ch
     readingTime: "5 min read",
     datePublished: "2025-11-05",
     author: "SightOpsAi Automation Team",
+    image: "/assets/resources/spc-automation.jpg",
     summary:
       "Transforming vision inspection from an end-of-line reject gate into an active feedback loop that prevents scrap before it occurs.",
     tags: ["SPC", "Industry 4.0", "Closed Loop", "Quality Control", "MES"],

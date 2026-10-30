@@ -1,16 +1,41 @@
 import { useState, useEffect } from 'react';
 import { Link } from 'react-router-dom';
-import { ArrowRight, Eye, Cpu, CheckCircle2, ChevronRight, Layers, Sparkles, Binary, Sliders, Shield, Play, Pause } from 'lucide-react';
+import {
+  ArrowRight,
+  Eye,
+  Cpu,
+  CheckCircle2,
+  ChevronRight,
+  ChevronDown,
+  Layers,
+  Sparkles,
+  Binary,
+  Sliders,
+  Shield,
+  Play,
+  Pause,
+  ShieldCheck,
+  Clock,
+  Gauge,
+  AlertTriangle,
+  TrendingUp,
+  Activity,
+  Factory,
+  MapPin,
+  Phone,
+  MessageCircle,
+  ExternalLink,
+} from 'lucide-react';
 import { SITE_CONFIG } from '../config/site.ts';
-import { SOLUTIONS } from '../data/solutions.ts';
 import { INDUSTRIES } from '../data/industries.ts';
 import { APPLICATIONS } from '../data/applications.ts';
 import { RESOURCE_ARTICLES } from '../data/resources.ts';
 import { InteractiveBoundingBoxViewer } from '../components/InteractiveBoundingBoxViewer.tsx';
 import { InteractiveIndustryExplorer } from '../components/InteractiveIndustryExplorer.tsx';
-import { InteractiveTechnologyExplorer } from '../components/InteractiveTechnologyExplorer.tsx';
 import { SeoHead } from '../components/SeoHead.tsx';
 import { generateOrganizationSchema } from '../utils/seo.ts';
+import factoryMonitorImg from '../assets/images/clean_engineer_monitor_1793174576152.jpg';
+import factoryEdgeIpcImg from '../assets/images/clean_edge_ipc_1793174610127.jpg';
 
 interface HeroSlide {
   id: string;
@@ -94,42 +119,42 @@ export function HomePage() {
     setVideoErrors((prev) => ({ ...prev, [slideId]: true }));
   };
 
-  const coreSolutionCards = [
+  const factoryAdvantages = [
     {
-      title: "AI-Based Visual Inspection Systems",
-      description: "Deep learning models for complex defect detection on irregular cast, brushed, or textured surfaces.",
-      href: "/solutions/ai-visual-inspection",
-      tag: "AI Inspection",
+      icon: ShieldCheck,
+      title: "Automated Quality Inspection",
+      description: "100% in-line optical inspection integrated into conveyor and robotic cells.",
+      metric: "100% In-Line",
     },
     {
-      title: "Automated PCB Inspection (AOI)",
-      description: "High-speed SMT verification, component presence/absence, solder fillet angles, and polarity checks.",
-      href: "/solutions/pcb-aoi",
-      tag: "Electronics AOI",
+      icon: Clock,
+      title: "Reduced Manual Effort",
+      description: "Eliminates operator fatigue, subjective variance, and quality bottlenecks.",
+      metric: "Zero Fatigue",
     },
     {
-      title: "Industrial Machine Vision",
-      description: "Deterministic edge-detection, sub-pixel metrology, and blob analysis for high-cadence production lines.",
-      href: "/technologies",
-      tag: "Deterministic Vision",
+      icon: Gauge,
+      title: "Consistent Accuracy",
+      description: "Sub-pixel repeatability across all shifts with zero human subjectivity.",
+      metric: "Sub-Micron",
     },
     {
-      title: "OCR & Barcode Recognition",
-      description: "High-speed reading of 1D/2D DataMatrix codes, serialized alphanumeric text, and DPM laser markings.",
-      href: "/solutions/ocr-barcode-inspection",
-      tag: "Traceability",
+      icon: AlertTriangle,
+      title: "Early Defect Detection",
+      description: "Catches non-conforming parts immediately before downstream value-add steps.",
+      metric: "Immediate Reject",
     },
     {
-      title: "Surface Defect Detection & Classification",
-      description: "Classifying surface scratches, porosity pits, and tool chatter in under 30ms on edge GPUs.",
-      href: "/solutions/surface-defect-detection",
-      tag: "Quality Control",
+      icon: TrendingUp,
+      title: "Higher Production Yield",
+      description: "Maximizes line yield and slashes scrap costs with continuous quality control.",
+      metric: "Higher Yield",
     },
     {
-      title: "Dimensional Measurement & Metrology",
-      description: "Telecentric optical metrology with sub-pixel edge detection for micron-level tolerance verification.",
-      href: "/solutions/dimensional-measurement",
-      tag: "Metrology",
+      icon: Activity,
+      title: "Real-Time Telemetry",
+      description: "Serialized defect logging, drift alerts, and MES/SCADA integration.",
+      metric: "Full MES Audit",
     },
   ];
 
@@ -176,10 +201,12 @@ export function HomePage() {
           <div className="grid grid-cols-1 lg:grid-cols-12 gap-12 items-center">
             {/* Left Headline & Content (7 cols) */}
             <div className="lg:col-span-7 space-y-6">
-              <div className="inline-flex items-center gap-2 text-xs font-semibold text-[#00D2FF]">
-                <span className="font-mono tracking-wider uppercase">SightOpsAi · Vision Platform</span>
-                <span aria-hidden="true">·</span>
-                <span className="text-slate-300">See Better. Inspect Smarter. Think Ahead.</span>
+              {/* Highlighted Official Company Tagline */}
+              <div className="inline-flex items-center gap-2.5 px-4 py-2 rounded-full bg-gradient-to-r from-blue-950/90 via-slate-900/95 to-blue-950/90 border border-[#00D2FF]/40 shadow-lg shadow-[#00D2FF]/10 backdrop-blur-md">
+                <span className="w-2.5 h-2.5 rounded-full bg-[#00D2FF] animate-pulse shadow-sm shadow-[#00D2FF]" />
+                <span className="text-xs sm:text-sm font-extrabold tracking-widest text-[#00D2FF] uppercase font-mono drop-shadow">
+                  SEE BETTER. INSPECT SMARTER. THINK AHEAD.
+                </span>
               </div>
 
               <h1 className="text-3xl sm:text-4xl lg:text-5xl font-extrabold text-white tracking-tight leading-[1.15] text-balance">
@@ -193,10 +220,10 @@ export function HomePage() {
               {/* CTAs */}
               <div className="pt-2 flex flex-col sm:flex-row items-stretch sm:items-center gap-4">
                 <Link
-                  to="/solutions"
+                  to="/applications"
                   className="inline-flex items-center justify-center gap-2 px-6 py-3.5 text-xs font-bold text-white bg-[#0066FF] hover:bg-[#0052cc] rounded-lg transition-colors shadow-md text-center"
                 >
-                  <span>Explore Our Solutions</span>
+                  <span>Explore Applications & Sectors</span>
                   <ArrowRight className="w-4 h-4" />
                 </Link>
 
@@ -304,11 +331,31 @@ export function HomePage() {
               </div>
             </div>
           </div>
+
+          {/* Prominent Scroll to Explore Indicator Button */}
+          <div className="mt-10 sm:mt-12 flex justify-center">
+            <button
+              type="button"
+              onClick={() => {
+                const target = document.getElementById('inspection-explorer');
+                if (target) {
+                  target.scrollIntoView({ behavior: 'smooth' });
+                }
+              }}
+              className="group inline-flex items-center gap-2.5 px-6 py-3 rounded-full bg-slate-900/80 hover:bg-slate-900 text-slate-200 hover:text-white border border-white/20 hover:border-[#00D2FF]/60 shadow-lg shadow-black/40 backdrop-blur-md transition-all cursor-pointer"
+              aria-label="Scroll down to inspect vision systems"
+            >
+              <span className="text-xs font-mono font-bold tracking-wider uppercase text-slate-200 group-hover:text-[#00D2FF]">
+                Scroll to Explore Inspection Systems
+              </span>
+              <ChevronDown className="w-4 h-4 text-[#00D2FF] animate-bounce" />
+            </button>
+          </div>
         </div>
       </section>
 
       {/* Section 3: Interactive Inspection System Experience */}
-      <section className="py-20 bg-transparent border-b border-white/10">
+      <section id="inspection-explorer" className="py-20 bg-transparent border-b border-white/10 scroll-mt-24">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="space-y-3 mb-10 text-center max-w-3xl mx-auto">
             <div className="inline-flex items-center gap-2 text-xs font-semibold text-[#00D2FF] font-mono uppercase bg-slate-900/60 backdrop-blur-sm px-3 py-1 rounded-full border border-white/10">
@@ -328,17 +375,17 @@ export function HomePage() {
       </section>
 
       {/* Section 5: Industry Navigation Transition & Consolidated 5 Industries */}
-      <section className="py-20 bg-transparent border-b border-white/10">
+      <section className="py-12 bg-transparent border-b border-white/10">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-          <div className="space-y-3 mb-10 max-w-3xl">
+          <div className="space-y-2 mb-6 max-w-3xl">
             <div className="text-xs font-semibold text-[#00D2FF] uppercase tracking-wider font-mono bg-slate-900/60 backdrop-blur-sm px-3 py-1 rounded-full border border-white/10 w-fit">
               Consolidated Sector Explorer
             </div>
-            <h2 className="text-2xl sm:text-3xl font-bold text-white drop-shadow-sm">
+            <h2 className="text-xl sm:text-2xl font-bold text-white drop-shadow-sm">
               Explore Our 5 Core Manufacturing Sectors
             </h2>
             <p className="text-sm text-slate-300">
-              Use the horizontal navigation buttons below to explore inspection challenges, proposed vision solutions, and expected business benefits across key manufacturing industries.
+              Select a sector to see how SightOpsAi vision systems inspect across key manufacturing industries.
             </p>
           </div>
 
@@ -346,104 +393,148 @@ export function HomePage() {
         </div>
       </section>
 
-      {/* Section 6 & 7: Redesigned Interactive Technology Explorer */}
-      <section className="py-20 bg-transparent border-b border-white/10">
+      {/* Factory Advantages & Operational Impact Section — compact */}
+      <section className="py-10 bg-transparent border-b border-white/10">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-          <div className="space-y-3 mb-10 max-w-3xl">
-            <div className="text-xs font-semibold text-[#00D2FF] uppercase tracking-wider font-mono bg-slate-900/60 backdrop-blur-sm px-3 py-1 rounded-full border border-white/10 w-fit">
-              Technology Explorer
+          <div className="flex flex-col md:flex-row md:items-end justify-between gap-4 mb-8">
+            <div className="space-y-2 max-w-3xl">
+              <div className="inline-flex items-center gap-2 text-xs font-semibold text-[#00D2FF] uppercase tracking-wider font-mono bg-slate-900/60 backdrop-blur-sm px-3 py-1 rounded-full border border-white/10 w-fit">
+                <Factory className="w-4 h-4 text-[#00D2FF]" />
+                <span>Smart Manufacturing Advantages</span>
+              </div>
+              <h2 className="text-xl sm:text-2xl font-bold text-white drop-shadow-sm">
+                Factory Advantages & Operational Impact
+              </h2>
+              <p className="text-sm text-slate-300">
+                Vision systems that transform production from passive sorting into active defect prevention and higher yield.
+              </p>
             </div>
-            <h2 className="text-2xl sm:text-3xl font-bold text-white drop-shadow-sm">
-              Interactive Machine Vision & AI Technology Stack
-            </h2>
-            <p className="text-sm text-slate-300">
-              Explore our core capabilities: deep learning, object detection, OCR & barcode decoding, precision metrology, industrial cameras, and on-premises edge model deployment.
-            </p>
-          </div>
-
-          <InteractiveTechnologyExplorer />
-        </div>
-      </section>
-
-      {/* Core Solutions Bento Grid */}
-      <section className="py-20 bg-transparent border-b border-white/10">
-        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-          <div className="space-y-3 mb-12">
-            <div className="text-xs font-semibold text-[#00D2FF] uppercase tracking-wider font-mono bg-slate-900/60 backdrop-blur-sm px-3 py-1 rounded-full border border-white/10 w-fit">
-              Core Capabilities
-            </div>
-            <h2 className="text-2xl sm:text-3xl font-bold text-white drop-shadow-sm">
-              Industrial Vision Solutions for Manufacturing Lines
-            </h2>
-            <p className="text-sm text-slate-300 max-w-2xl">
-              From sub-micron electronics assembly to heavy automotive forgings, our inspection solutions are engineered to prevent defects from escaping to downstream customers.
-            </p>
-          </div>
-
-          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
-            {coreSolutionCards.map((card) => (
-              <Link
-                key={card.title}
-                to={card.href}
-                className="hover-card-interactive group p-6 rounded-xl border border-white/30 bg-white/95 backdrop-blur-md shadow-md flex flex-col justify-between"
-              >
-                <div className="space-y-3">
-                  <div className="text-xs font-mono font-semibold text-[#0066FF]">
-                    {card.tag}
-                  </div>
-                  <h3 className="text-base font-bold text-slate-900 group-hover:text-[#0066FF] transition-colors">
-                    {card.title}
-                  </h3>
-                  <p className="text-xs text-slate-600 leading-relaxed">
-                    {card.description}
-                  </p>
-                </div>
-                <div className="pt-4 mt-4 border-t border-slate-200 flex items-center justify-between text-xs font-semibold text-slate-800 group-hover:text-[#0066FF]">
-                  <span>Technical Details</span>
-                  <ChevronRight className="w-4 h-4 transition-transform group-hover:translate-x-1" />
-                </div>
-              </Link>
-            ))}
-          </div>
-
-          <div className="mt-10 text-center">
             <Link
-              to="/solutions"
-              className="inline-flex items-center gap-2 text-xs font-bold text-[#00D2FF] hover:underline bg-slate-900/60 backdrop-blur-sm px-4 py-2 rounded-lg border border-white/15"
+              to="/technologies"
+              className="inline-flex items-center gap-2 text-xs font-bold text-[#00D2FF] hover:underline bg-slate-900/60 backdrop-blur-sm px-4 py-2.5 rounded-lg border border-white/15 shrink-0"
             >
-              <span>View In-Depth Specifications for All Solutions</span>
+              <span>Explore Complete Technology Stack</span>
               <ArrowRight className="w-3.5 h-3.5" />
             </Link>
           </div>
+
+          {/* 2 Featured Visual Highlight Spotlights */}
+          <div className="grid grid-cols-1 lg:grid-cols-2 gap-5 mb-6">
+            {/* Visual Card 1: In-Line Automation Workstation */}
+            <div className="rounded-xl overflow-hidden border border-white/30 bg-white/95 backdrop-blur-md shadow-xl flex flex-col group">
+              <div className="relative h-44 sm:h-52 overflow-hidden bg-slate-950">
+                <img
+                  src={factoryMonitorImg}
+                  alt="Industrial Vision Monitoring Station"
+                  className="w-full h-full object-cover transition-transform duration-500 group-hover:scale-105"
+                  loading="lazy"
+                />
+                <div className="absolute top-2.5 left-2.5 bg-slate-900/80 backdrop-blur-sm px-2.5 py-0.5 rounded-lg text-xs font-mono font-semibold text-[#00D2FF] border border-white/15">
+                  100% In-Line Inspection
+                </div>
+              </div>
+              <div className="p-4 space-y-2 flex-1 flex flex-col justify-between">
+                <div>
+                  <h3 className="text-base font-bold text-slate-900">
+                    Autonomous Inspection Stations
+                  </h3>
+                  <p className="text-xs text-slate-600 mt-1 leading-relaxed">
+                    Continuous optical verification at full line cadence. Eliminates operator fatigue and downstream escapes.
+                  </p>
+                </div>
+                <div className="pt-2 border-t border-slate-100 flex items-center justify-between text-xs text-slate-500 font-mono">
+                  <span>Latency: &lt; 25ms</span>
+                  <span className="text-[#0066FF] font-semibold">Zero Fatigue</span>
+                </div>
+              </div>
+            </div>
+
+            {/* Visual Card 2: Edge Computing & PLC Integration */}
+            <div className="rounded-xl overflow-hidden border border-white/30 bg-white/95 backdrop-blur-md shadow-xl flex flex-col group">
+              <div className="relative h-44 sm:h-52 overflow-hidden bg-slate-950">
+                <img
+                  src={factoryEdgeIpcImg}
+                  alt="Edge IPC and PLC Handshake Controller"
+                  className="w-full h-full object-cover transition-transform duration-500 group-hover:scale-105"
+                  loading="lazy"
+                />
+                <div className="absolute top-2.5 left-2.5 bg-slate-900/80 backdrop-blur-sm px-2.5 py-0.5 rounded-lg text-xs font-mono font-semibold text-[#00D2FF] border border-white/15">
+                  Deterministic Edge Control
+                </div>
+              </div>
+              <div className="p-4 space-y-2 flex-1 flex flex-col justify-between">
+                <div>
+                  <h3 className="text-base font-bold text-slate-900">
+                    Real-Time PLC & MES Telemetry
+                  </h3>
+                  <p className="text-xs text-slate-600 mt-1 leading-relaxed">
+                    Direct 24V discrete reject triggers, closed-loop drift compensation, and serialized trace records.
+                  </p>
+                </div>
+                <div className="pt-2 border-t border-slate-100 flex items-center justify-between text-xs text-slate-500 font-mono">
+                  <span>Handshake: 24V Opto</span>
+                  <span className="text-[#0066FF] font-semibold">Closed-Loop</span>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          {/* 6 Core Factory Benefits Grid */}
+          <div className="grid grid-cols-2 md:grid-cols-3 gap-3">
+            {factoryAdvantages.map((adv) => {
+              const Icon = adv.icon;
+              return (
+                <div
+                  key={adv.title}
+                  className="hover-card-panel p-4 rounded-xl border border-white/30 bg-white/95 backdrop-blur-md shadow-md space-y-2 flex flex-col justify-between"
+                >
+                  <div className="space-y-1.5">
+                    <div className="flex items-center justify-between">
+                      <div className="w-8 h-8 rounded-lg bg-blue-50 text-[#0066FF] flex items-center justify-center">
+                        <Icon className="w-4 h-4" />
+                      </div>
+                      <span className="text-[10px] font-mono font-semibold px-2 py-0.5 rounded bg-blue-100 text-[#0066FF]">
+                        {adv.metric}
+                      </span>
+                    </div>
+                    <h3 className="text-xs sm:text-sm font-bold text-slate-900">{adv.title}</h3>
+                    <p className="text-xs text-slate-600 leading-relaxed">
+                      {adv.description}
+                    </p>
+                  </div>
+                </div>
+              );
+            })}
+          </div>
         </div>
       </section>
 
-      {/* 5-Stage Engineering Workflow */}
-      <section className="py-20 bg-transparent border-b border-white/10">
+      {/* 5-Stage Engineering Workflow — compact */}
+      <section className="py-10 bg-transparent border-b border-white/10">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-          <div className="space-y-3 mb-14">
+          <div className="space-y-2 mb-6">
             <div className="text-xs font-semibold text-[#00D2FF] uppercase tracking-wider font-mono bg-slate-900/60 backdrop-blur-sm px-3 py-1 rounded-full border border-white/10 w-fit">
               System Engineering
             </div>
-            <h2 className="text-2xl sm:text-3xl font-bold text-white drop-shadow-sm">
-              How Our Industrial Vision Systems Work
+            <h2 className="text-xl sm:text-2xl font-bold text-white drop-shadow-sm">
+              How Our Vision Systems Work
             </h2>
             <p className="text-sm text-slate-300 max-w-2xl">
-              Reliable machine vision combines optics, microsecond strobe timing, edge inference, and deterministic PLC handshakes.
+              From image acquisition through deterministic rejection — five engineered stages.
             </p>
           </div>
 
-          <div className="grid grid-cols-1 md:grid-cols-5 gap-6">
+          <div className="grid grid-cols-2 md:grid-cols-5 gap-3">
             {workflowSteps.map((ws) => (
               <div
                 key={ws.step}
-                className="hover-card-panel p-5 rounded-xl border border-white/30 bg-white/95 backdrop-blur-md space-y-3 shadow-md"
+                className="hover-card-panel p-3.5 rounded-xl border border-white/30 bg-white/95 backdrop-blur-md space-y-1.5 shadow-md"
               >
-                <div className="text-2xl font-black font-mono text-[#0066FF]">
+                <div className="text-lg font-black font-mono text-[#0066FF]">
                   {ws.step}
                 </div>
-                <h3 className="text-sm font-bold text-slate-900">{ws.title}</h3>
-                <p className="text-xs text-slate-600 leading-relaxed">
+                <h3 className="text-xs font-bold text-slate-900">{ws.title}</h3>
+                <p className="text-[11px] text-slate-600 leading-relaxed line-clamp-3">
                   {ws.description}
                 </p>
               </div>
@@ -507,7 +598,7 @@ export function HomePage() {
       </section>
 
       {/* Consultation Action Banner */}
-      <section className="py-20 bg-slate-950/60 backdrop-blur-sm text-white border-t border-white/10">
+      <section className="py-16 bg-slate-950/60 backdrop-blur-sm text-white border-t border-white/10">
         <div className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 text-center space-y-6">
           <div className="inline-flex items-center gap-2 text-xs font-semibold text-[#00D2FF] font-mono uppercase tracking-wider">
             Optical Feasibility Testing
@@ -531,6 +622,126 @@ export function HomePage() {
             >
               Our Engineering Approach
             </Link>
+          </div>
+        </div>
+      </section>
+
+      {/* Our Office & Interactive Location Map Section */}
+      <section className="py-12 bg-white/95 backdrop-blur-md border-t border-slate-200 text-slate-900">
+        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+          <div className="bg-white rounded-2xl border border-slate-200/80 p-6 sm:p-10 shadow-lg">
+            <div className="grid grid-cols-1 lg:grid-cols-12 gap-8 lg:gap-12 items-center">
+              {/* Left Column: Office Information (5 cols) */}
+              <div className="lg:col-span-5 space-y-6">
+                <div>
+                  <div className="inline-flex items-center gap-2 text-xs font-mono font-bold text-[#0066FF] uppercase tracking-wider mb-2">
+                    <span>Headquarters</span>
+                    <span aria-hidden="true">·</span>
+                    <span>Bengaluru, India</span>
+                  </div>
+                  <h2 className="text-2xl sm:text-3xl font-extrabold text-slate-900 tracking-tight">
+                    Our Office
+                  </h2>
+                  <p className="text-sm text-slate-600 mt-1">
+                    Visit our laboratory or connect directly with our engineering team in Bengaluru.
+                  </p>
+                </div>
+
+                <div className="space-y-4 text-xs sm:text-sm text-slate-700">
+                  {/* Location & Address */}
+                  <div className="flex items-start gap-3">
+                    <div className="w-8 h-8 rounded-lg bg-blue-50 text-[#0066FF] flex items-center justify-center shrink-0 mt-0.5">
+                      <MapPin className="w-4 h-4" />
+                    </div>
+                    <div>
+                      <div className="font-bold text-slate-900 text-sm">
+                        Registered Office Address
+                      </div>
+                      <div className="text-xs text-slate-500 font-medium">Location: Bengaluru</div>
+                      <p className="text-xs text-slate-600 leading-relaxed mt-1">
+                        Flat No. L248, Second Floor, KB Ecocity, Phase 1, Kammasandra, Electronic City, Hebbagodi, Bengaluru, Karnataka - 560100
+                      </p>
+                    </div>
+                  </div>
+
+                  {/* Phone Contact */}
+                  <div className="flex items-center gap-3">
+                    <div className="w-8 h-8 rounded-lg bg-blue-50 text-[#0066FF] flex items-center justify-center shrink-0">
+                      <Phone className="w-4 h-4" />
+                    </div>
+                    <div>
+                      <div className="text-xs text-slate-500 font-medium">Direct Engineering Desk:</div>
+                      <a
+                        href="tel:+917259171733"
+                        className="font-mono font-semibold text-slate-900 hover:text-[#0066FF] transition-colors text-sm"
+                      >
+                        +91 72591 71733
+                      </a>
+                    </div>
+                  </div>
+
+                  {/* WhatsApp Contact */}
+                  <div className="flex items-center gap-3">
+                    <div className="w-8 h-8 rounded-lg bg-emerald-50 text-[#25D366] flex items-center justify-center shrink-0">
+                      <MessageCircle className="w-4 h-4" />
+                    </div>
+                    <div>
+                      <div className="text-xs text-slate-500 font-medium">WhatsApp Support:</div>
+                      <a
+                        href="https://wa.me/917259171733"
+                        target="_blank"
+                        rel="noopener noreferrer"
+                        className="font-mono font-semibold text-slate-900 hover:text-[#25D366] transition-colors text-sm"
+                      >
+                        +91 72591 71733
+                      </a>
+                    </div>
+                  </div>
+                </div>
+
+                <div className="pt-2">
+                  <a
+                    href="https://www.google.com/maps/search/?api=1&query=KB+Ecocity+Phase+1,+Kammasandra,+Electronic+City,+Hebbagodi,+Bengaluru,+Karnataka+560100"
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    className="inline-flex items-center gap-2 px-5 py-2.5 text-xs font-bold text-white bg-[#0066FF] hover:bg-[#0052cc] rounded-lg transition-colors shadow-sm"
+                  >
+                    <span>Open in Google Maps</span>
+                    <ExternalLink className="w-3.5 h-3.5" />
+                  </a>
+                </div>
+              </div>
+
+              {/* Right Column: Embedded Interactive Map (7 cols) */}
+              <div className="lg:col-span-7">
+                <div className="relative rounded-2xl overflow-hidden border border-slate-200 shadow-md bg-slate-100">
+                  <iframe
+                    title="SightOpsAi Registered Office Map"
+                    src="https://maps.google.com/maps?q=KB+Ecocity+Phase+1+Kammasandra+Electronic+City+Hebbagodi+Bengaluru+Karnataka+560100&output=embed"
+                    className="w-full h-72 sm:h-84 md:h-96"
+                    style={{ border: 0 }}
+                    allowFullScreen
+                    loading="lazy"
+                    referrerPolicy="no-referrer-when-downgrade"
+                  />
+                  <div className="bg-slate-50 border-t border-slate-200 px-4 py-2.5 flex items-center justify-between text-xs text-slate-600">
+                    <span className="flex items-center gap-1.5 font-medium">
+                      <MapPin className="w-3.5 h-3.5 text-[#0066FF]" />
+                      <span>KB Ecocity, Electronic City Phase 1, Bengaluru</span>
+                    </span>
+                    <a
+                      href="https://www.google.com/maps/search/?api=1&query=KB+Ecocity+Phase+1,+Kammasandra,+Electronic+City,+Hebbagodi,+Bengaluru,+Karnataka+560100"
+                      target="_blank"
+                      rel="noopener noreferrer"
+                      className="text-[#0066FF] hover:underline font-semibold flex items-center gap-1"
+                    >
+                      <span>Directions</span>
+                      <ExternalLink className="w-3 h-3" />
+                    </a>
+                  </div>
+                </div>
+              </div>
+            </div>
           </div>
         </div>
       </section>

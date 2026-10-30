@@ -1,15 +1,25 @@
 import { useState } from 'react';
 import { Link } from 'react-router-dom';
-import { ChevronRight, ArrowRight, CheckCircle2, ShieldAlert, Cpu, Wrench } from 'lucide-react';
-import { INDUSTRIES, Industry } from '../data/industries.ts';
+import { ArrowRight } from 'lucide-react';
+import { INDUSTRIES } from '../data/industries.ts';
+
+const SECTOR_DESCRIPTIONS: Record<string, string> = {
+  'automotive': 'Precision inspection of components, assemblies, and surface defects.',
+  'pcba-electronics': 'PCB inspection, component verification, and OCR.',
+  'food-packaging': 'Product quality, packaging, and label inspection.',
+  'logistics': 'Barcode reading, product identification, and tracking.',
+  'pharmaceuticals': 'Packaging, labeling, and product verification.',
+};
 
 export function InteractiveIndustryExplorer() {
   const [selectedIndex, setSelectedIndex] = useState(0);
   const currentIndustry = INDUSTRIES[selectedIndex];
+  const conciseDesc =
+    SECTOR_DESCRIPTIONS[currentIndustry.slug] ?? currentIndustry.tagline;
 
   return (
     <div className="bg-white/95 backdrop-blur-md rounded-2xl border border-white/30 shadow-xl overflow-hidden">
-      {/* Fixed Horizontal Navigation Buttons with subtle visual connector */}
+      {/* Horizontal tab navigation */}
       <div className="p-3 bg-slate-900 border-b border-slate-800 overflow-x-auto scrollbar-none">
         <div className="flex items-center gap-1.5 min-w-max">
           {INDUSTRIES.map((ind, idx) => {
@@ -28,7 +38,6 @@ export function InteractiveIndustryExplorer() {
                   <span className="font-mono text-[10px] opacity-75">0{idx + 1}</span>
                   <span>{ind.title}</span>
                 </button>
-                {/* Visual Connector between buttons */}
                 {idx < INDUSTRIES.length - 1 && (
                   <div className="w-4 flex items-center justify-center text-slate-600 px-1 select-none">
                     ·
@@ -40,107 +49,50 @@ export function InteractiveIndustryExplorer() {
         </div>
       </div>
 
-      {/* Selected Industry Detail View with subtle smooth fade transition */}
-      <div className="p-6 sm:p-10 transition-opacity duration-300">
-        <div className="grid grid-cols-1 lg:grid-cols-12 gap-8 lg:gap-12 items-center">
-          {/* Left: Content & Challenges (7 cols) */}
-          <div className="lg:col-span-7 space-y-6">
-            <div className="space-y-2">
+      {/* Detail panel — compact */}
+      <div className="p-4 sm:p-6 transition-opacity duration-300">
+        <div className="grid grid-cols-1 lg:grid-cols-12 gap-6 lg:gap-8 items-center">
+          {/* Left: title + one-liner + CTAs */}
+          <div className="lg:col-span-7 space-y-4">
+            <div className="space-y-1.5">
               <div className="flex items-center gap-2 text-xs font-mono font-bold text-[#0066FF] uppercase">
                 <span>Sector Focus</span>
                 <span aria-hidden="true">·</span>
                 <span>0{selectedIndex + 1} of 0{INDUSTRIES.length}</span>
               </div>
-              <h3 className="text-2xl sm:text-3xl font-extrabold text-slate-900 tracking-tight">
+              <h3 className="text-xl font-extrabold text-slate-900 tracking-tight">
                 {currentIndustry.title}
               </h3>
-              <p className="text-sm font-medium text-[#0066FF]">
-                {currentIndustry.tagline}
-              </p>
-              <p className="text-xs sm:text-sm text-slate-600 leading-relaxed">
-                {currentIndustry.heroSummary}
+              <p className="text-sm text-slate-600 leading-relaxed">
+                {conciseDesc}
               </p>
             </div>
 
-            {/* Customer Challenge vs Solution */}
-            <div className="grid grid-cols-1 sm:grid-cols-2 gap-4 pt-2">
-              <div className="hover-card-panel p-4 rounded-xl bg-white border border-slate-200 space-y-2 shadow-xs">
-                <div className="flex items-center gap-2 text-xs font-bold text-slate-800">
-                  <ShieldAlert className="w-4 h-4 text-amber-600 shrink-0" />
-                  <span>The Inspection Challenge</span>
-                </div>
-                <p className="text-xs text-slate-600 leading-relaxed">
-                  {currentIndustry.customerChallenge}
-                </p>
-              </div>
-
-              <div className="hover-card-panel p-4 rounded-xl bg-blue-50/60 border border-blue-200/60 space-y-2 shadow-xs">
-                <div className="flex items-center gap-2 text-xs font-bold text-[#0066FF]">
-                  <Cpu className="w-4 h-4 text-[#0066FF] shrink-0" />
-                  <span>The SightOpsAi Solution</span>
-                </div>
-                <p className="text-xs text-slate-700 leading-relaxed">
-                  {currentIndustry.proposedSolution}
-                </p>
-              </div>
-            </div>
-
-            {/* Expected Business Benefits */}
-            <div className="space-y-2 pt-2">
-              <div className="text-xs font-semibold text-slate-700">Expected Business Benefits:</div>
-              <div className="space-y-1.5 text-xs text-slate-600">
-                {currentIndustry.expectedBenefits.map((benefit, bIdx) => (
-                  <div key={bIdx} className="flex items-start gap-2">
-                    <CheckCircle2 className="w-3.5 h-3.5 text-emerald-600 shrink-0 mt-0.5" />
-                    <span>{benefit}</span>
-                  </div>
-                ))}
-              </div>
-            </div>
-
-            {/* Action buttons */}
-            <div className="pt-4 flex flex-wrap items-center gap-3">
+            <div className="flex flex-wrap items-center gap-3">
               <Link
                 to={`/industries/${currentIndustry.slug}`}
                 className="inline-flex items-center gap-2 px-5 py-2.5 text-xs font-bold text-white bg-[#0066FF] hover:bg-[#0052cc] rounded-lg transition-colors shadow-sm"
               >
-                <span>Explore Full Sector Specs</span>
+                <span>Learn More</span>
                 <ArrowRight className="w-3.5 h-3.5" />
               </Link>
               <Link
                 to={`/contact?industry=${encodeURIComponent(currentIndustry.title)}`}
                 className="inline-flex items-center gap-2 px-5 py-2.5 text-xs font-semibold text-slate-700 hover:text-slate-900 border border-slate-300 rounded-lg bg-white hover:bg-slate-50 transition-colors"
               >
-                <span>Consult on this Industry</span>
+                <span>Get a Quote</span>
               </Link>
             </div>
           </div>
 
-          {/* Right: Representative Image (5 cols) - Clean Unannotated Image */}
-          <div className="lg:col-span-5 space-y-3">
+          {/* Right: sector image */}
+          <div className="lg:col-span-5">
             <div className="relative rounded-2xl overflow-hidden border border-slate-200 bg-slate-900 shadow-md">
               <img
                 src={currentIndustry.image}
                 alt={currentIndustry.title}
-                className="w-full h-72 sm:h-80 object-cover"
+                className="w-full h-64 sm:h-72 object-cover"
               />
-            </div>
-
-            {/* Technologies Tag strip below image */}
-            <div className="bg-slate-50 p-3 rounded-xl border border-slate-200 text-xs shadow-xs">
-              <div className="text-[10px] font-mono font-bold text-[#0066FF] uppercase tracking-wider mb-1.5">
-                Primary Vision Technologies:
-              </div>
-              <div className="flex flex-wrap gap-1">
-                {currentIndustry.suitableTechnologies.slice(0, 3).map((tech, tIdx) => (
-                  <span
-                    key={tIdx}
-                    className="text-[10px] bg-white text-slate-700 px-2 py-0.5 rounded font-mono border border-slate-200"
-                  >
-                    {tech}
-                  </span>
-                ))}
-              </div>
             </div>
           </div>
         </div>

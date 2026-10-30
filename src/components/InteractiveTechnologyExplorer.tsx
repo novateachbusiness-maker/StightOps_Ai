@@ -36,16 +36,16 @@ export function InteractiveTechnologyExplorer() {
       </div>
 
       {/* Selected Technology Content View */}
-      <div className="p-6 sm:p-10 transition-opacity duration-300">
-        <div className="grid grid-cols-1 lg:grid-cols-12 gap-8 lg:gap-12 items-center">
+      <div className="p-4 sm:p-6 transition-opacity duration-300">
+        <div className="grid grid-cols-1 lg:grid-cols-12 gap-6 lg:gap-8 items-center">
           {/* Left: Explanations & Input/Output Cards (7 cols) */}
-          <div className="lg:col-span-7 space-y-6">
-            <div className="space-y-2">
+          <div className="lg:col-span-7 space-y-4">
+            <div className="space-y-1">
               <div className="flex items-center gap-2 text-xs font-mono font-bold text-[#0066FF] uppercase">
-                <Cpu className="w-4 h-4" />
+                <Cpu className="w-3.5 h-3.5" />
                 <span>{activeItem.category}</span>
               </div>
-              <h3 className="text-2xl sm:text-3xl font-extrabold text-slate-900 tracking-tight">
+              <h3 className="text-xl sm:text-2xl font-extrabold text-slate-900 tracking-tight">
                 {activeItem.title}
               </h3>
               <p className="text-xs sm:text-sm text-slate-600 leading-relaxed">
@@ -54,7 +54,7 @@ export function InteractiveTechnologyExplorer() {
             </div>
 
             {/* Industrial Use Block */}
-            <div className="hover-card-panel p-4 rounded-xl bg-white border border-slate-200 space-y-1.5 shadow-xs">
+            <div className="hover-card-panel p-3 rounded-xl bg-white border border-slate-200 space-y-1 shadow-xs">
               <div className="text-xs font-bold text-slate-800">
                 Where It Is Used in Industrial Inspection:
               </div>
@@ -64,8 +64,8 @@ export function InteractiveTechnologyExplorer() {
             </div>
 
             {/* Input & Output Comparison */}
-            <div className="grid grid-cols-1 sm:grid-cols-2 gap-4">
-              <div className="hover-card-panel p-4 rounded-xl bg-white border border-slate-200 space-y-1.5 shadow-xs">
+            <div className="grid grid-cols-1 sm:grid-cols-2 gap-3">
+              <div className="hover-card-panel p-3 rounded-xl bg-white border border-slate-200 space-y-1 shadow-xs">
                 <div className="text-xs font-bold text-slate-700 flex items-center gap-1.5">
                   <span className="w-2 h-2 rounded-full bg-[#087F8C]" />
                   <span>Example Input Image</span>
@@ -75,7 +75,7 @@ export function InteractiveTechnologyExplorer() {
                 </p>
               </div>
 
-              <div className="hover-card-panel p-4 rounded-xl bg-blue-50/70 border border-blue-200/70 space-y-1.5 shadow-xs">
+              <div className="hover-card-panel p-3 rounded-xl bg-blue-50/70 border border-blue-200/70 space-y-1 shadow-xs">
                 <div className="text-xs font-bold text-[#0066FF] flex items-center gap-1.5">
                   <span className="w-2 h-2 rounded-full bg-[#0066FF]" />
                   <span>Resulting Inspection Output</span>
@@ -87,8 +87,8 @@ export function InteractiveTechnologyExplorer() {
             </div>
 
             {/* Supported Tools & Trade-offs */}
-            <div className="space-y-2 pt-2">
-              <div className="flex items-center gap-2 flex-wrap">
+            <div className="space-y-1.5 pt-1">
+              <div className="flex items-center gap-1.5 flex-wrap">
                 <span className="text-xs font-semibold text-slate-700">Supported Technology Stack:</span>
                 {activeItem.keyTools.map((tool, idx) => (
                   <span
@@ -99,20 +99,20 @@ export function InteractiveTechnologyExplorer() {
                   </span>
                 ))}
               </div>
-              <p className="text-[11px] text-slate-500 italic pt-1">
+              <p className="text-[11px] text-slate-500 italic pt-0.5">
                 <span className="font-semibold text-slate-600 not-italic">Engineering Note: </span>
                 {activeItem.tradeOffNotes}
               </p>
             </div>
           </div>
 
-          {/* Right: Technology Image & Visual Demonstration (5 cols) - Clean Unannotated Image */}
-          <div className="lg:col-span-5 space-y-3">
+          {/* Right: Technology Image & Visual Demonstration (5 cols) */}
+          <div className="lg:col-span-5 space-y-2.5">
             <div className="relative rounded-2xl overflow-hidden border border-slate-200 bg-slate-900 shadow-md">
               <img
                 src={activeItem.image}
                 alt={activeItem.title}
-                className={`w-full h-72 sm:h-80 ${
+                className={`w-full h-52 sm:h-60 ${
                   activeItem.id === 'ai-deep-learning'
                     ? 'object-contain bg-slate-950'
                     : 'object-cover'
@@ -121,11 +121,11 @@ export function InteractiveTechnologyExplorer() {
             </div>
 
             {/* Caption Tag below image */}
-            <div className="bg-slate-50 p-3 rounded-xl border border-slate-200 text-xs shadow-xs">
+            <div className="bg-slate-50 p-2.5 rounded-xl border border-slate-200 text-xs shadow-xs">
               <div className="text-[10px] font-mono text-slate-500 uppercase tracking-wider mb-0.5">
                 Representative Visual
               </div>
-              <div className="font-semibold text-slate-800">
+              <div className="font-semibold text-slate-800 text-xs">
                 {activeItem.visualCaption}
               </div>
             </div>

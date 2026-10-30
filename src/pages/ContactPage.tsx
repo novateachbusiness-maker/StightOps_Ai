@@ -1,5 +1,5 @@
 import { useSearchParams } from 'react-router-dom';
-import { Mail, Phone, MapPin, Clock, ShieldCheck, FileCheck2, Cpu, MessageCircle } from 'lucide-react';
+import { Mail, Phone, MapPin, Clock, ShieldCheck, FileCheck2, Cpu, MessageCircle, ExternalLink } from 'lucide-react';
 import { SITE_CONFIG } from '../config/site.ts';
 import { SeoHead } from '../components/SeoHead.tsx';
 import { Breadcrumbs } from '../components/Breadcrumbs.tsx';
@@ -113,6 +113,37 @@ export function ContactPage() {
                   </div>
                 </div>
               </div>
+            </div>
+
+            {/* Find Us — Interactive Map */}
+            <div className="hover-card-panel bg-white/95 backdrop-blur-md rounded-2xl border border-white/30 p-6 sm:p-8 shadow-xl space-y-4">
+              <h3 className="text-base font-bold text-[#064E52] flex items-center gap-2">
+                <MapPin className="w-4 h-4 text-[#087F8C]" />
+                <span>Find Us</span>
+              </h3>
+              <p className="text-xs text-slate-600 leading-relaxed">
+                Flat No. L248, Second Floor, KB Ecocity, Phase 1, Kammasandra, Electronic City, Hebbagodi, Bengaluru, Karnataka - 560100
+              </p>
+              <div className="rounded-xl overflow-hidden border border-slate-200">
+                <iframe
+                  title="SightOpsAi Registered Office Location"
+                  src="https://maps.google.com/maps?q=KB+Ecocity+Phase+1+Kammasandra+Electronic+City+Hebbagodi+Bengaluru+Karnataka+560100&output=embed"
+                  className="w-full h-56 sm:h-64"
+                  style={{ border: 0 }}
+                  allowFullScreen
+                  loading="lazy"
+                  referrerPolicy="no-referrer-when-downgrade"
+                />
+              </div>
+              <a
+                href="https://www.google.com/maps/search/?api=1&query=KB+Ecocity+Phase+1,+Kammasandra,+Electronic+City,+Hebbagodi,+Bengaluru,+Karnataka+560100"
+                target="_blank"
+                rel="noopener noreferrer"
+                className="inline-flex items-center gap-1.5 text-xs font-semibold text-[#0066FF] hover:underline"
+              >
+                <ExternalLink className="w-3.5 h-3.5" />
+                <span>Open in Google Maps</span>
+              </a>
             </div>
 
             {/* Part Sample Shipment Protocol */}

@@ -8,7 +8,7 @@ import { Breadcrumbs } from '../components/Breadcrumbs.tsx';
 
 export function TechnologiesPage() {
   return (
-    <div className="py-12 bg-transparent min-h-screen">
+    <div className="py-8 bg-transparent min-h-screen">
       <SeoHead
         title="Vision Technologies: Optics, Algorithms, Edge AI & Hardware | SightOpsAi"
         description="Explore SightOpsAi machine vision technology stack: deep learning anomaly models, object detection, sub-pixel metrology, telecentric optics, and camera SDKs."
@@ -19,20 +19,20 @@ export function TechnologiesPage() {
         <Breadcrumbs items={[{ name: 'Technologies', path: '/technologies' }]} />
 
         {/* Header */}
-        <div className="space-y-4 mb-10 max-w-3xl">
+        <div className="space-y-3 mb-8 max-w-3xl">
           <div className="text-xs font-semibold text-[#00D2FF] font-mono uppercase tracking-wider bg-slate-900/60 backdrop-blur-sm px-3 py-1 rounded-full border border-white/10 w-fit">
             Engineering Foundations
           </div>
-          <h1 className="text-3xl sm:text-4xl font-extrabold text-white tracking-tight drop-shadow-sm">
+          <h1 className="text-2xl sm:text-3xl font-extrabold text-white tracking-tight drop-shadow-sm">
             Industrial Vision Technology Stack
           </h1>
-          <p className="text-sm sm:text-base text-slate-200 leading-relaxed">
+          <p className="text-sm text-slate-200 leading-relaxed">
             Industrial machine vision demands disciplined engineering trade-offs. We choose algorithms and optics based on physics, cycle times, and repeatabilities—never forcing AI where deterministic classical filters provide superior precision and lower latency.
           </p>
         </div>
 
         {/* Interactive Technology Explorer Widget */}
-        <div className="mb-16">
+        <div className="mb-10">
           <InteractiveTechnologyExplorer />
         </div>
 

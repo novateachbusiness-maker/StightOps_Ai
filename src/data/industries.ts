@@ -19,6 +19,9 @@ export interface Industry {
   keyApplications: {
     title: string;
     description: string;
+    image?: string;
+    inspectionFocus?: string;
+    benefit?: string;
   }[];
   suitableTechnologies: string[];
   expectedBenefits: string[];
@@ -47,16 +50,53 @@ export const INDUSTRIES: Industry[] = [
     ],
     keyApplications: [
       {
-        title: "Engine Gear & Bearing Surface Flaw Detection",
-        description: "Scanning for chatter marks, grinding burns, porosity, and handling dents on bearing surfaces.",
+        title: "Engine Components Inspection",
+        description: "Automated scanning of cylinder bores, valve seats, piston crowns, and connecting rods.",
+        image: "/assets/automotive/engine-components.jpg",
+        inspectionFocus: "Inspects cylinder liners, valve seat concentricity, and journals for micro-porosity, chatter marks, and hairline casting flaws.",
+        benefit: "Eliminates engine seizure risks and ensures precise compression sealing prior to block assembly.",
       },
       {
-        title: "Critical Fastener Dimensional Inspection",
-        description: "High-speed optical sorting of bolts, studs, and pins for thread pitch, shank straightness, and head concentricity.",
+        title: "Automotive Castings & Housings",
+        description: "Surface and internal cavity quality inspection for aluminum die-cast transmission cases and steering knuckles.",
+        image: "/assets/automotive/automotive-castings.jpg",
+        inspectionFocus: "Inspects parting lines, bolt bosses, and core passages for cold shuts, blowholes, and flash burrs.",
+        benefit: "Guarantees structural strength under dynamic mechanical loads and prevents hydraulic fluid leakage.",
       },
       {
-        title: "Brake Rotor & Disc Inspection",
-        description: "Verifying runout, surface finish, chamfer presence, and balanced drill hole placements.",
+        title: "Gears & Mechanical Drive Components",
+        description: "High-precision geometric profiling and root inspection for transmission gears, pinions, and splines.",
+        image: "/assets/automotive/gears-mechanical.jpg",
+        inspectionFocus: "Inspects gear tooth flanks, root fillets, bevel contact patterns, and pitch circle runout.",
+        benefit: "Eliminates gear whine, tooth spalling, and costly transmission warranty recalls.",
+      },
+      {
+        title: "Brake Discs & Friction Components",
+        description: "100% in-line verification of brake rotor runout, surface finish, and ventilation vane clearances.",
+        image: "/assets/automotive/brake-components.jpg",
+        inspectionFocus: "Inspects disc friction faces, chamfers, balance drill holes, and friction pad bonding integrity.",
+        benefit: "Ensures critical braking safety compliance and prevents brake shudder and uneven wear.",
+      },
+      {
+        title: "Metal Surface Defect Detection",
+        description: "Real-time surface scanning of stamped body panels, chassis brackets, and deep-drawn metal stampings.",
+        image: "/assets/automotive/metal-surface-inspection.jpg",
+        inspectionFocus: "Detects tool chatter, scratches, pits, draw wrinkles, and edge burrs on brushed and rolled metals.",
+        benefit: "Prevents defective stampings from reaching painting and robotic welding lines.",
+      },
+      {
+        title: "Automotive Assembly & Sub-Assembly Verification",
+        description: "Multi-angle optical check of assembled subsystems, brackets, clips, and torque witness marks.",
+        image: "/assets/automotive/automotive-assembly.jpg",
+        inspectionFocus: "Verifies clip seating, wiring harness routing, hose clamp alignment, and fastener torque marks.",
+        benefit: "100% verification that no missing or misaligned assembly items escape to downstream vehicle stations.",
+      },
+      {
+        title: "Precision Dimensional Metrology & Defect Sorting",
+        description: "Sub-micron optical measurement of outer diameters, thread pitches, and GD&T tolerances.",
+        image: "/assets/automotive/dimensional-defect-inspection.jpg",
+        inspectionFocus: "Measures lengths, diameters, concentricity, and thread form using bi-telecentric optics.",
+        benefit: "Replaces slow coordinate measuring machines (CMMs) with real-time 100% in-line dimensional sorting.",
       },
     ],
     suitableTechnologies: [
@@ -99,14 +139,23 @@ export const INDUSTRIES: Industry[] = [
       {
         title: "SMT Component Presence, Value & Polarity",
         description: "Checking IC orientation, resistor/capacitor presence, and component rotation against CAD centroids.",
+        image: "/assets/electronics/smt-presence-polarity.jpg",
+        inspectionFocus: "Inspects 0201/01005 passives, IC orientation notches, pin-1 markers, and package rotation.",
+        benefit: "Eliminates placement errors and missing components prior to reflow soldering.",
       },
       {
         title: "Solder Joint Fillet Verification",
         description: "Validating solder volume, wetting angles, pin protrusion, bridging, and solder balls to IPC-A-610 standards.",
+        image: "/assets/electronics/solder-joint-fillet.jpg",
+        inspectionFocus: "Multi-angle chromatic ring lighting checks meniscus wetting angles, tombstoning, and bridging.",
+        benefit: "Guarantees IPC-A-610 Class 3 compliance for mission-critical automotive and industrial PCBs.",
       },
       {
         title: "Semiconductor Die & Wire Bond Integrity",
         description: "Verifying die placement, coplanarity, lead frame alignment, and conformal coating coverage under UV light.",
+        image: "/assets/electronics/semiconductor-die-wirebond.jpg",
+        inspectionFocus: "Inspects wire loop heights, die attach fillets, lead coplanarity, and conformal coating voids.",
+        benefit: "Prevents microelectronic bond detachment and ensures long-term thermal packaging reliability.",
       },
     ],
     suitableTechnologies: [
@@ -149,14 +198,23 @@ export const INDUSTRIES: Industry[] = [
       {
         title: "Cap Skew, Height & Tamper Ring Check",
         description: "Instant optical verification of cocked caps, loose closures, and broken security bridges.",
+        image: "/assets/packaging/cap-skew-tamper-ring.jpg",
+        inspectionFocus: "Dual-camera profile station checks bottle cap seating depth, thread engagement, and tamper bridges.",
+        benefit: "Prevents leaking containers and maintains product sterility on high-speed bottling lines.",
       },
       {
         title: "Liquid Fill Level Verification",
         description: "Non-contact inspection of liquid fill line tolerances in glass and PET containers.",
+        image: "/assets/packaging/liquid-fill-level.jpg",
+        inspectionFocus: "High-contrast backlighting measures liquid meniscus levels against minimum/maximum bounds.",
+        benefit: "Prevents under-fill customer disputes and over-fill packaging spills.",
       },
       {
         title: "Label Position & Expiry Date Verification",
         description: "Checking label presence, skew, wrinkles, and legible inkjet lot/expiry codes.",
+        image: "/assets/packaging/label-expiry-verification.jpg",
+        inspectionFocus: "360-degree optical verification of label alignment, bubble-free adhesion, and OCR date codes.",
+        benefit: "Ensures retail traceability compliance and eliminates distributor chargebacks.",
       },
     ],
     suitableTechnologies: [
@@ -196,14 +254,23 @@ export const INDUSTRIES: Industry[] = [
       {
         title: "6-Sided Barcode Scanning Tunnels",
         description: "Capturing 1D and 2D barcodes across all parcel faces simultaneously.",
+        image: "/assets/logistics/barcode-scanning-tunnel.jpg",
+        inspectionFocus: "Multi-camera array decodes Code 128, GS1, and 2D DataMatrix on high-speed sorting belts.",
+        benefit: "Achieves 99.9%+ read rates on sorting conveyors, eliminating parcel recirculation.",
       },
       {
         title: "Optical Parcel Dimensioning (Volumetrics)",
         description: "3D time-of-flight or laser triangulation calculating legal-for-trade volume.",
+        image: "/assets/logistics/parcel-dimensioning.jpg",
+        inspectionFocus: "3D laser profilers capture exact length, width, height, and cubic volume in milliseconds.",
+        benefit: "Automates freight density billing and maximizes cargo space utilization.",
       },
       {
         title: "Label Presence & Destination Routing",
         description: "Directing parcels to automated sortation diverters based on decoded zip codes.",
+        image: "/assets/logistics/label-routing-verification.jpg",
+        inspectionFocus: "Verifies shipping label presence, print contrast, and barcode readability before routing shoes.",
+        benefit: "Prevents misrouted shipments and reduces manual sorting intervention.",
       },
     ],
     suitableTechnologies: [
@@ -244,14 +311,23 @@ export const INDUSTRIES: Industry[] = [
       {
         title: "Vial Cap & Crimping Integrity",
         description: "360-degree inspection of aluminum crimp seals, flip-off caps, stopper seating, and neck cracks.",
+        image: "/assets/pharma/vial-crimp-integrity.jpg",
+        inspectionFocus: "High-resolution rotational imaging inspects crimp circumference, skirt overhang, and stopper position.",
+        benefit: "Guarantees container closure integrity (CCI) and prevents parenteral drug contamination.",
       },
       {
         title: "Blister Pack Pocket & Tablet Integrity",
         description: "Detecting missing tablets, chipped pills, foreign particles, color mix-ups, and foil pinholes.",
+        image: "/assets/pharma/blister-tablet-integrity.jpg",
+        inspectionFocus: "Color area cameras inspect blister cavity fills, detecting broken tablets, empty pockets, and rogue pills.",
+        benefit: "100% blister verification eliminating batch recalls and FDA 483 citations.",
       },
       {
         title: "Medical Syringe & Needle Measurement",
         description: "Micro-measuring needle bevel angles, scale graduations, and cannula straightness.",
+        image: "/assets/pharma/syringe-needle-measurement.jpg",
+        inspectionFocus: "Telecentric optical metrology measures needle bevel tip geometry, scale markings, and barrel concentricity.",
+        benefit: "Ensures precise dosage delivery and pain-free needle insertion compliance.",
       },
     ],
     suitableTechnologies: [

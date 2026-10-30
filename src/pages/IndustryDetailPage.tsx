@@ -1,7 +1,6 @@
 import { useParams, Link, Navigate } from 'react-router-dom';
-import { ArrowLeft, CheckCircle2, AlertCircle, ArrowRight, Cpu, Wrench, ShieldAlert } from 'lucide-react';
+import { ArrowRight, Cpu, ShieldAlert } from 'lucide-react';
 import { INDUSTRIES } from '../data/industries.ts';
-import { SOLUTIONS } from '../data/solutions.ts';
 import { SeoHead } from '../components/SeoHead.tsx';
 import { Breadcrumbs } from '../components/Breadcrumbs.tsx';
 import { ConsultationForm } from '../components/ConsultationForm.tsx';
@@ -14,10 +13,12 @@ export function IndustryDetailPage() {
     return <Navigate to="/industries" replace />;
   }
 
+  const hasMoreThanThree = industry.keyApplications.length > 3;
+
   return (
-    <div className="py-12 bg-transparent min-h-screen">
+    <div className="py-8 bg-transparent min-h-screen">
       <SeoHead
-        title={`${industry.title} | Machine Vision Systems`}
+        title={`Industrial Vision Solutions - ${industry.title} | SightOpsAi`}
         description={industry.heroSummary}
         canonicalPath={`/industries/${industry.slug}`}
       />
@@ -31,19 +32,19 @@ export function IndustryDetailPage() {
         />
 
         {/* Hero Section */}
-        <div className="bg-white/95 backdrop-blur-md rounded-2xl border border-white/30 p-8 md:p-12 shadow-xl mb-12">
-          <div className="grid grid-cols-1 lg:grid-cols-12 gap-10 items-center">
-            <div className="lg:col-span-7 space-y-4">
+        <div className="bg-white/95 backdrop-blur-md rounded-2xl border border-white/30 p-6 sm:p-10 shadow-xl mb-8">
+          <div className="grid grid-cols-1 lg:grid-cols-12 gap-8 items-center">
+            <div className="lg:col-span-7 space-y-3">
               <div className="text-xs font-semibold text-[#0066FF] font-mono uppercase tracking-wider">
-                Industrial Vision Solutions
+                Sector · {industry.title}
               </div>
-              <h1 className="text-3xl sm:text-4xl font-extrabold text-slate-900 tracking-tight leading-tight">
-                {industry.title}
+              <h1 className="text-2xl sm:text-3xl lg:text-4xl font-extrabold text-slate-900 tracking-tight leading-tight">
+                Industrial Vision Solutions
               </h1>
               <p className="text-sm font-medium text-[#0066FF]">
                 {industry.tagline}
               </p>
-              <p className="text-sm text-slate-700 leading-relaxed">
+              <p className="text-xs sm:text-sm text-slate-700 leading-relaxed">
                 {industry.heroSummary}
               </p>
               <div className="pt-2 flex items-center gap-3">
@@ -67,137 +68,105 @@ export function IndustryDetailPage() {
                 <img
                   src={industry.image}
                   alt={industry.title}
-                  className="w-full h-64 object-cover"
+                  className="w-full h-56 sm:h-64 object-cover"
                 />
               </div>
             </div>
           </div>
         </div>
 
-        {/* Technical Challenge & Application Grid */}
-        <div className="grid grid-cols-1 lg:grid-cols-12 gap-10 mb-16">
-          {/* Main Content (8 cols) */}
-          <div className="lg:col-span-8 space-y-8">
-            {/* 1. Customer Challenge vs Proposed Solution */}
-            <div className="hover-card-panel bg-white/95 backdrop-blur-md rounded-xl border border-white/30 p-8 shadow-md space-y-6">
-              <h2 className="text-xl font-bold text-slate-900">
-                The Customer Challenge & Vision Solution
-              </h2>
+        {/* Main Content Area */}
+        <div className="space-y-8 mb-10">
+          {/* 1. Concise Customer Challenge vs Proposed Solution */}
+          <div className="hover-card-panel bg-white/95 backdrop-blur-md rounded-xl border border-white/30 p-6 shadow-md space-y-4">
+            <h2 className="text-lg font-bold text-slate-900">
+              Inspection Challenge &amp; SightOpsAi Solution
+            </h2>
 
-              <div className="space-y-4">
-                <div className="p-4 rounded-xl bg-amber-50/70 border border-amber-200/70 space-y-2">
-                  <div className="flex items-center gap-2 text-xs font-bold text-amber-900">
-                    <ShieldAlert className="w-4 h-4 text-amber-600" />
-                    <span>The Inspection Challenge</span>
-                  </div>
-                  <p className="text-xs text-slate-700 leading-relaxed">
-                    {industry.customerChallenge}
-                  </p>
+            <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
+              <div className="p-4 rounded-xl bg-amber-50/70 border border-amber-200/70 space-y-1.5">
+                <div className="flex items-center gap-2 text-xs font-bold text-amber-900">
+                  <ShieldAlert className="w-4 h-4 text-amber-600 shrink-0" />
+                  <span>The Inspection Challenge</span>
                 </div>
+                <p className="text-xs text-slate-700 leading-relaxed">
+                  {industry.customerChallenge}
+                </p>
+              </div>
 
-                <div className="p-4 rounded-xl bg-blue-50/70 border border-blue-200/70 space-y-2">
-                  <div className="flex items-center gap-2 text-xs font-bold text-[#0066FF]">
-                    <Cpu className="w-4 h-4 text-[#0066FF]" />
-                    <span>The SightOpsAi Solution</span>
-                  </div>
-                  <p className="text-xs text-slate-700 leading-relaxed">
-                    {industry.proposedSolution}
-                  </p>
+              <div className="p-4 rounded-xl bg-blue-50/70 border border-blue-200/70 space-y-1.5">
+                <div className="flex items-center gap-2 text-xs font-bold text-[#0066FF]">
+                  <Cpu className="w-4 h-4 text-[#0066FF] shrink-0" />
+                  <span>The SightOpsAi Solution</span>
                 </div>
+                <p className="text-xs text-slate-700 leading-relaxed">
+                  {industry.proposedSolution}
+                </p>
               </div>
-            </div>
-
-            {/* 2. Specific Inspection Challenges List */}
-            <div className="hover-card-panel bg-white/95 backdrop-blur-md rounded-xl border border-white/30 p-8 shadow-md space-y-4">
-              <h2 className="text-xl font-bold text-slate-900 flex items-center gap-2">
-                <ShieldAlert className="w-5 h-5 text-amber-600" />
-                <span>Sector-Specific Inspection Challenges</span>
-              </h2>
-              <div className="space-y-3 pt-2">
-                {industry.inspectionChallenges.map((challenge, idx) => (
-                  <div key={idx} className="flex items-start gap-3 p-3.5 rounded-lg bg-slate-50 border border-slate-200">
-                    <span className="text-[#0066FF] font-mono font-bold text-xs mt-0.5">0{idx + 1}.</span>
-                    <p className="text-xs text-slate-700 leading-relaxed">{challenge}</p>
-                  </div>
-                ))}
-              </div>
-            </div>
-
-            {/* 3. Key Applications & Use Cases */}
-            <div className="hover-card-panel bg-white/95 backdrop-blur-md rounded-xl border border-white/30 p-8 shadow-md space-y-6">
-              <h2 className="text-xl font-bold text-slate-900">Core Inspection Use Cases</h2>
-              <div className="grid grid-cols-1 gap-4">
-                {industry.keyApplications.map((app, idx) => (
-                  <div key={idx} className="border border-slate-200 p-5 rounded-lg bg-slate-50/50 space-y-2">
-                    <h3 className="text-sm font-bold text-slate-900">{app.title}</h3>
-                    <p className="text-xs text-slate-600 leading-relaxed">{app.description}</p>
-                  </div>
-                ))}
-              </div>
-            </div>
-
-            {/* 4. Factory Integration Considerations */}
-            <div className="hover-card-panel bg-white/95 backdrop-blur-md rounded-xl border border-white/30 p-8 shadow-md space-y-4">
-              <h2 className="text-xl font-bold text-slate-900 flex items-center gap-2">
-                <Wrench className="w-5 h-5 text-[#0066FF]" />
-                <span>Production Line Integration Considerations</span>
-              </h2>
-              <ul className="space-y-2.5 text-xs text-slate-700 pt-2">
-                {industry.integrationConsiderations.map((item, idx) => (
-                  <li key={idx} className="flex items-start gap-2.5 bg-slate-50 p-3 rounded-lg border border-slate-200">
-                    <CheckCircle2 className="w-4 h-4 text-emerald-600 shrink-0 mt-0.5" />
-                    <span>{item}</span>
-                  </li>
-                ))}
-              </ul>
             </div>
           </div>
 
-          {/* Sidebar (4 cols) */}
-          <div className="lg:col-span-4 space-y-8">
-            {/* Expected Business Benefits */}
-            <div className="hover-card-panel bg-white/95 backdrop-blur-md rounded-xl border border-white/30 p-6 shadow-md space-y-3">
-              <h3 className="text-sm font-bold text-slate-900">Expected Business Benefits</h3>
-              <div className="space-y-2 text-xs text-slate-600">
-                {industry.expectedBenefits.map((benefit, idx) => (
-                  <div key={idx} className="flex items-start gap-2 p-2 rounded-lg bg-emerald-50/60 border border-emerald-200/50">
-                    <CheckCircle2 className="w-3.5 h-3.5 text-emerald-600 shrink-0 mt-0.5" />
-                    <span className="text-slate-700">{benefit}</span>
-                  </div>
-                ))}
-              </div>
+          {/* 2. Key Applications & Use Cases (Vertically scrollable if > 3 items) */}
+          <div className="hover-card-panel bg-white/95 backdrop-blur-md rounded-xl border border-white/30 p-6 shadow-md space-y-5">
+            <div className="border-b border-slate-100 pb-3">
+              <h2 className="text-lg sm:text-xl font-bold text-slate-900">
+                Core Inspection Components &amp; Applications
+              </h2>
+              <p className="text-xs text-slate-500 mt-0.5">
+                Representative inspection stations demonstrating component localization, optical geometries, and defect prevention for {industry.title}.
+              </p>
             </div>
 
-            {/* Suitable Vision Technologies */}
-            <div className="hover-card-panel bg-white/95 backdrop-blur-md rounded-xl border border-white/30 p-6 shadow-md space-y-4">
-              <h3 className="text-sm font-bold text-slate-900">Recommended Vision Technologies</h3>
-              <div className="space-y-2 text-xs text-slate-600">
-                {industry.suitableTechnologies.map((tech, idx) => (
-                  <div key={idx} className="p-2.5 rounded-lg bg-slate-50 border border-slate-200 flex items-center gap-2">
-                    <Cpu className="w-4 h-4 text-[#0066FF] shrink-0" />
-                    <span>{tech}</span>
-                  </div>
-                ))}
-              </div>
-            </div>
-
-            {/* Related Solutions */}
-            <div className="bg-white/95 backdrop-blur-md rounded-xl border border-white/30 p-6 shadow-md space-y-4">
-              <h3 className="text-sm font-bold text-slate-900">Relevant Inspection Solutions</h3>
-              <div className="space-y-2">
-                {SOLUTIONS.slice(0, 3).map((sol) => (
-                  <Link
-                    key={sol.id}
-                    to={`/solutions/${sol.slug}`}
-                    className="block p-3 rounded-lg border border-slate-200 hover:border-[#0066FF] transition-colors group"
+            <div
+              className={
+                hasMoreThanThree
+                  ? 'max-h-[480px] section-scrollbar pr-3'
+                  : ''
+              }
+            >
+              <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
+                {industry.keyApplications.map((app, idx) => (
+                  <div
+                    key={idx}
+                    className="border border-slate-200 rounded-xl overflow-hidden bg-slate-50/50 hover:bg-white transition-all shadow-xs flex flex-col justify-between group"
                   >
-                    <div className="text-xs font-semibold text-slate-800 group-hover:text-[#0066FF]">
-                      {sol.title}
+                    {app.image && (
+                      <div className="relative h-44 w-full overflow-hidden bg-slate-900 shrink-0">
+                        <img
+                          src={app.image}
+                          alt={app.title}
+                          className="w-full h-full object-cover transition-transform duration-500 group-hover:scale-105"
+                          loading="lazy"
+                        />
+                        <div className="absolute top-2 left-2 bg-slate-900/80 backdrop-blur-sm px-2 py-0.5 rounded text-[10px] font-mono font-semibold text-[#00D2FF]">
+                          Station 0{idx + 1}
+                        </div>
+                      </div>
+                    )}
+                    <div className="p-4 space-y-2.5 flex-1 flex flex-col justify-between">
+                      <div className="space-y-1">
+                        <h3 className="text-sm font-bold text-slate-900">{app.title}</h3>
+                        <p className="text-xs text-slate-600 leading-relaxed">{app.description}</p>
+                      </div>
+
+                      {(app.inspectionFocus || app.benefit) && (
+                        <div className="pt-2 border-t border-slate-200/80 space-y-1.5 text-[11px]">
+                          {app.inspectionFocus && (
+                            <div>
+                              <span className="font-semibold text-slate-800">What It Inspects: </span>
+                              <span className="text-slate-600">{app.inspectionFocus}</span>
+                            </div>
+                          )}
+                          {app.benefit && (
+                            <div>
+                              <span className="font-semibold text-[#0066FF]">Inspection Value: </span>
+                              <span className="text-slate-600">{app.benefit}</span>
+                            </div>
+                          )}
+                        </div>
+                      )}
                     </div>
-                    <div className="text-[11px] text-slate-500 line-clamp-1 mt-0.5">
-                      {sol.tagline}
-                    </div>
-                  </Link>
+                  </div>
                 ))}
               </div>
             </div>

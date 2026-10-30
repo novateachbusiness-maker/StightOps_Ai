@@ -71,6 +71,18 @@ export function ResourceDetailPage() {
             </div>
           </div>
 
+          {/* Featured Article Supporting Image */}
+          {article.image && (
+            <div className="rounded-xl overflow-hidden border border-slate-200 bg-slate-950 max-h-[380px] shadow-sm">
+              <img
+                src={article.image}
+                alt={article.title}
+                className="w-full h-full object-cover max-h-[380px]"
+                loading="eager"
+              />
+            </div>
+          )}
+
           {/* Article Body Content */}
           <div className="prose prose-sm max-w-none text-slate-700 leading-relaxed space-y-6">
             {article.content.split('\n\n').map((paragraph, idx) => {

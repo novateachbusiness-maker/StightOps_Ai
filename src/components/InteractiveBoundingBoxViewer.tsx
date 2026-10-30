@@ -2,6 +2,8 @@ import { useState } from 'react';
 import { Eye } from 'lucide-react';
 import automotiveFlangeImg from '../assets/images/solution_surface_defect_1792999691227.jpg';
 import pcbAssemblyImg from '../assets/images/case_study_pcb_1792999691900.jpg';
+import pharmaInspectionImg from '../assets/images/clean_pharma_inspection_1793174508088.jpg';
+import fallbackGearImg from '../assets/images/clean_robotic_inspection_1793174472781.jpg';
 
 export interface BoundingTarget {
   id: string;
@@ -125,7 +127,7 @@ const INSPECTION_TARGETS: BoundingTarget[] = [
     id: 'pharma-serialized',
     name: 'Pharmaceutical Serialization & Labeling',
     category: 'Pharmaceutical',
-    image: '/assets/applications/pharma-inspection.jpg',
+    image: pharmaInspectionImg,
     description: 'Polarized coaxial strobe camera decoding 2D DataMatrix and serialized expiry codes on cartons at 450 ppm.',
     boxes: [
       {
@@ -209,9 +211,8 @@ export function InteractiveBoundingBoxViewer() {
             decoding="async"
             className="w-full h-full object-cover max-h-[500px]"
             onError={(e) => {
-              const fallback = '/assets/applications/robotic-gear-inspection.jpg';
-              if (e.currentTarget.src !== fallback) {
-                e.currentTarget.src = fallback;
+              if (e.currentTarget.src !== fallbackGearImg) {
+                e.currentTarget.src = fallbackGearImg;
               }
             }}
           />
@@ -228,13 +229,12 @@ export function InteractiveBoundingBoxViewer() {
               <p className="text-xs text-slate-600 leading-relaxed mt-1">{target.description}</p>
             </div>
 
-            {/* List of Detected Bounding Regions */}
+            {/* List of Inspected Features */}
             <div className="space-y-2 pt-2 border-t border-slate-200">
-              <div className="text-xs font-semibold text-slate-700">Detected Regions & Features:</div>
+              <div className="text-xs font-semibold text-slate-700">Inspected Features & Verification Criteria:</div>
               <div className="space-y-1.5">
                 {target.boxes.map((box) => {
                   const isSelected = activeBox.id === box.id;
-                  const isDefect = box.status === 'fail';
 
                   return (
                     <button
@@ -242,11 +242,9 @@ export function InteractiveBoundingBoxViewer() {
                       type="button"
                       onClick={() => setActiveBoxId(box.id)}
                       onMouseEnter={() => setActiveBoxId(box.id)}
-                      className={`hover-card-interactive w-full text-left p-2.5 rounded-lg border text-xs flex items-center justify-between ${
+                      className={`hover-card-interactive w-full text-left p-2.5 rounded-lg border text-xs flex items-center justify-between cursor-pointer ${
                         isSelected
-                          ? isDefect
-                            ? 'bg-rose-50 border-rose-300 ring-1 ring-rose-400'
-                            : 'bg-white border-[#0066FF] ring-1 ring-[#0066FF]'
+                          ? 'bg-blue-50 border-[#0066FF] ring-1 ring-[#0066FF]'
                           : 'bg-white/80 border-slate-200 hover:bg-white'
                       }`}
                     >
@@ -254,12 +252,8 @@ export function InteractiveBoundingBoxViewer() {
                         <div className="font-semibold text-slate-800">{box.label}</div>
                         <div className="text-[10px] text-slate-500 font-mono">{box.type}</div>
                       </div>
-                      <span
-                        className={`text-[10px] font-mono font-bold px-1.5 py-0.5 rounded ${
-                          isDefect ? 'bg-rose-100 text-rose-700' : 'bg-emerald-100 text-emerald-700'
-                        }`}
-                      >
-                        {box.status.toUpperCase()}
+                      <span className="text-[10px] font-mono font-semibold px-2 py-0.5 rounded bg-blue-100/70 text-[#0066FF]">
+                        VERIFIED
                       </span>
                     </button>
                   );
@@ -267,18 +261,18 @@ export function InteractiveBoundingBoxViewer() {
               </div>
             </div>
 
-            {/* Selected Box Telemetry Card */}
+            {/* Selected Feature Inspection Details */}
             <div className="hover-card-panel p-3.5 bg-white rounded-lg border border-slate-200 shadow-xs space-y-2 text-xs">
               <div className="flex items-center justify-between">
                 <span className="font-semibold text-slate-800">{activeBox.label}</span>
-                <span className="font-mono text-[11px] text-[#0066FF] font-bold">
-                  Conf: {activeBox.confidence}
+                <span className="font-mono text-[11px] text-[#0066FF] font-semibold">
+                  {activeBox.type}
                 </span>
               </div>
-              <div className="font-mono text-[11px] text-slate-600 bg-slate-50 p-2 rounded border border-slate-100">
+              <div className="font-mono text-[11px] text-slate-700 bg-slate-50 p-2 rounded border border-slate-100">
                 {activeBox.measurement}
               </div>
-              <p className="text-[11px] text-slate-500 leading-relaxed">{activeBox.details}</p>
+              <p className="text-[11px] text-slate-600 leading-relaxed">{activeBox.details}</p>
             </div>
           </div>
 
