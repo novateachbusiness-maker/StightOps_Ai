@@ -175,7 +175,7 @@ export const INDUSTRIES: Industry[] = [
       "Integration with rework station terminals showing operators exact defect coordinates and zoom frames.",
       "Exporting SPI (solder paste inspection) and AOI data to SPI/AOI correlation loops.",
     ],
-    image: "/src/assets/images/solution_aoi_system_1792999689778.jpg",
+    image: "/assets/electronics/solution_aoi_system_1792999689778.jpg",
   },
   {
     id: "food-packaging-inspection",

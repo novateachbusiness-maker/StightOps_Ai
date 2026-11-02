@@ -90,7 +90,7 @@ export const SOLUTIONS: Solution[] = [
     tagline: "High-speed SMT assembly verification, solder fillet validation, and component integrity checks.",
     summary:
       "High-resolution optical inspection tailored for high-density surface mount assemblies (SMT) and through-hole components to prevent rework and field escapes.",
-    image: "/src/assets/images/solution_aoi_system_1792999689778.jpg",
+    image: "/assets/electronics/solution_aoi_system_1792999689778.jpg",
     industrialProblem:
       "Modern electronics incorporate sub-millimeter components (01005 passives, micro-BGAs, QFNs) that cannot be reliably verified with manual microscopes. Solder bridges, tombstoning, polarities, and component offsets cause critical failures if not caught pre-reflow or post-reflow.",
     inspectionApproach:
@@ -291,7 +291,7 @@ export const SOLUTIONS: Solution[] = [
     tagline: "Turnkey bespoke vision stations engineered for unique factory footprints and automation requirements.",
     summary:
       "Full-cycle engineering from optical feasibility studies and mechanical mounting fixtures to PLC programming, safety enclosures, and ERP integration.",
-    image: "/src/assets/images/solution_aoi_system_1792999689778.jpg",
+    image: "/assets/electronics/solution_aoi_system_1792999689778.jpg",
     industrialProblem:
       "Off-the-shelf smart cameras often fail in non-standard plant environments with tight physical space constraints, vibration, oil mist, high temperatures, or unique multi-camera inspection angles.",
     inspectionApproach:

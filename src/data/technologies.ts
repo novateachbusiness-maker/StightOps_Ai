@@ -54,7 +54,7 @@ export const TECHNOLOGY_EXPLORER_ITEMS: TechnologyItem[] = [
       "Multi-angle RGB image of a populated PCB assembly with dozens of ICs, capacitors, and connector pins.",
     exampleOutput:
       "Bounding boxes around all components with labels ('IC_U4: PRESENT', 'C14: TOMBSTONED') and exact XY millimeter coordinates passed to the assembly controller.",
-    image: "/src/assets/images/solution_aoi_system_1792999689778.jpg",
+    image: "/assets/electronics/solution_aoi_system_1792999689778.jpg",
     visualCaption: "Automated optical inspection head locating component coordinates on PCB assembly",
     keyTools: ["YOLOv8 / YOLOv11 Edge Architectures", "Mask R-CNN / SegNet", "NVIDIA DeepStream", "C++ ONNX Runtime"],
     tradeOffNotes:
@@ -126,7 +126,7 @@ export const TECHNOLOGY_EXPLORER_ITEMS: TechnologyItem[] = [
       "A batch of 150 workpiece images collected during new product introduction (NPI) on the customer's assembly line.",
     exampleOutput:
       "A quantized, production-ready TensorRT model running locally on an industrial PC with sub-25ms inference latency and zero cloud dependency.",
-    image: "/src/assets/images/clean_edge_ipc_1793174610127.jpg",
+    image: "/assets/electronics/clean_edge_ipc_1793174610127.jpg",
     visualCaption: "Edge GPU vision controller and processing computer mounted in industrial automation enclosure",
     keyTools: ["Active Learning Annotation", "TensorRT Engine Compiler", "Local Industrial IPC Runtime", "OPC-UA / MQTT Factory Gateways"],
     tradeOffNotes:
