@@ -69,9 +69,12 @@ export function ContactPage() {
                   <Mail className="w-4 h-4 text-[#087F8C] shrink-0" />
                   <div>
                     <div className="text-[11px] text-slate-400">Technical Inquiries:</div>
-                    <div className="font-mono font-medium text-slate-800">
+                    <a
+                      href={`mailto:${SITE_CONFIG.contactEmail}`}
+                      className="font-mono font-medium text-slate-800 hover:text-[#0066FF] transition-colors"
+                    >
                       {SITE_CONFIG.contactEmail}
-                    </div>
+                    </a>
                   </div>
                 </div>
 

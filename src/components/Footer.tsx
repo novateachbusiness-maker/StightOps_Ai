@@ -50,7 +50,12 @@ export function Footer() {
               </div>
               <div className="flex items-center gap-2.5">
                 <Mail className="w-4 h-4 text-[#00D2FF] shrink-0" />
-                <span className="font-mono">{SITE_CONFIG.contactEmail}</span>
+                <a
+                  href={`mailto:${SITE_CONFIG.contactEmail}`}
+                  className="font-mono hover:text-white transition-colors"
+                >
+                  {SITE_CONFIG.contactEmail}
+                </a>
               </div>
               <div className="flex items-center gap-2.5">
                 <Phone className="w-4 h-4 text-[#00D2FF] shrink-0" />

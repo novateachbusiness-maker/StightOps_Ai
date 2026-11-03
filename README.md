@@ -102,7 +102,7 @@ export const SITE_CONFIG = {
   name: "SightOps AI",                                   // Change company name
   tagline: "See Better. Inspect Smarter. Think Ahead.",
   domain: "[DOMAIN PENDING]",                            // Update to your production domain (e.g. https://sightops.ai)
-  contactEmail: "[CONTACT EMAIL]",                       // Update to your corporate email
+  contactEmail: "sightopsai@gmail.com",                  // Official contact email
   phone: "+91 (0) 80 4920 1800",                         // Update telephone
   address: {
     line1: "Industrial Automation & Vision Systems Hub",
@@ -195,7 +195,7 @@ npm run build
 Before deploying to your public production domain:
 
 1. **Domain Update:** Replace `[DOMAIN PENDING]` in `src/config/site.ts` and `server.ts` with your live domain (e.g., `https://sightops.ai`).
-2. **Email & Phone Configuration:** Replace `[CONTACT EMAIL]` in `src/config/site.ts` with your monitored inbox.
+2. **Email & Phone Configuration:** Verify the official contact email and phone number in `src/config/site.ts`.
 3. **Google Search Console:** Submit `https://your-domain.com/sitemap.xml` in Search Console.
 4. **Canonical & OpenGraph Verification:** Inspect `head` metadata to verify absolute canonical URLs match your registered domain.
 5. **SMTP / CRM Relay:** In `server.ts`, connect your outbound email service (SendGrid, AWS SES, or Resend) to forward the logged enquiry payload to your sales engineering team.

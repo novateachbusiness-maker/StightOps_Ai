@@ -35,7 +35,7 @@ export const SITE_CONFIG = {
 
   // Contact details & editable placeholders
   domain: "[DOMAIN PENDING]",
-  contactEmail: "[CONTACT EMAIL]",
+  contactEmail: "sightopsai@gmail.com",
   phone: "+91 72591 71733",
   phoneRaw: "+917259171733",
   registeredOffice: "Flat No. L248, Second Floor, KB Ecocity, Phase 1, Kammasandra, Electronic City, Hebbagodi, Bengaluru, Karnataka - 560100",
