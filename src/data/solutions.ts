@@ -30,7 +30,7 @@ export const SOLUTIONS: Solution[] = [
     tagline: "Deep learning models for complex defect detection on variable and textured surfaces.",
     summary:
       "When surface texture, natural reflectivity, or manufacturing tolerance variations defeat rigid rule-based vision algorithms, our deep learning inspection models classify subtle anomalies with high repeatability.",
-    image: "/src/assets/images/hero_pcb_inspection_1792999689695.jpg",
+    image: "/images/High-Tech SMT Inspection System.png",
     industrialProblem:
       "Conventional thresholding and edge-detection tools struggle with organic part variances, cast surface textures, shifting ambient reflections, and complex aesthetic criteria. Manual human inspection causes fatigue, subjective variance, and bottlenecks on high-speed lines.",
     inspectionApproach:
@@ -143,7 +143,7 @@ export const SOLUTIONS: Solution[] = [
     tagline: "High-speed decoding and optical character verification for serialized manufacturing.",
     summary:
       "Industrial-grade 1D, 2D DataMatrix, QR, and alphanumeric Optical Character Recognition (OCR/OCV) ensuring 100% legibility and traceability across challenging substrates.",
-    image: "/src/assets/images/solution_ocr_barcode_1792999690125.jpg",
+    image: "/images/AI Solder Inspection Dashboard-4.png",
     industrialProblem:
       "Laser-etched, dot-peened, inkjet-printed, or embossed codes on curved, specular, or low-contrast packaging frequently degrade during production, causing downstream supply chain rejections and regulatory non-compliance.",
     inspectionApproach:
@@ -196,7 +196,7 @@ export const SOLUTIONS: Solution[] = [
     tagline: "Automated identification of scratches, pores, tool chatter, and cosmetic flaws on precision surfaces.",
     summary:
       "Real-time optical scanning of machined metals, stamped foils, glass, and injection moldings to detect microscopic flaws before assembly.",
-    image: "/src/assets/images/solution_surface_defect_1792999691227.jpg",
+    image: "/images/AI Metal Surface Inspection Dashboard-1.png",
     industrialProblem:
       "Subtle tool marks, grinding chatter, porosity pits, and handling scratches on precision components (such as engine bearings, medical implants, and optical elements) lead to structural failure or aesthetic rejection, yet are tedious and inconsistent for manual inspectors.",
     inspectionApproach:
@@ -243,7 +243,7 @@ export const SOLUTIONS: Solution[] = [
     tagline: "Sub-pixel telecentric measurement for critical tolerances and geometric verification.",
     summary:
       "Non-contact optical dimensioning verifying diameters, concentricity, thread pitches, pitch-circle diameters (PCD), and GD&T features at production rates.",
-    image: "/src/assets/images/case_study_pcb_1792999691900.jpg",
+    image: "/images/Precision Vision Inspection Dashboard.png",
     industrialProblem:
       "Manual vernier calipers, micrometers, and slow coordinate measuring machines (CMMs) sample only 1 in 100 parts, allowing batches of out-of-spec parts to pass undetected when cutting tools wear out.",
     inspectionApproach:

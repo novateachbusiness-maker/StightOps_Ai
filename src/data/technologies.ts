@@ -36,7 +36,7 @@ export const TECHNOLOGY_EXPLORER_ITEMS: TechnologyItem[] = [
       "High-resolution 12MP image of a cast aluminum cylinder head with natural surface pebble texture and casting lines.",
     exampleOutput:
       "Pixel-level anomaly heatmap highlighting a 0.35mm porosity pit with a 98.4% defect confidence score, triggering an automated diverter signal.",
-    image: "/assets/aistudio/image_2430292c_75e78aa8.jpg",
+    image: "/images/Precision Vision Inspection Dashboard.png",
     visualCaption: "Deep learning neural network architecture with hidden layers for real-time anomaly identification and classification",
     keyTools: ["TensorRT FP16/INT8", "PyTorch Anomaly Networks", "Vision Transformers (ViT)", "Unsupervised PatchCore"],
     tradeOffNotes:
@@ -54,7 +54,7 @@ export const TECHNOLOGY_EXPLORER_ITEMS: TechnologyItem[] = [
       "Multi-angle RGB image of a populated PCB assembly with dozens of ICs, capacitors, and connector pins.",
     exampleOutput:
       "Bounding boxes around all components with labels ('IC_U4: PRESENT', 'C14: TOMBSTONED') and exact XY millimeter coordinates passed to the assembly controller.",
-    image: "/assets/electronics/solution_aoi_system_1792999689778.jpg",
+    image: "/images/Futuristic Solder Inspection Dashboard-2.png",
     visualCaption: "Automated optical inspection head locating component coordinates on PCB assembly",
     keyTools: ["YOLOv8 / YOLOv11 Edge Architectures", "Mask R-CNN / SegNet", "NVIDIA DeepStream", "C++ ONNX Runtime"],
     tradeOffNotes:
@@ -108,7 +108,7 @@ export const TECHNOLOGY_EXPLORER_ITEMS: TechnologyItem[] = [
       "Parts moving at 2.5 meters per second on an automated conveyor line with ambient factory overhead fluorescent flicker.",
     exampleOutput:
       "Crystal-clear, zero-blur image captured with a 200-microsecond high-intensity LED strobe pulse triggered by a shaft encoder signal.",
-    image: "/src/assets/images/hero_pcb_inspection_1792999689695.jpg",
+    image: "/images/AI Metal Surface Inspection-3.png",
     visualCaption: "Industrial camera with telecentric lens and integrated ring illuminator over inspection station",
     keyTools: ["GigE Vision & USB3 Vision SDKs", "Global Shutter CMOS Sensors", "Collimated & Coaxial LED Strobes", "IP67 Protective Housings"],
     tradeOffNotes:

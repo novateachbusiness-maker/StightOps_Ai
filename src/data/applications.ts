@@ -76,7 +76,7 @@ export const APPLICATIONS: ApplicationCase[] = [
         detail: "Pass/Fail decision is dispatched to the SMEMA conveyor buffer, and rework zoom coordinates are sent to the operator repair station.",
       },
     ],
-    image: "/assets/applications/pcb-aoi.jpg",
+    image: "/images/WhatsApp Image 2026-11-03 at 1.15.42 PM.jpeg",
     technologiesUsed: [
       "Multi-angle RGB Shape-from-Shading",
       "Telecentric Macro Optics",
