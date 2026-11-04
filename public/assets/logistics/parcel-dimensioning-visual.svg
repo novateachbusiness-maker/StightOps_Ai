@@ -1,0 +1,68 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1600 900" role="img" aria-labelledby="title desc">
+  <title id="title">Optical parcel dimensioning and volumetrics</title>
+  <desc id="desc">A conveyor-mounted optical profiler measures parcel length, width and height for volumetric processing.</desc>
+  <defs>
+    <linearGradient id="bg" x2="1" y2="1"><stop stop-color="#071829"/><stop offset="1" stop-color="#12344a"/></linearGradient>
+    <linearGradient id="box" x2="1" y2="1"><stop stop-color="#d2a77e"/><stop offset="1" stop-color="#936541"/></linearGradient>
+    <linearGradient id="belt" y2="1"><stop stop-color="#426477"/><stop offset="1" stop-color="#142d3d"/></linearGradient>
+    <pattern id="grid" width="48" height="48" patternUnits="userSpaceOnUse"><path d="M48 0H0V48" fill="none" stroke="#8bd8e8" stroke-opacity=".07"/></pattern>
+    <filter id="glow"><feGaussianBlur stdDeviation="9" result="b"/><feMerge><feMergeNode in="b"/><feMergeNode in="SourceGraphic"/></feMerge></filter>
+  </defs>
+  <rect width="1600" height="900" fill="url(#bg)"/><rect width="1600" height="900" fill="url(#grid)"/>
+  <path d="M0 690H1600V900H0Z" fill="url(#belt)"/><path d="M0 701H1600" stroke="#72e4f6" stroke-opacity=".5" stroke-width="4"/>
+  <path d="M595 213V681M1000 213V681M595 228H1000" fill="none" stroke="#87aeba" stroke-width="20"/>
+  <path d="M650 250H948V344H650z" fill="#122d3e" stroke="#7ea5b3" stroke-width="6"/>
+  <path d="M698 344l38 226h-76zM900 344l-38 226h76z" fill="#55e8d3" opacity=".12"/>
+  <path d="M698 344l38 226M900 344l-38 226" stroke="#55e8d3" stroke-width="5" stroke-dasharray="10 10" filter="url(#glow)"/>
+  <g transform="translate(635 460)">
+    <path d="M0 50l174-78 212 80-182 96z" fill="url(#box)" stroke="#e9c19a" stroke-width="6"/>
+    <path d="M0 50v142l204 105V148z" fill="#916444" stroke="#d0a47b" stroke-width="6"/>
+    <path d="M204 148l182-96v141l-182 104z" fill="#bd8a5e" stroke="#e4b98e" stroke-width="6"/>
+    <path d="M170-26v174M126-8l89 175" stroke="#e9c19a" stroke-width="6" opacity=".75"/>
+  </g>
+  <g fill="none" stroke="#55e8d3" stroke-width="5">
+    <path d="M635 770h386"/><path d="M635 754v32M1021 754v32"/>
+    <path d="M1080 500l-174 92"/><path d="M1080 500v176"/>
+    <path d="M580 465l180-82"/>
+  </g>
+  <g font-family="Arial,sans-serif">
+    <rect x="64" y="58" width="385" height="50" rx="25" fill="#0b3042" stroke="#3b8194"/><circle cx="91" cy="83" r="8" fill="#55e8d3"/>
+    <text x="112" y="90" fill="#aeeaf2" font-size="20" letter-spacing="3">SIGHTOPS AI  /  LOGISTICS VISION</text>
+    <text x="64" y="174" fill="#fff" font-size="42" font-weight="700">OPTICAL PARCEL DIMENSIONING</text>
+    <text x="66" y="213" fill="#9dc0d0" font-size="23">3D profile capture for parcel volumetrics</text>
+    <rect x="1120" y="72" width="410" height="118" rx="18" fill="#102b3c" stroke="#3d7488"/>
+    <circle cx="1160" cy="113" r="9" fill="#55e8d3"/><text x="1184" y="121" fill="#a9c5d1" font-size="19">OPTICAL PROFILER</text>
+    <text x="1150" y="164" fill="#55e8d3" font-size="27" font-weight="700">LENGTH  /  WIDTH  /  HEIGHT</text>
+    <rect x="1112" y="274" width="390" height="166" rx="16" fill="#0b2030" stroke="#397083"/>
+    <text x="1144" y="315" fill="#8faebc" font-size="17" letter-spacing="2">VOLUMETRIC WORKFLOW</text>
+    <text x="1144" y="363" fill="#fff" font-size="23" font-weight="700">L  ×  W  ×  H</text>
+    <text x="1144" y="406" fill="#55e8d3" font-size="19">DIMENSIONS CAPTURED</text>
+    <text x="702" y="819" fill="#a8e8ee" font-size="20">CONVEYOR  /  PROFILER  /  PARCEL</text>
+    <rect x="1020" y="232" width="520" height="485" rx="24" fill="#071729" fill-opacity=".97" stroke="#078bff" stroke-width="4"/>
+    <path d="M1040 292h480" stroke="#155071" stroke-width="2"/>
+    <text x="1054" y="273" fill="#fff" font-size="25" font-weight="700">OPTICAL PARCEL DIMENSIONING</text>
+    <rect x="1386" y="245" width="126" height="46" rx="23" fill="#00d78a"/>
+    <path d="m1405 267 8 8 16-18" fill="none" stroke="#06372f" stroke-width="5" stroke-linecap="round" stroke-linejoin="round"/>
+    <text x="1436" y="276" fill="#06372f" font-size="21" font-weight="700">PASS</text>
+    <text x="1055" y="329" fill="#4ddaff" font-size="16" letter-spacing="2">ILLUSTRATIVE SAMPLE SCAN</text>
+    <rect x="1055" y="352" width="215" height="214" rx="12" fill="#0d2940" stroke="#26739a" stroke-width="2"/>
+    <path d="M1092 434l71-35 77 30-73 39z" fill="#bd8a5e" stroke="#e9c19a" stroke-width="4"/>
+    <path d="M1092 434v73l75 38v-77z" fill="#916444" stroke="#d0a47b" stroke-width="4"/>
+    <path d="M1167 468l73-39v73l-73 43z" fill="#bd8a5e" stroke="#e4b98e" stroke-width="4"/>
+    <path d="M1080 527h165M1080 519v16M1245 519v16M1253 418v103M1245 418h16M1245 521h16" fill="none" stroke="#16e7a4" stroke-width="3"/>
+    <text x="1080" y="554" fill="#9dbccc" font-size="15">3D PROFILE / SAMPLE PARCEL</text>
+    <g fill="#c6dce7" font-size="18">
+      <text x="1292" y="378">Length</text><text x="1504" y="378" text-anchor="end" fill="#51efbb">420 mm</text>
+      <text x="1292" y="419">Width</text><text x="1504" y="419" text-anchor="end" fill="#51efbb">310 mm</text>
+      <text x="1292" y="460">Height</text><text x="1504" y="460" text-anchor="end" fill="#51efbb">225 mm</text>
+      <text x="1292" y="501">Volume</text><text x="1504" y="501" text-anchor="end" fill="#51efbb">29.3 L</text>
+    </g>
+    <g fill="#16e7a4"><circle cx="1280" cy="372" r="6"/><circle cx="1280" cy="413" r="6"/><circle cx="1280" cy="454" r="6"/><circle cx="1280" cy="495" r="6"/></g>
+    <rect x="1055" y="592" width="450" height="82" rx="14" fill="#0c2538" stroke="#164d69"/>
+    <text x="1080" y="624" fill="#91aebe" font-size="15" letter-spacing="2">3D VOLUMETRIC MEASUREMENT</text>
+    <text x="1080" y="654" fill="#fff" font-size="18" font-weight="700">LENGTH  ·  WIDTH  ·  HEIGHT  ·  VOLUME</text>
+    <rect x="64" y="796" width="1472" height="62" rx="14" fill="#071729" stroke="#087fbd" stroke-width="2"/>
+    <text x="92" y="834" fill="#48dcff" font-size="17" letter-spacing="2">SIGHTOPS AI  /  FREIGHT VOLUMETRICS</text>
+    <text x="1508" y="834" fill="#b9d1df" font-size="17" text-anchor="end">3D PROFILE  ·  NON-CONTACT DIMENSIONING</text>
+  </g>
+</svg>

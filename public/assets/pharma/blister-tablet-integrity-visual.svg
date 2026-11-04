@@ -1,0 +1,76 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1600 900" role="img" aria-labelledby="title desc">
+  <title id="title">Blister pocket and tablet integrity inspection</title>
+  <desc id="desc">A vision system checks blister pack pockets for missing, damaged or incorrect tablets and packaging defects.</desc>
+  <defs>
+    <linearGradient id="bg" x2="1" y2="1"><stop stop-color="#071829"/><stop offset="1" stop-color="#12344a"/></linearGradient>
+    <linearGradient id="foil" x2="1" y2="1"><stop stop-color="#d8e5e9"/><stop offset=".5" stop-color="#7d9ba8"/><stop offset="1" stop-color="#e8f2f4"/></linearGradient>
+    <pattern id="grid" width="48" height="48" patternUnits="userSpaceOnUse"><path d="M48 0H0V48" fill="none" stroke="#8bd8e8" stroke-opacity=".07"/></pattern>
+    <filter id="glow"><feGaussianBlur stdDeviation="9" result="b"/><feMerge><feMergeNode in="b"/><feMergeNode in="SourceGraphic"/></feMerge></filter>
+  </defs>
+  <rect width="1600" height="900" fill="url(#bg)"/><rect width="1600" height="900" fill="url(#grid)"/>
+  <path d="M0 676H1600V900H0Z" fill="#18384b"/><path d="M0 688H1600" stroke="#72e4f6" stroke-opacity=".5" stroke-width="4"/>
+  <g transform="translate(230 286) rotate(-8 450 210)">
+    <rect x="0" y="0" width="910" height="380" rx="44" fill="url(#foil)" stroke="#effaff" stroke-width="8"/>
+    <path d="M24 24H885M24 355H885" stroke="#627e8b" stroke-width="4" stroke-dasharray="8 12"/>
+    <g fill="#173648" fill-opacity=".2" stroke="#436273" stroke-width="5">
+      <rect x="62" y="58" width="176" height="114" rx="48"/><rect x="278" y="58" width="176" height="114" rx="48"/><rect x="494" y="58" width="176" height="114" rx="48"/><rect x="710" y="58" width="140" height="114" rx="48"/>
+      <rect x="62" y="208" width="176" height="114" rx="48"/><rect x="278" y="208" width="176" height="114" rx="48"/><rect x="494" y="208" width="176" height="114" rx="48"/><rect x="710" y="208" width="140" height="114" rx="48"/>
+    </g>
+    <g fill="#f3f5d2" stroke="#b4a978" stroke-width="4">
+      <ellipse cx="150" cy="115" rx="56" ry="31"/><ellipse cx="366" cy="115" rx="56" ry="31"/><ellipse cx="582" cy="115" rx="56" ry="31"/><ellipse cx="780" cy="115" rx="44" ry="30"/>
+      <ellipse cx="150" cy="265" rx="56" ry="31"/><ellipse cx="366" cy="265" rx="56" ry="31"/><ellipse cx="582" cy="265" rx="56" ry="31"/>
+    </g>
+    <rect x="701" y="196" width="158" height="136" rx="26" fill="none" stroke="#ffbc64" stroke-width="7" stroke-dasharray="14 10"/>
+    <ellipse cx="780" cy="265" rx="43" ry="27" fill="#c5d6dd" stroke="#688394" stroke-width="4"/>
+  </g>
+  <path d="M1035 456h110l61-84h108" fill="none" stroke="#55e8d3" stroke-width="4"/>
+  <g font-family="Arial,sans-serif">
+    <rect x="64" y="58" width="385" height="50" rx="25" fill="#0b3042" stroke="#3b8194"/><circle cx="91" cy="83" r="8" fill="#55e8d3"/>
+    <text x="112" y="90" fill="#aeeaf2" font-size="20" letter-spacing="3">SIGHTOPS AI  /  PHARMA QC</text>
+    <text x="64" y="174" fill="#fff" font-size="42" font-weight="700">BLISTER &amp; TABLET INSPECTION</text>
+    <text x="66" y="213" fill="#9dc0d0" font-size="23">Pocket-by-pocket presence and integrity check</text>
+    <rect x="1120" y="72" width="410" height="118" rx="18" fill="#102b3c" stroke="#3d7488"/>
+    <circle cx="1160" cy="113" r="9" fill="#55e8d3"/><text x="1184" y="121" fill="#a9c5d1" font-size="19">VISION INSPECTION</text>
+    <text x="1150" y="164" fill="#55e8d3" font-size="26" font-weight="700">POCKET PRESENCE MAP</text>
+    <rect x="1120" y="281" width="390" height="196" rx="18" fill="#0b2030" stroke="#397083"/>
+    <text x="1152" y="322" fill="#8faebc" font-size="17" letter-spacing="2">POCKET CHECKS</text>
+    <circle cx="1174" cy="365" r="10" fill="#55e8d3"/><text x="1200" y="372" fill="#d9edf1" font-size="19">TABLET PRESENT</text>
+    <circle cx="1174" cy="411" r="10" fill="#55e8d3"/><text x="1200" y="418" fill="#d9edf1" font-size="19">DAMAGE / COLOR</text>
+    <circle cx="1174" cy="457" r="10" fill="#ffbc64"/><text x="1200" y="464" fill="#d9edf1" font-size="19">EMPTY POCKET ALERT</text>
+    <text x="1080" y="561" fill="#a8e8ee" font-size="20">MISSING / CHIPPED / FOREIGN</text>
+    <rect x="1045" y="659" width="460" height="76" rx="18" fill="#0a2030" stroke="#2b6075"/>
+    <text x="1080" y="706" fill="#fff" font-size="23" font-weight="700">CAVITY FILL  /  TABLET QUALITY</text>
+    <rect x="1024" y="445" width="22" height="22" rx="5" fill="#55e8d3" filter="url(#glow)"/>
+    <rect x="1020" y="232" width="520" height="485" rx="24" fill="#071729" fill-opacity=".97" stroke="#078bff" stroke-width="4"/>
+    <path d="M1040 292h480" stroke="#155071" stroke-width="2"/>
+    <text x="1054" y="273" fill="#fff" font-size="25" font-weight="700">BLISTER &amp; TABLET INSPECTION</text>
+    <rect x="1386" y="245" width="126" height="46" rx="23" fill="#00d78a"/>
+    <path d="m1405 267 8 8 16-18" fill="none" stroke="#06372f" stroke-width="5" stroke-linecap="round" stroke-linejoin="round"/>
+    <text x="1436" y="276" fill="#06372f" font-size="21" font-weight="700">PASS</text>
+    <text x="1055" y="329" fill="#4ddaff" font-size="16" letter-spacing="2">ILLUSTRATIVE SAMPLE INSPECTION</text>
+    <rect x="1055" y="352" width="215" height="214" rx="12" fill="#0d2940" stroke="#26739a" stroke-width="2"/>
+    <g fill="#b8cbd1" fill-opacity=".25" stroke="#a9c7d0" stroke-width="3">
+      <rect x="1080" y="382" width="72" height="62" rx="22"/><rect x="1168" y="382" width="72" height="62" rx="22"/>
+      <rect x="1080" y="462" width="72" height="62" rx="22"/><rect x="1168" y="462" width="72" height="62" rx="22"/>
+    </g>
+    <g fill="#f3f5d2" stroke="#d0c493" stroke-width="3">
+      <ellipse cx="1116" cy="413" rx="24" ry="13"/><ellipse cx="1204" cy="413" rx="24" ry="13"/>
+      <ellipse cx="1116" cy="493" rx="24" ry="13"/><ellipse cx="1204" cy="493" rx="24" ry="13"/>
+    </g>
+    <path d="M1072 374h176v158h-176z" fill="none" stroke="#16e7a4" stroke-width="3"/>
+    <text x="1080" y="554" fill="#9dbccc" font-size="16">POCKET MAP / SAMPLE REGION</text>
+    <g fill="#c6dce7" font-size="18">
+      <text x="1292" y="378">Tablet presence</text><text x="1504" y="378" text-anchor="end" fill="#51efbb">8 / 8</text>
+      <text x="1292" y="419">Chips / cracks</text><text x="1504" y="419" text-anchor="end" fill="#51efbb">NONE FOUND</text>
+      <text x="1292" y="460">Color match</text><text x="1504" y="460" text-anchor="end" fill="#51efbb">VERIFIED</text>
+      <text x="1292" y="501">Foil seal</text><text x="1504" y="501" text-anchor="end" fill="#51efbb">INTACT</text>
+    </g>
+    <g fill="#16e7a4"><circle cx="1280" cy="372" r="6"/><circle cx="1280" cy="413" r="6"/><circle cx="1280" cy="454" r="6"/><circle cx="1280" cy="495" r="6"/></g>
+    <rect x="1055" y="592" width="450" height="82" rx="14" fill="#0c2538" stroke="#164d69"/>
+    <text x="1080" y="624" fill="#91aebe" font-size="15" letter-spacing="2">POCKET-BY-POCKET CHECK</text>
+    <text x="1080" y="654" fill="#fff" font-size="18" font-weight="700">PRESENCE  ·  TABLET QUALITY  ·  FOIL</text>
+    <rect x="64" y="796" width="1472" height="62" rx="14" fill="#071729" stroke="#087fbd" stroke-width="2"/>
+    <text x="92" y="834" fill="#48dcff" font-size="17" letter-spacing="2">SIGHTOPS AI  /  BLISTER PACK QUALITY</text>
+    <text x="1508" y="834" fill="#b9d1df" font-size="17" text-anchor="end">AREA VISION  ·  CAVITY FILL &amp; SEAL CHECK</text>
+  </g>
+</svg>

@@ -1,0 +1,68 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1600 900" role="img" aria-labelledby="title desc">
+  <title id="title">Six-sided barcode scanning tunnel</title>
+  <desc id="desc">A parcel passes through a multi-camera tunnel that reads barcode labels from six faces.</desc>
+  <defs>
+    <linearGradient id="bg" x2="1" y2="1"><stop stop-color="#071829"/><stop offset="1" stop-color="#12344a"/></linearGradient>
+    <linearGradient id="metal" x2="1"><stop stop-color="#b7d0d6"/><stop offset=".48" stop-color="#58798a"/><stop offset="1" stop-color="#d8e6e8"/></linearGradient>
+    <linearGradient id="belt" y2="1"><stop stop-color="#426477"/><stop offset="1" stop-color="#142d3d"/></linearGradient>
+    <pattern id="grid" width="48" height="48" patternUnits="userSpaceOnUse"><path d="M48 0H0V48" fill="none" stroke="#8bd8e8" stroke-opacity=".07"/></pattern>
+    <filter id="glow"><feGaussianBlur stdDeviation="9" result="b"/><feMerge><feMergeNode in="b"/><feMergeNode in="SourceGraphic"/></feMerge></filter>
+  </defs>
+  <rect width="1600" height="900" fill="url(#bg)"/><rect width="1600" height="900" fill="url(#grid)"/>
+  <path d="M0 684H1600V900H0Z" fill="url(#belt)"/><path d="M0 696H1600" stroke="#72e4f6" stroke-opacity=".5" stroke-width="4"/>
+  <path d="M465 255V680M1138 255V680M465 266H1138M465 378H1138M465 678H1138" fill="none" stroke="url(#metal)" stroke-width="20"/>
+  <path d="M490 274H1110V660H490Z" fill="#102737" fill-opacity=".22" stroke="#62deed" stroke-opacity=".42" stroke-width="4"/>
+  <g fill="#122d3d" stroke="#9bc5ce" stroke-width="5">
+    <path d="M527 287h72v38h-72z"/><path d="M1002 287h72v38h-72z"/>
+    <path d="M468 420h38v76h-38z"/><path d="M1098 420h38v76h-38z"/>
+    <path d="M625 640h72v38h-72z"/><path d="M905 640h72v38h-72z"/>
+  </g>
+  <g fill="#55e8d3" filter="url(#glow)"><path d="M556 327l-18 155h55l-18-155z" opacity=".16"/><path d="M1036 327l-20 155h58l-18-155z" opacity=".16"/><path d="M484 458h165v25H484z" opacity=".18"/></g>
+  <g transform="translate(680 458)">
+    <path d="M0 55l175-83 187 78-177 93z" fill="#ad7650" stroke="#e0b692" stroke-width="6"/>
+    <path d="M0 55v128l185 92V143z" fill="#875739" stroke="#d7a67d" stroke-width="6"/>
+    <path d="M185 143l177-93v128l-177 97z" fill="#c18a60" stroke="#e6bd98" stroke-width="6"/>
+    <path d="M226 24l70 29-78 41-69-32z" fill="#fff8e9" stroke="#e8e4d8" stroke-width="4"/>
+    <g stroke="#142d3d" stroke-width="4"><path d="M176 44v30M188 49v30M200 54v30M213 58v31M225 63v30M240 69v29M253 74v29M267 79v29M280 83v29"/></g>
+    <rect x="144" y="16" width="173" height="78" fill="none" stroke="#55e8d3" stroke-width="5" stroke-dasharray="12 9"/>
+  </g>
+  <g font-family="Arial,sans-serif">
+    <rect x="64" y="58" width="385" height="50" rx="25" fill="#0b3042" stroke="#3b8194"/><circle cx="91" cy="83" r="8" fill="#55e8d3"/>
+    <text x="112" y="90" fill="#aeeaf2" font-size="20" letter-spacing="3">SIGHTOPS AI  /  LOGISTICS VISION</text>
+    <text x="64" y="174" fill="#fff" font-size="42" font-weight="700">6-SIDED SCANNING TUNNEL</text>
+    <text x="66" y="213" fill="#9dc0d0" font-size="23">Multi-camera barcode capture in motion</text>
+    <rect x="1120" y="72" width="410" height="118" rx="18" fill="#102b3c" stroke="#3d7488"/>
+    <circle cx="1160" cy="113" r="9" fill="#55e8d3"/><text x="1184" y="121" fill="#a9c5d1" font-size="19">CAMERA ARRAY</text>
+    <text x="1150" y="164" fill="#55e8d3" font-size="27" font-weight="700">TOP  /  SIDES  /  BASE</text>
+    <rect x="1160" y="283" width="338" height="174" rx="16" fill="#0b2030" stroke="#397083"/>
+    <text x="1190" y="322" fill="#8faebc" font-size="17" letter-spacing="2">DECODED LABEL</text>
+    <g stroke="#b7f4ff" stroke-width="5"><path d="M1194 350v69M1207 350v69M1220 350v69M1236 350v69M1244 350v69M1264 350v69M1278 350v69M1290 350v69M1307 350v69M1324 350v69M1332 350v69M1352 350v69"/></g>
+    <text x="1375" y="375" fill="#55e8d3" font-size="19">GS1 / 2D</text><text x="1375" y="410" fill="#a9c5d1" font-size="17">READ CHECK</text>
+    <text x="515" y="744" fill="#a8e8ee" font-size="20">SYNCHRONIZED MULTI-FACE CAPTURE</text>
+    <rect x="1020" y="232" width="520" height="485" rx="24" fill="#071729" fill-opacity=".97" stroke="#078bff" stroke-width="4"/>
+    <path d="M1040 292h480" stroke="#155071" stroke-width="2"/>
+    <text x="1054" y="273" fill="#fff" font-size="25" font-weight="700">6-SIDED BARCODE TUNNEL</text>
+    <rect x="1386" y="245" width="126" height="46" rx="23" fill="#00d78a"/>
+    <path d="m1405 267 8 8 16-18" fill="none" stroke="#06372f" stroke-width="5" stroke-linecap="round" stroke-linejoin="round"/>
+    <text x="1436" y="276" fill="#06372f" font-size="21" font-weight="700">PASS</text>
+    <text x="1055" y="329" fill="#4ddaff" font-size="16" letter-spacing="2">ILLUSTRATIVE SAMPLE INSPECTION</text>
+    <rect x="1055" y="352" width="215" height="214" rx="12" fill="#0d2940" stroke="#26739a" stroke-width="2"/>
+    <rect x="1082" y="389" width="162" height="102" rx="8" fill="#fff8e9"/>
+    <g stroke="#142d3d" stroke-width="4"><path d="M1100 405v67M1110 405v67M1123 405v67M1137 405v67M1145 405v67M1160 405v67M1174 405v67M1185 405v67M1202 405v67M1218 405v67"/></g>
+    <path d="M1072 378h183v124h-183z" fill="none" stroke="#16e7a4" stroke-width="3"/>
+    <text x="1080" y="542" fill="#9dbccc" font-size="16">LABEL REGION / DECODE</text>
+    <g fill="#c6dce7" font-size="18">
+      <text x="1292" y="378">Faces captured</text><text x="1504" y="378" text-anchor="end" fill="#51efbb">6 / 6</text>
+      <text x="1292" y="419">GS1-128</text><text x="1504" y="419" text-anchor="end" fill="#51efbb">DECODED</text>
+      <text x="1292" y="460">DataMatrix</text><text x="1504" y="460" text-anchor="end" fill="#51efbb">READ OK</text>
+      <text x="1292" y="501">Read result</text><text x="1504" y="501" text-anchor="end" fill="#51efbb">PASS</text>
+    </g>
+    <g fill="#16e7a4"><circle cx="1280" cy="372" r="6"/><circle cx="1280" cy="413" r="6"/><circle cx="1280" cy="454" r="6"/><circle cx="1280" cy="495" r="6"/></g>
+    <rect x="1055" y="592" width="450" height="82" rx="14" fill="#0c2538" stroke="#164d69"/>
+    <text x="1080" y="624" fill="#91aebe" font-size="15" letter-spacing="2">MULTI-FACE READ ZONE</text>
+    <text x="1080" y="654" fill="#fff" font-size="18" font-weight="700">TOP  ·  SIDES  ·  FRONT  ·  REAR  ·  BASE</text>
+    <rect x="64" y="796" width="1472" height="62" rx="14" fill="#071729" stroke="#087fbd" stroke-width="2"/>
+    <text x="92" y="834" fill="#48dcff" font-size="17" letter-spacing="2">SIGHTOPS AI  /  PARCEL IDENTIFICATION</text>
+    <text x="1508" y="834" fill="#b9d1df" font-size="17" text-anchor="end">MULTI-CAMERA VISION  ·  IN-MOTION DECODING</text>
+  </g>
+</svg>

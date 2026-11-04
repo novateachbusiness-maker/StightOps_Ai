@@ -1,0 +1,73 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1600 900" role="img" aria-labelledby="title desc">
+  <title id="title">Medical syringe and needle measurement</title>
+  <desc id="desc">Telecentric optical metrology checks syringe graduations, barrel geometry, needle straightness and bevel angle.</desc>
+  <defs>
+    <linearGradient id="bg" x2="1" y2="1"><stop stop-color="#071829"/><stop offset="1" stop-color="#12344a"/></linearGradient>
+    <linearGradient id="glass" x2="1"><stop stop-color="#c1f3ff" stop-opacity=".1"/><stop offset=".5" stop-color="#e6fbff" stop-opacity=".45"/><stop offset="1" stop-color="#69bfd1" stop-opacity=".14"/></linearGradient>
+    <linearGradient id="metal" x2="1"><stop stop-color="#7191a0"/><stop offset=".5" stop-color="#e1eff2"/><stop offset="1" stop-color="#627e8b"/></linearGradient>
+    <pattern id="grid" width="48" height="48" patternUnits="userSpaceOnUse"><path d="M48 0H0V48" fill="none" stroke="#8bd8e8" stroke-opacity=".07"/></pattern>
+    <filter id="glow"><feGaussianBlur stdDeviation="9" result="b"/><feMerge><feMergeNode in="b"/><feMergeNode in="SourceGraphic"/></feMerge></filter>
+  </defs>
+  <rect width="1600" height="900" fill="url(#bg)"/><rect width="1600" height="900" fill="url(#grid)"/>
+  <path d="M0 690H1600V900H0Z" fill="#18384b"/><path d="M0 701H1600" stroke="#72e4f6" stroke-opacity=".5" stroke-width="4"/>
+  <g transform="translate(230 390)">
+    <path d="M80 0h44v116H80z" fill="url(#metal)" stroke="#d8edf2" stroke-width="5"/>
+    <path d="M124 28h506v60H124z" rx="12" fill="url(#glass)" stroke="#c2f2ff" stroke-width="7"/>
+    <path d="M142 39h365v38H142z" fill="#66d7d2" fill-opacity=".2"/>
+    <path d="M630 42h151v32H630z" fill="url(#metal)" stroke="#d8edf2" stroke-width="5"/>
+    <path d="M781 58h285" stroke="#d8e8ec" stroke-width="12" stroke-linecap="round"/>
+    <path d="M1065 58l35-13v26z" fill="#d8e8ec"/>
+    <path d="M176 29v15m35-15v25m35-25v15m35-15v25m35-25v15m35-15v25m35-25v15m35-15v25m35-25v15m35-15v25" stroke="#e9ffff" stroke-width="5"/>
+    <path d="M184 88h50m16 0h50m16 0h50m16 0h50m16 0h50" stroke="#55e8d3" stroke-width="3" opacity=".65"/>
+  </g>
+  <g fill="none" stroke="#55e8d3" stroke-width="4">
+    <path d="M460 420v-88h106"/><path d="M715 419v-128h124"/><path d="M1310 447h90v-84h74"/>
+    <circle cx="485" cy="430" r="8" fill="#55e8d3"/><circle cx="750" cy="447" r="8" fill="#55e8d3"/><circle cx="1310" cy="448" r="8" fill="#55e8d3"/>
+  </g>
+  <circle cx="1172" cy="519" r="116" fill="#0b2232" stroke="#4a8598" stroke-width="6"/>
+  <circle cx="1172" cy="519" r="83" fill="url(#glass)" stroke="#55e8d3" stroke-width="4"/>
+  <path d="M1105 548h102m-78-16 36-54 25 32 34-48" fill="none" stroke="#d9f9ff" stroke-width="8" stroke-linecap="round" stroke-linejoin="round"/>
+  <path d="M1105 578h133" stroke="#55e8d3" stroke-width="4" stroke-dasharray="8 8"/>
+  <g font-family="Arial,sans-serif">
+    <rect x="64" y="58" width="385" height="50" rx="25" fill="#0b3042" stroke="#3b8194"/><circle cx="91" cy="83" r="8" fill="#55e8d3"/>
+    <text x="112" y="90" fill="#aeeaf2" font-size="20" letter-spacing="3">SIGHTOPS AI  /  PHARMA METROLOGY</text>
+    <text x="64" y="174" fill="#fff" font-size="42" font-weight="700">SYRINGE &amp; NEEDLE METROLOGY</text>
+    <text x="66" y="213" fill="#9dc0d0" font-size="23">Telecentric measurement of critical geometry</text>
+    <rect x="1120" y="72" width="410" height="118" rx="18" fill="#102b3c" stroke="#3d7488"/>
+    <circle cx="1160" cy="113" r="9" fill="#55e8d3"/><text x="1184" y="121" fill="#a9c5d1" font-size="19">OPTICAL METROLOGY</text>
+    <text x="1150" y="164" fill="#55e8d3" font-size="26" font-weight="700">PROFILE  /  DIMENSION  /  ANGLE</text>
+    <text x="860" y="291" fill="#a8e8ee" font-size="20">BEVEL TIP PROFILE</text>
+    <text x="500" y="326" fill="#a8e8ee" font-size="20">GRADUATIONS</text>
+    <text x="843" y="607" fill="#a8e8ee" font-size="20">BARREL &amp; CANNULA</text>
+    <rect x="1045" y="689" width="460" height="70" rx="18" fill="#0a2030" stroke="#2b6075"/>
+    <text x="1080" y="733" fill="#fff" font-size="22" font-weight="700">STRAIGHTNESS  /  BEVEL  /  SCALE</text>
+    <rect x="1020" y="232" width="520" height="485" rx="24" fill="#071729" fill-opacity=".97" stroke="#078bff" stroke-width="4"/>
+    <path d="M1040 292h480" stroke="#155071" stroke-width="2"/>
+    <text x="1054" y="273" fill="#fff" font-size="25" font-weight="700">SYRINGE &amp; NEEDLE METROLOGY</text>
+    <rect x="1386" y="245" width="126" height="46" rx="23" fill="#00d78a"/>
+    <path d="m1405 267 8 8 16-18" fill="none" stroke="#06372f" stroke-width="5" stroke-linecap="round" stroke-linejoin="round"/>
+    <text x="1436" y="276" fill="#06372f" font-size="21" font-weight="700">PASS</text>
+    <text x="1055" y="329" fill="#4ddaff" font-size="16" letter-spacing="2">ILLUSTRATIVE SAMPLE MEASUREMENT</text>
+    <rect x="1055" y="352" width="215" height="214" rx="12" fill="#0d2940" stroke="#26739a" stroke-width="2"/>
+    <path d="M1080 421h128" stroke="#d7eff5" stroke-width="11" stroke-linecap="round"/>
+    <path d="M1093 404v34m17-34v22m17-22v34m17-34v22m17-22v34m17-34v22" stroke="#16e7a4" stroke-width="3"/>
+    <path d="M1208 421h37" stroke="#d7eff5" stroke-width="5"/>
+    <path d="m1245 421 14-7v14z" fill="#d7eff5"/>
+    <path d="M1225 405a26 26 0 0 1 27 16" fill="none" stroke="#16e7a4" stroke-width="3"/>
+    <path d="M1084 471h150" stroke="#60d9f3" stroke-width="2" stroke-dasharray="7 7"/>
+    <text x="1080" y="532" fill="#9dbccc" font-size="16">BARREL / GRADUATIONS / TIP</text>
+    <g fill="#c6dce7" font-size="18">
+      <text x="1292" y="378">Needle runout</text><text x="1504" y="378" text-anchor="end" fill="#51efbb">0.03 mm</text>
+      <text x="1292" y="419">Bevel angle</text><text x="1504" y="419" text-anchor="end" fill="#51efbb">12.5°</text>
+      <text x="1292" y="460">Scale markings</text><text x="1504" y="460" text-anchor="end" fill="#51efbb">LEGIBLE</text>
+      <text x="1292" y="501">Barrel profile</text><text x="1504" y="501" text-anchor="end" fill="#51efbb">WITHIN SPEC</text>
+    </g>
+    <g fill="#16e7a4"><circle cx="1280" cy="372" r="6"/><circle cx="1280" cy="413" r="6"/><circle cx="1280" cy="454" r="6"/><circle cx="1280" cy="495" r="6"/></g>
+    <rect x="1055" y="592" width="450" height="82" rx="14" fill="#0c2538" stroke="#164d69"/>
+    <text x="1080" y="624" fill="#91aebe" font-size="15" letter-spacing="2">TELECENTRIC OPTICAL CHECK</text>
+    <text x="1080" y="654" fill="#fff" font-size="18" font-weight="700">TIP  ·  STRAIGHTNESS  ·  GRADUATION</text>
+    <rect x="64" y="796" width="1472" height="62" rx="14" fill="#071729" stroke="#087fbd" stroke-width="2"/>
+    <text x="92" y="834" fill="#48dcff" font-size="17" letter-spacing="2">SIGHTOPS AI  /  MEDICAL DEVICE METROLOGY</text>
+    <text x="1508" y="834" fill="#b9d1df" font-size="17" text-anchor="end">TELECENTRIC VISION  ·  DIMENSION &amp; ANGLE CHECK</text>
+  </g>
+</svg>

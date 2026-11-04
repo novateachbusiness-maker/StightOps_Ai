@@ -1,0 +1,67 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1600 900" role="img" aria-labelledby="title desc">
+  <title id="title">Liquid fill-level verification</title>
+  <desc id="desc">A backlit machine-vision inspection checks the meniscus against a fill-level tolerance window.</desc>
+  <defs>
+    <linearGradient id="bg" x2="1" y2="1"><stop stop-color="#071829"/><stop offset="1" stop-color="#12344a"/></linearGradient>
+    <linearGradient id="glass" x2="1"><stop stop-color="#b8f5ff" stop-opacity=".12"/><stop offset=".5" stop-color="#d6fbff" stop-opacity=".48"/><stop offset="1" stop-color="#56b8d2" stop-opacity=".16"/></linearGradient>
+    <linearGradient id="liquid" y2="1"><stop stop-color="#31d1c2" stop-opacity=".85"/><stop offset="1" stop-color="#087eaa" stop-opacity=".72"/></linearGradient>
+    <pattern id="grid" width="48" height="48" patternUnits="userSpaceOnUse"><path d="M48 0H0V48" fill="none" stroke="#8bd8e8" stroke-opacity=".07"/></pattern>
+    <filter id="glow"><feGaussianBlur stdDeviation="11" result="b"/><feMerge><feMergeNode in="b"/><feMergeNode in="SourceGraphic"/></feMerge></filter>
+  </defs>
+  <rect width="1600" height="900" fill="url(#bg)"/><rect width="1600" height="900" fill="url(#grid)"/>
+  <path d="M0 680H1600V900H0Z" fill="#18384b"/><path d="M0 691H1600" stroke="#75e8f4" stroke-opacity=".5" stroke-width="4"/>
+  <g transform="translate(590 202)">
+    <path d="M106 133h265l-15 351q-3 62-59 70H180q-56-8-59-70Z" fill="url(#glass)" stroke="#bdeefa" stroke-width="8"/>
+    <path d="M131 329q107 10 215 0l-8 157q-3 52-54 59H182q-51-7-54-59Z" fill="url(#liquid)"/>
+    <path d="M131 329q107 10 215 0" fill="none" stroke="#a2fff0" stroke-width="7" filter="url(#glow)"/>
+    <path d="M162 101h153v91H162z" rx="16" fill="#0979b5" stroke="#8beaff" stroke-width="6"/>
+    <path d="M180 117h117M180 142h117M180 167h117" stroke="#b7f4ff" stroke-width="5" opacity=".65"/>
+    <path d="M131 294h215M131 365h215" stroke="#ffd166" stroke-width="4" stroke-dasharray="12 10"/>
+    <path d="M108 294H72v71h36" fill="none" stroke="#55e8d3" stroke-width="6"/>
+    <path d="M72 329H-5" stroke="#55e8d3" stroke-width="4"/>
+  </g>
+  <g fill="none" stroke="#55e8d3" stroke-width="4">
+    <path d="M933 526h125l58 57h113"/><path d="M900 322h121l68-69h122"/>
+  </g>
+  <g font-family="Arial,sans-serif">
+    <rect x="64" y="58" width="385" height="50" rx="25" fill="#0b3042" stroke="#3b8194"/><circle cx="91" cy="83" r="8" fill="#55e8d3"/>
+    <text x="112" y="90" fill="#aeeaf2" font-size="20" letter-spacing="3">SIGHTOPS AI  /  PACKAGING QC</text>
+    <text x="64" y="174" fill="#fff" font-size="42" font-weight="700">LIQUID FILL-LEVEL CHECK</text>
+    <text x="66" y="213" fill="#9dc0d0" font-size="23">Backlit meniscus detection for glass and PET</text>
+    <rect x="1120" y="72" width="410" height="118" rx="18" fill="#102b3c" stroke="#3d7488"/>
+    <circle cx="1160" cy="113" r="9" fill="#55e8d3"/><text x="1184" y="121" fill="#a9c5d1" font-size="19">INSPECTION MODE</text>
+    <text x="1150" y="164" fill="#55e8d3" font-size="27" font-weight="700">MENISCUS  /  FILL WINDOW</text>
+    <text x="1076" y="246" fill="#a8e8ee" font-size="20">REFERENCE BAND</text>
+    <text x="1076" y="608" fill="#a8e8ee" font-size="20">LEVEL DETECTED</text>
+    <rect x="1045" y="671" width="460" height="76" rx="18" fill="#0a2030" stroke="#2b6075"/>
+    <text x="1080" y="718" fill="#fff" font-size="23" font-weight="700">UNDERFILL  /  OVERFILL  /  PASS</text>
+    <rect x="918" y="510" width="22" height="22" rx="5" fill="#55e8d3"/><rect x="888" y="306" width="22" height="22" rx="5" fill="#55e8d3"/>
+    <rect x="1020" y="232" width="520" height="485" rx="24" fill="#071729" fill-opacity=".97" stroke="#078bff" stroke-width="4"/>
+    <path d="M1040 292h480" stroke="#155071" stroke-width="2"/>
+    <text x="1054" y="273" fill="#fff" font-size="25" font-weight="700">LIQUID FILL LEVEL</text>
+    <rect x="1386" y="245" width="126" height="46" rx="23" fill="#00d78a"/>
+    <path d="m1405 267 8 8 16-18" fill="none" stroke="#06372f" stroke-width="5" stroke-linecap="round" stroke-linejoin="round"/>
+    <text x="1436" y="276" fill="#06372f" font-size="21" font-weight="700">PASS</text>
+    <text x="1055" y="329" fill="#4ddaff" font-size="16" letter-spacing="2">ILLUSTRATIVE SAMPLE INSPECTION</text>
+    <rect x="1055" y="352" width="215" height="214" rx="12" fill="#0d2940" stroke="#26739a" stroke-width="2"/>
+    <path d="M1135 382h56l-7 140h-42z" fill="#8feaff" fill-opacity=".15" stroke="#bceefa" stroke-width="4"/>
+    <path d="M1142 396h42v22h-42z" fill="#0789c8" stroke="#a9edfa" stroke-width="3"/>
+    <path d="M1139 454q26 3 49 0l-4 63h-42z" fill="#25c9b9" fill-opacity=".75"/>
+    <path d="M1139 454q26 3 49 0" fill="none" stroke="#8affdf" stroke-width="5"/>
+    <path d="M1124 443h78M1124 469h78" stroke="#ffc65f" stroke-width="3" stroke-dasharray="7 7"/>
+    <text x="1078" y="542" fill="#9dbccc" font-size="16">MENISCUS / TARGET BAND</text>
+    <g fill="#c6dce7" font-size="18">
+      <text x="1292" y="378">Measured fill</text><text x="1504" y="378" text-anchor="end" fill="#51efbb">72.4 mm</text>
+      <text x="1292" y="419">Target window</text><text x="1504" y="419" text-anchor="end" fill="#51efbb">70–75 mm</text>
+      <text x="1292" y="460">Meniscus edge</text><text x="1504" y="460" text-anchor="end" fill="#51efbb">DETECTED</text>
+      <text x="1292" y="501">Container</text><text x="1504" y="501" text-anchor="end" fill="#51efbb">PET / GLASS</text>
+    </g>
+    <g fill="#16e7a4"><circle cx="1280" cy="372" r="6"/><circle cx="1280" cy="413" r="6"/><circle cx="1280" cy="454" r="6"/><circle cx="1280" cy="495" r="6"/></g>
+    <rect x="1055" y="592" width="450" height="82" rx="14" fill="#0c2538" stroke="#164d69"/>
+    <text x="1080" y="624" fill="#91aebe" font-size="15" letter-spacing="2">CHECKED FEATURES</text>
+    <text x="1080" y="654" fill="#fff" font-size="18" font-weight="700">UNDERFILL  ·  OVERFILL  ·  MENISCUS</text>
+    <rect x="64" y="796" width="1472" height="62" rx="14" fill="#071729" stroke="#087fbd" stroke-width="2"/>
+    <text x="92" y="834" fill="#48dcff" font-size="17" letter-spacing="2">SIGHTOPS AI  /  LIQUID FILL VERIFICATION</text>
+    <text x="1508" y="834" fill="#b9d1df" font-size="17" text-anchor="end">BACKLIGHT VISION  ·  NON-CONTACT MEASUREMENT</text>
+  </g>
+</svg>
