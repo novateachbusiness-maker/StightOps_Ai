@@ -138,9 +138,6 @@ export function IndustryDetailPage() {
                           className="w-full h-full object-cover transition-transform duration-500 group-hover:scale-105"
                           loading="lazy"
                         />
-                        <div className="absolute top-2 left-2 bg-slate-900/80 backdrop-blur-sm px-2 py-0.5 rounded text-[10px] font-mono font-semibold text-[#00D2FF]">
-                          Station 0{idx + 1}
-                        </div>
                       </div>
                     )}
                     <div className="p-4 space-y-2.5 flex-1 flex flex-col justify-between">

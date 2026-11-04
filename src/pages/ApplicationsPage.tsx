@@ -357,9 +357,20 @@ export function ApplicationsPage() {
                         <div className="text-[11px] font-mono font-semibold text-[#00D2FF] uppercase tracking-wide truncate">
                           {app.industry}
                         </div>
-                        <span className="text-[10px] font-mono px-2 py-0.5 bg-white/10 text-slate-300 rounded border border-white/15 shrink-0">
-                          Case #{index + 1}
-                        </span>
+                        <div className="flex items-center gap-2 shrink-0">
+                          <span className="text-[10px] font-mono px-2 py-0.5 bg-white/10 text-slate-300 rounded border border-white/15">
+                            Case #{index + 1}
+                          </span>
+                          <button
+                            type="button"
+                            onClick={() => setModalApp(app)}
+                            aria-label={`View full dossier for ${app.title}`}
+                            className="p-1.5 rounded-lg bg-white/10 text-white hover:bg-[#0066FF] transition-colors cursor-pointer"
+                            title="View Full Specifications"
+                          >
+                            <Maximize2 className="w-3.5 h-3.5" />
+                          </button>
+                        </div>
                       </div>
                       <div>
                         <h2 className="text-base sm:text-lg font-bold text-white leading-snug line-clamp-2">
@@ -379,15 +390,6 @@ export function ApplicationsPage() {
                         className="w-full h-full object-cover transition-transform duration-500 group-hover:scale-105"
                         loading="lazy"
                       />
-                      <button
-                        type="button"
-                        onClick={() => setModalApp(app)}
-                        aria-label={`View full dossier for ${app.title}`}
-                        className="absolute top-3 right-3 p-1.5 rounded-lg bg-black/60 text-white backdrop-blur-xs hover:bg-[#0066FF] transition-colors cursor-pointer opacity-90 hover:opacity-100"
-                        title="View Full Specifications"
-                      >
-                        <Maximize2 className="w-3.5 h-3.5" />
-                      </button>
                     </div>
 
                     {/* Tab Navigation Controls */}
