@@ -1,7 +1,8 @@
 import { useState, useId } from 'react';
-import { Send, CheckCircle2, AlertCircle, Loader2, ShieldCheck, FileText, MessageCircle } from 'lucide-react';
+import { Send, CheckCircle2, AlertCircle, Loader2, ShieldCheck, FileText, MessageCircle, Mail } from 'lucide-react';
 import { validateEnquiryForm, ValidationErrors } from '../utils/validation.ts';
 import { SITE_CONFIG } from '../config/site.ts';
+import { buildEnquiryHandoff, EnquiryHandoff } from '../utils/enquiryHandoff.ts';
 
 interface ConsultationFormProps {
   defaultApplication?: string;
@@ -31,6 +32,7 @@ export function ConsultationForm({ defaultApplication = '', defaultIndustry = ''
     deliveryNote?: string;
   } | null>(null);
   const [apiError, setApiError] = useState<string | null>(null);
+  const [handoff, setHandoff] = useState<EnquiryHandoff | null>(null);
 
   const industryOptions = [
     'Electronics & PCB Assembly',
@@ -93,7 +95,15 @@ export function ConsultationForm({ defaultApplication = '', defaultIndustry = ''
           'Content-Type': 'application/json',
         },
         body: JSON.stringify(formData),
-      });
+      }).catch(() => null);
+
+      // Hosts without the enquiry server (such as Vercel) do not answer with JSON.
+      // Hand the details to WhatsApp or email so the enquiry is never lost.
+      if (!response || !response.headers.get('content-type')?.includes('application/json')) {
+        setHandoff(buildEnquiryHandoff(formData));
+        setErrors({});
+        return;
+      }
 
       const data = await response.json();
 
@@ -134,7 +144,54 @@ export function ConsultationForm({ defaultApplication = '', defaultIndustry = ''
 
   return (
     <div className="bg-white/95 backdrop-blur-md rounded-2xl border border-white/30 p-6 sm:p-8 shadow-xl">
-      {submissionResult?.success ? (
+      {handoff ? (
+        <div className="space-y-6 text-center py-8">
+          <div className="w-14 h-14 bg-blue-100 text-[#0066FF] rounded-full flex items-center justify-center mx-auto">
+            <Send className="w-7 h-7" />
+          </div>
+
+          <div className="space-y-2">
+            <h3 className="text-xl font-bold text-[#172B32]">
+              One Last Step: Send Your Enquiry
+            </h3>
+            <p className="text-sm text-slate-600 max-w-md mx-auto">
+              Your details are ready. Choose WhatsApp or email to send them to our engineering team. Your enquiry is not sent until you do.
+            </p>
+          </div>
+
+          <div className="bg-[#F4F8F8] border border-[#DCE7E8] rounded-lg p-4 max-w-md mx-auto flex items-center justify-between text-xs">
+            <span className="text-slate-500 font-medium">Enquiry Reference:</span>
+            <span className="font-mono font-bold text-[#064E52]">{handoff.referenceId}</span>
+          </div>
+
+          <div className="flex flex-col sm:flex-row items-center justify-center gap-3">
+            <a
+              href={handoff.whatsappUrl}
+              target="_blank"
+              rel="noopener noreferrer"
+              className="w-full sm:w-auto justify-center px-5 py-2.5 text-xs font-semibold text-white bg-[#25D366] hover:bg-[#20ba59] rounded-lg transition-colors flex items-center gap-1.5 shadow-sm"
+            >
+              <MessageCircle className="w-3.5 h-3.5" />
+              <span>Send on WhatsApp</span>
+            </a>
+            <a
+              href={handoff.emailUrl}
+              className="w-full sm:w-auto justify-center px-5 py-2.5 text-xs font-semibold text-white bg-[#0066FF] hover:bg-[#0052cc] rounded-lg transition-colors flex items-center gap-1.5 shadow-sm"
+            >
+              <Mail className="w-3.5 h-3.5" />
+              <span>Send by Email</span>
+            </a>
+          </div>
+
+          <button
+            type="button"
+            onClick={() => setHandoff(null)}
+            className="text-xs font-semibold text-[#0066FF] hover:underline"
+          >
+            Back to Edit Details
+          </button>
+        </div>
+      ) : submissionResult?.success ? (
         <div className="space-y-6 text-center py-8">
           <div className="w-14 h-14 bg-emerald-100 text-emerald-700 rounded-full flex items-center justify-center mx-auto">
             <CheckCircle2 className="w-8 h-8" />
