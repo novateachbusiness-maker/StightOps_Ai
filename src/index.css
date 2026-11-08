@@ -230,8 +230,8 @@ html {
 :root {
   --so-white: #ffffff;
   --so-body: #d9f0ff;
-  --so-sky: #8fd6ff;
-  --so-cyan: #25e8ff;
+  --so-sky: #a8e0ff;
+  --so-cyan: #4aecff;
   --so-blue: #0a6cf0;
   --so-blue-hover: #0857c8;
   --so-blue-deep: #0a4fb5;
@@ -247,6 +247,10 @@ html {
 
 html {
   background-color: #052a5e;
+}
+
+body {
+  background-color: transparent !important;
 }
 
 ::selection {
