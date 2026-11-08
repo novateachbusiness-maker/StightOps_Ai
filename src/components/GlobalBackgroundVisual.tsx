@@ -1,125 +1,78 @@
-import { useState, useEffect } from 'react';
+import { useEffect, useState } from 'react';
 
-export interface GlobalVisualSlide {
-  id: string;
-  title: string;
-  badge: string;
-  image: string;
-  video?: string;
-}
+const BACKGROUND_VIDEO = {
+  desktop: '/assets/video/industrial-manufacturing-1080.mp4',
+  mobile: '/assets/video/industrial-manufacturing-720.mp4',
+  poster: '/assets/video/industrial-manufacturing-poster.jpg',
+};
 
-export const GLOBAL_BACKGROUND_VISUALS: GlobalVisualSlide[] = [
-  {
-    id: 'robotic-inspection',
-    title: 'Automated Robotic & Laser In-Line Inspection',
-    badge: 'Automotive & Machining Vision',
-    image: '/assets/hero/clean-robotic-inspection.jpg',
-  },
-  {
-    id: 'pcb-telecentric',
-    title: 'Sub-Micron Telecentric PCB & SMT Inspection',
-    badge: 'Electronics & PCB AOI',
-    image: '/assets/hero/clean-pcb-inspection.jpg',
-  },
-  {
-    id: 'edge-ai-telemetry',
-    title: 'Edge AI Quality Control & Factory Telemetry',
-    badge: 'Edge GPU Intelligence',
-    image: '/assets/hero/clean-manufacturing-monitor.jpg',
-  },
-];
-
+/**
+ * One industrial manufacturing video, fixed behind every page.
+ * Visitors who ask for reduced motion or Data Saver, and browsers where the
+ * video cannot play, see the still poster instead.
+ */
 export function GlobalBackgroundVisual() {
-  const [activeSlide, setActiveSlide] = useState(0);
-  const [videoErrors, setVideoErrors] = useState<Record<string, boolean>>({});
-  const [isReducedMotion, setIsReducedMotion] = useState(false);
+  const [videoSrc, setVideoSrc] = useState<string | null>(null);
 
-  // Detect user prefers-reduced-motion preference
   useEffect(() => {
-    const mediaQuery = window.matchMedia('(prefers-reduced-motion: reduce)');
-    setIsReducedMotion(mediaQuery.matches);
-    const handler = (e: MediaQueryListEvent) => setIsReducedMotion(e.matches);
-    mediaQuery.addEventListener('change', handler);
-    return () => mediaQuery.removeEventListener('change', handler);
+    const reducedMotion = window.matchMedia('(prefers-reduced-motion: reduce)');
+    const connection = (navigator as Navigator & { connection?: { saveData?: boolean } }).connection;
+
+    const chooseSource = () => {
+      if (reducedMotion.matches || connection?.saveData) {
+        setVideoSrc(null);
+        return;
+      }
+      const isPhone = window.matchMedia('(max-width: 767px)').matches;
+      setVideoSrc(isPhone ? BACKGROUND_VIDEO.mobile : BACKGROUND_VIDEO.desktop);
+    };
+
+    chooseSource();
+    reducedMotion.addEventListener('change', chooseSource);
+    return () => reducedMotion.removeEventListener('change', chooseSource);
   }, []);
-
-  // Subtle auto-transition between 3 visuals (every 8s) if not reduced motion
-  useEffect(() => {
-    if (isReducedMotion) return;
-    const timer = setInterval(() => {
-      setActiveSlide((prev) => (prev + 1) % GLOBAL_BACKGROUND_VISUALS.length);
-    }, 8000);
-    return () => clearInterval(timer);
-  }, [isReducedMotion]);
-
-  const handleVideoError = (slideId: string) => {
-    setVideoErrors((prev) => ({ ...prev, [slideId]: true }));
-  };
 
   return (
     <aside
-      className="fixed inset-0 pointer-events-none z-0 overflow-hidden"
+      className="fixed top-0 left-0 w-full h-lvh pointer-events-none z-0 overflow-hidden"
       aria-hidden="true"
+      style={{
+        backgroundColor: '#052A5E',
+        backgroundImage: 'url(' + BACKGROUND_VIDEO.poster + ')',
+        backgroundSize: 'cover',
+        backgroundPosition: 'center',
+      }}
     >
-      {/* 2-3 Distinct High-Quality Visuals with Smooth Cross-Fade */}
-      {GLOBAL_BACKGROUND_VISUALS.map((slide, sIdx) => {
-        const isActive = activeSlide === sIdx;
-        const hasVideoError = videoErrors[slide.id];
-        const shouldRenderVideo = Boolean(slide.video && !hasVideoError && isActive && !isReducedMotion);
+      {videoSrc && (
+        <video
+          key={videoSrc}
+          src={videoSrc}
+          poster={BACKGROUND_VIDEO.poster}
+          autoPlay
+          muted
+          loop
+          playsInline
+          preload="auto"
+          onError={() => setVideoSrc(null)}
+          className="w-full h-full object-cover object-center"
+        />
+      )}
 
-        return (
-          <div
-            key={slide.id}
-            className={`absolute inset-0 transition-opacity duration-1000 ease-in-out ${
-              isActive ? 'opacity-100' : 'opacity-0'
-            }`}
-            style={{
-              backgroundImage: `url(${slide.image})`,
-              backgroundSize: 'cover',
-              backgroundPosition: 'center',
-            }}
-          >
-            {shouldRenderVideo && (
-              <video
-                autoPlay
-                muted
-                loop
-                playsInline
-                preload="auto"
-                poster={slide.image}
-                onTimeUpdate={(e) => {
-                  // Guarantee: Every background video plays for at most 10 seconds per loop
-                  const v = e.currentTarget;
-                  if (v.currentTime >= 10.0) {
-                    v.currentTime = 0;
-                    v.play().catch(() => {});
-                  }
-                }}
-                onError={() => handleVideoError(slide.id)}
-                className="w-full h-full object-cover object-center"
-                style={{ minWidth: '100%', minHeight: '100%' }}
-              >
-                <source src={slide.video} type="video/mp4" />
-              </video>
-            )}
-          </div>
-        );
-      })}
-
-      {/* Global Precision Dark Overlay Matching Reference Hero Style */}
-      {/* 1. Base Darkening Layer to Mute Raw Photographic Highlights */}
-      <div className="absolute inset-0 bg-slate-950/75 pointer-events-none" />
-
-      {/* 2. Directional Gradient Overlay for Optimal Text Readability & Deep Tech Ambiance */}
-      <div className="absolute inset-0 bg-gradient-to-r from-slate-950/90 via-slate-950/75 to-slate-950/60 pointer-events-none" />
-      <div className="absolute inset-0 bg-gradient-to-b from-slate-950/50 via-slate-950/30 to-slate-950/70 pointer-events-none" />
-
-      {/* 3. Subtle Precision Industrial Grid Pattern Overlay */}
+      {/* Blue tint: keeps white and sky blue text readable over every frame of the video */}
       <div
-        className="absolute inset-0 opacity-15 pointer-events-none"
+        className="absolute inset-0"
+        style={{
+          background:
+            'linear-gradient(180deg, rgba(3, 34, 86, 0.66) 0%, rgba(3, 40, 98, 0.6) 50%, rgba(3, 30, 78, 0.68) 100%)',
+        }}
+      />
+
+      {/* Precision grid */}
+      <div
+        className="absolute inset-0 opacity-15"
         style={{
           backgroundImage:
-            'linear-gradient(to right, rgba(0, 210, 255, 0.2) 1px, transparent 1px), linear-gradient(to bottom, rgba(0, 210, 255, 0.2) 1px, transparent 1px)',
+            'linear-gradient(to right, rgba(37, 232, 255, 0.2) 1px, transparent 1px), linear-gradient(to bottom, rgba(37, 232, 255, 0.2) 1px, transparent 1px)',
           backgroundSize: '40px 40px',
         }}
       />
