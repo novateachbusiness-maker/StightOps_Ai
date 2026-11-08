@@ -547,3 +547,23 @@ input[type="range"] {
 .section-scrollbar::-webkit-scrollbar-thumb:hover {
   background-color: var(--so-cyan);
 }
+
+/* Small phones: tighten the header so the page never scrolls sideways */
+@media (max-width: 420px) {
+  header.sticky .h-22 {
+    gap: 0.5rem;
+  }
+
+  header.sticky .h-22 > a {
+    gap: 0.5rem;
+  }
+
+  header.sticky .h-22 > a > div:first-child {
+    width: 3rem;
+    height: 3rem;
+  }
+
+  header.sticky .h-22 > a span:first-child {
+    font-size: 1.05rem;
+  }
+}
