@@ -414,7 +414,7 @@ export const APPLICATIONS: ApplicationCase[] = [
         detail: "Discrete 24V signal triggers a multi-finger pneumatic rejector to divert defective bottles into an inspection bay.",
       },
     ],
-    image: "/assets/industries/packaging-inspection.jpg",
+    image: "/assets/packaging/liquid-fill-level.jpg",
     technologiesUsed: [
       "Continuous High-Frequency Strobe Backlights",
       "Telecentric Fill-Level Profiling",

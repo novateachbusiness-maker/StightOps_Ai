@@ -220,3 +220,353 @@ html {
   background-color: #0066ff;
 }
 
+
+/* ==========================================================================
+   SightOps AI: video background and bright blue theme
+   These rules sit outside Tailwind's layers on purpose, so they win over the
+   colour utilities in the components without changing any layout.
+   ========================================================================== */
+
+:root {
+  --so-white: #ffffff;
+  --so-body: #d9f0ff;
+  --so-sky: #a8e0ff;
+  --so-cyan: #4aecff;
+  --so-blue: #0a6cf0;
+  --so-blue-hover: #0857c8;
+  --so-blue-deep: #0a4fb5;
+  --so-glass: rgba(4, 36, 90, 0.62);
+  --so-glass-hover: rgba(8, 52, 120, 0.74);
+  --so-tint: rgba(120, 205, 255, 0.1);
+  --so-tint-hover: rgba(120, 205, 255, 0.2);
+  --so-solid: #062a5c;
+  --so-solid-raised: #08356f;
+  --so-line: rgba(143, 214, 255, 0.3);
+  color: var(--so-white);
+}
+
+html {
+  background-color: #052a5e;
+}
+
+body {
+  background-color: transparent !important;
+}
+
+::selection {
+  background-color: var(--so-cyan);
+  color: #032457;
+}
+
+/* Every page section is fully transparent so the video stays visible. */
+section,
+footer {
+  background: transparent !important;
+  -webkit-backdrop-filter: none !important;
+  backdrop-filter: none !important;
+}
+
+/* Blur over a moving video is expensive, so only the header keeps it. */
+main [class*="backdrop-blur"],
+footer [class*="backdrop-blur"] {
+  -webkit-backdrop-filter: none;
+  backdrop-filter: none;
+}
+
+main h1,
+main h2,
+main h3,
+main p {
+  text-shadow: 0 1px 12px rgba(2, 22, 60, 0.45);
+}
+
+/* Text */
+.text-slate-900,
+.text-slate-800,
+.text-\[\#172B32\],
+.text-\[\#0B2545\],
+.text-\[\#064E52\] {
+  color: var(--so-white);
+}
+
+.text-slate-700,
+.text-slate-600,
+.text-slate-500,
+.text-slate-300 {
+  color: var(--so-body);
+}
+
+.text-slate-200 {
+  color: #e8f6ff;
+}
+
+.text-slate-400 {
+  color: var(--so-sky);
+}
+
+.text-\[\#0066FF\],
+.text-\[\#087F8C\],
+.text-\[\#18B6A4\],
+.text-\[\#00D2FF\] {
+  color: var(--so-cyan);
+}
+
+.text-emerald-600,
+.text-emerald-700,
+.text-emerald-800 {
+  color: #6ee7b7;
+}
+
+.text-amber-500,
+.text-amber-600,
+.text-amber-700,
+.text-amber-800 {
+  color: #fcd34d;
+}
+
+.text-rose-500,
+.text-rose-600,
+.text-rose-700,
+.text-red-500,
+.text-red-600,
+.text-red-700,
+.text-red-800 {
+  color: #fca5a5;
+}
+
+[class*="hover:text-"]:not(.hover\:text-white):hover,
+.group:hover [class*="group-hover:text-"] {
+  color: var(--so-cyan);
+}
+
+.hover\:text-white:hover {
+  color: var(--so-white);
+}
+
+/* Cards and panels: blue glass, so the video shows through behind them */
+.bg-white\/95,
+.bg-white\/80,
+.bg-white\/70,
+.bg-white:not(:has(> img)) {
+  background-color: var(--so-glass);
+}
+
+.bg-slate-50,
+.bg-slate-50\/50,
+.bg-slate-50\/70,
+.bg-slate-100,
+.bg-\[\#F4F8F8\],
+.bg-blue-50,
+.bg-blue-50\/50,
+.bg-blue-50\/60,
+.bg-blue-50\/70,
+.bg-blue-100,
+.bg-blue-100\/70 {
+  background-color: var(--so-tint);
+}
+
+.bg-slate-200,
+.bg-slate-300,
+.bg-slate-400 {
+  background-color: rgba(143, 214, 255, 0.28);
+}
+
+.bg-emerald-50,
+.bg-emerald-50\/80,
+.bg-emerald-100 {
+  background-color: rgba(16, 185, 129, 0.18);
+}
+
+.bg-amber-50,
+.bg-amber-100 {
+  background-color: rgba(245, 158, 11, 0.18);
+}
+
+.bg-red-50,
+.bg-red-100 {
+  background-color: rgba(239, 68, 68, 0.18);
+}
+
+.bg-slate-900 {
+  background-color: var(--so-solid);
+}
+
+.bg-slate-950 {
+  background-color: #041f49;
+}
+
+.bg-slate-900\/60,
+.bg-slate-900\/70,
+.bg-slate-900\/80,
+.bg-slate-900\/90 {
+  background-color: rgba(4, 36, 90, 0.72);
+}
+
+.bg-slate-800,
+.bg-slate-800\/80,
+.bg-slate-700 {
+  background-color: rgba(13, 77, 163, 0.72);
+}
+
+.hover\:bg-white:hover,
+.hover\:bg-slate-50:hover,
+.hover\:bg-slate-100:hover,
+.hover\:bg-blue-50:hover {
+  background-color: var(--so-tint-hover);
+}
+
+.hover\:bg-slate-700:hover {
+  background-color: var(--so-blue-hover);
+}
+
+/* Buttons and highlights */
+.bg-\[\#0066FF\],
+.bg-\[\#0066FF\]\/90,
+.bg-\[\#087F8C\],
+.bg-\[\#18B6A4\] {
+  background-color: var(--so-blue);
+}
+
+.bg-\[\#064E52\],
+.bg-\[\#064E52\]\/90 {
+  background-color: var(--so-blue-deep);
+}
+
+.bg-\[\#00D2FF\] {
+  background-color: var(--so-cyan);
+  color: #032457;
+}
+
+[class*="hover:bg-[#"]:not([class*="25D366"]):hover {
+  background-color: var(--so-blue-hover);
+}
+
+/* Borders */
+.border-slate-100,
+.border-slate-200,
+.border-slate-200\/80,
+.border-slate-200\/90,
+.border-slate-300,
+.border-white\/30,
+.border-blue-200,
+.border-blue-200\/70,
+.border-\[\#DCE7E8\],
+.border-\[\#DCE7E8\]\/60 {
+  border-color: var(--so-line);
+}
+
+.border-\[\#0066FF\],
+.border-\[\#087F8C\],
+.border-\[\#18B6A4\] {
+  border-color: var(--so-sky);
+}
+
+.border-emerald-200,
+.border-emerald-200\/80 {
+  border-color: rgba(110, 231, 183, 0.4);
+}
+
+[class*="hover:border-"]:hover {
+  border-color: var(--so-cyan);
+}
+
+[class*="focus:ring-[#"]:focus {
+  --tw-ring-color: var(--so-cyan);
+}
+
+[class*="focus:border-"]:focus {
+  border-color: var(--so-cyan);
+}
+
+/* Header stays readable while content scrolls behind it */
+header.sticky {
+  background-color: rgba(3, 30, 76, 0.74);
+  border-color: var(--so-line);
+  -webkit-backdrop-filter: blur(12px);
+  backdrop-filter: blur(12px);
+}
+
+/* Menus and pop-ups sit over content, so they need a solid background */
+header .bg-white:not(:has(> img)),
+.bg-white.max-h-\[90vh\] {
+  background-color: var(--so-solid);
+}
+
+.sticky.bg-slate-50 {
+  background-color: var(--so-solid-raised);
+}
+
+/* Form fields */
+input:not([type="checkbox"]):not([type="radio"]):not([type="range"]),
+select,
+textarea {
+  background-color: rgba(3, 26, 66, 0.72);
+  color: var(--so-white);
+}
+
+input::placeholder,
+textarea::placeholder {
+  color: var(--so-sky);
+  opacity: 0.85;
+}
+
+option {
+  background-color: var(--so-solid);
+  color: var(--so-white);
+}
+
+input[type="checkbox"],
+input[type="radio"],
+input[type="range"] {
+  accent-color: var(--so-cyan);
+}
+
+/* Card hover states */
+@media (hover: hover) and (pointer: fine) {
+  .hover-card:hover,
+  .hover-card-interactive:hover,
+  .hover-card-panel:hover {
+    background-color: var(--so-glass-hover);
+    border-color: var(--so-cyan) !important;
+    box-shadow: 0 14px 30px -10px rgba(37, 232, 255, 0.35) !important;
+  }
+}
+
+/* Scrollbars inside panels */
+.section-scrollbar {
+  scrollbar-color: var(--so-sky) rgba(4, 36, 90, 0.6);
+}
+
+.section-scrollbar::-webkit-scrollbar-track {
+  background: rgba(4, 36, 90, 0.6);
+  border-color: var(--so-line);
+}
+
+.section-scrollbar::-webkit-scrollbar-thumb {
+  background-color: var(--so-sky);
+  border-color: rgba(4, 36, 90, 0.6);
+}
+
+.section-scrollbar::-webkit-scrollbar-thumb:hover {
+  background-color: var(--so-cyan);
+}
+
+/* Small phones: tighten the header so the page never scrolls sideways */
+@media (max-width: 420px) {
+  header.sticky .h-22 {
+    gap: 0.5rem;
+  }
+
+  header.sticky .h-22 > a {
+    gap: 0.5rem;
+  }
+
+  header.sticky .h-22 > a > div:first-child {
+    width: 3rem;
+    height: 3rem;
+  }
+
+  header.sticky .h-22 > a span:first-child {
+    font-size: 1.05rem;
+  }
+}
