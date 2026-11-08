@@ -63,7 +63,7 @@ export function GlobalBackgroundVisual() {
         className="absolute inset-0"
         style={{
           background:
-            'linear-gradient(180deg, rgba(3, 34, 86, 0.66) 0%, rgba(3, 40, 98, 0.6) 50%, rgba(3, 30, 78, 0.68) 100%)',
+            'linear-gradient(180deg, rgba(3, 34, 86, 0.72) 0%, rgba(3, 40, 98, 0.68) 50%, rgba(3, 30, 78, 0.74) 100%)',
         }}
       />
 
