@@ -175,7 +175,7 @@ export const INDUSTRIES: Industry[] = [
       "Integration with rework station terminals showing operators exact defect coordinates and zoom frames.",
       "Exporting SPI (solder paste inspection) and AOI data to SPI/AOI correlation loops.",
     ],
-    image: "/images/Solder Joint Fillet Verification Dashboard-1.png",
+    image: "/assets/hero/clean-pcb-inspection.jpg",
   },
   {
     id: "food-packaging-inspection",
@@ -232,7 +232,7 @@ export const INDUSTRIES: Industry[] = [
       "High-speed pneumatic blow-off reject nozzles synchronized with downstream encoder tracking.",
       "Integration with line control systems to stop conveyors upon continuous consecutive reject thresholds.",
     ],
-    image: "/assets/packaging/cap-skew-tamper-ring-visual.svg",
+    image: "/assets/packaging/liquid-fill-level.jpg",
   },
   {
     id: "logistics-product-inspection",
