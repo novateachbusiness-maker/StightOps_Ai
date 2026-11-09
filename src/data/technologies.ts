@@ -18,6 +18,8 @@ export interface TechnologyItem {
   exampleInput: string;
   exampleOutput: string;
   image: string;
+  video?: string;
+  videoPoster?: string;
   visualCaption: string;
   keyTools: string[];
   tradeOffNotes: string;
@@ -36,8 +38,10 @@ export const TECHNOLOGY_EXPLORER_ITEMS: TechnologyItem[] = [
       "High-resolution 12MP image of a cast aluminum cylinder head with natural surface pebble texture and casting lines.",
     exampleOutput:
       "Pixel-level anomaly heatmap highlighting a 0.35mm porosity pit with a 98.4% defect confidence score, triggering an automated diverter signal.",
-    image: "/images/Precision Vision Inspection Dashboard.png",
-    visualCaption: "Deep learning neural network architecture with hidden layers for real-time anomaly identification and classification",
+    image: "/assets/video/satellite-advanced-assembly-poster.jpg",
+    video: "/assets/video/satellite-advanced-assembly.mp4",
+    videoPoster: "/assets/video/satellite-advanced-assembly-poster.jpg",
+    visualCaption: "Advanced cleanroom robotic assembly with deep learning vision guidance",
     keyTools: ["TensorRT FP16/INT8", "PyTorch Anomaly Networks", "Vision Transformers (ViT)", "Unsupervised PatchCore"],
     tradeOffNotes:
       "Requires representative good and defect workpiece samples for training; higher compute requirements compared to classical rule-based filtering.",
@@ -54,8 +58,10 @@ export const TECHNOLOGY_EXPLORER_ITEMS: TechnologyItem[] = [
       "Multi-angle RGB image of a populated PCB assembly with dozens of ICs, capacitors, and connector pins.",
     exampleOutput:
       "Bounding boxes around all components with labels ('IC_U4: PRESENT', 'C14: TOMBSTONED') and exact XY millimeter coordinates passed to the assembly controller.",
-    image: "/images/Futuristic Solder Inspection Dashboard-2.png",
-    visualCaption: "Automated optical inspection head locating component coordinates on PCB assembly",
+    image: "/assets/video/pcb-electronics-poster.jpg",
+    video: "/assets/video/pcb-electronics.mp4",
+    videoPoster: "/assets/video/pcb-electronics-poster.jpg",
+    visualCaption: "Robotic pick-and-place precision assembly of electronics and PCB modules",
     keyTools: ["YOLOv8 / YOLOv11 Edge Architectures", "Mask R-CNN / SegNet", "NVIDIA DeepStream", "C++ ONNX Runtime"],
     tradeOffNotes:
       "Bounding boxes provide high-speed localization (15ms), while full semantic segmentation yields contour boundaries at slightly higher inference latency (35ms).",
@@ -90,8 +96,10 @@ export const TECHNOLOGY_EXPLORER_ITEMS: TechnologyItem[] = [
       "Silhouette image of a precision turned steel pin captured with a collimated blue telecentric backlight and bi-telecentric lens.",
     exampleOutput:
       "Outer diameter measurement of 12.003 mm against nominal 12.000 ± 0.008 mm, with automated SPC trend logging and CNC tool offset compensation.",
-    image: "/assets/applications/shaft-metrology.jpg",
-    visualCaption: "Sub-pixel telecentric edge measurement verifying tolerances without perspective error",
+    image: "/assets/video/cnc-machining-poster.jpg",
+    video: "/assets/video/cnc-machining.mp4",
+    videoPoster: "/assets/video/cnc-machining-poster.jpg",
+    visualCaption: "High-speed CNC gear milling and dimensional tool chatter inspection",
     keyTools: ["OpenCV / Halcon Metrology", "Sub-Pixel Canny & Sobel Kernels", "Bi-Telecentric Optics", "NIST Calibration Grids"],
     tradeOffNotes:
       "Superior to AI for dimensional tolerances and deterministic sub-millisecond execution, but requires controlled, high-contrast backlighting.",

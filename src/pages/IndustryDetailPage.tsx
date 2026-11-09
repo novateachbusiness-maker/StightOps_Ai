@@ -64,12 +64,29 @@ export function IndustryDetailPage() {
             </div>
 
             <div className="lg:col-span-5">
-              <div className="rounded-xl overflow-hidden border border-slate-200 shadow-sm bg-slate-900">
-                <img
-                  src={industry.image}
-                  alt={industry.title}
-                  className="w-full h-56 sm:h-64 object-cover"
-                />
+              <div className="relative rounded-xl overflow-hidden border border-slate-200 shadow-sm bg-slate-900 group">
+                {industry.video ? (
+                  <video
+                    src={industry.video}
+                    poster={industry.videoPoster || industry.image}
+                    autoPlay
+                    muted
+                    loop
+                    playsInline
+                    preload="metadata"
+                    className="w-full h-56 sm:h-64 object-cover"
+                  />
+                ) : (
+                  <img
+                    src={industry.videoPoster || industry.image}
+                    alt={industry.title}
+                    className="w-full h-56 sm:h-64 object-cover"
+                  />
+                )}
+                <div className="absolute top-2.5 left-2.5 flex items-center gap-1.5 px-2 py-0.5 rounded text-[10px] font-mono font-bold bg-slate-900/85 text-[#0066FF] border border-blue-500/20">
+                  <span className="w-1.5 h-1.5 rounded-full bg-[#0066FF] animate-pulse" />
+                  <span>100% IN-LINE VISION FEED</span>
+                </div>
               </div>
             </div>
           </div>

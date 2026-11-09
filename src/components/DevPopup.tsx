@@ -157,8 +157,7 @@ export function DevPopup() {
           </div>
 
           <p className="text-sm text-slate-300 leading-relaxed">
-            We are actively developing and improving SightOps AI to deliver intelligent industrial AI solutions.
-            The platform you see today represents our early engineering foundation.
+            SightOps AI is currently under development as we work towards delivering intelligent industrial AI solutions.
           </p>
 
           {/* Attribution card */}

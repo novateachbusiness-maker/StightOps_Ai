@@ -41,6 +41,7 @@ interface HeroSlide {
   id: string;
   image: string;
   video?: string;
+  videoPoster?: string;
   title: string;
   subtitle: string;
   badge: string;
@@ -54,7 +55,9 @@ interface HeroSlide {
 const HERO_SLIDES: HeroSlide[] = [
   {
     id: "robotic-inspection",
-    image: "/assets/hero/clean-robotic-inspection.jpg",
+    image: "/assets/video/automotive-assembly-poster.jpg",
+    video: "/assets/video/automotive-assembly.mp4",
+    videoPoster: "/assets/video/automotive-assembly-poster.jpg",
     title: "Automated Robotic & Laser In-Line Inspection",
     subtitle: "Real-time 3D defect detection on high-speed CNC and automotive assembly lines",
     badge: "Automotive & Machining",
@@ -66,7 +69,9 @@ const HERO_SLIDES: HeroSlide[] = [
   },
   {
     id: "pcb-telecentric",
-    image: "/assets/hero/clean-pcb-inspection.jpg",
+    image: "/assets/video/pcb-electronics-poster.jpg",
+    video: "/assets/video/pcb-electronics.mp4",
+    videoPoster: "/assets/video/pcb-electronics-poster.jpg",
     title: "Sub-Micron Telecentric PCB & SMT Inspection",
     subtitle: "Bi-telecentric optics with multi-tier RGB ring lighting verifying 0201 passives and micro-BGAs",
     badge: "Electronics & PCB",
@@ -78,7 +83,9 @@ const HERO_SLIDES: HeroSlide[] = [
   },
   {
     id: "edge-ai-telemetry",
-    image: "/assets/hero/clean-manufacturing-monitor.jpg",
+    image: "/assets/video/satellite-advanced-assembly-poster.jpg",
+    video: "/assets/video/satellite-advanced-assembly.mp4",
+    videoPoster: "/assets/video/satellite-advanced-assembly-poster.jpg",
     title: "Edge AI Quality Control & Telemetry",
     subtitle: "Plant engineers monitoring automated pass/fail decisions and SPC drift alerts in real time",
     badge: "Edge GPU Intelligence",
@@ -255,20 +262,36 @@ export function HomePage() {
             {/* Right Multi-Asset Visual Hero Showcase (5 cols) - Clean Unannotated Images */}
             <div className="lg:col-span-5 space-y-3 relative z-10">
               <div className="relative rounded-2xl overflow-hidden border border-white/20 shadow-2xl bg-slate-950 min-h-[340px] sm:min-h-[380px] flex items-center justify-center">
-                {HERO_SLIDES.map((slide, sIdx) => (
-                  <div
-                    key={slide.id}
-                    className={`absolute inset-0 transition-opacity duration-700 ease-in-out ${
-                      activeSlide === sIdx ? 'opacity-100 z-10' : 'opacity-0 z-0'
-                    }`}
-                  >
-                    <img
-                      src={slide.image}
-                      alt={slide.title}
-                      className="w-full h-full object-cover"
-                    />
-                  </div>
-                ))}
+                {HERO_SLIDES.map((slide, sIdx) => {
+                  const isActive = activeSlide === sIdx;
+                  return (
+                    <div
+                      key={slide.id}
+                      className={`absolute inset-0 transition-opacity duration-700 ease-in-out ${
+                        isActive ? 'opacity-100 z-10' : 'opacity-0 z-0 pointer-events-none'
+                      }`}
+                    >
+                      {slide.video && isActive && !isReducedMotion ? (
+                        <video
+                          src={slide.video}
+                          poster={slide.videoPoster || slide.image}
+                          autoPlay
+                          muted
+                          loop
+                          playsInline
+                          preload="metadata"
+                          className="w-full h-full object-cover"
+                        />
+                      ) : (
+                        <img
+                          src={slide.videoPoster || slide.image}
+                          alt={slide.title}
+                          className="w-full h-full object-cover"
+                        />
+                      )}
+                    </div>
+                  );
+                })}
 
                 {/* Live Inspection Telemetry HUD Strip at Top */}
                 <div className="absolute top-3 left-3 z-20 flex items-center gap-2 bg-black/70 backdrop-blur-md px-2.5 py-1 rounded-lg border border-white/15 text-[10px] font-mono text-[#00D2FF]">
@@ -420,60 +443,70 @@ export function HomePage() {
 
           {/* 2 Featured Visual Highlight Spotlights */}
           <div className="grid grid-cols-1 lg:grid-cols-2 gap-5 mb-6">
-            {/* Visual Card 1: In-Line Automation Workstation */}
+            {/* Visual Card 1: CNC Machining & Precision Milling */}
             <div className="rounded-xl overflow-hidden border border-white/30 bg-white/95 backdrop-blur-md shadow-xl flex flex-col group">
               <div className="relative h-44 sm:h-52 overflow-hidden bg-slate-950">
-                <img
-                  src={factoryMonitorImg}
-                  alt="Industrial Vision Monitoring Station"
+                <video
+                  src="/assets/video/cnc-machining.mp4"
+                  poster="/assets/video/cnc-machining-poster.jpg"
+                  autoPlay
+                  muted
+                  loop
+                  playsInline
+                  preload="metadata"
                   className="w-full h-full object-cover transition-transform duration-500 group-hover:scale-105"
-                  loading="lazy"
                 />
-                <div className="absolute top-2.5 left-2.5 bg-slate-900/80 backdrop-blur-sm px-2.5 py-0.5 rounded-lg text-xs font-mono font-semibold text-[#00D2FF] border border-white/15">
-                  100% In-Line Inspection
+                <div className="absolute top-2.5 left-2.5 bg-slate-900/80 backdrop-blur-sm px-2.5 py-0.5 rounded-lg text-xs font-mono font-semibold text-[#00D2FF] border border-white/15 flex items-center gap-1.5">
+                  <span className="w-1.5 h-1.5 rounded-full bg-[#00D2FF] animate-pulse" />
+                  <span>CNC Milling Quality Control</span>
                 </div>
               </div>
               <div className="p-4 space-y-2 flex-1 flex flex-col justify-between">
                 <div>
                   <h3 className="text-base font-bold text-slate-900">
-                    Autonomous Inspection Stations
+                    CNC Machining &amp; In-Line Gear Milling
                   </h3>
                   <p className="text-xs text-slate-600 mt-1 leading-relaxed">
-                    Continuous optical verification at full line cadence. Eliminates operator fatigue and downstream escapes.
+                    Continuous optical verification of tool chatter, gear tooth profiles, and sub-micron dimensional runout during live milling operations.
                   </p>
                 </div>
                 <div className="pt-2 border-t border-slate-100 flex items-center justify-between text-xs text-slate-500 font-mono">
-                  <span>Latency: &lt; 25ms</span>
-                  <span className="text-[#0066FF] font-semibold">Zero Fatigue</span>
+                  <span>Cadence: 100% In-Line</span>
+                  <span className="text-[#0066FF] font-semibold">Sub-Micron</span>
                 </div>
               </div>
             </div>
 
-            {/* Visual Card 2: Edge Computing & PLC Integration */}
+            {/* Visual Card 2: Advanced Cleanroom & Robotic Assembly */}
             <div className="rounded-xl overflow-hidden border border-white/30 bg-white/95 backdrop-blur-md shadow-xl flex flex-col group">
               <div className="relative h-44 sm:h-52 overflow-hidden bg-slate-950">
-                <img
-                  src={factoryEdgeIpcImg}
-                  alt="Edge IPC and PLC Handshake Controller"
+                <video
+                  src="/assets/video/satellite-advanced-assembly.mp4"
+                  poster="/assets/video/satellite-advanced-assembly-poster.jpg"
+                  autoPlay
+                  muted
+                  loop
+                  playsInline
+                  preload="metadata"
                   className="w-full h-full object-cover transition-transform duration-500 group-hover:scale-105"
-                  loading="lazy"
                 />
-                <div className="absolute top-2.5 left-2.5 bg-slate-900/80 backdrop-blur-sm px-2.5 py-0.5 rounded-lg text-xs font-mono font-semibold text-[#00D2FF] border border-white/15">
-                  Deterministic Edge Control
+                <div className="absolute top-2.5 left-2.5 bg-slate-900/80 backdrop-blur-sm px-2.5 py-0.5 rounded-lg text-xs font-mono font-semibold text-[#00D2FF] border border-white/15 flex items-center gap-1.5">
+                  <span className="w-1.5 h-1.5 rounded-full bg-[#00D2FF] animate-pulse" />
+                  <span>Advanced Aerospace Robotics</span>
                 </div>
               </div>
               <div className="p-4 space-y-2 flex-1 flex flex-col justify-between">
                 <div>
                   <h3 className="text-base font-bold text-slate-900">
-                    Real-Time PLC & MES Telemetry
+                    Cleanroom &amp; Mission-Critical Assembly
                   </h3>
                   <p className="text-xs text-slate-600 mt-1 leading-relaxed">
-                    Direct 24V discrete reject triggers, closed-loop drift compensation, and serialized trace records.
+                    Multi-axis robotic guidance, harness routing checks, and satellite cleanroom positioning with deterministic optical verification.
                   </p>
                 </div>
                 <div className="pt-2 border-t border-slate-100 flex items-center justify-between text-xs text-slate-500 font-mono">
-                  <span>Handshake: 24V Opto</span>
-                  <span className="text-[#0066FF] font-semibold">Closed-Loop</span>
+                  <span>Guidance: 6-DoF Vision</span>
+                  <span className="text-[#0066FF] font-semibold">Deterministic</span>
                 </div>
               </div>
             </div>

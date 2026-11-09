@@ -70,17 +70,45 @@ export function IndustriesPage() {
             >
               <div>
                 <div className="relative h-48 overflow-hidden" style={{ background: '#020817' }}>
-                  <img
-                    src={industry.image}
-                    alt={industry.title}
-                    className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-300"
-                    loading="lazy"
-                  />
+                  {industry.video ? (
+                    <video
+                      src={industry.video}
+                      poster={industry.videoPoster || industry.image}
+                      muted
+                      loop
+                      playsInline
+                      preload="none"
+                      onMouseEnter={(e) => {
+                        e.currentTarget.play().catch(() => {});
+                      }}
+                      onMouseLeave={(e) => {
+                        e.currentTarget.pause();
+                        e.currentTarget.currentTime = 0;
+                      }}
+                      className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-300"
+                    />
+                  ) : (
+                    <img
+                      src={industry.videoPoster || industry.image}
+                      alt={industry.title}
+                      className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-300"
+                      loading="lazy"
+                    />
+                  )}
                   <div
-                    className="absolute inset-0"
+                    className="absolute inset-0 pointer-events-none"
                     style={{ background: 'linear-gradient(to top, rgba(2, 8, 23, 0.85) 0%, transparent 60%)' }}
                   />
-                  <div className="absolute bottom-3 left-4 text-white text-base font-bold drop-shadow-sm">
+                  {industry.video && (
+                    <div
+                      className="absolute top-2.5 right-2.5 flex items-center gap-1.5 px-2 py-0.5 rounded text-[10px] font-mono font-bold pointer-events-none"
+                      style={{ background: 'rgba(2, 8, 23, 0.85)', color: '#00E5FF', border: '1px solid rgba(56, 189, 248, 0.3)' }}
+                    >
+                      <span className="w-1.5 h-1.5 rounded-full bg-[#00E5FF] animate-pulse" />
+                      <span>LIVE PREVIEW</span>
+                    </div>
+                  )}
+                  <div className="absolute bottom-3 left-4 text-white text-base font-bold drop-shadow-sm pointer-events-none">
                     {industry.title}
                   </div>
                 </div>

@@ -27,6 +27,8 @@ export interface Industry {
   expectedBenefits: string[];
   integrationConsiderations: string[];
   image: string;
+  video?: string;
+  videoPoster?: string;
   productCutout?: string;
 }
 
@@ -117,6 +119,8 @@ export const INDUSTRIES: Industry[] = [
       "Automated tool-wear compensation triggers sent back to CNC controllers.",
     ],
     image: "/assets/industries/automotive-inspection.jpg",
+    video: "/assets/video/automotive-assembly.mp4",
+    videoPoster: "/assets/video/automotive-assembly-poster.jpg",
   },
   {
     id: "electronics-pcb-inspection",
@@ -176,6 +180,8 @@ export const INDUSTRIES: Industry[] = [
       "Exporting SPI (solder paste inspection) and AOI data to SPI/AOI correlation loops.",
     ],
     image: "/assets/electronics/smt-presence-polarity.jpg",
+    video: "/assets/video/pcb-electronics.mp4",
+    videoPoster: "/assets/video/pcb-electronics-poster.jpg",
   },
   {
     id: "food-packaging-inspection",
@@ -233,6 +239,8 @@ export const INDUSTRIES: Industry[] = [
       "Integration with line control systems to stop conveyors upon continuous consecutive reject thresholds.",
     ],
     image: "/assets/packaging/liquid-fill-level.jpg",
+    video: "/assets/video/liquid-packaging.mp4",
+    videoPoster: "/assets/video/liquid-packaging-poster.jpg",
   },
   {
     id: "logistics-product-inspection",
@@ -289,6 +297,8 @@ export const INDUSTRIES: Industry[] = [
       "Real-time image archival for misread audit logs and carrier dispute resolution.",
     ],
     image: "/assets/industries/logistics-tunnel.jpg",
+    video: "/assets/video/satellite-advanced-assembly.mp4",
+    videoPoster: "/assets/video/satellite-advanced-assembly-poster.jpg",
   },
   {
     id: "pharmaceutical-inspection",
@@ -347,5 +357,7 @@ export const INDUSTRIES: Industry[] = [
       "Cleanroom stainless steel (SS316) enclosures and IP65 washdown protection.",
     ],
     image: "/assets/applications/pharma-inspection.jpg",
+    video: "/assets/video/liquid-packaging.mp4",
+    videoPoster: "/assets/video/liquid-packaging-poster.jpg",
   },
 ];

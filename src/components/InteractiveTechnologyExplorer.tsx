@@ -108,16 +108,37 @@ export function InteractiveTechnologyExplorer() {
 
           {/* Right: Technology Image & Visual Demonstration (5 cols) */}
           <div className="lg:col-span-5 space-y-2.5">
-            <div className="relative rounded-2xl overflow-hidden border border-slate-200 bg-slate-900 shadow-md">
-              <img
-                src={activeItem.image}
-                alt={activeItem.title}
-                className={`w-full h-52 sm:h-60 ${
-                  activeItem.id === 'ai-deep-learning'
-                    ? 'object-contain bg-slate-950'
-                    : 'object-cover'
-                }`}
-              />
+            <div className="relative rounded-2xl overflow-hidden border border-slate-200 bg-slate-900 shadow-md group">
+              {activeItem.video ? (
+                <video
+                  key={activeItem.id}
+                  src={activeItem.video}
+                  poster={activeItem.videoPoster || activeItem.image}
+                  autoPlay
+                  muted
+                  loop
+                  playsInline
+                  preload="metadata"
+                  className="w-full h-52 sm:h-60 object-cover"
+                />
+              ) : (
+                <img
+                  src={activeItem.image}
+                  alt={activeItem.title}
+                  className={`w-full h-52 sm:h-60 ${
+                    activeItem.id === 'ai-deep-learning'
+                      ? 'object-contain bg-slate-950'
+                      : 'object-cover'
+                  }`}
+                />
+              )}
+
+              {activeItem.video && (
+                <div className="absolute top-2.5 left-2.5 flex items-center gap-1.5 px-2 py-0.5 rounded text-[10px] font-mono font-bold bg-slate-950/80 text-[#0066FF] border border-blue-500/20">
+                  <span className="w-1.5 h-1.5 rounded-full bg-[#0066FF] animate-pulse" />
+                  <span>TECHNOLOGY FEED</span>
+                </div>
+              )}
             </div>
 
             {/* Caption Tag below image */}
