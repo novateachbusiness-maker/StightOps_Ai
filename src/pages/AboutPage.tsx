@@ -1,5 +1,5 @@
 import { Link } from 'react-router-dom';
-import { MapPin, Phone, MessageCircle } from 'lucide-react';
+import { MapPin, Phone, MessageCircle, Cpu, Code2 } from 'lucide-react';
 import { SITE_CONFIG } from '../config/site.ts';
 import { SeoHead } from '../components/SeoHead.tsx';
 import { Breadcrumbs } from '../components/Breadcrumbs.tsx';
@@ -98,6 +98,41 @@ export function AboutPage() {
           >
             Start Technical Consultation
           </Link>
+        </div>
+
+        {/* IN DEVELOPMENT Note */}
+        <div
+          className="mt-8 rounded-2xl p-6 space-y-4"
+          style={{
+            background: 'rgba(8, 25, 55, 0.70)',
+            border: '1px solid rgba(56, 189, 248, 0.25)',
+          }}
+        >
+          <div className="flex items-center gap-2.5">
+            <span
+              className="w-2.5 h-2.5 rounded-full animate-pulse shrink-0"
+              style={{ backgroundColor: '#00E5FF', boxShadow: '0 0 8px #00E5FF' }}
+            />
+            <span className="text-[11px] font-mono font-bold uppercase tracking-widest" style={{ color: '#00E5FF' }}>
+              IN DEVELOPMENT
+            </span>
+          </div>
+          <p className="text-sm text-slate-300 leading-relaxed">
+            SightOps AI is currently under development as we work towards delivering intelligent industrial AI solutions.
+            The platform you see today represents our early engineering foundation — actively being built and refined.
+          </p>
+          <div className="flex flex-col sm:flex-row gap-4 pt-1">
+            <div className="flex items-center gap-2">
+              <Cpu className="w-4 h-4 shrink-0" style={{ color: '#00E5FF' }} />
+              <span className="text-sm font-semibold text-white">Shah Tishy</span>
+              <span className="text-xs text-slate-400">— Lead Developer</span>
+            </div>
+            <div className="flex items-center gap-2">
+              <Code2 className="w-4 h-4 shrink-0" style={{ color: '#3B82F6' }} />
+              <span className="text-sm font-semibold text-white">Python Community India</span>
+              <span className="text-xs text-slate-400">— Development Support</span>
+            </div>
+          </div>
         </div>
       </div>
     </div>

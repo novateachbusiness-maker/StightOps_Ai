@@ -37,7 +37,7 @@ export function GlobalBackgroundVisual() {
       className="fixed top-0 left-0 w-full h-lvh pointer-events-none z-0 overflow-hidden"
       aria-hidden="true"
       style={{
-        backgroundColor: '#052A5E',
+        backgroundColor: '#020817',
         backgroundImage: 'url(' + BACKGROUND_VIDEO.poster + ')',
         backgroundSize: 'cover',
         backgroundPosition: 'center',
@@ -58,22 +58,32 @@ export function GlobalBackgroundVisual() {
         />
       )}
 
-      {/* Blue tint: keeps white and sky blue text readable over every frame of the video */}
+      {/* Premium dark overlay — keeps text readable, video visible */}
       <div
         className="absolute inset-0"
         style={{
           background:
-            'linear-gradient(180deg, rgba(3, 34, 86, 0.72) 0%, rgba(3, 40, 98, 0.68) 50%, rgba(3, 30, 78, 0.74) 100%)',
+            'linear-gradient(180deg, rgba(2,8,23,0.80) 0%, rgba(2,10,30,0.74) 40%, rgba(2,10,30,0.72) 70%, rgba(2,8,23,0.84) 100%)',
         }}
       />
 
-      {/* Precision grid */}
+      {/* Precision grid — subtle tech aesthetic */}
       <div
-        className="absolute inset-0 opacity-15"
+        className="absolute inset-0"
         style={{
+          opacity: 0.12,
           backgroundImage:
-            'linear-gradient(to right, rgba(37, 232, 255, 0.2) 1px, transparent 1px), linear-gradient(to bottom, rgba(37, 232, 255, 0.2) 1px, transparent 1px)',
-          backgroundSize: '40px 40px',
+            'linear-gradient(to right, rgba(56, 189, 248, 0.25) 1px, transparent 1px), linear-gradient(to bottom, rgba(56, 189, 248, 0.25) 1px, transparent 1px)',
+          backgroundSize: '48px 48px',
+        }}
+      />
+
+      {/* Subtle blue vignette edges */}
+      <div
+        className="absolute inset-0"
+        style={{
+          background:
+            'radial-gradient(ellipse at center, transparent 50%, rgba(2, 8, 23, 0.55) 100%)',
         }}
       />
     </aside>

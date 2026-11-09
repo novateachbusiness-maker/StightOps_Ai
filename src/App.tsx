@@ -9,6 +9,7 @@ import { Header } from './components/Header.tsx';
 import { Footer } from './components/Footer.tsx';
 import { WhatsAppButton } from './components/WhatsAppButton.tsx';
 import { GlobalBackgroundVisual } from './components/GlobalBackgroundVisual.tsx';
+import { DevPopup } from './components/DevPopup.tsx';
 
 // Pages
 import { HomePage } from './pages/HomePage.tsx';
@@ -43,6 +44,8 @@ export default function App() {
         <GlobalBackgroundVisual />
 
         <div className="relative z-10 flex flex-col min-h-screen">
+          {/* One-per-session development status popup */}
+          <DevPopup />
           <Header />
           <main className="flex-1">
             <Routes>
